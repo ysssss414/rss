@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "three-board-rsi-entry"
+version = "0.1.0"
+description = "Replayable validation of RSI secondary entries for three-board stocks"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "openpyxl>=3.1",
+    "pandas>=2.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+amazingdata = [
+    "pydantic>=2,<3",
+    "tables>=3.10,<4",
+]
+
+[project.scripts]
+three-board-rsi-entry = "three_board_rsi_entry.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["three_board_rsi_entry*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -p no:cacheprovider"

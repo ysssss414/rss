@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+~$*.xlsx
+.pytest_cache/
+.test_tmp/
+.test_workspace/
+.test_tools/
+.cache/
+outputs/
+.numba_cache/
