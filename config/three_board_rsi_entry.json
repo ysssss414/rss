@@ -1,0 +1,9 @@
+{
+  "rsi_period": 14,
+  "candidate_rsi_threshold": 70.0,
+  "md2_rsi_floor": 60.0,
+  "md2_max_below70_days": 9,
+  "candidate_max_observation_days": 20,
+  "warmup_trading_days": 150,
+  "price_adjustment": "qfq"
+}
