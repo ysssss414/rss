@@ -25,6 +25,7 @@ DATE_COLUMNS = {
     "below70_start_date",
     "md2_date",
     "cycle_expiry_date",
+    "superseded_date",
     "run_as_of",
 }
 

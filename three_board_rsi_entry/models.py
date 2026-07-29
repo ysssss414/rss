@@ -33,6 +33,7 @@ CANDIDATE_COLUMNS = [
     "md2_date",
     "md2_result",
     "cycle_expiry_date",
+    "superseded_date",
     "invalid_reason",
     "data_complete",
 ]
@@ -100,6 +101,7 @@ class CycleState:
     md2_date: date | None = None
     md2_result: str = "NO_REBREAK"
     cycle_expiry_date: date | None = None
+    superseded_date: date | None = None
     invalid_reason: str = ""
     data_complete: bool = True
 

@@ -324,6 +324,26 @@ def run_replay(
                 if getattr(row, "stock_name", ""):
                     cycle.stock_name = str(row.stock_name)
             else:
+                if prior is not None:
+                    prior_observation_day = (
+                        day_index
+                        - calendar_position[prior.last_limit_up_date]
+                    )
+                    prior_expired = (
+                        prior_observation_day
+                        > config.candidate_max_observation_days
+                    )
+                    prior_fully_invalid = (
+                        prior.md1_result != "NOT_REACHED"
+                        and prior.md2_result == "RSI_BELOW_60"
+                    )
+                    if (
+                        not prior.invalid_reason
+                        and not prior_expired
+                        and not prior_fully_invalid
+                    ):
+                        prior.invalid_reason = "SUPERSEDED_BY_NEW_CYCLE"
+                        prior.superseded_date = day
                 cycle = CycleState(
                     candidate_cycle_id=f"{row.ts_code}_{day.strftime('%Y%m%d')}",
                     ts_code=row.ts_code,
@@ -350,6 +370,8 @@ def run_replay(
 
         for cycle in cycles:
             if cycle.sequence_start_date > day:
+                continue
+            if cycle.invalid_reason:
                 continue
             bar = bar_lookup.get((day, cycle.ts_code))
             _update_latest(cycle, day, bar)

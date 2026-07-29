@@ -13,7 +13,14 @@ from three_board_rsi_entry.input_excel import InputData, create_input_template
 from three_board_rsi_entry.outputs import write_outputs
 from three_board_rsi_entry.pipeline import AnalysisRun
 
-from .helpers import TEST_TEMP_ROOT, replay_one, trading_days
+from .helpers import (
+    CODE,
+    TEST_TEMP_ROOT,
+    board_frame,
+    indicator_bars,
+    replay_one,
+    trading_days,
+)
 
 
 class OutputTests(unittest.TestCase):
@@ -36,7 +43,13 @@ class OutputTests(unittest.TestCase):
 
     def test_all_required_output_files_and_excel_sheets_are_written(self):
         days = trading_days(4)
-        result = replay_one(days=days, as_of_index=2)
+        boards = board_frame(
+            [(days[0], CODE, 3, "测试股"), (days[2], CODE, 3, "测试股")]
+        )
+        bars = indicator_bars(days, low={1: 9.0})
+        result = replay_one(
+            days=days, boards=boards, bars=bars, as_of_index=2
+        )
         input_data = InputData(
             confirmations=pd.DataFrame(),
             boards=pd.DataFrame(),
@@ -68,8 +81,29 @@ class OutputTests(unittest.TestCase):
             workbook.sheetnames,
             ["当前候选", "历史信号", "未准入连板", "运行检查", "参数"],
         )
+        candidates = pd.read_csv(paths["candidate_cycles"])
+        self.assertEqual(
+            candidates.iloc[0]["superseded_date"], days[2].isoformat()
+        )
+        signals = pd.read_csv(paths["signals"])
+        self.assertEqual(signals["signal_type"].tolist(), ["MD_1"])
+        self.assertEqual(
+            signals.iloc[0]["candidate_cycle_id"],
+            f"{CODE}_{days[0].strftime('%Y%m%d')}",
+        )
+        candidate_headers = [
+            cell.value for cell in next(workbook["当前候选"].iter_rows())
+        ]
+        self.assertIn("superseded_date", candidate_headers)
+        excel_candidates = pd.read_excel(
+            paths["candidate_status"], sheet_name="当前候选"
+        )
+        self.assertEqual(
+            excel_candidates.iloc[0]["superseded_date"],
+            days[2].isoformat(),
+        )
         summary = json.loads(paths["run_summary"].read_text(encoding="utf-8"))
-        self.assertEqual(summary["candidate_cycle_count"], 1)
+        self.assertEqual(summary["candidate_cycle_count"], 2)
         self.assertEqual(summary["run_as_of"], days[2].isoformat())
 
     def test_incomplete_input_warning_is_written_to_summary(self):
