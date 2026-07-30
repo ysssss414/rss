@@ -5,6 +5,8 @@ import sys
 from datetime import date
 from pathlib import Path
 
+from .backtest import run_event_backtest
+from .backtest_outputs import write_backtest_outputs
 from .config import StrategyConfig
 from .input_excel import create_input_template
 from .market_data import AmazingDataMarketDataProvider, CsvMarketDataProvider
@@ -21,6 +23,48 @@ def _date_argument(value: str) -> date:
         ) from exc
 
 
+def _add_analysis_arguments(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument("--input", type=Path, required=True)
+    parser.add_argument("--start-date", type=_date_argument, required=True)
+    parser.add_argument("--as-of", type=_date_argument, required=True)
+    parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument(
+        "--config",
+        type=Path,
+        default=Path("config/three_board_rsi_entry.json"),
+    )
+    parser.add_argument(
+        "--market-data-csv",
+        type=Path,
+        help=(
+            "Offline daily-bar CSV; otherwise the RSI project's verified "
+            "AmazingDataProvider is used"
+        ),
+    )
+    parser.add_argument(
+        "--cache-dir",
+        type=Path,
+        default=Path(".cache/three_board_rsi_entry"),
+    )
+    parser.add_argument(
+        "--legacy-provider-root",
+        type=Path,
+        help=(
+            "Root containing yh_quant_shape/data_provider.py; defaults to "
+            "AMAZINGDATA_LEGACY_PROVIDER_ROOT or the sibling yh project"
+        ),
+    )
+    parser.add_argument("--retry-count", type=int, default=3)
+    parser.add_argument("--retry-delay-seconds", type=float, default=1.0)
+    parser.add_argument(
+        "--no-numba-compat",
+        action="store_true",
+        help="Disable the RSI project's verified AmazingData 1.1.6 no-JIT shim",
+    )
+    parser.add_argument("--allow-incomplete", action="store_true")
+    parser.add_argument("--force-refresh", action="store_true")
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="three_board_rsi_entry",
@@ -34,45 +78,12 @@ def build_parser() -> argparse.ArgumentParser:
     template.add_argument("--output", type=Path, required=True)
 
     run = subparsers.add_parser("run", help="Run a deterministic historical replay")
-    run.add_argument("--input", type=Path, required=True)
-    run.add_argument("--start-date", type=_date_argument, required=True)
-    run.add_argument("--as-of", type=_date_argument, required=True)
-    run.add_argument("--output-dir", type=Path, required=True)
-    run.add_argument(
-        "--config",
-        type=Path,
-        default=Path("config/three_board_rsi_entry.json"),
+    _add_analysis_arguments(run)
+    backtest = subparsers.add_parser(
+        "backtest",
+        help="Replay signals and evaluate their forward daily-bar events",
     )
-    run.add_argument(
-        "--market-data-csv",
-        type=Path,
-        help=(
-            "Offline daily-bar CSV; otherwise the RSI project's verified "
-            "AmazingDataProvider is used"
-        ),
-    )
-    run.add_argument(
-        "--cache-dir",
-        type=Path,
-        default=Path(".cache/three_board_rsi_entry"),
-    )
-    run.add_argument(
-        "--legacy-provider-root",
-        type=Path,
-        help=(
-            "Root containing yh_quant_shape/data_provider.py; defaults to "
-            "AMAZINGDATA_LEGACY_PROVIDER_ROOT or the sibling yh project"
-        ),
-    )
-    run.add_argument("--retry-count", type=int, default=3)
-    run.add_argument("--retry-delay-seconds", type=float, default=1.0)
-    run.add_argument(
-        "--no-numba-compat",
-        action="store_true",
-        help="Disable the RSI project's verified AmazingData 1.1.6 no-JIT shim",
-    )
-    run.add_argument("--allow-incomplete", action="store_true")
-    run.add_argument("--force-refresh", action="store_true")
+    _add_analysis_arguments(backtest)
     return parser
 
 
@@ -108,6 +119,18 @@ def main(argv: list[str] | None = None) -> int:
                 force_refresh=args.force_refresh,
             )
             paths = write_outputs(analysis, args.output_dir)
+            if args.command == "backtest":
+                backtest = run_event_backtest(
+                    signals=analysis.result.signals,
+                    candidate_cycles=analysis.result.candidate_cycles,
+                    indicator_bars=analysis.indicator_bars,
+                    trading_days=analysis.trading_days,
+                    as_of_date=analysis.as_of_date,
+                    config=analysis.config,
+                )
+                paths.update(
+                    write_backtest_outputs(backtest, analysis, args.output_dir)
+                )
         finally:
             provider.close()
         print(
@@ -115,6 +138,12 @@ def main(argv: list[str] | None = None) -> int:
             f"signals={len(analysis.result.signals)}, "
             f"warnings={len(analysis.warnings)}"
         )
+        if args.command == "backtest":
+            print(
+                f"Backtest: events={len(backtest.events)}, "
+                f"first_signals={len(backtest.first_signal_events)}, "
+                f"warnings={len(backtest.warnings)}"
+            )
         for name, path in paths.items():
             print(f"{name}: {path}")
         return 0
