@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import hashlib
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -27,6 +27,8 @@ class AnalysisRun:
     input_path: Path
     input_hash: str
     market_source: str
+    indicator_bars: pd.DataFrame = field(default_factory=pd.DataFrame)
+    trading_days: tuple[date, ...] = ()
 
 
 def _input_hash(path: Path) -> str:
@@ -206,4 +208,6 @@ def run_analysis(
         input_path=input_file,
         input_hash=_input_hash(input_file),
         market_source=type(provider).__name__,
+        indicator_bars=indicator_bars.copy(),
+        trading_days=tuple(analysis_calendar),
     )

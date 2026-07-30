@@ -19,3 +19,7 @@ python -m three_board_rsi_entry.cli run \
 
 完整规则、AmazingData 环境变量、离线运行和输出说明见
 [`docs/three_board_rsi_entry_v0.1.md`](docs/three_board_rsi_entry_v0.1.md)。
+
+历史 MD_1/MD_2 事件回测的下一可交易日开盘、固定持有期、MFE/MAE、输出和
+CLI 说明见
+[`docs/three_board_rsi_entry_backtest_v0.2.md`](docs/three_board_rsi_entry_backtest_v0.2.md)。

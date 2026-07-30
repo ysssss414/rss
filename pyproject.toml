@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "three-board-rsi-entry"
-version = "0.1.0"
+version = "0.2.0"
 description = "Replayable validation of RSI secondary entries for three-board stocks"
 requires-python = ">=3.10"
 dependencies = [
