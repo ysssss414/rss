@@ -1,0 +1,15 @@
+Capability,Status,Evidence,Stage 1 Blocking?,Required Action
+Trading calendar,VERIFIED,live_core_01 calendar_sh/calendar_sz/calendar_bj/calendar_sh_2024; official holiday notices,NO,Freeze market-specific calendar; do not claim historical revision/PIT
+Historical security master,PARTIAL,history_2016/history_2017/history_pre_ipo/history_ipo show historical membership changes,YES,Validate full A-share coverage and code/board history; not CURRENT_MASTER_ONLY
+Historical listing/delisting,PARTIAL,stock_basic dates agree with IPO/delisting notices but IS_LISTED=0 conflicts with documented delisting enum 3,YES,Use evidenced dates; obtain authoritative enum/version semantics
+Historical ST,FAILED,status_st_transition and independent single-day repeat disagree with 2024-07-04 effective date,YES,Obtain vendor correction or independent effective-dated risk-warning source; never shift all rows blindly
+Trading/suspension status,PARTIAL,2024-07-03 explicit suspension and missing bar match notice; pre/post-listing samples examined,YES,Preserve UNKNOWN for unexplained missing/status/API failures; verify zero-volume and special sessions
+Raw daily bars,PARTIAL,42 raw plus 5 checked rows across normal/high-turnover/IPO/suspension/corporate-action samples,YES,Confirm units and missing-response semantics before formal capture
+volume units,UNVERIFIED,local manual PDF page 145 and SDK metadata describe total volume without explicit A-share Kline unit,YES,Obtain authoritative share/lot unit evidence; keep units_verified=false
+amount units,UNVERIFIED,local manual PDF page 145 and SDK metadata describe total amount without explicit Kline currency/scale,YES,Obtain authoritative currency/scale evidence; do not borrow units from another API
+official limit-up/down price,PARTIAL,main/ChiNext/STAR/ST/IPO/ex-dividend values captured; rate-price conflict on 2024-07-03 and zero/999 IPO sentinels,YES,Confirm official lineage and sentinel/rule semantics; cross-check historical effective rules
+reference price,PARTIAL,600519.SH 2024-06-19 PRECLOSE=1490.62 versus prior raw close=1521.5,YES,Confirm reference definition across corporate actions; never substitute yesterday close
+adjustment factor schema,VERIFIED,two-symbol 8730-row dense frame; calendar/finite/positive checks; dividend and bonus-share boundaries,NO,Use declared daily schema only within verified scope; pre-listing factors do not imply security existence
+factor revision/PIT,UNVERIFIED,two current refreshes identical; installed factor method has no historical end-date parameter,YES,Obtain version/PIT evidence or document and control non-PIT research scope
+availability/PIT metadata,UNVERIFIED,captured bars/status/factor schemas have no historical publication/revision version,YES,Keep availability_verified=false; require provenance source
+session lifecycle,PARTIAL,two sessions established and reused; invalid-symbol TypeError; malformed interval empty; controlled process timeout,NO,Keep error isolation; SDK-internal retry and safe logout remain unverified
