@@ -23,6 +23,7 @@ SYMBOL = "300308.SZ"
 def legacy_raw_bars() -> pd.DataFrame:
     return pd.DataFrame(
         {
+            "code": [SYMBOL, SYMBOL],
             "date": ["2026-01-01", "2026-01-02"],
             "open": [100.0, 200.0],
             "high": [110.0, 220.0],
@@ -35,18 +36,15 @@ def legacy_raw_bars() -> pd.DataFrame:
 
 
 class AmazingDataReferenceTests(unittest.TestCase):
-    def test_legacy_bar_validation_sorts_and_keeps_last_duplicate(self):
+    def test_conflicting_duplicate_is_a_data_quality_correction(self):
         raw = pd.concat(
             [
                 legacy_raw_bars().iloc[::-1],
                 legacy_raw_bars().iloc[[1]].assign(close=211.0),
             ]
         )
-        validated = AmazingDataAdapter._validate_bars(raw, SYMBOL)
-        self.assertEqual(
-            validated["date"].tolist(), ["2026-01-01", "2026-01-02"]
-        )
-        self.assertEqual(validated.iloc[-1]["close"], 211.0)
+        with self.assertRaisesRegex(DataSourceError, "CONFLICTING_DUPLICATE"):
+            AmazingDataAdapter._validate_bars(raw, SYMBOL)
 
     def test_legacy_bar_validation_rejects_missing_amount(self):
         raw = legacy_raw_bars()
@@ -97,6 +95,7 @@ class AmazingDataReferenceTests(unittest.TestCase):
 
             def __init__(self):
                 self.base = FakeBase()
+                self.ad = SimpleNamespace(constant=SimpleNamespace(Period=SimpleNamespace(day=SimpleNamespace(value="day"))))
                 self.logged_in = False
                 self.logged_out = False
                 FakeProvider.last_instance = self
@@ -110,9 +109,11 @@ class AmazingDataReferenceTests(unittest.TestCase):
             def get_trade_calendar(self):
                 return [20260101, 20260102]
 
-            def get_daily_bars(self, code, start_date, end_date):
-                del code, start_date, end_date
-                return legacy_raw_bars()
+            def _ensure_market(self):
+                return self
+
+            def query_kline(self, codes, **kwargs):
+                return {codes[0]: legacy_raw_bars()}
 
         cache_dir = Path(TEST_TEMP_ROOT) / "reference_adapter_cache"
         provider = AmazingDataMarketDataProvider(
@@ -154,7 +155,7 @@ class AmazingDataReferenceTests(unittest.TestCase):
             nonlocal attempts
             attempts += 1
             if attempts == 1:
-                raise RuntimeError("temporary")
+                raise ConnectionError("temporary")
             return "ok"
 
         self.assertEqual(adapter._call_with_retry(operation), "ok")

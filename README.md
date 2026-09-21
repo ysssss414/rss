@@ -23,3 +23,6 @@ python -m three_board_rsi_entry.cli run \
 历史 MD_1/MD_2 事件回测的下一可交易日开盘、固定持有期、MFE/MAE、输出和
 CLI 说明见
 [`docs/three_board_rsi_entry_backtest_v0.2.md`](docs/three_board_rsi_entry_backtest_v0.2.md)。
+
+Stage 0 的数据契约、不可变 snapshot、研究入口、manifest 与冻结回归说明见
+[`docs/research_stage0.md`](docs/research_stage0.md)。

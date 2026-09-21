@@ -63,6 +63,10 @@ def _add_analysis_arguments(parser: argparse.ArgumentParser) -> None:
     )
     parser.add_argument("--allow-incomplete", action="store_true")
     parser.add_argument("--force-refresh", action="store_true")
+    parser.add_argument("--numba-compat", action="store_true", help="Explicitly enable the AmazingData no-JIT compatibility mode")
+    parser.add_argument("--research-snapshot", help="Immutable Stage 0 snapshot ID")
+    parser.add_argument("--research-cache", type=Path, default=Path(".cache/research"))
+    parser.add_argument("--outcome-as-of", type=_date_argument, help="Outcome cutoff for snapshot-backed event evaluation")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -97,6 +101,20 @@ def main(argv: list[str] | None = None) -> int:
             return 0
 
         config = StrategyConfig.from_file(args.config)
+        if args.research_snapshot:
+            if args.market_data_csv or args.force_refresh:
+                raise ValueError("Snapshot runs cannot use market-data-csv or force-refresh")
+            from research.data.cache import SnapshotStore
+            from research.runs.legacy import run_with_snapshot, write_research_outputs
+            run = run_with_snapshot(snapshot=SnapshotStore(args.research_cache).load(args.research_snapshot),
+                input_path=args.input, start_date=args.start_date, decision_as_of=args.as_of,
+                outcome_as_of=args.outcome_as_of, config=config, allow_incomplete=args.allow_incomplete,
+                evaluate=args.command == "backtest")
+            write_research_outputs(run, args.output_dir)
+            print(f"Completed research run: {run.manifest['run_id']}")
+            return 0
+        if args.outcome_as_of:
+            raise ValueError("outcome-as-of requires research-snapshot")
         provider = (
             CsvMarketDataProvider(args.market_data_csv)
             if args.market_data_csv
@@ -105,7 +123,7 @@ def main(argv: list[str] | None = None) -> int:
                 legacy_provider_root=args.legacy_provider_root,
                 retry_count=args.retry_count,
                 retry_delay_seconds=args.retry_delay_seconds,
-                use_numba_compat=not args.no_numba_compat,
+                use_numba_compat=args.numba_compat and not args.no_numba_compat,
             )
         )
         try:

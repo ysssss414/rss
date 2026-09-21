@@ -11,7 +11,7 @@ from three_board_rsi_entry.replay import run_replay
 
 CODE = "000001.SZ"
 TEST_TEMP_ROOT = Path(__file__).resolve().parent.parent / ".test_workspace"
-TEST_TEMP_ROOT.mkdir(parents=True, exist_ok=True)
+# pytest assigns each test an isolated directory; importing helpers never writes.
 
 
 def trading_days(count: int = 30, start: str = "2025-01-02") -> list[date]:

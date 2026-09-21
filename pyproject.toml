@@ -24,7 +24,7 @@ amazingdata = [
 three-board-rsi-entry = "three_board_rsi_entry.cli:main"
 
 [tool.setuptools.packages.find]
-include = ["three_board_rsi_entry*"]
+include = ["three_board_rsi_entry*", "research*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

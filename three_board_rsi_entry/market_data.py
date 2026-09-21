@@ -16,6 +16,10 @@ import numpy as np
 import pandas as pd
 
 from .input_excel import normalize_ts_code
+from research.data.contracts import DataContractError as DataSourceError
+from research.data.amazingdata import SessionInvalidated, checked_sdk_bars, validate_legacy_bars
+from research.data.cache import SnapshotStore
+from research.data.validation import validate_price_values
 
 
 LOGGER = logging.getLogger(__name__)
@@ -30,10 +34,6 @@ BAR_COLUMNS = [
     "suspended",
 ]
 LEGACY_BAR_COLUMNS = ["date", "open", "high", "low", "close", "volume", "amount"]
-
-
-class DataSourceError(RuntimeError):
-    """AmazingData returned invalid data or the verified provider was unavailable."""
 
 
 def _install_numba_compat() -> None:
@@ -71,15 +71,17 @@ def _date_value(value: object) -> date:
 
 
 def _bool_value(value: object) -> bool:
-    if value is None or (isinstance(value, float) and pd.isna(value)):
-        return False
+    if pd.isna(value):
+        raise DataSourceError("UNKNOWN_TRADING_STATUS", "Missing suspension classification")
     if isinstance(value, str):
         text = value.strip().lower()
         if text in {"1", "true", "yes", "y", "suspended", "停牌"}:
             return True
         if text in {"0", "false", "no", "n", "trading", "交易"}:
             return False
-    return bool(value)
+    if isinstance(value, (bool, np.bool_)) or value in (0, 1):
+        return bool(value)
+    raise DataSourceError("UNKNOWN_TRADING_STATUS", "Unrecognized suspension classification")
 
 
 def normalize_bars(frame: pd.DataFrame, *, default_code: str | None = None) -> pd.DataFrame:
@@ -113,20 +115,25 @@ def normalize_bars(frame: pd.DataFrame, *, default_code: str | None = None) -> p
     if missing:
         raise ValueError(f"Market data missing fields: {', '.join(missing)}")
     if "suspended" not in data:
-        data["suspended"] = data[["open", "high", "low", "close"]].isna().all(axis=1)
+        if data[["open", "high", "low", "close"]].isna().any().any():
+            raise DataSourceError("UNKNOWN_TRADING_STATUS", "Missing prices do not establish suspension")
+        data["suspended"] = False
 
     data["trade_date"] = data["trade_date"].map(_date_value)
     data["ts_code"] = data["ts_code"].map(normalize_ts_code)
-    for column in ["open", "high", "low", "close", "amount"]:
-        data[column] = pd.to_numeric(data[column], errors="coerce")
     data["suspended"] = data["suspended"].map(_bool_value).astype(bool)
+    renames = {p: f"raw_{p}" for p in ("open", "high", "low", "close")}
+    data = validate_price_values(data.rename(columns=renames), ~data.suspended).rename(columns={v: k for k, v in renames.items()})
+    if data.trade_date.isna().any():
+        raise DataSourceError("INVALID_DATE", "Missing bar date")
+    data = data.drop_duplicates(BAR_COLUMNS + (["volume"] if "volume" in data else []))
     duplicated = data.duplicated(["trade_date", "ts_code"], keep=False)
     if duplicated.any():
         details = ", ".join(
             f"{row.ts_code} {row.trade_date}"
             for row in data.loc[duplicated].itertuples(index=False)
         )
-        raise ValueError(f"Duplicate market bars: {details}")
+        raise DataSourceError("CONFLICTING_DUPLICATE", f"Duplicate market bars: {details}")
     return data[BAR_COLUMNS].sort_values(
         ["ts_code", "trade_date"], kind="stable"
     ).reset_index(drop=True)
@@ -213,7 +220,7 @@ class AmazingDataAdapter:
         cache_dir: Path | str,
         retry_count: int = 3,
         retry_delay_seconds: float = 1.0,
-        use_numba_compat: bool = True,
+        use_numba_compat: bool = False,
     ) -> None:
         self.legacy_provider_root = Path(legacy_provider_root).resolve()
         self.cache_dir = Path(cache_dir).resolve()
@@ -232,11 +239,7 @@ class AmazingDataAdapter:
         self, symbol: str, start_date: date, end_date: date
     ) -> pd.DataFrame:
         raw = self._call_with_retry(
-            lambda provider: provider.get_daily_bars(
-                symbol,
-                int(start_date.strftime("%Y%m%d")),
-                int(end_date.strftime("%Y%m%d")),
-            )
+            lambda provider: checked_sdk_bars(provider, symbol, start_date, end_date)
         )
         return self._validate_bars(raw, symbol)
 
@@ -275,21 +278,23 @@ class AmazingDataAdapter:
                     return operation(provider)
             except (KeyboardInterrupt, SystemExit):
                 raise
-            except Exception as exc:
+            except DataSourceError:
+                raise
+            except (ConnectionError, TimeoutError) as exc:
                 last_error = exc
+                if isinstance(exc, SessionInvalidated):
+                    self._session_provider = None
                 LOGGER.warning(
-                    "AmazingData attempt %s/%s failed: %s",
+                    "AmazingData transient failure on attempt %s/%s",
                     attempt,
                     self.retry_count,
-                    exc,
                 )
                 if attempt < self.retry_count and self.retry_delay_seconds:
                     time.sleep(self.retry_delay_seconds)
+            except Exception:
+                raise DataSourceError("PROVIDER_FAILURE", "AmazingData request failed; no automatic retry") from None
         assert last_error is not None
-        raise DataSourceError(
-            f"AmazingData request failed after {self.retry_count} attempts: "
-            f"{last_error}"
-        ) from last_error
+        raise DataSourceError("PROVIDER_UNAVAILABLE", f"AmazingData request failed after {self.retry_count} attempts") from None
 
     @contextmanager
     def _provider(self) -> Iterator[Any]:
@@ -329,52 +334,14 @@ class AmazingDataAdapter:
 
     @staticmethod
     def _validate_bars(raw: pd.DataFrame, symbol: str) -> pd.DataFrame:
-        if not isinstance(raw, pd.DataFrame):
-            raise DataSourceError("AmazingData daily bars must be a DataFrame")
-        frame = raw.copy()
-        missing = set(LEGACY_BAR_COLUMNS) - set(frame.columns)
-        if missing:
-            raise DataSourceError(
-                f"{symbol} daily bars missing fields: {', '.join(sorted(missing))}"
-            )
-        frame = frame[LEGACY_BAR_COLUMNS].copy()
-        frame["date"] = pd.to_datetime(
-            frame["date"].astype(str), errors="coerce"
-        )
-        for column in LEGACY_BAR_COLUMNS[1:]:
-            frame[column] = pd.to_numeric(frame[column], errors="coerce")
-        if frame.empty:
-            return frame
-        if frame.isna().any().any():
-            bad = frame.columns[frame.isna().any()].tolist()
-            raise DataSourceError(
-                f"{symbol} daily bars contain missing values: {', '.join(bad)}"
-            )
-        frame = (
-            frame.sort_values("date")
-            .drop_duplicates("date", keep="last")
-            .reset_index(drop=True)
-        )
-        invalid = (
-            (frame["high"] < frame[["open", "close", "low"]].max(axis=1))
-            | (frame["low"] > frame[["open", "close", "high"]].min(axis=1))
-            | (frame[["open", "high", "low", "close"]] <= 0).any(axis=1)
-            | (frame[["volume", "amount"]] < 0).any(axis=1)
-        )
-        if invalid.any():
-            dates = frame.loc[invalid, "date"].dt.strftime("%Y-%m-%d").tolist()
-            raise DataSourceError(
-                f"{symbol} daily bars contain invalid OHLC/trading values: "
-                f"{dates[:5]}"
-            )
-        frame["date"] = frame["date"].dt.strftime("%Y-%m-%d")
-        return frame
+        return validate_legacy_bars(raw, symbol)
 
 
 class _RawCsvCache:
     def __init__(self, directory: Path):
         self.directory = directory
         self.directory.mkdir(parents=True, exist_ok=True)
+        self._writer = SnapshotStore(directory)
 
     def _path(self, code: str) -> Path:
         safe = "".join(character if character.isalnum() else "_" for character in code)
@@ -390,8 +357,10 @@ class _RawCsvCache:
             return pd.DataFrame(columns=BAR_COLUMNS)
         return normalize_bars(pd.read_csv(path), default_code=code)
 
-    def upsert(self, code: str, new_rows: pd.DataFrame) -> pd.DataFrame:
+    def upsert(self, code: str, new_rows: pd.DataFrame, *, replace_dates=()) -> pd.DataFrame:
         current = self.read(code)
+        if replace_dates:
+            current = current.loc[~current["trade_date"].isin(replace_dates)].copy()
         combined = (
             new_rows.copy()
             if current.empty
@@ -403,7 +372,7 @@ class _RawCsvCache:
         path = self._path(code)
         serializable = combined.copy()
         serializable["trade_date"] = serializable["trade_date"].map(date.isoformat)
-        serializable.to_csv(path, index=False, lineterminator="\n")
+        self._writer._atomic_write(path, serializable.to_csv(index=False, lineterminator="\n").encode("utf-8"), immutable=False)
         return combined.reset_index(drop=True)
 
     def read_coverage(self, code: str) -> set[date]:
@@ -415,16 +384,12 @@ class _RawCsvCache:
             return set()
         return {_date_value(value) for value in frame["trade_date"]}
 
-    def mark_covered(self, code: str, covered_dates: Iterable[date]) -> None:
-        combined = self.read_coverage(code) | set(covered_dates)
+    def mark_covered(self, code: str, covered_dates: Iterable[date], *, replace_dates=()) -> None:
+        combined = (self.read_coverage(code) - set(replace_dates)) | set(covered_dates)
         frame = pd.DataFrame(
             {"trade_date": [value.isoformat() for value in sorted(combined)]}
         )
-        frame.to_csv(
-            self._coverage_path(code),
-            index=False,
-            lineterminator="\n",
-        )
+        self._writer._atomic_write(self._coverage_path(code), frame.to_csv(index=False, lineterminator="\n").encode("utf-8"), immutable=False)
 
 
 class AmazingDataMarketDataProvider(MarketDataProvider):
@@ -437,7 +402,7 @@ class AmazingDataMarketDataProvider(MarketDataProvider):
         legacy_provider_root: Path | str | None = None,
         retry_count: int = 3,
         retry_delay_seconds: float = 1.0,
-        use_numba_compat: bool = True,
+        use_numba_compat: bool = False,
     ):
         self.cache_dir = Path(cache_dir)
         self.cache_dir.mkdir(parents=True, exist_ok=True)
@@ -507,26 +472,20 @@ class AmazingDataMarketDataProvider(MarketDataProvider):
             pd.DataFrame(columns=BAR_COLUMNS) if force_refresh else self._cache.read(code)
         )
         covered = set() if force_refresh else self._cache.read_coverage(code)
+        covered &= set(cached["trade_date"])
         if not covered and not cached.empty:
             # Backward compatibility with caches created before coverage files
             # were added: known bar dates are still safe cache hits.
             covered = set(cached["trade_date"])
         ranges = self._missing_ranges(requested, covered)
-        fetched_parts: list[pd.DataFrame] = []
         for range_start, range_end in ranges:
             raw = self._adapter.get_daily_bars(code, range_start, range_end)
-            if not raw.empty:
-                fetched_parts.append(normalize_bars(raw, default_code=code))
-            covered_dates = [
-                value
-                for value in requested
-                if range_start <= value <= range_end
-            ]
-            # Coverage records requested calendar dates without fabricating
-            # price rows for suspensions or pre-listing dates.
-            self._cache.mark_covered(code, covered_dates)
-        if fetched_parts:
-            cached = self._cache.upsert(code, pd.concat(fetched_parts, ignore_index=True))
+            if not raw.empty or force_refresh:
+                normalized = normalize_bars(raw, default_code=code)
+                replaced = [day for day in requested if range_start <= day <= range_end] if force_refresh else []
+                cached = self._cache.upsert(code, normalized, replace_dates=replaced)
+                # Only confirmed rows are covered, and only after their data is durable.
+                self._cache.mark_covered(code, normalized["trade_date"], replace_dates=replaced)
         mask = cached["trade_date"].isin(requested)
         return cached.loc[mask].copy()
 
@@ -564,11 +523,9 @@ class AmazingDataMarketDataProvider(MarketDataProvider):
         factor = factor_raw.copy()
         if symbol in factor.columns:
             values = pd.to_numeric(factor[symbol], errors="coerce")
-        elif len(factor.columns) == 1:
-            values = pd.to_numeric(factor.iloc[:, 0], errors="coerce")
         else:
             raise DataSourceError(
-                f"{symbol} column not found in forward-adjustment factors"
+                "SYMBOL_MISMATCH", "Requested security absent from adjustment factors"
             )
         factor_dates = pd.to_datetime(
             factor.index.astype(str), errors="coerce"
@@ -577,11 +534,16 @@ class AmazingDataMarketDataProvider(MarketDataProvider):
             factor_dates = pd.to_datetime(
                 factor["date"].astype(str), errors="coerce"
             )
-        series = pd.Series(
-            values.to_numpy(dtype=float), index=factor_dates
-        ).dropna()
-        series = series[~series.index.isna()].sort_index()
-        series = series[~series.index.duplicated(keep="last")]
+        if factor_dates.isna().any():
+            raise DataSourceError("INVALID_FACTOR", "Invalid factor dates")
+        series = pd.Series(values.to_numpy(dtype=float), index=factor_dates).sort_index()
+        series = series.loc[series.index <= pd.Timestamp(raw["trade_date"].max())]
+        if not np.isfinite(series).all() or series.le(0).any():
+            raise DataSourceError("INVALID_FACTOR", "Factors must be finite and positive")
+        for _, group in series.groupby(level=0):
+            if group.nunique() > 1:
+                raise DataSourceError("INVALID_FACTOR", "Conflicting factor observations")
+        series = series[~series.index.duplicated()]
         bar_dates = pd.to_datetime(raw["trade_date"])
         aligned = series.reindex(bar_dates).ffill()
         if aligned.isna().any():
@@ -621,12 +583,13 @@ class AmazingDataMarketDataProvider(MarketDataProvider):
             if parts
             else pd.DataFrame(columns=BAR_COLUMNS)
         )
-        if price_adjustment == "qfq" and not bars.empty:
-            bars = self._apply_qfq(
-                bars,
-                normalized_codes,
-                force_refresh=force_refresh,
-            )
+        if price_adjustment == "qfq":
+            if not bars.empty:
+                bars = self._apply_qfq(
+                    bars,
+                    normalized_codes,
+                    force_refresh=force_refresh,
+                )
         elif price_adjustment != "none":
             raise ValueError("price_adjustment must be 'qfq' or 'none'")
         return normalize_bars(bars)
