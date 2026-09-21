@@ -85,6 +85,12 @@ def run_analysis(
         price_adjustment=config.price_adjustment,
         force_refresh=force_refresh,
     )
+    if not raw_bars.empty:
+        dates = pd.to_datetime(raw_bars["trade_date"], errors="raise").dt.date
+        if not dates.between(market_start, as_of_date).all():
+            raise ValueError("AS_OF_VIOLATION: provider returned out-of-range market data")
+        if not raw_bars["ts_code"].isin(codes).all():
+            raise ValueError("SYMBOL_MISMATCH: provider returned an unrequested security")
     indicator_bars = add_indicators(raw_bars, config.rsi_period)
 
     warnings = list(input_data.warnings)
