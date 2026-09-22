@@ -1,0 +1,26 @@
+{
+  "schema": "gate-b-retry1-limit-validation/1",
+  "status": "OPEN",
+  "rule_boundary_cases": [
+    {"trade_date": "2026-07-03", "exchange": "SSE", "board": "MAIN", "security_status": "RISK_WARNING", "selected_rate": "0.05", "source": "2026 rule supersession"},
+    {"trade_date": "2026-07-06", "exchange": "SSE", "board": "MAIN", "security_status": "RISK_WARNING", "selected_rate": "0.10", "source": "上证发〔2026〕41号"},
+    {"trade_date": "2026-07-07", "exchange": "SSE", "board": "MAIN", "security_status": "RISK_WARNING", "selected_rate": "0.10", "source": "上证发〔2026〕41号"}
+  ],
+  "validation_matrix": [
+    {"case": "normal 10%", "fixture": "000001.SZ 2024-10-09", "level": "vendor diagnostic only"},
+    {"case": "risk-warning 5%", "fixture": "600518.SH 2024-07-02", "level": "vendor diagnostic only"},
+    {"case": "20%", "fixture": "300750.SZ and 688981.SH 2024-09-30", "level": "vendor diagnostic only"},
+    {"case": "IPO/no-limit", "fixture": "603194.SH 2024-12-24 vendor upper/lower=0, rate=999", "level": "official no-limit day and sentinel semantics not independently verified"},
+    {"case": "ex-dividend", "fixture": "600519.SH 2024-06-19 vendor reference 1490.62 vs prior raw close 1521.50", "level": "independent exchange reference unavailable"},
+    {"case": "half-tick rounding", "fixture": "1.05×1.10=1.155; diagnostic HALF_UP→1.16", "level": "synthetic only"},
+    {"case": "rule-change boundary", "fixture": "SSE risk-warning 2026-07-03/06/07", "level": "official date/rate boundary; daily prices unavailable"},
+    {"case": "rate-vs-price conflict", "fixture": "600518.SH 2024-07-03 vendor rate 10% vs upper price roughly 5%", "level": "conflict preserved; official daily price unavailable"}
+  ],
+  "reference_price_verified": false,
+  "official_daily_limit_price_verified": false,
+  "rounding_certified": false,
+  "vendor_conflict_resolved": false,
+  "no_limit_semantics": "Only an independently confirmed official no-limit day normalizes to is_limit_applicable=false with null rate/prices; vendor 0/999 alone returns UNKNOWN.",
+  "close_limit_definition": "raw close equals independently verified exchange official upper limit at valid tick; high touch and pct_chg threshold are insufficient",
+  "minimum_next_action": "Obtain date/versioned SSE and SZSE official daily reference files containing per-security adjusted reference and upper/lower prices, including 600518 conflict, 603194 IPO and 600519 ex-dividend; reconcile against dated rules and tick rounding."
+}

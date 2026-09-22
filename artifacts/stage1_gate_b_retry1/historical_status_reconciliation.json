@@ -1,0 +1,50 @@
+{
+  "schema": "gate-b-retry1-effective-status/1",
+  "status": "OPEN",
+  "event_contract": {
+    "required_fields": ["security_id", "status_type", "event_type", "published_at", "effective_from", "effective_to", "source_authority", "source_id", "source_url", "revision_of", "superseded_by", "retrieved_at", "content_hash"],
+    "publication_rule": "A date-only publication claim is conservatively available no earlier than 23:59:59 Asia/Shanghai that day; missing date or revision provenance is not PIT admission.",
+    "effective_rule": "Use exchange-local trade date and half-open intervals; published_at and effective_from are independent constraints.",
+    "source_precedence": ["exchange official effective event or dated daily reference", "issuer official announcement with explicit effective date", "version-verified vendor effective event", "vendor historical status snapshot as conflict diagnostic only"],
+    "revision_rule": "A correction is a new event version with revision_of pointing to its predecessor; superseded_by closes the predecessor as of the correction publication. Unknown correction history quarantines causal use.",
+    "conflict_rule": "At equal priority or if official effective event and daily official reference disagree, return UNKNOWN and preserve both documents; never shift vendor history by a fixed number of days."
+  },
+  "600518_conflict": {
+    "security_id": "600518.SH",
+    "official_notice_date": "2024-07-03",
+    "official_effective_from": "2024-07-04",
+    "official_suspended_on": "2024-07-03",
+    "official_state_on_effective_date": "NORMAL",
+    "official_limit_rate_on_effective_date": "0.10",
+    "vendor_is_st_on_effective_date": "1",
+    "vendor_independent_requery": "1",
+    "vendor_field_semantics": "UNKNOWN; cannot distinguish delayed update, EOD snapshot, current-state backfill, or error",
+    "contract_resolution": "Issuer effective event outranks vendor snapshot for this documented case; vendor field quarantined. This does not establish scalable historical coverage."
+  },
+  "validated_events": [
+    {
+      "security_id": "600518.SH",
+      "status_type": "NORMAL",
+      "event_type": "RISK_WARNING_REMOVED",
+      "published_at": "2024-07-03 (date only)",
+      "available_at": "2024-07-03T23:59:59+08:00",
+      "effective_from": "2024-07-04",
+      "effective_to": null,
+      "source_authority": "issuer/CNINFO",
+      "source_priority": 2,
+      "source_id": "2024-024/1220520500",
+      "source_url": "https://static.cninfo.com.cn/finalpage/2024-07-03/1220520500.PDF",
+      "revision_of": null,
+      "superseded_by": null,
+      "retrieved_at": "2026-09-22T03:28:47+00:00",
+      "content_hash": "a8e43c796ca7946c224ba1f2d07271dea0b669c9d7dce5d50e9641f39f12b31e",
+      "admission_state": "PIT_SAFE_ASOF_VERIFIED",
+      "historical_version": "issuer-announcement-2024-024",
+      "revision_state": "FROZEN_VERSION",
+      "limitation": "This is a single source-version fixture. Complete supersession coverage for a scalable status feed is not proven."
+    }
+  ],
+  "independent_transitions_validated": 0,
+  "official_scalable_event_archive_identified": false,
+  "minimum_next_action": "Acquire a machine-retrievable exchange/CNINFO historical event index with first-published and correction links; validate official NORMAL→ST, ST→NORMAL, and *ST transitions and daily reference states, then establish coverage and conflict precedence."
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "gate-b-retry1-limit-rules/1",
+  "status": "PARTIAL_NOT_CERTIFIED",
+  "selection_key": ["exchange", "board", "security_status", "trade_date"],
+  "required_rule_fields": ["exchange", "board", "security_status", "effective_from", "effective_to", "rule_version", "limit_regime", "limit_rate", "reference_price_rule", "tick_size", "rounding_rule", "special_exceptions", "source_id"],
+  "rules": [
+    {
+      "exchange": "SSE", "board": "MAIN", "security_status": "RISK_WARNING",
+      "effective_from": "2023-02-17", "effective_to": "2026-07-06",
+      "rule_version": "SSE-2023 risk-warning; prior rate documented by 2026 revision",
+      "limit_regime": "DAILY_PERCENT", "limit_rate": "0.05",
+      "reference_price_rule": "prior adjusted close or exchange approved ex-right/ex-dividend reference; exact daily value required",
+      "tick_size": "0.01", "rounding_rule": "UNVERIFIED_FOR_ALL_EXCEPTIONS",
+      "special_exceptions": ["IPO", "relisting", "other no-limit sessions", "corporate actions"],
+      "source_id": "sse_rule_2026_explanation"
+    },
+    {
+      "exchange": "SSE", "board": "MAIN", "security_status": "RISK_WARNING",
+      "effective_from": "2026-07-06", "effective_to": null,
+      "rule_version": "上证发〔2026〕41号",
+      "limit_regime": "DAILY_PERCENT", "limit_rate": "0.10",
+      "reference_price_rule": "prior adjusted close or exchange approved ex-right/ex-dividend reference; exact daily value required",
+      "tick_size": "0.01", "rounding_rule": "UNVERIFIED_FOR_ALL_EXCEPTIONS",
+      "special_exceptions": ["IPO", "relisting", "other no-limit sessions", "corporate actions"],
+      "source_id": "sse_rule_2026"
+    }
+  ],
+  "known_other_regimes": [
+    {"exchange": "SZSE", "board": "CHINEXT", "from": "2020-08-24", "ordinary_rate": "0.20", "ipo_first_five_days": "NO_LIMIT", "source_id": "szse_chinext_2020", "certified_for_daily_price": false}
+  ],
+  "incomplete": ["historical versions for all boards and statuses", "official per-security daily reference and upper/lower prices", "tick/rounding exceptions", "dated corporate-action exception handling"]
+}
