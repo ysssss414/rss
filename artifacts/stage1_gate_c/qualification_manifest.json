@@ -1,0 +1,42 @@
+{
+  "schema": "stage1-gate-c-qualification/1",
+  "generated_at_utc": "2026-09-22T07:06:36.539366+00:00",
+  "repository": "https://github.com/ysssss414/rss",
+  "branch": "codex/rss-stage1-gate-c-contract",
+  "base_main_sha": "9e67bba487f90073e5ea2bac4c80bca71e3ca599",
+  "stage0_tag": "research-stage0-v0.1.0",
+  "stage0_target_sha": "fdf4e5a15f120f7cf1c533c38b8c9214cb2130de",
+  "gate_b_result": "GATE_B_CORE_DATA_CONTRACT_PASS",
+  "gate_c_contracts": {
+    "C1": "CLOSED",
+    "C2": "CLOSED"
+  },
+  "gate_c_verdict": "GATE_C_CONTRACT_PASS",
+  "recommended_execution_policy_id": "NEXT_SESSION_V1",
+  "unqualified_policies": [
+    "CLOSING_AUCTION_V1",
+    "PRE_CLOSE_SNAPSHOT_V1"
+  ],
+  "universe_case_count": 20,
+  "qualification_scope": "Contract, read-only SDK/repository capability probe, synthetic fixtures and offline tests only; no market-wide history or real fill qualification",
+  "no_stage1_strategy_implementation": true,
+  "evidence_hashes": {
+    "artifacts/stage1_gate_c/.gitattributes": "68b1fa504825dc0f64c151540664269fd687e577e8ea4f34b706497652fa2fb7",
+    "artifacts/stage1_gate_c/baseline_receipt.json": "66f900b4039b4f554562f6ac4b9328bec72d6ae0805c3ec777d2bb5410cabb11",
+    "artifacts/stage1_gate_c/execution_policy_contract.json": "2a4408b939fcb18234c73b98223c81fa0c05028392e7c947da90c35e476c84f6",
+    "artifacts/stage1_gate_c/execution_capability_probe.json": "0c71a23d873558639f4b7579812641f04e7f8264c7b86cd01e9a919f9b5ed893",
+    "artifacts/stage1_gate_c/historical_universe_contract.json": "fdf0e818d94197cca517156d97266929ea585a28e52ee606036567d34351efcb",
+    "artifacts/stage1_gate_c/universe_validation_cases.json": "5645cc7753f7ced69ceda5eb485d57b548fc78ea2b7996450b27d4cc59173c9c"
+  },
+  "evidence_hash_basis": "Literal bytes under stage1_gate_c/.gitattributes -text; manifest excludes itself",
+  "validated_at_utc": "2026-09-22T07:14:33.426831+00:00",
+  "tests": {
+    "gate_c_targeted_passed": 39,
+    "prior_gate_qualification_passed": 72,
+    "full_repository_passed": 258,
+    "prior_manifest_hashes_verified": 86,
+    "gate_c_manifest_hashes_verified": 6,
+    "failures": 0,
+    "stage0_windows_checkout_note": "Full-suite run temporarily used verified frozen LF bytes for pipeline_reference.json and restored original checkout bytes."
+  }
+}

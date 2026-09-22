@@ -1,0 +1,89 @@
+{
+  "schema": "stage1-gate-c-execution-capability-probe/1",
+  "method": "Read-only inspection of repository code/artifacts and installed AmazingData 1.1.6 bytecode method names, signatures and schema names; no SDK import/login, API request or raw provider response",
+  "sdk_version": "1.1.6",
+  "inspected_sdk_members": {
+    "AmazingData/query_api/market_data.pyc": ["MarketData.query_kline(code_list, begin_date, end_date, period)", "MarketData.query_snapshot(code_list, begin_date, end_date)"],
+    "AmazingData/utils/constant.pyc": ["Period.min1", "Period.min5", "Kline: code/kline_time/OHLC/volume/amount", "Snapshot: trade_time and level-1 prices/volumes", "SnapshotL2: trade_time and bid/ask levels", "Order and OrderQueue record types"],
+    "repository_bridge": ["research/data/amazingdata.py calls query_kline with Period.day", "No Stage 1 intraday/auction/order-book capture or timestamp qualification exists"]
+  },
+  "capabilities": {
+    "one_minute_bars": {
+      "api_surface": "AVAILABLE",
+      "api": "MarketData.query_kline with Period.min1",
+      "schema": "Kline code, kline_time, open, high, low, close, volume, amount",
+      "historical_coverage": "UNKNOWN",
+      "timestamp_semantics": "UNKNOWN",
+      "unit": "UNKNOWN",
+      "rate_limits": "UNKNOWN",
+      "research_usable": "UNKNOWN"
+    },
+    "five_minute_bars": {
+      "api_surface": "AVAILABLE",
+      "api": "MarketData.query_kline with Period.min5",
+      "schema": "Kline code, kline_time, open, high, low, close, volume, amount",
+      "historical_coverage": "UNKNOWN",
+      "timestamp_semantics": "UNKNOWN",
+      "unit": "UNKNOWN",
+      "rate_limits": "UNKNOWN",
+      "research_usable": "UNKNOWN"
+    },
+    "tick_data": {
+      "api_surface": "NOT_AVAILABLE_IN_INSPECTED_MARKETDATA_QUERY_PATH",
+      "api": "No query_tick method in installed MarketData class; Period.execution alone does not prove historical query access",
+      "schema": "UNKNOWN",
+      "historical_coverage": "UNKNOWN",
+      "timestamp_semantics": "UNKNOWN",
+      "unit": "UNKNOWN",
+      "rate_limits": "UNKNOWN",
+      "research_usable": "UNKNOWN"
+    },
+    "quote_snapshots": {
+      "api_surface": "AVAILABLE",
+      "api": "MarketData.query_snapshot",
+      "schema": "Snapshot record declares trade_time, last, bid/ask levels and trading_phase_code",
+      "historical_coverage": "UNKNOWN",
+      "timestamp_semantics": "UNKNOWN",
+      "unit": "UNKNOWN",
+      "rate_limits": "UNKNOWN",
+      "research_usable": "UNKNOWN"
+    },
+    "closing_auction_data": {
+      "api_surface": "UNKNOWN",
+      "api": "No dedicated historical auction query identified; generic snapshot does not prove auction-order or match data",
+      "schema": "UNKNOWN",
+      "historical_coverage": "UNKNOWN",
+      "timestamp_semantics": "UNKNOWN",
+      "unit": "UNKNOWN",
+      "rate_limits": "UNKNOWN",
+      "research_usable": "UNKNOWN"
+    },
+    "order_book": {
+      "api_surface": "UNKNOWN",
+      "api": "SnapshotL2 and OrderQueue record types exist, but no verified historical query path or entitlement",
+      "schema": "Declared bid/ask levels and queue fields; actual response unobserved",
+      "historical_coverage": "UNKNOWN",
+      "timestamp_semantics": "UNKNOWN",
+      "unit": "UNKNOWN",
+      "rate_limits": "UNKNOWN",
+      "research_usable": "UNKNOWN"
+    },
+    "limit_up_intraday_path": {
+      "api_surface": "UNKNOWN",
+      "api": "Requires independently qualified minute/tick/quote history and trading-phase semantics",
+      "schema": "UNKNOWN",
+      "historical_coverage": "UNKNOWN",
+      "timestamp_semantics": "UNKNOWN",
+      "unit": "UNKNOWN",
+      "rate_limits": "UNKNOWN",
+      "research_usable": "UNKNOWN"
+    }
+  },
+  "historical_security_master": {
+    "repo_evidence": "Gate A historical code-list membership and stock-basic listing dates are PARTIAL; delisting enum conflicts and full-market coverage remain unqualified",
+    "sdk_surface": ["BaseData.get_hist_code_list", "BaseData.get_code_info", "InfoData.get_stock_basic"],
+    "historical_security_type_classification": "UNKNOWN",
+    "universe_admission": "Fail closed unless explicit point-in-time security type and lifecycle evidence are present"
+  },
+  "conclusion": "Only daily-data NEXT_SESSION_V1 is contract-qualified. Interface names do not establish historical data coverage, usable timestamps, units, entitlement, queue position or real fills. CLOSING_AUCTION_V1 and PRE_CLOSE_SNAPSHOT_V1 are NOT_QUALIFIED."
+}

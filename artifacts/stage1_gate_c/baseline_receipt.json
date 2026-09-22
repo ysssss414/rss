@@ -1,0 +1,26 @@
+{
+  "schema": "stage1-gate-c-baseline/1",
+  "repository": "https://github.com/ysssss414/rss",
+  "base_main_sha": "9e67bba487f90073e5ea2bac4c80bca71e3ca599",
+  "gate_b_closure_receipt": "artifacts/stage1_gate_b_closure/closure_receipt.json",
+  "gate_b_result": "GATE_B_CORE_DATA_CONTRACT_PASS",
+  "gate_b_contracts": {
+    "C1": "CLOSED",
+    "C2": "CLOSED",
+    "C3": "CLOSED",
+    "A1": "UNTRUSTED / AUXILIARY / NON-CAUSAL"
+  },
+  "stage0_tag": "research-stage0-v0.1.0",
+  "stage0_target_sha": "fdf4e5a15f120f7cf1c533c38b8c9214cb2130de",
+  "prior_local_planning_commit": "1711ecc7f38c48ccebe0f3ce8d3194c526f451a9",
+  "prior_planning_path": "docs/stage1_next_stage_planning.md",
+  "prior_planning_disposition": "SUPERSEDED_PLANNING_INPUT_NOT_AN_AUTHORITATIVE_CONTRACT",
+  "branch_origin": "Independent branch from public main; prior local planning commit is not an ancestor",
+  "scope": "Gate C contract formalization and offline deterministic validation only",
+  "no_stage1_strategy_implementation": true,
+  "protected_excel_sha256": {
+    "inputs/three_board_daily_input.xlsx": "38dabdc991d26d4d1b5873bfdcbfb5dd29db4671fa1760c20d932d3d17d9b9fe",
+    "inputs/three_board_daily_input_2026_backtest.xlsx": "282c4abdbb5901f5e3ee33512e7256887c1e92ae129662f631397fbd6943cf22",
+    "手工统计.xlsx": "2fdf23576a7d220e994cf74143236a0b3db34e9e495f769927d0a65c994f8277"
+  }
+}
