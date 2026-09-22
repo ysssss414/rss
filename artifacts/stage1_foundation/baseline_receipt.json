@@ -1,0 +1,13 @@
+{
+  "schema": "stage1-foundation-baseline/1",
+  "repository": "https://github.com/ysssss414/rss",
+  "base_main_sha": "29baa0603a5279c91b80e47aad9c7ecc6886656b",
+  "gate_c_pr": 9,
+  "gate_c_merge_sha": "29baa0603a5279c91b80e47aad9c7ecc6886656b",
+  "gate_c_verdict": "GATE_C_CONTRACT_PASS",
+  "history_requirement": "DEPENDENCY_DRIVEN",
+  "gate_b_verdict": "GATE_B_CORE_DATA_CONTRACT_PASS",
+  "stage0_tag": "research-stage0-v0.1.0",
+  "stage0_target_sha": "fdf4e5a15f120f7cf1c533c38b8c9214cb2130de",
+  "no_stage1_strategy_primitives": true
+}
