@@ -116,7 +116,7 @@ def ma5(series: IndicatorPriceSeries, *, decision_at: datetime) -> PrimitiveValu
 
 def rsi14(series: IndicatorPriceSeries, *, decision_at: datetime) -> PrimitiveValue:
     """Legacy Tonghuashun SMA(GAIN,14,1)/SMA(ABS(delta),14,1), first-delta seed."""
-    primitive = "RSI14_TONGHUASHUN_V1"
+    primitive = "RSI14_PROJECT_V1"
     records = _indicator_records(series, decision_at)
     if records is None:
         return _result(primitive, "INVALID_INPUT", series.as_of_date, series.source_snapshot_id,

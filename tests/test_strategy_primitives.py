@@ -255,12 +255,17 @@ def test_dependency_graph_keeps_price_and_constraint_history_separate():
     empty = required_history(())
     assert empty.base_universe_minimum == 0
     requirement = required_history(("LIMIT_UP_COUNT_5_V1", "MA5_SMA_V1",
-                                    "RSI14_TONGHUASHUN_V1"))
+                                    "RSI14_PROJECT_V1"))
     assert (requirement.price_history_required, requirement.limit_constraint_history_required,
             requirement.base_universe_minimum) == (5, 5, 5)
     assert requirement.price_replay_scope == "ALL_VALID_OBSERVATIONS_SINCE_RESET"
+    assert requirement.requires_full_prefix is True
+    assert requirement.replay_origin == "LATEST_LISTING_OR_RELISTING"
     assert requirement.dependency_graph_version == GRAPH_VERSION
-    assert required_history(("RSI14_TONGHUASHUN_V1",)).price_history_required == 2
+    assert required_history(("RSI14_PROJECT_V1",)).price_history_required == 2
+    assert required_history(("MA5_SMA_V1",)).requires_full_prefix is False
+    assert required_history(("LIMIT_UP_COUNT_5_V1",)).requires_full_prefix is False
+    assert PrimitiveRunContext(SNAPSHOT, "1").rsi_replay_origin == "LATEST_LISTING_OR_RELISTING"
     with pytest.raises(ValueError):
         required_history(("UNKNOWN",))
     assert PrimitiveRunContext(SNAPSHOT, "1").indicator_price_basis_version == "PIT_ADJUSTED_CLOSE_V1"
