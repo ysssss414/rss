@@ -1,0 +1,13 @@
+{
+  "schema": "gate-b-retry2-auxiliary-status/1",
+  "gate": "A1_HISTORICAL_STATUS_LABEL_QUALITY",
+  "status": "UNTRUSTED",
+  "causal_admission": "PROHIBITED",
+  "reason": "Historical IS_ST_SEC is not a necessary feature for the Stage 1 core strategy when verified daily constraints are used directly.",
+  "known_conflicts": [
+    {"security_id":"600518.SH","trade_date":"2024-07-04","official":"risk warning removed effective July 4; 10% daily regime","vendor":"IS_ST_SEC=1","daily_absolute":"PRECLOSE=1.93, HIGH_LIMITED=2.12, LOW_LIMITED=1.74; consistent with 10% but exact reference row unavailable"},
+    {"security_id":"600187.SH","trade_date":"2026-07-06","official":"SSE risk-warning 10% rule effective July 6","vendor":"IS_ST_SEC=1; PRICE_HIGH_LMT_RATE=0.05","daily_absolute":"PRECLOSE=1.47, HIGH_LIMITED=1.62, LOW_LIMITED=1.32; consistent with 10%"}
+  ],
+  "independent_blocker": false,
+  "condition_if_future_strategy_changes": "Reopen only if ST/risk-warning label becomes a causal feature."
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "gate-b-retry2-daily-constraint/1",
+  "status": "OPEN_FOR_CAUSAL_ADMISSION",
+  "canonical_object": "DailyTradingConstraint",
+  "fields": ["security_id", "trade_date", "reference_price", "limit_applicable", "limit_type", "limit_up_price", "limit_down_price", "price_tick", "trading_allowed", "suspended", "source", "source_priority", "retrieved_at", "raw_provider_value"],
+  "source_priority": [
+    {"priority": 1, "source": "final pre-open dated exchange reference version; SSE cpxx0202 after cpxx0201 if published before session; SZSE second non-pre securities/cashauctionparams version", "admission": "authoritative"},
+    {"priority": 2, "source": "AmazingData PRECLOSE/HIGH_LIMITED/LOW_LIMITED/IS_SUSP_SEC after complete official rule, announcement and quote matrix reconciliation", "admission": "not yet qualified globally; only individually validated cases"},
+    {"priority": 3, "source": "issuer/exchange announcement and effective-dated official rule with official quote corroboration", "admission": "case-specific validation; do not silently extrapolate"},
+    {"priority": 9, "source": "IS_ST_SEC, security name, PRICE_HIGH_LMT_RATE/PRICE_LOW_LMT_RATE", "admission": "diagnostic only; cannot override priority 1-3"}
+  ],
+  "sse_contract": {"files": ["cpxx0201MMDD", "cpxx0202MMDD"], "fields": ["PrevClose", "limit type", "upper limit", "lower limit", "product status", "price tick"], "timing": "pre-open; use final published cpxx0202 price update if available before session, otherwise final cpxx0201; equal-priority equal-time conflict excludes day", "caveat": "R/P limit-type prices can be display placeholders rather than enforced controls; require applicable limit type"},
+  "szse_contract": {"files": ["securities", "cashauctionparams"], "fields": ["SecurityStatus", "PriceTick", "HasPriceLimit", "ReferPriceType", "LimitType", "LimitUpRate", "LimitDownRate", "LimitUpAbsolute", "LimitDownAbsolute"], "timing": "pre-open; final second non-pre file takes precedence over pre file; same-version conflict excludes day"},
+  "historical_reference_rows_acquired": false,
+  "normalization": "No-limit only with authoritative HasPriceLimit=N or confirmed first-five-IPO official rule; set applicable=false and upper/lower=null, retain raw 0/999 sentinel audit. For limited days require positive reference/tick, lower<reference<upper, on-tick prices, independently verified authority. Suspended day excluded even if theoretical prices present.",
+  "ten_percent_universe": "Only board-eligible, trading-allowed days with verified daily absolute limit prices and verified current 10% regime (official rate or deterministic official-rule/tick classification). Never infer from IS_ST_SEC/name alone.",
+  "conflict_policy": "Official final daily reference outranks vendor absolute; verified vendor absolute outranks descriptive rate/label. Unresolved absolute/rule/reference disagreement, missing price, invalid sentinel, impossible rate or duplicate final version => exclude security-day and emit data-quality flag.",
+  "close_limit_predicate": "limit_applicable && trading_allowed && raw_unadjusted_close == normalized_limit_up_price at tick precision; no pct_change>=threshold shortcut",
+  "fallback_qualification": "Incomplete: no dated historical exchange reference rows and not all matrix cells independently validated; AmazingData absolute prices cannot yet be promoted to a universally qualified operational source."
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "gate-b-retry2-source-registry/1",
+  "retrieval_date_utc": "2026-09-22",
+  "sdk": {"installed_version":"1.1.6","module":"AmazingData.utils.constant.Kline","compiled_constant_path":"C:/Users/cjzs0/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0/LocalCache/local-packages/Python313/site-packages/AmazingData/utils/constant.pyc","compiled_constant_sha256":"a1758abccf454baefa309f8e9776a6d8b2df47ea6986634db38929073c30636f","manual_path":"D:/ej/材料/codex/yh/AmazingData开发手册.pdf","manual_sha256":"8d2f671828140e1e16007beef218dc92d34bc81b9288afdcea8f6814cbbd8cd9","manual_page":"145; field labels only, no query_kline units"},
+  "vendor_snapshots": [
+    {"path":"artifacts/stage1_gate_a/live_core_01.json","sha256":"fc8f81d292b3d6ad52ecc7d4cacdca5a665d800710d9a375cf8dfae9d380100a","role":"historical status and Kline sample rows"},
+    {"path":"artifacts/stage1_gate_a/live_followup_01.json","sha256":"22f04e3aa0aa96b2068012b408f962f464fc5312c8962ab0f18a307097a26a31","role":"600518 effective-day repeat"},
+    {"path":"artifacts/stage1_gate_b_retry2/live_boundary_2026_py313.json","sha256":"3bfdd21650c83535f0f5d323beaf1976ab9483a6079cb25591b89aad774dcb0e","role":"bounded 600187 July 2026 status and bars; SDK 1.1.6"}
+  ],
+  "official_snapshot_contract": "Downloaded directly from exchange-controlled host, frozen raw response bytes and SHA-256 below; query URL is reproducible but a later re-query can yield changed bytes.",
+  "official_snapshots": [
+    {"file":"sse_600187.json","sha256":"d685a5b8b7f24c242b178e5ae41a6fd789865ecc809d4e610c68997682d3b5d4","url":"http://yunhq.sse.com.cn:32041/v1/sh1/dayk/600187?begin=-650&end=-1&period=day&select=date%2Copen%2Chigh%2Clow%2Cclose%2Cvolume%2Camount","referer":"https://www.sse.com.cn/market/price/trends/"},
+    {"file":"sse_600518.json","sha256":"5006d5c4845faf59dcaf4396a31c3a39478c669ba2c658a83c541f88d6adc567","url":"http://yunhq.sse.com.cn:32041/v1/sh1/dayk/600518?begin=-650&end=-1&period=day&select=date%2Copen%2Chigh%2Clow%2Cclose%2Cvolume%2Camount","referer":"https://www.sse.com.cn/market/price/trends/"},
+    {"file":"sse_600519.json","sha256":"c2ffbe4b57247435291310a82350d1188a15192420c73dbbbf6951947c5492c2","url":"http://yunhq.sse.com.cn:32041/v1/sh1/dayk/600519?begin=-650&end=-1&period=day&select=date%2Copen%2Chigh%2Clow%2Cclose%2Cvolume%2Camount","referer":"https://www.sse.com.cn/market/price/trends/"},
+    {"file":"sse_688981.json","sha256":"5a3f858a2c377d99d8ed2dab9f4415c67ff3ffc34b26531356c189e3f51813db","url":"http://yunhq.sse.com.cn:32041/v1/sh1/dayk/688981?begin=-650&end=-1&period=day&select=date%2Copen%2Chigh%2Clow%2Cclose%2Cvolume%2Camount","referer":"https://www.sse.com.cn/market/price/trends/"},
+    {"file":"szse_000001_2024-01-08.json","sha256":"151348323bc80acf6b7f7cee8036d22606e810ebe030cde1e08173922b4f415e"},
+    {"file":"szse_000001_2024-01-09.json","sha256":"b5a56976d0c4419d91725c53861d249419bb0951a844567077b8cf569d424c04"},
+    {"file":"szse_000001_2024-01-10.json","sha256":"d0551696be017be3dbde61ecead67b6087e516aff78b498f2a302ae159f0d421"},
+    {"file":"szse_000001_2024-09-27.json","sha256":"f8eaf4ea58fbe311833b1a9fad8a2ea70cc7d0c1faf3878210df49bb66117ebe"},
+    {"file":"szse_000001_2024-10-09.json","sha256":"982a77d81e0f34d9ea606d7f90539b243fb48cf256fc8a1f81e491015ddeea16"},
+    {"file":"szse_300750_2024-09-27.json","sha256":"c219a3f90b775857161929637d814aa1b94fa454561be5a02973e3742dcbfa3a"}
+  ],
+  "szse_query_template": "https://www.szse.cn/api/report/ShowReport/data?SHOWTYPE=JSON&CATALOGID=1815_stock&TABKEY=tab1&txtDMorJC={code}&txtBeginDate={YYYY-MM-DD}&txtEndDate={YYYY-MM-DD}&radioClass=00%2C20%2C30&txtSite=all",
+  "szse_report_metadata": "cjgs 成交量(万股); cjje 成交金额(万元); footer says all trading methods included; displayed to 0.01 万 units",
+  "official_rule_and_event_urls": {
+    "sse_daily_reference_spec":"https://www.sse.com.cn/services/tradingtech/development/c/10781338/files/b251f026187849cdb57db7d4e2205269.pdf",
+    "szse_reference_spec_2024":"https://www.szse.cn/marketServices/technicalservice/interface/P020241016554266648071.pdf",
+    "szse_reference_faq":"https://www.szse.cn/www/marketServices/technicalservice/introduce/P020180328467244590967.pdf",
+    "sse_2026_rule":"https://www.sse.com.cn/lawandrules/sselawsrules2025/stocks/exchange/c/c_20260424_10816482.shtml",
+    "sse_2026_explanation":"https://www.sse.com.cn/aboutus/mediacenter/hotandd/c/c_20260424_10816474.shtml",
+    "600518_removal_issuer_notice":"https://static.cninfo.com.cn/finalpage/2024-07-03/1220520500.PDF",
+    "603194_ipo_listing_notice":"https://www.sse.com.cn/disclosure/listedinfo/announcement/c/new/2024-12-23/603194_20241223_YCS3.pdf",
+    "600519_dividend_sse_yearbook":"https://big5.sse.com.cn/aboutus/publication/yearly/documents/c/10801255/files/02acb566841a48f0b2ca8941c73f4541.pdf"
+  },
+  "historical_daily_reference_rows": "SSE cpxx0201/0202 and SZSE securities/cashauctionparams schemas found; requested historical per-security rows were not obtained from public official endpoints. This is a validation gap, not an assumed data value."
+}

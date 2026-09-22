@@ -1,0 +1,29 @@
+{
+  "schema": "gate-b-retry2-market-units/1",
+  "status": "CLOSED",
+  "provider": "AmazingData",
+  "provider_version": "1.1.6",
+  "api": "MarketData.query_kline(period=day)",
+  "sdk_metadata": "constant.Kline volume Optional[int], amount Optional[float]; no unit annotation or docstring; local manual page 145 has field labels but no units",
+  "canonical": {"volume": "shares", "amount": "CNY"},
+  "raw": {"volume": "shares", "amount": "CNY"},
+  "conversion_multiplier": {"volume": 1, "amount": 1},
+  "candidate_multipliers": [1, 10, 100, 1000, 10000],
+  "sse_comparison": "Daily SSE day-k volume exact shares; amount reported whole CNY and must be within 0.50 CNY of raw amount",
+  "szse_comparison": "SZSE historical stock report prints 0.01 万股 and 0.01 万元; raw/10000 truncated to 2 displayed decimals for matching rows; report footer covers all trading methods",
+  "samples": [
+    {"id":"600519.SH/2024-06-18","exchange":"SSE","vendor_volume":4125825,"vendor_amount":"6317590942.71","official_volume":4125825,"official_amount":6317590943,"official_file":"sse_600519.json","reconciliation":"MATCH"},
+    {"id":"600518.SH/2024-07-02","exchange":"SSE","vendor_volume":83910952,"vendor_amount":"161479718.94","official_volume":83910952,"official_amount":161479719,"official_file":"sse_600518.json","reconciliation":"MATCH"},
+    {"id":"600518.SH/2024-07-04","exchange":"SSE","vendor_volume":85620499,"vendor_amount":"181515457.88","official_volume":85620499,"official_amount":181515458,"official_file":"sse_600518.json","reconciliation":"MATCH"},
+    {"id":"688981.SH/2024-09-30","exchange":"SSE","vendor_volume":109263571,"vendor_amount":"6255248098.1","official_volume":109263571,"official_amount":6255248098,"official_file":"sse_688981.json","reconciliation":"MATCH"},
+    {"id":"600187.SH/2026-07-06","exchange":"SSE","vendor_volume":74108103,"vendor_amount":"114955759.56","official_volume":74108103,"official_amount":114955760,"official_file":"sse_600187.json","reconciliation":"MATCH"},
+    {"id":"000001.SZ/2024-01-08","exchange":"SZSE","vendor_volume":112115619,"vendor_amount":"1029006548.73","official_volume":"11211.56","official_amount":"102900.65","official_file":"szse_000001_2024-01-08.json","reconciliation":"MATCH"},
+    {"id":"000001.SZ/2024-01-09","exchange":"SZSE","vendor_volume":76619388,"vendor_amount":"700375720.2","official_volume":"7661.93","official_amount":"70037.57","official_file":"szse_000001_2024-01-09.json","reconciliation":"MATCH"},
+    {"id":"000001.SZ/2024-01-10","exchange":"SZSE","vendor_volume":85862091,"vendor_amount":"783771150.01","official_volume":"8586.20","official_amount":"78377.11","official_file":"szse_000001_2024-01-10.json","reconciliation":"MATCH"},
+    {"id":"000001.SZ/2024-09-27","exchange":"SZSE","vendor_volume":384001637,"vendor_amount":"4337985142.5","official_volume":"38400.16","official_amount":"433798.51","official_file":"szse_000001_2024-09-27.json","reconciliation":"MATCH"},
+    {"id":"000001.SZ/2024-10-09","exchange":"SZSE","vendor_volume":426934506,"vendor_amount":"5172049702.23","official_volume":"42693.45","official_amount":"517204.97","official_file":"szse_000001_2024-10-09.json","reconciliation":"MATCH"},
+    {"id":"300750.SZ/2024-09-27","exchange":"SZSE","vendor_volume":70181326,"vendor_amount":"15567947397.43","official_volume":"7019.45","official_amount":"1557095.48","official_file":"szse_300750_2024-09-27.json","reconciliation":"MISMATCH_SOURCE_SCOPE_UNRESOLVED"}
+  ],
+  "scope_caveat": "The 300750 report total differs from vendor Kline by 13,174 shares and 3,007,402.57 CNY before display rounding. The report footer includes all trading methods; the cause of this difference was not independently proven. This row is excluded from exact unit identification and remains a separate stock-day data-quality flag.",
+  "unit_identification": "Unique multiplier 1 independently for volume and amount across 5 SSE and 5 SZSE matching stock-days; different price and turnover levels including 600519, 600518 and high-volume 000001. Does not certify all stock-day content parity."
+}

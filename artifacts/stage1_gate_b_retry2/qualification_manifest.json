@@ -1,0 +1,75 @@
+{
+  "schema": "gate-b-retry2-qualification/1",
+  "generated_at_utc": "2026-09-22T04:39:16.416961+00:00",
+  "repository": "https://github.com/ysssss414/rss",
+  "branch": "codex/rss-stage1-gate-b-core-contract-r2",
+  "baseline_main_sha": "19ef0ffc7eeb595316f984349a06a67d28bc0c3a",
+  "retry1_pr": 6,
+  "retry1_merge_sha": "19ef0ffc7eeb595316f984349a06a67d28bc0c3a",
+  "stage0_tag": "research-stage0-v0.1.0",
+  "stage0_tag_target": "fdf4e5a15f120f7cf1c533c38b8c9214cb2130de",
+  "preserved_gate_results": {
+    "gate_a": "STOP",
+    "gate_b_round1": "GATE_B_STOP",
+    "gate_b_retry1": "GATE_B_STOP"
+  },
+  "contracts": {
+    "C1_market_data_units": "CLOSED",
+    "C2_daily_trading_constraint": "OPEN",
+    "C3_decision_time_pit": "CLOSED",
+    "A1_historical_status_label": "UNTRUSTED"
+  },
+  "gate_verdict": "GATE_B_STOP",
+  "evidence_hashes": {
+    "artifacts/stage1_gate_b_retry2/.gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+    "artifacts/stage1_gate_b_retry2/auxiliary_status_quality.json": "1b0d2991da8be19f3babd8e17df8795476f5be2085723b26ebed2735fb6d8577",
+    "artifacts/stage1_gate_b_retry2/baseline_receipt.json": "aa45c9ceb4e5ae0518dcd16d8624bc5807b78315fabc88440880ca603f9e6f76",
+    "artifacts/stage1_gate_b_retry2/core_data_dependency.json": "e1bce87fafdf7f6cf467dc0f7aa8a95c245ca2c8815081cdd74d531031ff8458",
+    "artifacts/stage1_gate_b_retry2/daily_constraint_validation.json": "02a7312deb761b3d7c82abe926805ba5516e688f609cd662facd073e8cdcc9e8",
+    "artifacts/stage1_gate_b_retry2/daily_trading_constraint_contract.json": "adf40e18fdbf6434998104fffb47aab833db503f40787e1e0e1ba455e1b5eb1b",
+    "artifacts/stage1_gate_b_retry2/decision_time_contract.json": "c71a844074784b603e8ac35e6e82fae20c42763cb988410186c135545f1d5a33",
+    "artifacts/stage1_gate_b_retry2/live_boundary_2026_py313.json": "3bfdd21650c83535f0f5d323beaf1976ab9483a6079cb25591b89aad774dcb0e",
+    "artifacts/stage1_gate_b_retry2/live_boundary_2026_py313.process.json": "d0256d5e98aa1a208f8ae41919b2566e4f277235dcc903a48150f62b18c1619e",
+    "artifacts/stage1_gate_b_retry2/live_boundary_plan.json": "8cf36bb8c57159f13a385388a98ba906f88e985cd3af02d5bf32535da6d1515e",
+    "artifacts/stage1_gate_b_retry2/market_unit_reconciliation.json": "85cc0d6954f24b05ef5c31009b6aab275611bf20573103ce5a39f3ea1a17be88",
+    "artifacts/stage1_gate_b_retry2/pit_validation.json": "78ce7a016c572ac4eb1e1e52db4aed530a58c24c58cbd34405e224ad0d008ee1",
+    "artifacts/stage1_gate_b_retry2/source_registry.json": "3dc48c97ae28a019bf9d6fe90fda3c692f268657ab6b8cdcb893426ecf75bab8",
+    "artifacts/stage1_gate_b_retry2/sse_600187.json": "d685a5b8b7f24c242b178e5ae41a6fd789865ecc809d4e610c68997682d3b5d4",
+    "artifacts/stage1_gate_b_retry2/sse_600518.json": "5006d5c4845faf59dcaf4396a31c3a39478c669ba2c658a83c541f88d6adc567",
+    "artifacts/stage1_gate_b_retry2/sse_600519.json": "c2ffbe4b57247435291310a82350d1188a15192420c73dbbbf6951947c5492c2",
+    "artifacts/stage1_gate_b_retry2/sse_688981.json": "5a3f858a2c377d99d8ed2dab9f4415c67ff3ffc34b26531356c189e3f51813db",
+    "artifacts/stage1_gate_b_retry2/szse_000001_2024-01-08.json": "151348323bc80acf6b7f7cee8036d22606e810ebe030cde1e08173922b4f415e",
+    "artifacts/stage1_gate_b_retry2/szse_000001_2024-01-09.json": "b5a56976d0c4419d91725c53861d249419bb0951a844567077b8cf569d424c04",
+    "artifacts/stage1_gate_b_retry2/szse_000001_2024-01-10.json": "d0551696be017be3dbde61ecead67b6087e516aff78b498f2a302ae159f0d421",
+    "artifacts/stage1_gate_b_retry2/szse_000001_2024-09-27.json": "f8eaf4ea58fbe311833b1a9fad8a2ea70cc7d0c1faf3878210df49bb66117ebe",
+    "artifacts/stage1_gate_b_retry2/szse_000001_2024-10-09.json": "982a77d81e0f34d9ea606d7f90539b243fb48cf256fc8a1f81e491015ddeea16",
+    "artifacts/stage1_gate_b_retry2/szse_300750_2024-09-27.json": "c219a3f90b775857161929637d814aa1b94fa454561be5a02973e3742dcbfa3a",
+    "docs/stage1_gate_b_retry2_core_contract.md": "4df489e0587a94323237e60d50808d638beccf3991e2a00e750ad7a16284c6f3",
+    "scripts/validate_stage1_gate_b_retry2.py": "2062a56ea4de6c22ae81f143f08bf39b02241aa12e20d8165e4ddf5c7482f4ac",
+    "tests/test_gate_b_retry2.py": "69351cf639e9dc8c68d0d7d8cb1b11f6e30a4ce9fd6062a98aa88af7c6268011"
+  },
+  "hash_basis": "SHA-256 of staged Git blobs, later identical to committed HEAD blobs; artifact directory pinned -text. Manifest excludes itself.",
+  "official_response_file_count": 10,
+  "tests": {
+    "retry2_targeted": 21,
+    "gate_a": 15,
+    "round1": 6,
+    "retry1": 10,
+    "combined_qualification": 52,
+    "full_suite": 199,
+    "failures": 0,
+    "skipped": 0
+  },
+  "protected_excel_before_sha256": {
+    "inputs/three_board_daily_input.xlsx": "38dabdc991d26d4d1b5873bfdcbfb5dd29db4671fa1760c20d932d3d17d9b9fe",
+    "inputs/three_board_daily_input_2026_backtest.xlsx": "282c4abdbb5901f5e3ee33512e7256887c1e92ae129662f631397fbd6943cf22",
+    "手工统计.xlsx": "2fdf23576a7d220e994cf74143236a0b3db34e9e495f769927d0a65c994f8277"
+  },
+  "protected_excel_after_sha256": {
+    "inputs/three_board_daily_input.xlsx": "38dabdc991d26d4d1b5873bfdcbfb5dd29db4671fa1760c20d932d3d17d9b9fe",
+    "inputs/three_board_daily_input_2026_backtest.xlsx": "282c4abdbb5901f5e3ee33512e7256887c1e92ae129662f631397fbd6943cf22",
+    "手工统计.xlsx": "2fdf23576a7d220e994cf74143236a0b3db34e9e495f769927d0a65c994f8277"
+  },
+  "protected_excel_staged": false,
+  "no_stage1_strategy_or_production_changes": true
+}

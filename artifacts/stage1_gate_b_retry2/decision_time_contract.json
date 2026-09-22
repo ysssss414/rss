@@ -1,0 +1,20 @@
+{
+  "schema": "gate-b-retry2-decision-time/1",
+  "status": "CLOSED",
+  "timezone": "Asia/Shanghai with explicit UTC offset in serialized timestamps",
+  "classes": {
+    "PRE_OPEN_KNOWN": "Effective-dated trading calendar and daily reference/limit/trading constraint published before session; use only after final available pre-open version is known.",
+    "INTRADAY_OBSERVED": "Price/volume observations usable no earlier than their observation timestamp.",
+    "EOD_FINALIZED": "Raw unadjusted daily OHLCV and amount usable only at or after actual session close/bar finalization, never at midnight trade-date marker.",
+    "DERIVED_EOD": "RSI14, MA5 and 5-day limit count availability is max of all source-input available_at timestamps; no calculations implemented here."
+  },
+  "causal_guard": "timezone-aware decision_at >= available_at; future trade-date and premature same-day EOD rejected; unknown source publication semantics rejected",
+  "raw_market_data_pit": "EVENT_TIME_SAFE if historical trade_date, no future-derived labels, EOD cutoff enforcement and frozen retrieval snapshot; provider first-write and complete revision ledger not required for raw bars",
+  "raw_snapshot_required": ["retrieved_at", "provider_version", "request_parameters", "request_hash", "content_sha256"],
+  "snapshot_policy": "On actual backtest acquisition freeze raw response and metadata, refer to content hash; re-pulls create a new immutable version and never silently overwrite the dataset used by an existing run.",
+  "revision_history": "REVISION_HISTORY_UNAVAILABLE is recorded, but not an independent Gate B blocker for OHLCV.",
+  "strict_publication_pit_sources": ["news", "company announcements", "theme labels", "research annotations", "fundamentals", "manually revised events"],
+  "strict_publication_pit_source_admission": "PROHIBITED_FOR_CAUSAL_BACKTEST until publication/version semantics are proven; outside present core causal set",
+  "same_close_execution": "SAME_CLOSE_EXECUTION_REQUIRES_STAGE1_EXECUTION_POLICY: a final close/RSI/close-at-limit signal is known at or after close, so assuming fill at that same final close needs a separate closing-auction, next-session or pre-close snapshot execution policy. Not a Gate B blocker.",
+  "strategy_or_execution_implemented": false
+}
