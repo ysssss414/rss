@@ -14,45 +14,52 @@ from scripts.validate_stage1_gate_c_contract import (
 )
 
 
-CASES = load("universe_validation_cases.json")["cases"]
+FIXTURES = load("universe_validation_cases.json")
+CASES = FIXTURES["cases"]
+MINIMUM = FIXTURES["minimum_history_required"]
+
+
+def classify(case):
+    return classify_security_day(case, minimum_history_required=MINIMUM)
 
 
 @pytest.mark.parametrize("case", CASES, ids=lambda case: case["case_id"])
 def test_security_day_boundary(case):
-    assert classify_security_day(case) == case["expected"]
+    assert classify(case) == case["expected"]
 
 
 def test_future_delisting_cannot_rewrite_past_universe():
     case = deepcopy(next(c for c in CASES if c["case_id"] == "future_delisting_does_not_rewrite_past"))
-    assert classify_security_day(case)["eligible"]
+    assert classify(case)["eligible"]
     case["lifecycle_events"][-1]["available_at"] = "2024-10-08T09:00:00+08:00"
-    assert classify_security_day(case)["eligible"]  # Effective date remains T+1.
+    assert classify(case)["eligible"]  # Effective date remains T+1.
 
 
 def test_board_and_vendor_st_label_cannot_override_validated_ten_percent_constraint():
     case = deepcopy(next(c for c in CASES if c["case_id"] == "sse_main_10_eligible"))
     case["board"] = "CHINEXT"
     case["IS_ST_SEC"] = 1
-    assert classify_security_day(case)["eligible"]
+    assert classify(case)["eligible"]
     case["daily_constraint"]["limit_up_rate"] = "0.20"
-    assert classify_security_day(case)["exclusion_reason"] == "NON_10_PERCENT_REGIME"
+    assert classify(case)["exclusion_reason"] == "NON_10_PERCENT_REGIME"
 
 
 def test_unknown_type_and_incomplete_lifecycle_fail_closed():
     case = deepcopy(next(c for c in CASES if c["case_id"] == "sse_main_10_eligible"))
     case["security_type"] = "UNKNOWN"
-    assert classify_security_day(case)["exclusion_reason"] == "UNSUPPORTED_SECURITY_TYPE"
+    assert classify(case)["exclusion_reason"] == "UNSUPPORTED_SECURITY_TYPE"
     case["security_type"] = "A_SHARE_COMMON_STOCK"
     case["lifecycle_coverage_verified"] = False
-    assert classify_security_day(case)["exclusion_reason"] == "UNKNOWN_LISTING_LIFECYCLE"
+    assert classify(case)["exclusion_reason"] == "UNKNOWN_LISTING_LIFECYCLE"
 
 
 def test_required_lookback_is_a_frozen_contract_input_not_an_indicator_calculation():
     case = deepcopy(next(c for c in CASES if c["case_id"] == "sse_main_10_eligible"))
-    case["valid_history_sessions"] = 149
-    assert classify_security_day(case)["exclusion_reason"] == "INSUFFICIENT_HISTORY"
-    case["valid_history_sessions"] = 150
-    assert classify_security_day(case)["eligible"]
+    case["valid_history_sessions"] = MINIMUM - 1
+    assert classify(case)["exclusion_reason"] == "INSUFFICIENT_HISTORY"
+    case["valid_history_sessions"] = MINIMUM
+    assert classify(case)["eligible"]
+    assert classify_security_day(case, minimum_history_required=0)["eligible"]
 
 
 def test_next_session_timeline_admits_after_eod_signal_and_opening_auction():
@@ -98,7 +105,7 @@ def test_daily_open_below_limit_is_only_a_modelled_fill():
 
 @pytest.mark.parametrize("trading,valid,applicable,opening,upper,status", [
     (True, True, True, "11.00", "11.00", "NO_FILL"),
-    (False, True, True, "10.50", "11.00", "NO_FILL"),
+    (False, True, True, "10.50", "11.00", "EXECUTION_UNRESOLVED"),
     (True, False, True, "10.50", "11.00", "EXECUTION_UNRESOLVED"),
     (True, True, False, "10.50", "11.00", "EXECUTION_UNRESOLVED"),
     (True, True, True, None, "11.00", "EXECUTION_UNRESOLVED"),
@@ -122,12 +129,12 @@ def test_unqualified_intraday_interfaces_do_not_become_qualified_policies():
 def test_malformed_pit_time_and_asymmetric_regime_fail_closed():
     case = deepcopy(next(c for c in CASES if c["case_id"] == "sse_main_10_eligible"))
     case["trading_status_available_at"] = "not-a-timestamp"
-    assert classify_security_day(case)["exclusion_reason"] == "MISSING_PIT_EVIDENCE"
+    assert classify(case)["exclusion_reason"] == "MISSING_PIT_EVIDENCE"
     case["trading_status_available_at"] = "2024-10-09T09:00:00+08:00"
     case["daily_constraint"]["limit_down_rate"] = "0.20"
-    assert classify_security_day(case)["exclusion_reason"] == "NON_10_PERCENT_REGIME"
+    assert classify(case)["exclusion_reason"] == "NON_10_PERCENT_REGIME"
     case["daily_constraint"]["limit_down_rate"] = "NaN"
-    assert classify_security_day(case)["exclusion_reason"] == "INVALID_DAILY_CONSTRAINT"
+    assert classify(case)["exclusion_reason"] == "INVALID_DAILY_CONSTRAINT"
 
 
 def test_manifest_and_gate_verdict():

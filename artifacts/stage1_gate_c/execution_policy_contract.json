@@ -19,7 +19,7 @@
       "order_time": "T+1 next exchange session from the frozen qualified trading calendar at 09:15:00+08:00 for a modeled opening-auction marketable-limit buy; never a T order.",
       "execution_time": "T+1 opening auction at 09:25:00+08:00 if the conservative daily-data fill rule admits a modeled fill; otherwise no execution.",
       "execution_price": "T+1 official unadjusted opening auction price from the frozen daily bar, observed only as an outcome after the auction; not a T signal input.",
-      "fill_rule": "MODELLED_FILL only if T+1 trading is allowed, pre-open DailyTradingConstraint is VALID and limit-applicable, an official positive opening price exists, and opening price is strictly below the validated upper limit. Opening exactly at the upper limit is NO_FILL. Invalid or absent price/constraint is EXECUTION_UNRESOLVED. Suspended/non-trading is NO_FILL. No automatic rollover to later sessions.",
+      "fill_rule": "MODELLED_FILL only if T+1 trading is allowed, pre-open DailyTradingConstraint is VALID and limit-applicable, an official positive opening price exists, and opening price is strictly below the validated upper limit. Opening exactly at the upper limit is NO_FILL. Invalid or absent price/constraint, suspension or non-trading is EXECUTION_UNRESOLVED. No automatic rollover to later sessions.",
       "slippage_assumption": "0 bps, explicitly idealized benchmark; no measured spread, latency, fees, impact or capacity claim",
       "limit_up_fill_assumption": "No modeled buy fill at an opening limit-up; final T close at limit never proves a T fill.",
       "price_basis": "Raw execution price; any later adjusted-price comparison must use one frozen decision anchor.",

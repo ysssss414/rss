@@ -1,7 +1,8 @@
 {
   "schema": "stage1-gate-c-universe-fixtures/1",
   "fixture_disclosure": "All security-type, lifecycle, status, bar and history rows are synthetic contract inputs. Gate B case names/rates provide boundary anchors only; no new historical vendor capture or full-market qualification is asserted.",
-  "required_history_sessions": 150,
+  "minimum_history_required": 7,
+  "history_threshold_note": "Seven is an explicit synthetic fixture scenario that preserves the existing 20 boundary expectations; it is not a production or foundation eligibility default.",
   "case_count": 20,
   "cases": [
     {

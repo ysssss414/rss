@@ -23,10 +23,10 @@
   "evidence_hashes": {
     "artifacts/stage1_gate_c/.gitattributes": "68b1fa504825dc0f64c151540664269fd687e577e8ea4f34b706497652fa2fb7",
     "artifacts/stage1_gate_c/baseline_receipt.json": "66f900b4039b4f554562f6ac4b9328bec72d6ae0805c3ec777d2bb5410cabb11",
-    "artifacts/stage1_gate_c/execution_policy_contract.json": "2a4408b939fcb18234c73b98223c81fa0c05028392e7c947da90c35e476c84f6",
+    "artifacts/stage1_gate_c/execution_policy_contract.json": "be8652ffc51a5786d27dc3574332357d9947e1dd8506ae2246eafed4dfd8aed6",
     "artifacts/stage1_gate_c/execution_capability_probe.json": "0c71a23d873558639f4b7579812641f04e7f8264c7b86cd01e9a919f9b5ed893",
-    "artifacts/stage1_gate_c/historical_universe_contract.json": "fdf0e818d94197cca517156d97266929ea585a28e52ee606036567d34351efcb",
-    "artifacts/stage1_gate_c/universe_validation_cases.json": "5645cc7753f7ced69ceda5eb485d57b548fc78ea2b7996450b27d4cc59173c9c"
+    "artifacts/stage1_gate_c/historical_universe_contract.json": "a4a048e760663523c5b70cc422cabba8fb87c2b9fc1e7823c751199e311842aa",
+    "artifacts/stage1_gate_c/universe_validation_cases.json": "319110cd46d9ddfe9ae32a4b7c4145597554a81b2ac5520dc7cf2997687dc243"
   },
   "evidence_hash_basis": "Literal bytes under stage1_gate_c/.gitattributes -text; manifest excludes itself",
   "validated_at_utc": "2026-09-22T07:14:33.426831+00:00",

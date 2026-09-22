@@ -31,11 +31,13 @@ def _available(value: str | None, cutoff: datetime) -> bool:
         return False
 
 
-def classify_security_day(row: dict, *, required_history_sessions: int = 150) -> dict:
+def classify_security_day(row: dict, *, minimum_history_required: int) -> dict:
     """Classify one normalized, frozen security-day; no market data are fetched."""
     def exclude(reason: str) -> dict:
         return {"eligible": False, "exclusion_reason": reason}
 
+    if type(minimum_history_required) is not int or minimum_history_required < 0:
+        return exclude("DATA_CONFLICT")
     try:
         day = date.fromisoformat(row["trade_date"])
         cutoff = _time(row["decision_at"])
@@ -110,7 +112,9 @@ def classify_security_day(row: dict, *, required_history_sessions: int = 150) ->
         return exclude("MISSING_PIT_EVIDENCE")
     if row.get("history_basis") != "SINCE_ACTIVE_LISTING":
         return exclude("DATA_CONFLICT")
-    if type(row.get("valid_history_sessions")) is not int or row["valid_history_sessions"] < required_history_sessions:
+    if type(row.get("valid_history_sessions")) is not int or row["valid_history_sessions"] < 0:
+        return exclude("DATA_CONFLICT")
+    if row["valid_history_sessions"] < minimum_history_required:
         return exclude("INSUFFICIENT_HISTORY")
     return {"eligible": True, "exclusion_reason": None}
 
@@ -140,7 +144,7 @@ def classify_daily_open_fill(*, trading_allowed: bool, constraint_valid: bool,
                              limit_up_price: str | None) -> dict:
     """Conservative daily-data benchmark; this is not a broker fill replay."""
     if not trading_allowed:
-        return {"status": "NO_FILL", "price": None}
+        return {"status": "EXECUTION_UNRESOLVED", "price": None}
     if not constraint_valid or not limit_applicable or opening_price is None or limit_up_price is None:
         return {"status": "EXECUTION_UNRESOLVED", "price": None}
     try:
@@ -172,9 +176,10 @@ def validate() -> dict:
     if any(policy["policies"][name]["qualification"] != "NOT_QUALIFIED"
            for name in ("CLOSING_AUCTION_V1", "PRE_CLOSE_SNAPSHOT_V1")):
         raise AssertionError("Unverified intraday policy admitted")
-    if universe["required_history_sessions"] != 150 or universe["daily_regime_source"] != "Gate B DailyTradingConstraint":
+    if universe["history_requirement"] != "DEPENDENCY_DRIVEN" or universe["daily_regime_source"] != "Gate B DailyTradingConstraint":
         raise AssertionError("Universe contract baseline changed")
-    if not cases or any(classify_security_day(case, required_history_sessions=150) != case["expected"]
+    minimum = load("universe_validation_cases.json")["minimum_history_required"]
+    if not cases or any(classify_security_day(case, minimum_history_required=minimum) != case["expected"]
                         for case in cases):
         raise AssertionError("Universe fixture mismatch")
     return {"C1": "CLOSED", "C2": "CLOSED", "gate_c": "GATE_C_CONTRACT_PASS",
