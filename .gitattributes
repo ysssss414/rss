@@ -2,7 +2,3 @@ artifacts/stage1_gate_b/** -text
 docs/stage1_gate_b_hybrid_data_contract.md -text
 scripts/validate_stage1_gate_b_contract.py -text
 tests/test_gate_b_contract.py -text
-artifacts/stage1_gate_b_retry1/** -text
-docs/stage1_gate_b_retry1_evidence_closure.md -text
-scripts/validate_stage1_gate_b_retry1.py -text
-tests/test_gate_b_retry1.py -text
