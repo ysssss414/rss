@@ -1,0 +1,55 @@
+{
+  "schema": "stage1-gate-c-execution-policy/1",
+  "timezone": "Asia/Shanghai; every timestamp serialized with an explicit UTC offset",
+  "core_question": "Separate SIGNAL_TIME, ORDER_TIME, EXECUTION_TIME and EXECUTION_PRICE for the original closing-buy intent.",
+  "prohibited_assumption": "Final T close, final-close RSI14 or final close-limit-up status cannot trigger an order filled at the same final T close.",
+  "recommended_baseline": "NEXT_SESSION_V1",
+  "recommendation_scope": "Causal daily-data benchmark, not a final interpretation of the original same-close intent and not a production fill guarantee.",
+  "exchange_time_sources": {
+    "sse_2023": "https://www.sse.com.cn/lawandrules/sselawsrules2025/repeal/rules/c/c_20250612_10824490.shtml",
+    "sse_2026": "https://www.sse.com.cn/lawandrules/sselawsrules2025/stocks/exchange/c/c_20260424_10816482.shtml",
+    "szse_2023": "https://investor.szse.cn/lawrules/index/rule/t20230217_598773.html",
+    "regular_opening_auction": "09:15-09:25; session-specific exceptions and historical rule version must be checked",
+    "regular_closing_auction": "14:57-15:00; orders may be submitted, cancellation is restricted; rule version and exceptional sessions must be checked"
+  },
+  "policies": {
+    "NEXT_SESSION_V1": {
+      "qualification": "CONTRACT_QUALIFIED",
+      "signal_time": "After the T daily bar and every required T input are finalized and available; event-time lower bound is the latest input available_at, not a date-only midnight marker.",
+      "order_time": "T+1 next exchange session from the frozen qualified trading calendar at 09:15:00+08:00 for a modeled opening-auction marketable-limit buy; never a T order.",
+      "execution_time": "T+1 opening auction at 09:25:00+08:00 if the conservative daily-data fill rule admits a modeled fill; otherwise no execution.",
+      "execution_price": "T+1 official unadjusted opening auction price from the frozen daily bar, observed only as an outcome after the auction; not a T signal input.",
+      "fill_rule": "MODELLED_FILL only if T+1 trading is allowed, pre-open DailyTradingConstraint is VALID and limit-applicable, an official positive opening price exists, and opening price is strictly below the validated upper limit. Opening exactly at the upper limit is NO_FILL. Invalid or absent price/constraint, suspension or non-trading is EXECUTION_UNRESOLVED. No automatic rollover to later sessions.",
+      "slippage_assumption": "0 bps, explicitly idealized benchmark; no measured spread, latency, fees, impact or capacity claim",
+      "limit_up_fill_assumption": "No modeled buy fill at an opening limit-up; final T close at limit never proves a T fill.",
+      "price_basis": "Raw execution price; any later adjusted-price comparison must use one frozen decision anchor.",
+      "known_limitation": "A modeled open fill below the limit is not proof of an actual broker execution or available quantity. Portfolio sizing, fees and PnL remain out of scope."
+    },
+    "CLOSING_AUCTION_V1": {
+      "qualification": "NOT_QUALIFIED",
+      "signal_time": "Before the exchange-specific T closing-auction order cutoff, using only actually timestamped pre-order observations; final T close, final RSI and final close-limit status are forbidden inputs.",
+      "order_time": "T during the exchange closing-auction submission window, before its documented cutoff and subject to historical rule version.",
+      "execution_time": "T closing-auction match, only if order acceptance and queue/fill evidence support it.",
+      "execution_price": "Actual matched auction price only after independent auction/order evidence; a final daily close alone is insufficient.",
+      "unresolved_evidence": ["historical pre-order price/quote and provisional indicator inputs", "exchange-specific order acceptance timestamp", "auction indicative and matched prices", "available sell liquidity and queue position", "historical coverage, units and publication timestamps"],
+      "limit_up_fill_assumption": "EXECUTION_UNRESOLVED without matched liquidity/queue evidence; never assume 100% fill."
+    },
+    "PRE_CLOSE_SNAPSHOT_V1": {
+      "qualification": "NOT_QUALIFIED",
+      "signal_time": "A frozen intraday snapshot before the chosen exchange-specific order cutoff; 14:55 is a candidate, while 14:57 is an auction boundary, not an automatically valid data cutoff.",
+      "order_time": "After the snapshot and before a documented T auction or continuous-session acceptance cutoff.",
+      "execution_time": "T only if a separately evidenced order/fill model applies.",
+      "execution_price": "Model-specific observed execution price, never substituted with the final daily close without auction evidence.",
+      "input_model": "Latest observable price at cutoff plus finalized closes through T-1; provisional RSI/MA/limit state is a different strategy definition from final EOD.",
+      "unresolved_evidence": ["historical 1-minute or finer observations and their timestamp convention", "snapshot availability at cutoff", "auction submission timing and order acceptance", "intraday limit-up path and fill feasibility", "snapshot-versus-final signal bias"],
+      "limit_up_fill_assumption": "EXECUTION_UNRESOLVED without intraday liquidity/queue evidence."
+    }
+  },
+  "limit_up_execution": {
+    "distinct_states": ["limit-up close", "sealed limit-up", "opened board", "resealed board", "available sell liquidity", "queue position"],
+    "daily_data_same_day_limit_up_fill": "NO_FILL for the conservative baseline or EXECUTION_UNRESOLVED for unqualified same-day policies; never assert an actual fill from close == limit_up"
+  },
+  "required_future_run_context": ["execution_policy_id", "signal_cutoff", "allowed_input_availability", "order_rule", "execution_rule", "fill_rule", "price_source", "slippage_assumption", "limit_up_fill_assumption", "data_snapshot_id", "trading_calendar_snapshot_id"],
+  "C1": "CLOSED",
+  "strategy_or_execution_engine_implemented": false
+}

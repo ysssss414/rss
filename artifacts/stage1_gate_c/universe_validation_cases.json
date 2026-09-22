@@ -1,0 +1,905 @@
+{
+  "schema": "stage1-gate-c-universe-fixtures/1",
+  "fixture_disclosure": "All security-type, lifecycle, status, bar and history rows are synthetic contract inputs. Gate B case names/rates provide boundary anchors only; no new historical vendor capture or full-market qualification is asserted.",
+  "minimum_history_required": 7,
+  "history_threshold_note": "Seven is an explicit synthetic fixture scenario that preserves the existing 20 boundary expectations; it is not a production or foundation eligibility default.",
+  "case_count": 20,
+  "cases": [
+    {
+      "case_id": "sse_main_10_eligible",
+      "fixture_kind": "SYNTHETIC_CONTRACT_INPUT",
+      "security_id": "600000.SH",
+      "trade_date": "2024-10-09",
+      "decision_at": "2024-10-09T15:10:00+08:00",
+      "data_snapshot_id": "dca4d067e216b0112b7d3f16c820bbe4067dd15446a8981255c22c40672f17d6",
+      "execution_policy_id": "NEXT_SESSION_V1",
+      "universe_contract_version": "1",
+      "security_type": "A_SHARE_COMMON_STOCK",
+      "security_type_available_at": "2024-10-08T12:00:00+08:00",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "lifecycle_coverage_verified": true,
+      "lifecycle_coverage_available_at": "2024-10-08T12:00:00+08:00",
+      "lifecycle_events": [
+        {
+          "kind": "LISTED",
+          "effective_date": "2020-01-01",
+          "available_at": "2019-12-31T12:00:00+08:00",
+          "source_hash": "5ecb6af1c62411cba240d10338788be5272c0cc99cbf7f1ebf8eb4508fff3964"
+        }
+      ],
+      "trading_status": "TRADING",
+      "trading_status_available_at": "2024-10-09T09:00:00+08:00",
+      "daily_constraint": {
+        "available_at": "2024-10-09T09:00:00+08:00",
+        "validation_status": "VALID",
+        "limit_applicable": true,
+        "limit_up_rate": "0.10",
+        "provenance": "SYNTHETIC_VALIDATED_GATE_B_CONSTRAINT",
+        "limit_down_rate": "0.10"
+      },
+      "bar_present": true,
+      "bar_available_at": "2024-10-09T15:00:00+08:00",
+      "valid_history_sessions": 150,
+      "history_available_at": "2024-10-09T15:00:00+08:00",
+      "expected": {
+        "eligible": true,
+        "exclusion_reason": null
+      },
+      "history_basis": "SINCE_ACTIVE_LISTING"
+    },
+    {
+      "case_id": "szse_main_10_eligible",
+      "fixture_kind": "SYNTHETIC_CONTRACT_INPUT",
+      "security_id": "000001.SZ",
+      "trade_date": "2024-10-09",
+      "decision_at": "2024-10-09T15:10:00+08:00",
+      "data_snapshot_id": "dca4d067e216b0112b7d3f16c820bbe4067dd15446a8981255c22c40672f17d6",
+      "execution_policy_id": "NEXT_SESSION_V1",
+      "universe_contract_version": "1",
+      "security_type": "A_SHARE_COMMON_STOCK",
+      "security_type_available_at": "2024-10-08T12:00:00+08:00",
+      "exchange": "SZSE",
+      "board": "MAIN",
+      "lifecycle_coverage_verified": true,
+      "lifecycle_coverage_available_at": "2024-10-08T12:00:00+08:00",
+      "lifecycle_events": [
+        {
+          "kind": "LISTED",
+          "effective_date": "2020-01-01",
+          "available_at": "2019-12-31T12:00:00+08:00",
+          "source_hash": "5ecb6af1c62411cba240d10338788be5272c0cc99cbf7f1ebf8eb4508fff3964"
+        }
+      ],
+      "trading_status": "TRADING",
+      "trading_status_available_at": "2024-10-09T09:00:00+08:00",
+      "daily_constraint": {
+        "available_at": "2024-10-09T09:00:00+08:00",
+        "validation_status": "VALID",
+        "limit_applicable": true,
+        "limit_up_rate": "0.10",
+        "provenance": "SYNTHETIC_VALIDATED_GATE_B_CONSTRAINT",
+        "limit_down_rate": "0.10"
+      },
+      "bar_present": true,
+      "bar_available_at": "2024-10-09T15:00:00+08:00",
+      "valid_history_sessions": 150,
+      "history_available_at": "2024-10-09T15:00:00+08:00",
+      "expected": {
+        "eligible": true,
+        "exclusion_reason": null
+      },
+      "history_basis": "SINCE_ACTIVE_LISTING"
+    },
+    {
+      "case_id": "chinext_20_excluded",
+      "fixture_kind": "SYNTHETIC_CONTRACT_INPUT",
+      "security_id": "300750.SZ",
+      "trade_date": "2024-10-09",
+      "decision_at": "2024-10-09T15:10:00+08:00",
+      "data_snapshot_id": "dca4d067e216b0112b7d3f16c820bbe4067dd15446a8981255c22c40672f17d6",
+      "execution_policy_id": "NEXT_SESSION_V1",
+      "universe_contract_version": "1",
+      "security_type": "A_SHARE_COMMON_STOCK",
+      "security_type_available_at": "2024-10-08T12:00:00+08:00",
+      "exchange": "SZSE",
+      "board": "CHINEXT",
+      "lifecycle_coverage_verified": true,
+      "lifecycle_coverage_available_at": "2024-10-08T12:00:00+08:00",
+      "lifecycle_events": [
+        {
+          "kind": "LISTED",
+          "effective_date": "2020-01-01",
+          "available_at": "2019-12-31T12:00:00+08:00",
+          "source_hash": "5ecb6af1c62411cba240d10338788be5272c0cc99cbf7f1ebf8eb4508fff3964"
+        }
+      ],
+      "trading_status": "TRADING",
+      "trading_status_available_at": "2024-10-09T09:00:00+08:00",
+      "daily_constraint": {
+        "available_at": "2024-10-09T09:00:00+08:00",
+        "validation_status": "VALID",
+        "limit_applicable": true,
+        "limit_up_rate": "0.20",
+        "provenance": "SYNTHETIC_VALIDATED_GATE_B_CONSTRAINT",
+        "limit_down_rate": "0.20"
+      },
+      "bar_present": true,
+      "bar_available_at": "2024-10-09T15:00:00+08:00",
+      "valid_history_sessions": 150,
+      "history_available_at": "2024-10-09T15:00:00+08:00",
+      "expected": {
+        "eligible": false,
+        "exclusion_reason": "NON_10_PERCENT_REGIME"
+      },
+      "history_basis": "SINCE_ACTIVE_LISTING"
+    },
+    {
+      "case_id": "star_20_excluded",
+      "fixture_kind": "SYNTHETIC_CONTRACT_INPUT",
+      "security_id": "688981.SH",
+      "trade_date": "2024-10-09",
+      "decision_at": "2024-10-09T15:10:00+08:00",
+      "data_snapshot_id": "dca4d067e216b0112b7d3f16c820bbe4067dd15446a8981255c22c40672f17d6",
+      "execution_policy_id": "NEXT_SESSION_V1",
+      "universe_contract_version": "1",
+      "security_type": "A_SHARE_COMMON_STOCK",
+      "security_type_available_at": "2024-10-08T12:00:00+08:00",
+      "exchange": "SSE",
+      "board": "STAR",
+      "lifecycle_coverage_verified": true,
+      "lifecycle_coverage_available_at": "2024-10-08T12:00:00+08:00",
+      "lifecycle_events": [
+        {
+          "kind": "LISTED",
+          "effective_date": "2020-01-01",
+          "available_at": "2019-12-31T12:00:00+08:00",
+          "source_hash": "5ecb6af1c62411cba240d10338788be5272c0cc99cbf7f1ebf8eb4508fff3964"
+        }
+      ],
+      "trading_status": "TRADING",
+      "trading_status_available_at": "2024-10-09T09:00:00+08:00",
+      "daily_constraint": {
+        "available_at": "2024-10-09T09:00:00+08:00",
+        "validation_status": "VALID",
+        "limit_applicable": true,
+        "limit_up_rate": "0.20",
+        "provenance": "SYNTHETIC_VALIDATED_GATE_B_CONSTRAINT",
+        "limit_down_rate": "0.20"
+      },
+      "bar_present": true,
+      "bar_available_at": "2024-10-09T15:00:00+08:00",
+      "valid_history_sessions": 150,
+      "history_available_at": "2024-10-09T15:00:00+08:00",
+      "expected": {
+        "eligible": false,
+        "exclusion_reason": "NON_10_PERCENT_REGIME"
+      },
+      "history_basis": "SINCE_ACTIVE_LISTING"
+    },
+    {
+      "case_id": "ipo_no_limit_excluded",
+      "fixture_kind": "SYNTHETIC_CONTRACT_INPUT",
+      "security_id": "603194.SH",
+      "trade_date": "2024-12-24",
+      "decision_at": "2024-12-24T15:10:00+08:00",
+      "data_snapshot_id": "dca4d067e216b0112b7d3f16c820bbe4067dd15446a8981255c22c40672f17d6",
+      "execution_policy_id": "NEXT_SESSION_V1",
+      "universe_contract_version": "1",
+      "security_type": "A_SHARE_COMMON_STOCK",
+      "security_type_available_at": "2024-12-23T12:00:00+08:00",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "lifecycle_coverage_verified": true,
+      "lifecycle_coverage_available_at": "2024-12-23T12:00:00+08:00",
+      "lifecycle_events": [
+        {
+          "kind": "LISTED",
+          "effective_date": "2024-12-24",
+          "available_at": "2024-12-23T12:00:00+08:00",
+          "source_hash": "6be1af3c626a6e9a6dd2965d55bfc4ece01630efc79f0680d1b4fb3d16ec6a05"
+        }
+      ],
+      "trading_status": "TRADING",
+      "trading_status_available_at": "2024-12-24T09:00:00+08:00",
+      "daily_constraint": {
+        "available_at": "2024-12-24T09:00:00+08:00",
+        "validation_status": "VALID",
+        "limit_applicable": false,
+        "limit_up_rate": null,
+        "provenance": "SYNTHETIC_VALIDATED_GATE_B_CONSTRAINT",
+        "limit_down_rate": null
+      },
+      "bar_present": true,
+      "bar_available_at": "2024-12-24T15:00:00+08:00",
+      "valid_history_sessions": 1,
+      "history_available_at": "2024-12-24T15:00:00+08:00",
+      "expected": {
+        "eligible": false,
+        "exclusion_reason": "NO_PRICE_LIMIT"
+      },
+      "history_basis": "SINCE_ACTIVE_LISTING"
+    },
+    {
+      "case_id": "historical_risk_warning_5_excluded",
+      "fixture_kind": "SYNTHETIC_CONTRACT_INPUT",
+      "security_id": "600187.SH",
+      "trade_date": "2026-07-03",
+      "decision_at": "2026-07-03T15:10:00+08:00",
+      "data_snapshot_id": "dca4d067e216b0112b7d3f16c820bbe4067dd15446a8981255c22c40672f17d6",
+      "execution_policy_id": "NEXT_SESSION_V1",
+      "universe_contract_version": "1",
+      "security_type": "A_SHARE_COMMON_STOCK",
+      "security_type_available_at": "2026-07-02T12:00:00+08:00",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "lifecycle_coverage_verified": true,
+      "lifecycle_coverage_available_at": "2026-07-02T12:00:00+08:00",
+      "lifecycle_events": [
+        {
+          "kind": "LISTED",
+          "effective_date": "2020-01-01",
+          "available_at": "2019-12-31T12:00:00+08:00",
+          "source_hash": "5ecb6af1c62411cba240d10338788be5272c0cc99cbf7f1ebf8eb4508fff3964"
+        }
+      ],
+      "trading_status": "TRADING",
+      "trading_status_available_at": "2026-07-03T09:00:00+08:00",
+      "daily_constraint": {
+        "available_at": "2026-07-03T09:00:00+08:00",
+        "validation_status": "VALID",
+        "limit_applicable": true,
+        "limit_up_rate": "0.05",
+        "provenance": "SYNTHETIC_VALIDATED_GATE_B_CONSTRAINT",
+        "limit_down_rate": "0.05"
+      },
+      "bar_present": true,
+      "bar_available_at": "2026-07-03T15:00:00+08:00",
+      "valid_history_sessions": 150,
+      "history_available_at": "2026-07-03T15:00:00+08:00",
+      "expected": {
+        "eligible": false,
+        "exclusion_reason": "NON_10_PERCENT_REGIME"
+      },
+      "history_basis": "SINCE_ACTIVE_LISTING"
+    },
+    {
+      "case_id": "post_rule_change_10_eligible",
+      "fixture_kind": "SYNTHETIC_CONTRACT_INPUT",
+      "security_id": "600187.SH",
+      "trade_date": "2026-07-06",
+      "decision_at": "2026-07-06T15:10:00+08:00",
+      "data_snapshot_id": "dca4d067e216b0112b7d3f16c820bbe4067dd15446a8981255c22c40672f17d6",
+      "execution_policy_id": "NEXT_SESSION_V1",
+      "universe_contract_version": "1",
+      "security_type": "A_SHARE_COMMON_STOCK",
+      "security_type_available_at": "2026-07-05T12:00:00+08:00",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "lifecycle_coverage_verified": true,
+      "lifecycle_coverage_available_at": "2026-07-05T12:00:00+08:00",
+      "lifecycle_events": [
+        {
+          "kind": "LISTED",
+          "effective_date": "2020-01-01",
+          "available_at": "2019-12-31T12:00:00+08:00",
+          "source_hash": "5ecb6af1c62411cba240d10338788be5272c0cc99cbf7f1ebf8eb4508fff3964"
+        }
+      ],
+      "trading_status": "TRADING",
+      "trading_status_available_at": "2026-07-06T09:00:00+08:00",
+      "daily_constraint": {
+        "available_at": "2026-07-06T09:00:00+08:00",
+        "validation_status": "VALID",
+        "limit_applicable": true,
+        "limit_up_rate": "0.10",
+        "provenance": "SYNTHETIC_VALIDATED_GATE_B_CONSTRAINT",
+        "limit_down_rate": "0.10"
+      },
+      "bar_present": true,
+      "bar_available_at": "2026-07-06T15:00:00+08:00",
+      "valid_history_sessions": 150,
+      "history_available_at": "2026-07-06T15:00:00+08:00",
+      "expected": {
+        "eligible": true,
+        "exclusion_reason": null
+      },
+      "history_basis": "SINCE_ACTIVE_LISTING"
+    },
+    {
+      "case_id": "suspended_day_excluded",
+      "fixture_kind": "SYNTHETIC_CONTRACT_INPUT",
+      "security_id": "600187.SH",
+      "trade_date": "2024-10-09",
+      "decision_at": "2024-10-09T15:10:00+08:00",
+      "data_snapshot_id": "dca4d067e216b0112b7d3f16c820bbe4067dd15446a8981255c22c40672f17d6",
+      "execution_policy_id": "NEXT_SESSION_V1",
+      "universe_contract_version": "1",
+      "security_type": "A_SHARE_COMMON_STOCK",
+      "security_type_available_at": "2024-10-08T12:00:00+08:00",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "lifecycle_coverage_verified": true,
+      "lifecycle_coverage_available_at": "2024-10-08T12:00:00+08:00",
+      "lifecycle_events": [
+        {
+          "kind": "LISTED",
+          "effective_date": "2020-01-01",
+          "available_at": "2019-12-31T12:00:00+08:00",
+          "source_hash": "5ecb6af1c62411cba240d10338788be5272c0cc99cbf7f1ebf8eb4508fff3964"
+        }
+      ],
+      "trading_status": "SUSPENDED",
+      "trading_status_available_at": "2024-10-09T09:00:00+08:00",
+      "daily_constraint": {
+        "available_at": "2024-10-09T09:00:00+08:00",
+        "validation_status": "VALID",
+        "limit_applicable": true,
+        "limit_up_rate": "0.10",
+        "provenance": "SYNTHETIC_VALIDATED_GATE_B_CONSTRAINT",
+        "limit_down_rate": "0.10"
+      },
+      "bar_present": false,
+      "bar_available_at": "2024-10-09T15:00:00+08:00",
+      "valid_history_sessions": 150,
+      "history_available_at": "2024-10-09T15:00:00+08:00",
+      "expected": {
+        "eligible": false,
+        "exclusion_reason": "SUSPENDED"
+      },
+      "history_basis": "SINCE_ACTIVE_LISTING"
+    },
+    {
+      "case_id": "post_ipo_insufficient_history",
+      "fixture_kind": "SYNTHETIC_CONTRACT_INPUT",
+      "security_id": "001391.SZ",
+      "trade_date": "2025-01-07",
+      "decision_at": "2025-01-07T15:10:00+08:00",
+      "data_snapshot_id": "dca4d067e216b0112b7d3f16c820bbe4067dd15446a8981255c22c40672f17d6",
+      "execution_policy_id": "NEXT_SESSION_V1",
+      "universe_contract_version": "1",
+      "security_type": "A_SHARE_COMMON_STOCK",
+      "security_type_available_at": "2025-01-06T12:00:00+08:00",
+      "exchange": "SZSE",
+      "board": "MAIN",
+      "lifecycle_coverage_verified": true,
+      "lifecycle_coverage_available_at": "2025-01-06T12:00:00+08:00",
+      "lifecycle_events": [
+        {
+          "kind": "LISTED",
+          "effective_date": "2024-12-30",
+          "available_at": "2024-12-27T12:00:00+08:00",
+          "source_hash": "5fc977c5eab77c78fdc3284b9ce1fee297745b83025ca57d4e0d34eb7c763a05"
+        }
+      ],
+      "trading_status": "TRADING",
+      "trading_status_available_at": "2025-01-07T09:00:00+08:00",
+      "daily_constraint": {
+        "available_at": "2025-01-07T09:00:00+08:00",
+        "validation_status": "VALID",
+        "limit_applicable": true,
+        "limit_up_rate": "0.10",
+        "provenance": "SYNTHETIC_VALIDATED_GATE_B_CONSTRAINT",
+        "limit_down_rate": "0.10"
+      },
+      "bar_present": true,
+      "bar_available_at": "2025-01-07T15:00:00+08:00",
+      "valid_history_sessions": 6,
+      "history_available_at": "2025-01-07T15:00:00+08:00",
+      "expected": {
+        "eligible": false,
+        "exclusion_reason": "INSUFFICIENT_HISTORY"
+      },
+      "history_basis": "SINCE_ACTIVE_LISTING"
+    },
+    {
+      "case_id": "delisted_security_excluded",
+      "fixture_kind": "SYNTHETIC_CONTRACT_INPUT",
+      "security_id": "600001.SH",
+      "trade_date": "2024-10-09",
+      "decision_at": "2024-10-09T15:10:00+08:00",
+      "data_snapshot_id": "dca4d067e216b0112b7d3f16c820bbe4067dd15446a8981255c22c40672f17d6",
+      "execution_policy_id": "NEXT_SESSION_V1",
+      "universe_contract_version": "1",
+      "security_type": "A_SHARE_COMMON_STOCK",
+      "security_type_available_at": "2024-10-08T12:00:00+08:00",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "lifecycle_coverage_verified": true,
+      "lifecycle_coverage_available_at": "2024-10-08T12:00:00+08:00",
+      "lifecycle_events": [
+        {
+          "kind": "LISTED",
+          "effective_date": "2020-01-01",
+          "available_at": "2019-12-31T12:00:00+08:00",
+          "source_hash": "5ecb6af1c62411cba240d10338788be5272c0cc99cbf7f1ebf8eb4508fff3964"
+        },
+        {
+          "kind": "DELISTED",
+          "effective_date": "2024-10-08",
+          "available_at": "2024-10-08T12:00:00+08:00",
+          "source_hash": "a6552e4f99389cd0e1d62689b81a1a7b2e4d45dd185b7efbef781578d339d606"
+        }
+      ],
+      "trading_status": "TRADING",
+      "trading_status_available_at": "2024-10-09T09:00:00+08:00",
+      "daily_constraint": {
+        "available_at": "2024-10-09T09:00:00+08:00",
+        "validation_status": "VALID",
+        "limit_applicable": true,
+        "limit_up_rate": "0.10",
+        "provenance": "SYNTHETIC_VALIDATED_GATE_B_CONSTRAINT",
+        "limit_down_rate": "0.10"
+      },
+      "bar_present": true,
+      "bar_available_at": "2024-10-09T15:00:00+08:00",
+      "valid_history_sessions": 150,
+      "history_available_at": "2024-10-09T15:00:00+08:00",
+      "expected": {
+        "eligible": false,
+        "exclusion_reason": "DELISTED"
+      },
+      "history_basis": "SINCE_ACTIVE_LISTING"
+    },
+    {
+      "case_id": "invalid_constraint_excluded",
+      "fixture_kind": "SYNTHETIC_CONTRACT_INPUT",
+      "security_id": "600002.SH",
+      "trade_date": "2024-10-09",
+      "decision_at": "2024-10-09T15:10:00+08:00",
+      "data_snapshot_id": "dca4d067e216b0112b7d3f16c820bbe4067dd15446a8981255c22c40672f17d6",
+      "execution_policy_id": "NEXT_SESSION_V1",
+      "universe_contract_version": "1",
+      "security_type": "A_SHARE_COMMON_STOCK",
+      "security_type_available_at": "2024-10-08T12:00:00+08:00",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "lifecycle_coverage_verified": true,
+      "lifecycle_coverage_available_at": "2024-10-08T12:00:00+08:00",
+      "lifecycle_events": [
+        {
+          "kind": "LISTED",
+          "effective_date": "2020-01-01",
+          "available_at": "2019-12-31T12:00:00+08:00",
+          "source_hash": "5ecb6af1c62411cba240d10338788be5272c0cc99cbf7f1ebf8eb4508fff3964"
+        }
+      ],
+      "trading_status": "TRADING",
+      "trading_status_available_at": "2024-10-09T09:00:00+08:00",
+      "daily_constraint": {
+        "available_at": "2024-10-09T09:00:00+08:00",
+        "validation_status": "INVALID",
+        "limit_applicable": true,
+        "limit_up_rate": "0.10",
+        "provenance": "SYNTHETIC_VALIDATED_GATE_B_CONSTRAINT",
+        "limit_down_rate": "0.10"
+      },
+      "bar_present": true,
+      "bar_available_at": "2024-10-09T15:00:00+08:00",
+      "valid_history_sessions": 150,
+      "history_available_at": "2024-10-09T15:00:00+08:00",
+      "expected": {
+        "eligible": false,
+        "exclusion_reason": "INVALID_DAILY_CONSTRAINT"
+      },
+      "history_basis": "SINCE_ACTIVE_LISTING"
+    },
+    {
+      "case_id": "etf_type_excluded",
+      "fixture_kind": "SYNTHETIC_CONTRACT_INPUT",
+      "security_id": "510300.SH",
+      "trade_date": "2024-10-09",
+      "decision_at": "2024-10-09T15:10:00+08:00",
+      "data_snapshot_id": "dca4d067e216b0112b7d3f16c820bbe4067dd15446a8981255c22c40672f17d6",
+      "execution_policy_id": "NEXT_SESSION_V1",
+      "universe_contract_version": "1",
+      "security_type": "ETF",
+      "security_type_available_at": "2024-10-08T12:00:00+08:00",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "lifecycle_coverage_verified": true,
+      "lifecycle_coverage_available_at": "2024-10-08T12:00:00+08:00",
+      "lifecycle_events": [
+        {
+          "kind": "LISTED",
+          "effective_date": "2020-01-01",
+          "available_at": "2019-12-31T12:00:00+08:00",
+          "source_hash": "5ecb6af1c62411cba240d10338788be5272c0cc99cbf7f1ebf8eb4508fff3964"
+        }
+      ],
+      "trading_status": "TRADING",
+      "trading_status_available_at": "2024-10-09T09:00:00+08:00",
+      "daily_constraint": {
+        "available_at": "2024-10-09T09:00:00+08:00",
+        "validation_status": "VALID",
+        "limit_applicable": true,
+        "limit_up_rate": "0.10",
+        "provenance": "SYNTHETIC_VALIDATED_GATE_B_CONSTRAINT",
+        "limit_down_rate": "0.10"
+      },
+      "bar_present": true,
+      "bar_available_at": "2024-10-09T15:00:00+08:00",
+      "valid_history_sessions": 150,
+      "history_available_at": "2024-10-09T15:00:00+08:00",
+      "expected": {
+        "eligible": false,
+        "exclusion_reason": "UNSUPPORTED_SECURITY_TYPE"
+      },
+      "history_basis": "SINCE_ACTIVE_LISTING"
+    },
+    {
+      "case_id": "missing_bar_excluded",
+      "fixture_kind": "SYNTHETIC_CONTRACT_INPUT",
+      "security_id": "600003.SH",
+      "trade_date": "2024-10-09",
+      "decision_at": "2024-10-09T15:10:00+08:00",
+      "data_snapshot_id": "dca4d067e216b0112b7d3f16c820bbe4067dd15446a8981255c22c40672f17d6",
+      "execution_policy_id": "NEXT_SESSION_V1",
+      "universe_contract_version": "1",
+      "security_type": "A_SHARE_COMMON_STOCK",
+      "security_type_available_at": "2024-10-08T12:00:00+08:00",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "lifecycle_coverage_verified": true,
+      "lifecycle_coverage_available_at": "2024-10-08T12:00:00+08:00",
+      "lifecycle_events": [
+        {
+          "kind": "LISTED",
+          "effective_date": "2020-01-01",
+          "available_at": "2019-12-31T12:00:00+08:00",
+          "source_hash": "5ecb6af1c62411cba240d10338788be5272c0cc99cbf7f1ebf8eb4508fff3964"
+        }
+      ],
+      "trading_status": "TRADING",
+      "trading_status_available_at": "2024-10-09T09:00:00+08:00",
+      "daily_constraint": {
+        "available_at": "2024-10-09T09:00:00+08:00",
+        "validation_status": "VALID",
+        "limit_applicable": true,
+        "limit_up_rate": "0.10",
+        "provenance": "SYNTHETIC_VALIDATED_GATE_B_CONSTRAINT",
+        "limit_down_rate": "0.10"
+      },
+      "bar_present": false,
+      "bar_available_at": "2024-10-09T15:00:00+08:00",
+      "valid_history_sessions": 150,
+      "history_available_at": "2024-10-09T15:00:00+08:00",
+      "expected": {
+        "eligible": false,
+        "exclusion_reason": "MISSING_BAR"
+      },
+      "history_basis": "SINCE_ACTIVE_LISTING"
+    },
+    {
+      "case_id": "future_delisting_does_not_rewrite_past",
+      "fixture_kind": "SYNTHETIC_CONTRACT_INPUT",
+      "security_id": "600004.SH",
+      "trade_date": "2024-10-09",
+      "decision_at": "2024-10-09T15:10:00+08:00",
+      "data_snapshot_id": "dca4d067e216b0112b7d3f16c820bbe4067dd15446a8981255c22c40672f17d6",
+      "execution_policy_id": "NEXT_SESSION_V1",
+      "universe_contract_version": "1",
+      "security_type": "A_SHARE_COMMON_STOCK",
+      "security_type_available_at": "2024-10-08T12:00:00+08:00",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "lifecycle_coverage_verified": true,
+      "lifecycle_coverage_available_at": "2024-10-08T12:00:00+08:00",
+      "lifecycle_events": [
+        {
+          "kind": "LISTED",
+          "effective_date": "2020-01-01",
+          "available_at": "2019-12-31T12:00:00+08:00",
+          "source_hash": "5ecb6af1c62411cba240d10338788be5272c0cc99cbf7f1ebf8eb4508fff3964"
+        },
+        {
+          "kind": "DELISTED",
+          "effective_date": "2024-10-10",
+          "available_at": "2024-10-10T12:00:00+08:00",
+          "source_hash": "66d88173b46ac939c60040feb84f8087e2966b00ca1db4d12865d51de899a2bb"
+        }
+      ],
+      "trading_status": "TRADING",
+      "trading_status_available_at": "2024-10-09T09:00:00+08:00",
+      "daily_constraint": {
+        "available_at": "2024-10-09T09:00:00+08:00",
+        "validation_status": "VALID",
+        "limit_applicable": true,
+        "limit_up_rate": "0.10",
+        "provenance": "SYNTHETIC_VALIDATED_GATE_B_CONSTRAINT",
+        "limit_down_rate": "0.10"
+      },
+      "bar_present": true,
+      "bar_available_at": "2024-10-09T15:00:00+08:00",
+      "valid_history_sessions": 150,
+      "history_available_at": "2024-10-09T15:00:00+08:00",
+      "expected": {
+        "eligible": true,
+        "exclusion_reason": null
+      },
+      "history_basis": "SINCE_ACTIVE_LISTING"
+    },
+    {
+      "case_id": "unknown_lifecycle_excluded",
+      "fixture_kind": "SYNTHETIC_CONTRACT_INPUT",
+      "security_id": "600005.SH",
+      "trade_date": "2024-10-09",
+      "decision_at": "2024-10-09T15:10:00+08:00",
+      "data_snapshot_id": "dca4d067e216b0112b7d3f16c820bbe4067dd15446a8981255c22c40672f17d6",
+      "execution_policy_id": "NEXT_SESSION_V1",
+      "universe_contract_version": "1",
+      "security_type": "A_SHARE_COMMON_STOCK",
+      "security_type_available_at": "2024-10-08T12:00:00+08:00",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "lifecycle_coverage_verified": false,
+      "lifecycle_coverage_available_at": "2024-10-08T12:00:00+08:00",
+      "lifecycle_events": [
+        {
+          "kind": "LISTED",
+          "effective_date": "2020-01-01",
+          "available_at": "2019-12-31T12:00:00+08:00",
+          "source_hash": "5ecb6af1c62411cba240d10338788be5272c0cc99cbf7f1ebf8eb4508fff3964"
+        }
+      ],
+      "trading_status": "TRADING",
+      "trading_status_available_at": "2024-10-09T09:00:00+08:00",
+      "daily_constraint": {
+        "available_at": "2024-10-09T09:00:00+08:00",
+        "validation_status": "VALID",
+        "limit_applicable": true,
+        "limit_up_rate": "0.10",
+        "provenance": "SYNTHETIC_VALIDATED_GATE_B_CONSTRAINT",
+        "limit_down_rate": "0.10"
+      },
+      "bar_present": true,
+      "bar_available_at": "2024-10-09T15:00:00+08:00",
+      "valid_history_sessions": 150,
+      "history_available_at": "2024-10-09T15:00:00+08:00",
+      "expected": {
+        "eligible": false,
+        "exclusion_reason": "UNKNOWN_LISTING_LIFECYCLE"
+      },
+      "history_basis": "SINCE_ACTIVE_LISTING"
+    },
+    {
+      "case_id": "not_yet_listed_excluded",
+      "fixture_kind": "SYNTHETIC_CONTRACT_INPUT",
+      "security_id": "600006.SH",
+      "trade_date": "2024-10-09",
+      "decision_at": "2024-10-09T15:10:00+08:00",
+      "data_snapshot_id": "dca4d067e216b0112b7d3f16c820bbe4067dd15446a8981255c22c40672f17d6",
+      "execution_policy_id": "NEXT_SESSION_V1",
+      "universe_contract_version": "1",
+      "security_type": "A_SHARE_COMMON_STOCK",
+      "security_type_available_at": "2024-10-08T12:00:00+08:00",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "lifecycle_coverage_verified": true,
+      "lifecycle_coverage_available_at": "2024-10-08T12:00:00+08:00",
+      "lifecycle_events": [
+        {
+          "kind": "LISTED",
+          "effective_date": "2024-10-10",
+          "available_at": "2024-10-08T12:00:00+08:00",
+          "source_hash": "5cb9a7517f3a3424e29aac7f9ebb26950c0dccbb1fa310eeea2b769e0c4ce8ca"
+        }
+      ],
+      "trading_status": "TRADING",
+      "trading_status_available_at": "2024-10-09T09:00:00+08:00",
+      "daily_constraint": {
+        "available_at": "2024-10-09T09:00:00+08:00",
+        "validation_status": "VALID",
+        "limit_applicable": true,
+        "limit_up_rate": "0.10",
+        "provenance": "SYNTHETIC_VALIDATED_GATE_B_CONSTRAINT",
+        "limit_down_rate": "0.10"
+      },
+      "bar_present": true,
+      "bar_available_at": "2024-10-09T15:00:00+08:00",
+      "valid_history_sessions": 150,
+      "history_available_at": "2024-10-09T15:00:00+08:00",
+      "expected": {
+        "eligible": false,
+        "exclusion_reason": "NOT_LISTED"
+      },
+      "history_basis": "SINCE_ACTIVE_LISTING"
+    },
+    {
+      "case_id": "relisted_with_insufficient_new_history",
+      "fixture_kind": "SYNTHETIC_CONTRACT_INPUT",
+      "security_id": "600007.SH",
+      "trade_date": "2024-10-09",
+      "decision_at": "2024-10-09T15:10:00+08:00",
+      "data_snapshot_id": "dca4d067e216b0112b7d3f16c820bbe4067dd15446a8981255c22c40672f17d6",
+      "execution_policy_id": "NEXT_SESSION_V1",
+      "universe_contract_version": "1",
+      "security_type": "A_SHARE_COMMON_STOCK",
+      "security_type_available_at": "2024-10-08T12:00:00+08:00",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "lifecycle_coverage_verified": true,
+      "lifecycle_coverage_available_at": "2024-10-08T12:00:00+08:00",
+      "lifecycle_events": [
+        {
+          "kind": "LISTED",
+          "effective_date": "2020-01-01",
+          "available_at": "2019-12-31T12:00:00+08:00",
+          "source_hash": "5ecb6af1c62411cba240d10338788be5272c0cc99cbf7f1ebf8eb4508fff3964"
+        },
+        {
+          "kind": "DELISTED",
+          "effective_date": "2024-09-01",
+          "available_at": "2024-09-01T12:00:00+08:00",
+          "source_hash": "186cc1c2abb782ee76f40973d47b6b68b3370ae4d9b7e607e4f330be27898465"
+        },
+        {
+          "kind": "RELISTED",
+          "effective_date": "2024-10-08",
+          "available_at": "2024-10-08T12:00:00+08:00",
+          "source_hash": "f48133e027d1b7ecf345ac1c68b01610b732feff896b62fc27346baec3a7fc4d"
+        }
+      ],
+      "trading_status": "TRADING",
+      "trading_status_available_at": "2024-10-09T09:00:00+08:00",
+      "daily_constraint": {
+        "available_at": "2024-10-09T09:00:00+08:00",
+        "validation_status": "VALID",
+        "limit_applicable": true,
+        "limit_up_rate": "0.10",
+        "provenance": "SYNTHETIC_VALIDATED_GATE_B_CONSTRAINT",
+        "limit_down_rate": "0.10"
+      },
+      "bar_present": true,
+      "bar_available_at": "2024-10-09T15:00:00+08:00",
+      "valid_history_sessions": 1,
+      "history_available_at": "2024-10-09T15:00:00+08:00",
+      "expected": {
+        "eligible": false,
+        "exclusion_reason": "INSUFFICIENT_HISTORY"
+      },
+      "history_basis": "SINCE_ACTIVE_LISTING"
+    },
+    {
+      "case_id": "conflicting_lifecycle_excluded",
+      "fixture_kind": "SYNTHETIC_CONTRACT_INPUT",
+      "security_id": "600008.SH",
+      "trade_date": "2024-10-09",
+      "decision_at": "2024-10-09T15:10:00+08:00",
+      "data_snapshot_id": "dca4d067e216b0112b7d3f16c820bbe4067dd15446a8981255c22c40672f17d6",
+      "execution_policy_id": "NEXT_SESSION_V1",
+      "universe_contract_version": "1",
+      "security_type": "A_SHARE_COMMON_STOCK",
+      "security_type_available_at": "2024-10-08T12:00:00+08:00",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "lifecycle_coverage_verified": true,
+      "lifecycle_coverage_available_at": "2024-10-08T12:00:00+08:00",
+      "lifecycle_events": [
+        {
+          "kind": "LISTED",
+          "effective_date": "2020-01-01",
+          "available_at": "2019-12-31T12:00:00+08:00",
+          "source_hash": "5ecb6af1c62411cba240d10338788be5272c0cc99cbf7f1ebf8eb4508fff3964"
+        },
+        {
+          "kind": "DELISTED",
+          "effective_date": "2024-10-08",
+          "available_at": "2024-10-08T10:00:00+08:00",
+          "source_hash": "db4622cab387f671ac44406f3ae6fde0eb6ca18f63df2d98d53f344a7edfda35"
+        },
+        {
+          "kind": "RELISTED",
+          "effective_date": "2024-10-08",
+          "available_at": "2024-10-08T11:00:00+08:00",
+          "source_hash": "4dfac40f8490440b7f5132e3b605d566e987841416d771f29c9608c82483c86b"
+        }
+      ],
+      "trading_status": "TRADING",
+      "trading_status_available_at": "2024-10-09T09:00:00+08:00",
+      "daily_constraint": {
+        "available_at": "2024-10-09T09:00:00+08:00",
+        "validation_status": "VALID",
+        "limit_applicable": true,
+        "limit_up_rate": "0.10",
+        "provenance": "SYNTHETIC_VALIDATED_GATE_B_CONSTRAINT",
+        "limit_down_rate": "0.10"
+      },
+      "bar_present": true,
+      "bar_available_at": "2024-10-09T15:00:00+08:00",
+      "valid_history_sessions": 150,
+      "history_available_at": "2024-10-09T15:00:00+08:00",
+      "expected": {
+        "eligible": false,
+        "exclusion_reason": "DATA_CONFLICT"
+      },
+      "history_basis": "SINCE_ACTIVE_LISTING"
+    },
+    {
+      "case_id": "late_type_evidence_excluded",
+      "fixture_kind": "SYNTHETIC_CONTRACT_INPUT",
+      "security_id": "600009.SH",
+      "trade_date": "2024-10-09",
+      "decision_at": "2024-10-09T15:10:00+08:00",
+      "data_snapshot_id": "dca4d067e216b0112b7d3f16c820bbe4067dd15446a8981255c22c40672f17d6",
+      "execution_policy_id": "NEXT_SESSION_V1",
+      "universe_contract_version": "1",
+      "security_type": "A_SHARE_COMMON_STOCK",
+      "security_type_available_at": "2024-10-10T09:00:00+08:00",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "lifecycle_coverage_verified": true,
+      "lifecycle_coverage_available_at": "2024-10-08T12:00:00+08:00",
+      "lifecycle_events": [
+        {
+          "kind": "LISTED",
+          "effective_date": "2020-01-01",
+          "available_at": "2019-12-31T12:00:00+08:00",
+          "source_hash": "5ecb6af1c62411cba240d10338788be5272c0cc99cbf7f1ebf8eb4508fff3964"
+        }
+      ],
+      "trading_status": "TRADING",
+      "trading_status_available_at": "2024-10-09T09:00:00+08:00",
+      "daily_constraint": {
+        "available_at": "2024-10-09T09:00:00+08:00",
+        "validation_status": "VALID",
+        "limit_applicable": true,
+        "limit_up_rate": "0.10",
+        "provenance": "SYNTHETIC_VALIDATED_GATE_B_CONSTRAINT",
+        "limit_down_rate": "0.10"
+      },
+      "bar_present": true,
+      "bar_available_at": "2024-10-09T15:00:00+08:00",
+      "valid_history_sessions": 150,
+      "history_available_at": "2024-10-09T15:00:00+08:00",
+      "expected": {
+        "eligible": false,
+        "exclusion_reason": "MISSING_PIT_EVIDENCE"
+      },
+      "history_basis": "SINCE_ACTIVE_LISTING"
+    },
+    {
+      "case_id": "special_no_limit_excluded",
+      "fixture_kind": "SYNTHETIC_CONTRACT_INPUT",
+      "security_id": "600010.SH",
+      "trade_date": "2024-10-09",
+      "decision_at": "2024-10-09T15:10:00+08:00",
+      "data_snapshot_id": "dca4d067e216b0112b7d3f16c820bbe4067dd15446a8981255c22c40672f17d6",
+      "execution_policy_id": "NEXT_SESSION_V1",
+      "universe_contract_version": "1",
+      "security_type": "A_SHARE_COMMON_STOCK",
+      "security_type_available_at": "2024-10-08T12:00:00+08:00",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "lifecycle_coverage_verified": true,
+      "lifecycle_coverage_available_at": "2024-10-08T12:00:00+08:00",
+      "lifecycle_events": [
+        {
+          "kind": "LISTED",
+          "effective_date": "2020-01-01",
+          "available_at": "2019-12-31T12:00:00+08:00",
+          "source_hash": "5ecb6af1c62411cba240d10338788be5272c0cc99cbf7f1ebf8eb4508fff3964"
+        }
+      ],
+      "trading_status": "TRADING",
+      "trading_status_available_at": "2024-10-09T09:00:00+08:00",
+      "daily_constraint": {
+        "available_at": "2024-10-09T09:00:00+08:00",
+        "validation_status": "VALID",
+        "limit_applicable": false,
+        "limit_up_rate": null,
+        "provenance": "SYNTHETIC_VALIDATED_GATE_B_CONSTRAINT",
+        "limit_down_rate": null
+      },
+      "bar_present": true,
+      "bar_available_at": "2024-10-09T15:00:00+08:00",
+      "valid_history_sessions": 150,
+      "history_available_at": "2024-10-09T15:00:00+08:00",
+      "expected": {
+        "eligible": false,
+        "exclusion_reason": "NO_PRICE_LIMIT"
+      },
+      "history_basis": "SINCE_ACTIVE_LISTING"
+    }
+  ]
+}
