@@ -1,0 +1,238 @@
+{
+  "schema": "gate-b-retry3-publication-safety-review/1",
+  "reviewed_original_commit": "032e5897e7d18c6ab455326be4353b191f198ec5",
+  "target_repository": "https://github.com/ysssss414/rss",
+  "target_branch": "codex/rss-stage1-gate-b-c2-evidence-r3",
+  "original_file_count": 24,
+  "inventory": [
+    {
+      "path": "artifacts/stage1_gate_b_retry3/.gitattributes",
+      "classification": "GENERATED_ARTIFACT",
+      "public_safe": true,
+      "issues_found": [],
+      "action_taken": "Retained repo-relative contract/baseline metadata; no private provider payload.",
+      "present_in_public_tree": true
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/001391_listing.html",
+      "classification": "PUBLIC_SOURCE_ONLY",
+      "public_safe": true,
+      "issues_found": [],
+      "action_taken": "Retained exact public exchange or issuer source bytes with URL and SHA-256 provenance.",
+      "present_in_public_tree": true
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/600187_intro.html",
+      "classification": "PUBLIC_SOURCE_ONLY",
+      "public_safe": true,
+      "issues_found": [],
+      "action_taken": "Retained exact public exchange or issuer source bytes with URL and SHA-256 provenance.",
+      "present_in_public_tree": true
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/600518_removal.pdf",
+      "classification": "PUBLIC_SOURCE_ONLY",
+      "public_safe": true,
+      "issues_found": [],
+      "action_taken": "Retained exact public exchange or issuer source bytes with URL and SHA-256 provenance.",
+      "present_in_public_tree": true
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/600519_dividend.pdf",
+      "classification": "PUBLIC_SOURCE_ONLY",
+      "public_safe": true,
+      "issues_found": [],
+      "action_taken": "Retained exact public exchange or issuer source bytes with URL and SHA-256 provenance.",
+      "present_in_public_tree": true
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/603194_listing.pdf",
+      "classification": "PUBLIC_SOURCE_ONLY",
+      "public_safe": true,
+      "issues_found": [],
+      "action_taken": "Retained exact public exchange or issuer source bytes with URL and SHA-256 provenance.",
+      "present_in_public_tree": true
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/baseline_receipt.json",
+      "classification": "GENERATED_ARTIFACT",
+      "public_safe": true,
+      "issues_found": [],
+      "action_taken": "Retained repo-relative contract/baseline metadata; no private provider payload.",
+      "present_in_public_tree": true
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/daily_constraint_contract.json",
+      "classification": "GENERATED_ARTIFACT",
+      "public_safe": true,
+      "issues_found": [],
+      "action_taken": "Retained repo-relative contract/baseline metadata; no private provider payload.",
+      "present_in_public_tree": true
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/exchange_constraint_semantics.json",
+      "classification": "GENERATED_ARTIFACT",
+      "public_safe": true,
+      "issues_found": [],
+      "action_taken": "Retained repo-relative contract/baseline metadata; no private provider payload.",
+      "present_in_public_tree": true
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/historical_validation_cases.json",
+      "classification": "DERIVED_VENDOR_EVIDENCE",
+      "public_safe": true,
+      "issues_found": [
+        "Raw sampled vendor field values and capture paths"
+      ],
+      "action_taken": "Replaced every vendor row with derived comparison flags and private source SHA-256.",
+      "present_in_public_tree": true
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/live_c2_cases.json",
+      "classification": "PRIVATE_VENDOR_EVIDENCE_REMOVED",
+      "public_safe": true,
+      "issues_found": [
+        "Non-public provider payload or live request/process metadata"
+      ],
+      "action_taken": "Removed complete AmazingData response and live session/request metadata; SHA-only private receipt retained.",
+      "present_in_public_tree": false
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/live_c2_cases.process.json",
+      "classification": "PRIVATE_VENDOR_EVIDENCE_REMOVED",
+      "public_safe": true,
+      "issues_found": [
+        "Non-public provider payload or live request/process metadata"
+      ],
+      "action_taken": "Removed live worker/process execution metadata.",
+      "present_in_public_tree": false
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/live_c2_plan.json",
+      "classification": "PRIVATE_VENDOR_EVIDENCE_REMOVED",
+      "public_safe": true,
+      "issues_found": [
+        "Non-public provider payload or live request/process metadata"
+      ],
+      "action_taken": "Removed live request plan and request identifiers.",
+      "present_in_public_tree": false
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/qualification_manifest.json",
+      "classification": "GENERATED_ARTIFACT",
+      "public_safe": true,
+      "issues_found": [
+        "Old manifest hashed unsafe raw capture files"
+      ],
+      "action_taken": "Regenerated from safe Git index blobs; removed raw file entries.",
+      "present_in_public_tree": true
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/source_registry.json",
+      "classification": "DERIVED_VENDOR_EVIDENCE",
+      "public_safe": true,
+      "issues_found": [
+        "Frozen raw vendor capture paths"
+      ],
+      "action_taken": "Moved three vendor captures to hash-only PRIVATE_LOCAL_EVIDENCE receipts.",
+      "present_in_public_tree": true
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/sse_603194.json",
+      "classification": "PUBLIC_SOURCE_ONLY",
+      "public_safe": true,
+      "issues_found": [],
+      "action_taken": "Retained exact public exchange or issuer source bytes with URL and SHA-256 provenance.",
+      "present_in_public_tree": true
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/sse_rule_2023.docx",
+      "classification": "PUBLIC_SOURCE_ONLY",
+      "public_safe": true,
+      "issues_found": [],
+      "action_taken": "Retained exact public exchange or issuer source bytes with URL and SHA-256 provenance.",
+      "present_in_public_tree": true
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/sse_rule_2026.docx",
+      "classification": "PUBLIC_SOURCE_ONLY",
+      "public_safe": true,
+      "issues_found": [],
+      "action_taken": "Retained exact public exchange or issuer source bytes with URL and SHA-256 provenance.",
+      "present_in_public_tree": true
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/szse_001391_2024-12-30.json",
+      "classification": "PUBLIC_SOURCE_ONLY",
+      "public_safe": true,
+      "issues_found": [],
+      "action_taken": "Retained exact public exchange or issuer source bytes with URL and SHA-256 provenance.",
+      "present_in_public_tree": true
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/szse_001391_2025-01-07.json",
+      "classification": "PUBLIC_SOURCE_ONLY",
+      "public_safe": true,
+      "issues_found": [],
+      "action_taken": "Retained exact public exchange or issuer source bytes with URL and SHA-256 provenance.",
+      "present_in_public_tree": true
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/vendor_field_admission.json",
+      "classification": "DERIVED_VENDOR_EVIDENCE",
+      "public_safe": true,
+      "issues_found": [
+        "Raw vendor ST-label values"
+      ],
+      "action_taken": "Kept only derived field admissions and comparisons.",
+      "present_in_public_tree": true
+    },
+    {
+      "path": "docs/stage1_gate_b_retry3_c2_evidence.md",
+      "classification": "DERIVED_VENDOR_EVIDENCE",
+      "public_safe": true,
+      "issues_found": [
+        "Reported raw vendor observations"
+      ],
+      "action_taken": "Reworded to official reconstructed prices and hash-linked derived comparisons.",
+      "present_in_public_tree": true
+    },
+    {
+      "path": "scripts/validate_stage1_gate_b_retry3.py",
+      "classification": "GENERATED_ARTIFACT",
+      "public_safe": true,
+      "issues_found": [
+        "Mandatory raw vendor-file reads"
+      ],
+      "action_taken": "Public verification uses derived receipts; optional local private replay checks hashes and 13 comparisons.",
+      "present_in_public_tree": true
+    },
+    {
+      "path": "tests/test_gate_b_retry3.py",
+      "classification": "SYNTHETIC_TEST_FIXTURE",
+      "public_safe": true,
+      "issues_found": [
+        "Tests required raw vendor captures"
+      ],
+      "action_taken": "Replaced raw dependency with synthetic vendor rows and derived-receipt checks.",
+      "present_in_public_tree": true
+    }
+  ],
+  "private_evidence": {
+    "source_type": "PRIVATE_LOCAL_EVIDENCE",
+    "source_count": 3,
+    "public_payload": false,
+    "retention": "Original commit retained in local refs/private; new raw capture also retained in a gitignored local copy.",
+    "local_replay": "Optional --private-capture inputs verify all private hashes and 13 derived comparisons; public tests use synthetic rows."
+  },
+  "publication_scope": "Only the 24 files introduced by the original Retry 3 commit; inherited repository history was not reclassified.",
+  "qualification_state_unchanged": {
+    "C1": "CLOSED",
+    "C2": "CLOSED",
+    "C3": "CLOSED",
+    "A1": "UNTRUSTED",
+    "gate_b": "GATE_B_CORE_DATA_CONTRACT_PASS"
+  },
+  "public_push_authorized": false,
+  "public_pr_authorized": false
+}

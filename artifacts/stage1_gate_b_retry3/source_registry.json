@@ -1,0 +1,104 @@
+{
+  "schema": "gate-b-retry3-sources/1",
+  "frozen_bytes": [
+    {
+      "path": "artifacts/stage1_gate_b_retry2/sse_600187.json",
+      "sha256": "d685a5b8b7f24c242b178e5ae41a6fd789865ecc809d4e610c68997682d3b5d4"
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry2/sse_600518.json",
+      "sha256": "5006d5c4845faf59dcaf4396a31c3a39478c669ba2c658a83c541f88d6adc567"
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry2/sse_600519.json",
+      "sha256": "c2ffbe4b57247435291310a82350d1188a15192420c73dbbbf6951947c5492c2"
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry2/szse_000001_2024-10-09.json",
+      "sha256": "982a77d81e0f34d9ea606d7f90539b243fb48cf256fc8a1f81e491015ddeea16"
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry2/szse_300750_2024-09-27.json",
+      "sha256": "c219a3f90b775857161929637d814aa1b94fa454561be5a02973e3742dcbfa3a"
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/001391_listing.html",
+      "sha256": "759d2f090358f312acf20eafbcb9c8cc4d425a0577d772363d93c06ff663b0cd"
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/600187_intro.html",
+      "sha256": "9fecf28fd656fce0232095043cb7d82a4581e8b6762ae9f1989e0e80e9f76b51"
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/600518_removal.pdf",
+      "sha256": "a8e43c796ca7946c224ba1f2d07271dea0b669c9d7dce5d50e9641f39f12b31e"
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/600519_dividend.pdf",
+      "sha256": "626888864d607e51f11f48df3368c496c7dec832f6cdd90244336195b1ef2972"
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/603194_listing.pdf",
+      "sha256": "23ba2c7906b2e12513cc93f282e1d62a089c7d8722dd99f3e5a782aed74308ed"
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/sse_603194.json",
+      "sha256": "0aafaa9f361e56566467e62967f6f98771c3501d2683495510f344e796af0a83"
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/sse_rule_2023.docx",
+      "sha256": "7aa2319f6dcf597be1e86b3b69d7c2ad0e6acb2a5d0cc6be48a01af602fded40"
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/sse_rule_2026.docx",
+      "sha256": "fc922c433438b2636cb631eab25cca405209712acbb6aaded768c45456ff8888"
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/szse_001391_2024-12-30.json",
+      "sha256": "a09c6cda20617169478b1bc70af0c59bae11ca119b77b1d34f1016ec4033ff45"
+    },
+    {
+      "path": "artifacts/stage1_gate_b_retry3/szse_001391_2025-01-07.json",
+      "sha256": "7427b538c76360f6240644df7f50869ab3ee2b7b839e11004136fb371643c5c6"
+    }
+  ],
+  "official_urls": {
+    "sse_2023_rule": "https://www.sse.com.cn/lawandrules/sselawsrules2025/repeal/rules/c/c_20250612_10824490.shtml",
+    "sse_2026_rule": "https://www.sse.com.cn/lawandrules/sselawsrules2025/stocks/exchange/c/c_20260424_10816482.shtml",
+    "sse_2026_explanation": "https://www.sse.com.cn/aboutus/mediacenter/hotandd/c/c_20260424_10816474.shtml",
+    "sse_reference_spec": "https://www.sse.com.cn/services/tradingtech/development/c/10781338/files/b251f026187849cdb57db7d4e2205269.pdf",
+    "szse_2023_rule": "https://investor.szse.cn/lawrules/index/rule/t20230217_598773.html",
+    "szse_reference_spec": "https://www.szse.cn/marketServices/technicalservice/interface/P020241016554266648071.pdf",
+    "szse_interface_faq": "https://www.szse.cn/www/marketServices/technicalservice/introduce/P020180328467244590967.pdf",
+    "600187_intro": "https://www.sse.com.cn/disclosure/magin/announcement/ssereport/c/c_20260430_10817280.shtml",
+    "600518_removal": "https://static.cninfo.com.cn/finalpage/2024-07-03/1220520500.PDF",
+    "600519_dividend": "https://static.sse.com.cn/disclosure/listedinfo/announcement/c/new/2024-06-12/600519_20240612_P65B.pdf",
+    "600519_dividend_frozen_download": "https://big5.sse.com.cn/site/cht/www.sse.com.cn/disclosure/listedinfo/announcement/c/new/2024-06-12/600519_20240612_P65B.pdf",
+    "603194_listing": "https://www.sse.com.cn/disclosure/listedinfo/announcement/c/new/2024-12-23/603194_20241223_YCS3.pdf",
+    "603194_listing_frozen_download": "https://big5.sse.com.cn/site/cht/www.sse.com.cn/disclosure/listedinfo/announcement/c/new/2024-12-23/603194_20241223_YCS3.pdf",
+    "001391_listing": "https://www.szse.cn/disclosure/notice/company/t20241227_611339.html",
+    "szse_day_quote_query": "https://www.szse.cn/api/report/ShowReport/data?SHOWTYPE=JSON&CATALOGID=1815_stock&TABKEY=tab1&txtDMorJC={code}&txtBeginDate={day}&txtEndDate={day}&radioClass=00%2C20%2C30&txtSite=all",
+    "sse_day_quote_query": "http://yunhq.sse.com.cn:32041/v1/sh1/dayk/{code}?begin=-650&end=-1&period=day&select=date%2Copen%2Chigh%2Clow%2Cclose%2Cvolume%2Camount"
+  },
+  "retrieval_utc_date": "2026-09-22",
+  "private_sources": [
+    {
+      "source_type": "PRIVATE_LOCAL_EVIDENCE",
+      "source_hash": "3bfdd21650c83535f0f5d323beaf1976ab9483a6079cb25591b89aad774dcb0e",
+      "public_payload": false,
+      "fact_proved": "AmazingData 1.1.6 status-field comparison for cited representative stock-days"
+    },
+    {
+      "source_type": "PRIVATE_LOCAL_EVIDENCE",
+      "source_hash": "500dbcaac2068c9eae30cffbfee708eb5b5d1edfd77dc4a2d1e2644ba57e28b4",
+      "public_payload": false,
+      "fact_proved": "AmazingData 1.1.6 status-field comparison for cited representative stock-days"
+    },
+    {
+      "source_type": "PRIVATE_LOCAL_EVIDENCE",
+      "source_hash": "fc8f81d292b3d6ad52ecc7d4cacdca5a665d800710d9a375cf8dfae9d380100a",
+      "public_payload": false,
+      "fact_proved": "AmazingData 1.1.6 status-field comparison for cited representative stock-days"
+    }
+  ]
+}

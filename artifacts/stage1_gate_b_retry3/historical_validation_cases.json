@@ -1,0 +1,501 @@
+{
+  "schema": "gate-b-retry3-historical-cases/1",
+  "evidence_level": "OFFICIAL_RECONSTRUCTED",
+  "cases": [
+    {
+      "case": "sse_normal_2026_04_29",
+      "security_id": "600187.SH",
+      "trade_date": "2026-04-29",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "regime": "NORMAL",
+      "reference_price": "1.76",
+      "reference_origin": {
+        "kind": "SSE_PREVIOUS_CLOSE",
+        "path": "artifacts/stage1_gate_b_retry2/sse_600187.json",
+        "date": "2026-04-28"
+      },
+      "price_tick": "0.01",
+      "limit_up_price": "1.94",
+      "limit_down_price": "1.58",
+      "close": "1.84",
+      "close_limit_up": false,
+      "suspended": false,
+      "official_close_path": "artifacts/stage1_gate_b_retry2/sse_600187.json",
+      "coverage": [
+        "sse_normal_10",
+        "sse_risk_intro_pre"
+      ],
+      "event_sources": [],
+      "private_source_sha256": "500dbcaac2068c9eae30cffbfee708eb5b5d1edfd77dc4a2d1e2644ba57e28b4",
+      "source_type": "PRIVATE_LOCAL_EVIDENCE",
+      "public_payload": false,
+      "vendor_comparison": {
+        "reference_matches_official": true,
+        "absolute_matches_reconstruction": true,
+        "rate_matches_rule": true,
+        "status_label_matches_regime": true,
+        "suspension_matches_official": true,
+        "no_limit_sentinel_normalized": null
+      }
+    },
+    {
+      "case": "sse_suspension_2026_04_30",
+      "security_id": "600187.SH",
+      "trade_date": "2026-04-30",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "regime": "NORMAL",
+      "reference_price": "1.84",
+      "reference_origin": {
+        "kind": "SSE_PREVIOUS_CLOSE",
+        "path": "artifacts/stage1_gate_b_retry2/sse_600187.json",
+        "date": "2026-04-29"
+      },
+      "price_tick": "0.01",
+      "limit_up_price": "2.02",
+      "limit_down_price": "1.66",
+      "close": null,
+      "close_limit_up": false,
+      "suspended": true,
+      "official_close_path": "artifacts/stage1_gate_b_retry2/sse_600187.json",
+      "coverage": [
+        "suspension"
+      ],
+      "event_sources": [
+        "artifacts/stage1_gate_b_retry3/600187_intro.html"
+      ],
+      "private_source_sha256": "500dbcaac2068c9eae30cffbfee708eb5b5d1edfd77dc4a2d1e2644ba57e28b4",
+      "source_type": "PRIVATE_LOCAL_EVIDENCE",
+      "public_payload": false,
+      "vendor_comparison": {
+        "reference_matches_official": true,
+        "absolute_matches_reconstruction": true,
+        "rate_matches_rule": true,
+        "status_label_matches_regime": true,
+        "suspension_matches_official": true,
+        "no_limit_sentinel_normalized": null
+      }
+    },
+    {
+      "case": "sse_risk_intro_2026_05_06",
+      "security_id": "600187.SH",
+      "trade_date": "2026-05-06",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "regime": "RISK_WARNING",
+      "reference_price": "1.84",
+      "reference_origin": {
+        "kind": "SSE_PREVIOUS_CLOSE",
+        "path": "artifacts/stage1_gate_b_retry2/sse_600187.json",
+        "date": "2026-04-29"
+      },
+      "price_tick": "0.01",
+      "limit_up_price": "1.93",
+      "limit_down_price": "1.75",
+      "close": "1.75",
+      "close_limit_up": false,
+      "suspended": false,
+      "official_close_path": "artifacts/stage1_gate_b_retry2/sse_600187.json",
+      "coverage": [
+        "sse_risk_5",
+        "sse_risk_intro_post",
+        "actual_close_limit_down"
+      ],
+      "event_sources": [
+        "artifacts/stage1_gate_b_retry3/600187_intro.html"
+      ],
+      "private_source_sha256": "500dbcaac2068c9eae30cffbfee708eb5b5d1edfd77dc4a2d1e2644ba57e28b4",
+      "source_type": "PRIVATE_LOCAL_EVIDENCE",
+      "public_payload": false,
+      "vendor_comparison": {
+        "reference_matches_official": true,
+        "absolute_matches_reconstruction": true,
+        "rate_matches_rule": true,
+        "status_label_matches_regime": true,
+        "suspension_matches_official": true,
+        "no_limit_sentinel_normalized": null
+      }
+    },
+    {
+      "case": "sse_risk_before_rule_change",
+      "security_id": "600187.SH",
+      "trade_date": "2026-07-03",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "regime": "RISK_WARNING",
+      "reference_price": "1.40",
+      "reference_origin": {
+        "kind": "SSE_PREVIOUS_CLOSE",
+        "path": "artifacts/stage1_gate_b_retry2/sse_600187.json",
+        "date": "2026-07-02"
+      },
+      "price_tick": "0.01",
+      "limit_up_price": "1.47",
+      "limit_down_price": "1.33",
+      "close": "1.47",
+      "close_limit_up": true,
+      "suspended": false,
+      "official_close_path": "artifacts/stage1_gate_b_retry2/sse_600187.json",
+      "coverage": [
+        "sse_risk_5",
+        "actual_close_limit"
+      ],
+      "event_sources": [
+        "artifacts/stage1_gate_b_retry3/600187_intro.html"
+      ],
+      "private_source_sha256": "3bfdd21650c83535f0f5d323beaf1976ab9483a6079cb25591b89aad774dcb0e",
+      "source_type": "PRIVATE_LOCAL_EVIDENCE",
+      "public_payload": false,
+      "vendor_comparison": {
+        "reference_matches_official": true,
+        "absolute_matches_reconstruction": true,
+        "rate_matches_rule": true,
+        "status_label_matches_regime": true,
+        "suspension_matches_official": true,
+        "no_limit_sentinel_normalized": null
+      }
+    },
+    {
+      "case": "sse_risk_after_rule_change",
+      "security_id": "600187.SH",
+      "trade_date": "2026-07-06",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "regime": "RISK_WARNING",
+      "reference_price": "1.47",
+      "reference_origin": {
+        "kind": "SSE_PREVIOUS_CLOSE",
+        "path": "artifacts/stage1_gate_b_retry2/sse_600187.json",
+        "date": "2026-07-03"
+      },
+      "price_tick": "0.01",
+      "limit_up_price": "1.62",
+      "limit_down_price": "1.32",
+      "close": "1.56",
+      "close_limit_up": false,
+      "suspended": false,
+      "official_close_path": "artifacts/stage1_gate_b_retry2/sse_600187.json",
+      "coverage": [
+        "sse_risk_10_2026",
+        "near_limit"
+      ],
+      "event_sources": [
+        "artifacts/stage1_gate_b_retry3/600187_intro.html"
+      ],
+      "private_source_sha256": "3bfdd21650c83535f0f5d323beaf1976ab9483a6079cb25591b89aad774dcb0e",
+      "source_type": "PRIVATE_LOCAL_EVIDENCE",
+      "public_payload": false,
+      "vendor_comparison": {
+        "reference_matches_official": true,
+        "absolute_matches_reconstruction": true,
+        "rate_matches_rule": false,
+        "status_label_matches_regime": true,
+        "suspension_matches_official": true,
+        "no_limit_sentinel_normalized": null
+      }
+    },
+    {
+      "case": "sse_risk_pre_removal",
+      "security_id": "600518.SH",
+      "trade_date": "2024-07-02",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "regime": "RISK_WARNING",
+      "reference_price": "1.92",
+      "reference_origin": {
+        "kind": "SSE_PREVIOUS_CLOSE",
+        "path": "artifacts/stage1_gate_b_retry2/sse_600518.json",
+        "date": "2024-07-01"
+      },
+      "price_tick": "0.01",
+      "limit_up_price": "2.02",
+      "limit_down_price": "1.82",
+      "close": "1.93",
+      "close_limit_up": false,
+      "suspended": false,
+      "official_close_path": "artifacts/stage1_gate_b_retry2/sse_600518.json",
+      "coverage": [
+        "sse_risk_5"
+      ],
+      "event_sources": [
+        "artifacts/stage1_gate_b_retry3/600518_removal.pdf"
+      ],
+      "private_source_sha256": "fc8f81d292b3d6ad52ecc7d4cacdca5a665d800710d9a375cf8dfae9d380100a",
+      "source_type": "PRIVATE_LOCAL_EVIDENCE",
+      "public_payload": false,
+      "vendor_comparison": {
+        "reference_matches_official": true,
+        "absolute_matches_reconstruction": true,
+        "rate_matches_rule": true,
+        "status_label_matches_regime": true,
+        "suspension_matches_official": true,
+        "no_limit_sentinel_normalized": null
+      }
+    },
+    {
+      "case": "sse_risk_removal_2024_07_04",
+      "security_id": "600518.SH",
+      "trade_date": "2024-07-04",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "regime": "NORMAL",
+      "reference_price": "1.93",
+      "reference_origin": {
+        "kind": "SSE_PREVIOUS_CLOSE",
+        "path": "artifacts/stage1_gate_b_retry2/sse_600518.json",
+        "date": "2024-07-02"
+      },
+      "price_tick": "0.01",
+      "limit_up_price": "2.12",
+      "limit_down_price": "1.74",
+      "close": "2.12",
+      "close_limit_up": true,
+      "suspended": false,
+      "official_close_path": "artifacts/stage1_gate_b_retry2/sse_600518.json",
+      "coverage": [
+        "sse_risk_removal",
+        "actual_close_limit"
+      ],
+      "event_sources": [
+        "artifacts/stage1_gate_b_retry3/600518_removal.pdf"
+      ],
+      "private_source_sha256": "fc8f81d292b3d6ad52ecc7d4cacdca5a665d800710d9a375cf8dfae9d380100a",
+      "source_type": "PRIVATE_LOCAL_EVIDENCE",
+      "public_payload": false,
+      "vendor_comparison": {
+        "reference_matches_official": true,
+        "absolute_matches_reconstruction": true,
+        "rate_matches_rule": true,
+        "status_label_matches_regime": false,
+        "suspension_matches_official": true,
+        "no_limit_sentinel_normalized": null
+      }
+    },
+    {
+      "case": "sse_ipo_first_day",
+      "security_id": "603194.SH",
+      "trade_date": "2024-12-24",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "regime": "IPO_FIRST_FIVE",
+      "reference_price": "20.32",
+      "reference_origin": {
+        "kind": "ISSUER_IPO_PRICE",
+        "issue_price": "20.32",
+        "path": "artifacts/stage1_gate_b_retry3/603194_listing.pdf"
+      },
+      "price_tick": "0.01",
+      "limit_up_price": null,
+      "limit_down_price": null,
+      "close": "54.08",
+      "close_limit_up": false,
+      "suspended": false,
+      "official_close_path": "artifacts/stage1_gate_b_retry3/sse_603194.json",
+      "coverage": [
+        "sse_ipo_no_limit"
+      ],
+      "event_sources": [
+        "artifacts/stage1_gate_b_retry3/603194_listing.pdf"
+      ],
+      "private_source_sha256": "fc8f81d292b3d6ad52ecc7d4cacdca5a665d800710d9a375cf8dfae9d380100a",
+      "source_type": "PRIVATE_LOCAL_EVIDENCE",
+      "public_payload": false,
+      "vendor_comparison": {
+        "reference_matches_official": true,
+        "absolute_matches_reconstruction": null,
+        "rate_matches_rule": null,
+        "status_label_matches_regime": true,
+        "suspension_matches_official": true,
+        "no_limit_sentinel_normalized": true
+      }
+    },
+    {
+      "case": "sse_ex_dividend",
+      "security_id": "600519.SH",
+      "trade_date": "2024-06-19",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "regime": "NORMAL",
+      "reference_price": "1490.62",
+      "reference_origin": {
+        "kind": "SSE_EX_DIVIDEND",
+        "path": "artifacts/stage1_gate_b_retry2/sse_600519.json",
+        "date": "2024-06-18",
+        "raw_prior_close": "1521.50",
+        "cash_dividend_per_share": "30.876",
+        "dividend_notice": "artifacts/stage1_gate_b_retry3/600519_dividend.pdf"
+      },
+      "price_tick": "0.01",
+      "limit_up_price": "1639.68",
+      "limit_down_price": "1341.56",
+      "close": "1501.00",
+      "close_limit_up": false,
+      "suspended": false,
+      "official_close_path": "artifacts/stage1_gate_b_retry2/sse_600519.json",
+      "coverage": [
+        "sse_exdiv"
+      ],
+      "event_sources": [
+        "artifacts/stage1_gate_b_retry3/600519_dividend.pdf"
+      ],
+      "private_source_sha256": "fc8f81d292b3d6ad52ecc7d4cacdca5a665d800710d9a375cf8dfae9d380100a",
+      "source_type": "PRIVATE_LOCAL_EVIDENCE",
+      "public_payload": false,
+      "vendor_comparison": {
+        "reference_matches_official": true,
+        "absolute_matches_reconstruction": true,
+        "rate_matches_rule": true,
+        "status_label_matches_regime": true,
+        "suspension_matches_official": true,
+        "no_limit_sentinel_normalized": null
+      }
+    },
+    {
+      "case": "szse_main_10",
+      "security_id": "000001.SZ",
+      "trade_date": "2024-10-09",
+      "exchange": "SZSE",
+      "board": "MAIN",
+      "regime": "NORMAL",
+      "reference_price": "12.88",
+      "reference_origin": {
+        "kind": "SZSE_QSS",
+        "path": "artifacts/stage1_gate_b_retry2/szse_000001_2024-10-09.json"
+      },
+      "price_tick": "0.01",
+      "limit_up_price": "14.17",
+      "limit_down_price": "11.59",
+      "close": "11.68",
+      "close_limit_up": false,
+      "suspended": false,
+      "official_close_path": "artifacts/stage1_gate_b_retry2/szse_000001_2024-10-09.json",
+      "coverage": [
+        "szse_main_10"
+      ],
+      "event_sources": [],
+      "private_source_sha256": "fc8f81d292b3d6ad52ecc7d4cacdca5a665d800710d9a375cf8dfae9d380100a",
+      "source_type": "PRIVATE_LOCAL_EVIDENCE",
+      "public_payload": false,
+      "vendor_comparison": {
+        "reference_matches_official": true,
+        "absolute_matches_reconstruction": true,
+        "rate_matches_rule": true,
+        "status_label_matches_regime": true,
+        "suspension_matches_official": true,
+        "no_limit_sentinel_normalized": null
+      }
+    },
+    {
+      "case": "szse_chinext_20",
+      "security_id": "300750.SZ",
+      "trade_date": "2024-09-27",
+      "exchange": "SZSE",
+      "board": "CHINEXT",
+      "regime": "NORMAL",
+      "reference_price": "205.51",
+      "reference_origin": {
+        "kind": "SZSE_QSS",
+        "path": "artifacts/stage1_gate_b_retry2/szse_300750_2024-09-27.json"
+      },
+      "price_tick": "0.01",
+      "limit_up_price": "246.61",
+      "limit_down_price": "164.41",
+      "close": "226.81",
+      "close_limit_up": false,
+      "suspended": false,
+      "official_close_path": "artifacts/stage1_gate_b_retry2/szse_300750_2024-09-27.json",
+      "coverage": [
+        "szse_chinext_20"
+      ],
+      "event_sources": [],
+      "private_source_sha256": "fc8f81d292b3d6ad52ecc7d4cacdca5a665d800710d9a375cf8dfae9d380100a",
+      "source_type": "PRIVATE_LOCAL_EVIDENCE",
+      "public_payload": false,
+      "vendor_comparison": {
+        "reference_matches_official": true,
+        "absolute_matches_reconstruction": true,
+        "rate_matches_rule": true,
+        "status_label_matches_regime": true,
+        "suspension_matches_official": true,
+        "no_limit_sentinel_normalized": null
+      }
+    },
+    {
+      "case": "szse_ipo_first_day",
+      "security_id": "001391.SZ",
+      "trade_date": "2024-12-30",
+      "exchange": "SZSE",
+      "board": "MAIN",
+      "regime": "IPO_FIRST_FIVE",
+      "reference_price": "2.30",
+      "reference_origin": {
+        "kind": "SZSE_QSS",
+        "path": "artifacts/stage1_gate_b_retry3/szse_001391_2024-12-30.json"
+      },
+      "price_tick": "0.01",
+      "limit_up_price": null,
+      "limit_down_price": null,
+      "close": "9.30",
+      "close_limit_up": false,
+      "suspended": false,
+      "official_close_path": "artifacts/stage1_gate_b_retry3/szse_001391_2024-12-30.json",
+      "coverage": [
+        "szse_ipo_no_limit"
+      ],
+      "event_sources": [
+        "artifacts/stage1_gate_b_retry3/001391_listing.html"
+      ],
+      "private_source_sha256": "500dbcaac2068c9eae30cffbfee708eb5b5d1edfd77dc4a2d1e2644ba57e28b4",
+      "source_type": "PRIVATE_LOCAL_EVIDENCE",
+      "public_payload": false,
+      "vendor_comparison": {
+        "reference_matches_official": true,
+        "absolute_matches_reconstruction": null,
+        "rate_matches_rule": null,
+        "status_label_matches_regime": true,
+        "suspension_matches_official": true,
+        "no_limit_sentinel_normalized": true
+      }
+    },
+    {
+      "case": "szse_post_ipo_day_six",
+      "security_id": "001391.SZ",
+      "trade_date": "2025-01-07",
+      "exchange": "SZSE",
+      "board": "MAIN",
+      "regime": "NORMAL",
+      "reference_price": "7.44",
+      "reference_origin": {
+        "kind": "SZSE_QSS",
+        "path": "artifacts/stage1_gate_b_retry3/szse_001391_2025-01-07.json"
+      },
+      "price_tick": "0.01",
+      "limit_up_price": "8.18",
+      "limit_down_price": "6.70",
+      "close": "7.11",
+      "close_limit_up": false,
+      "suspended": false,
+      "official_close_path": "artifacts/stage1_gate_b_retry3/szse_001391_2025-01-07.json",
+      "coverage": [
+        "szse_main_10",
+        "ipo_to_normal"
+      ],
+      "event_sources": [
+        "artifacts/stage1_gate_b_retry3/001391_listing.html"
+      ],
+      "private_source_sha256": "500dbcaac2068c9eae30cffbfee708eb5b5d1edfd77dc4a2d1e2644ba57e28b4",
+      "source_type": "PRIVATE_LOCAL_EVIDENCE",
+      "public_payload": false,
+      "vendor_comparison": {
+        "reference_matches_official": true,
+        "absolute_matches_reconstruction": true,
+        "rate_matches_rule": true,
+        "status_label_matches_regime": true,
+        "suspension_matches_official": true,
+        "no_limit_sentinel_normalized": null
+      }
+    }
+  ],
+  "claim_limit": "Representative stock-days only; vendor raw captures are local/private and bound by SHA-256."
+}

@@ -1,0 +1,224 @@
+{
+  "schema": "gate-b-retry3-vendor-admission/1",
+  "scope": "Only listed representative security-days; new dates require the same validation.",
+  "case_results": [
+    {
+      "case": "sse_normal_2026_04_29",
+      "rule_id": "SSE-MAIN-NORMAL-2023-04-10",
+      "reference_price": "1.76",
+      "limit_applicable": true,
+      "limit_up_price": "1.94",
+      "limit_down_price": "1.58",
+      "close_limit_up": false,
+      "trading_allowed": true,
+      "suspended": false,
+      "vendor_rate_admission": "QUALIFIED",
+      "vendor_absolute_admission": "QUALIFIED",
+      "vendor_status_label_admission": "CONSISTENT_ONLY"
+    },
+    {
+      "case": "sse_suspension_2026_04_30",
+      "rule_id": "SSE-MAIN-NORMAL-2023-04-10",
+      "reference_price": "1.84",
+      "limit_applicable": true,
+      "limit_up_price": "2.02",
+      "limit_down_price": "1.66",
+      "close_limit_up": false,
+      "trading_allowed": false,
+      "suspended": true,
+      "vendor_rate_admission": "QUALIFIED",
+      "vendor_absolute_admission": "QUALIFIED",
+      "vendor_status_label_admission": "CONSISTENT_ONLY"
+    },
+    {
+      "case": "sse_risk_intro_2026_05_06",
+      "rule_id": "SSE-MAIN-RISK_WARNING-2023-04-10",
+      "reference_price": "1.84",
+      "limit_applicable": true,
+      "limit_up_price": "1.93",
+      "limit_down_price": "1.75",
+      "close_limit_up": false,
+      "trading_allowed": true,
+      "suspended": false,
+      "vendor_rate_admission": "QUALIFIED",
+      "vendor_absolute_admission": "QUALIFIED",
+      "vendor_status_label_admission": "CONSISTENT_ONLY"
+    },
+    {
+      "case": "sse_risk_before_rule_change",
+      "rule_id": "SSE-MAIN-RISK_WARNING-2023-04-10",
+      "reference_price": "1.4",
+      "limit_applicable": true,
+      "limit_up_price": "1.47",
+      "limit_down_price": "1.33",
+      "close_limit_up": true,
+      "trading_allowed": true,
+      "suspended": false,
+      "vendor_rate_admission": "QUALIFIED",
+      "vendor_absolute_admission": "QUALIFIED",
+      "vendor_status_label_admission": "CONSISTENT_ONLY"
+    },
+    {
+      "case": "sse_risk_after_rule_change",
+      "rule_id": "SSE-MAIN-RISK_WARNING-2026-07-06",
+      "reference_price": "1.47",
+      "limit_applicable": true,
+      "limit_up_price": "1.62",
+      "limit_down_price": "1.32",
+      "close_limit_up": false,
+      "trading_allowed": true,
+      "suspended": false,
+      "vendor_rate_admission": "UNTRUSTED",
+      "vendor_absolute_admission": "QUALIFIED",
+      "vendor_status_label_admission": "CONSISTENT_ONLY"
+    },
+    {
+      "case": "sse_risk_pre_removal",
+      "rule_id": "SSE-MAIN-RISK_WARNING-2023-04-10",
+      "reference_price": "1.92",
+      "limit_applicable": true,
+      "limit_up_price": "2.02",
+      "limit_down_price": "1.82",
+      "close_limit_up": false,
+      "trading_allowed": true,
+      "suspended": false,
+      "vendor_rate_admission": "QUALIFIED",
+      "vendor_absolute_admission": "QUALIFIED",
+      "vendor_status_label_admission": "CONSISTENT_ONLY"
+    },
+    {
+      "case": "sse_risk_removal_2024_07_04",
+      "rule_id": "SSE-MAIN-NORMAL-2023-04-10",
+      "reference_price": "1.93",
+      "limit_applicable": true,
+      "limit_up_price": "2.12",
+      "limit_down_price": "1.74",
+      "close_limit_up": true,
+      "trading_allowed": true,
+      "suspended": false,
+      "vendor_rate_admission": "QUALIFIED",
+      "vendor_absolute_admission": "QUALIFIED",
+      "vendor_status_label_admission": "UNTRUSTED"
+    },
+    {
+      "case": "sse_ipo_first_day",
+      "rule_id": "SSE-MAIN-IPO_FIRST_FIVE-2023-04-10",
+      "reference_price": "20.32",
+      "limit_applicable": false,
+      "limit_up_price": null,
+      "limit_down_price": null,
+      "close_limit_up": false,
+      "trading_allowed": true,
+      "suspended": false,
+      "vendor_rate_admission": "NOT_APPLICABLE",
+      "vendor_absolute_admission": "NORMALIZE_TO_NULL",
+      "vendor_status_label_admission": "CONSISTENT_ONLY"
+    },
+    {
+      "case": "sse_ex_dividend",
+      "rule_id": "SSE-MAIN-NORMAL-2023-04-10",
+      "reference_price": "1490.62",
+      "limit_applicable": true,
+      "limit_up_price": "1639.68",
+      "limit_down_price": "1341.56",
+      "close_limit_up": false,
+      "trading_allowed": true,
+      "suspended": false,
+      "vendor_rate_admission": "QUALIFIED",
+      "vendor_absolute_admission": "QUALIFIED",
+      "vendor_status_label_admission": "CONSISTENT_ONLY"
+    },
+    {
+      "case": "szse_main_10",
+      "rule_id": "SZSE-MAIN-NORMAL-2023-04-10",
+      "reference_price": "12.88",
+      "limit_applicable": true,
+      "limit_up_price": "14.17",
+      "limit_down_price": "11.59",
+      "close_limit_up": false,
+      "trading_allowed": true,
+      "suspended": false,
+      "vendor_rate_admission": "QUALIFIED",
+      "vendor_absolute_admission": "CORROBORATING_ONLY",
+      "vendor_status_label_admission": "CONSISTENT_ONLY"
+    },
+    {
+      "case": "szse_chinext_20",
+      "rule_id": "SZSE-CHINEXT-NORMAL-2023-04-10",
+      "reference_price": "205.51",
+      "limit_applicable": true,
+      "limit_up_price": "246.61",
+      "limit_down_price": "164.41",
+      "close_limit_up": false,
+      "trading_allowed": true,
+      "suspended": false,
+      "vendor_rate_admission": "QUALIFIED",
+      "vendor_absolute_admission": "CORROBORATING_ONLY",
+      "vendor_status_label_admission": "CONSISTENT_ONLY"
+    },
+    {
+      "case": "szse_ipo_first_day",
+      "rule_id": "SZSE-MAIN-IPO_FIRST_FIVE-2023-04-10",
+      "reference_price": "2.30",
+      "limit_applicable": false,
+      "limit_up_price": null,
+      "limit_down_price": null,
+      "close_limit_up": false,
+      "trading_allowed": true,
+      "suspended": false,
+      "vendor_rate_admission": "NOT_APPLICABLE",
+      "vendor_absolute_admission": "NORMALIZE_TO_NULL",
+      "vendor_status_label_admission": "CONSISTENT_ONLY"
+    },
+    {
+      "case": "szse_post_ipo_day_six",
+      "rule_id": "SZSE-MAIN-NORMAL-2023-04-10",
+      "reference_price": "7.44",
+      "limit_applicable": true,
+      "limit_up_price": "8.18",
+      "limit_down_price": "6.70",
+      "close_limit_up": false,
+      "trading_allowed": true,
+      "suspended": false,
+      "vendor_rate_admission": "QUALIFIED",
+      "vendor_absolute_admission": "CORROBORATING_ONLY",
+      "vendor_status_label_admission": "CONSISTENT_ONLY"
+    }
+  ],
+  "matrix": [
+    {
+      "exchange_mode": "SSE N/rate",
+      "field": "HIGH_LIMITED / LOW_LIMITED",
+      "admission": "QUALIFIED_WHEN_EQUAL_TO_OFFICIAL_RECONSTRUCTION",
+      "case_count": 8
+    },
+    {
+      "exchange_mode": "SSE N/rate",
+      "field": "PRICE_HIGH_LMT_RATE / PRICE_LOW_LMT_RATE",
+      "admission": "UNTRUSTED_ACROSS_2026_BOUNDARY",
+      "counterexample": "sse_risk_after_rule_change"
+    },
+    {
+      "exchange_mode": "SSE status",
+      "field": "IS_ST_SEC",
+      "admission": "AUXILIARY_UNTRUSTED",
+      "counterexample": "sse_risk_removal_2024_07_04"
+    },
+    {
+      "exchange_mode": "SZSE official-rule rate reconstruction",
+      "field": "PRECLOSE + rate",
+      "admission": "CORROBORATED_BY_OFFICIAL_QSS_AND_RULE; ACTUAL_CASHAUCTIONPARAMS_ROW_UNOBSERVED"
+    },
+    {
+      "exchange_mode": "SZSE LimitType=1",
+      "field": "LimitUpAbsolute / LimitDownAbsolute",
+      "admission": "NOT_AUTHORITATIVE_BY_OFFICIAL_FAQ"
+    },
+    {
+      "exchange_mode": "SSE/SZSE no-limit",
+      "field": "vendor 0/999 sentinel",
+      "admission": "NORMALIZE_TO_NULL_AFTER_OFFICIAL_NO_LIMIT_REGIME"
+    }
+  ],
+  "source_disclosure": "Derived comparison receipts only; raw vendor capture hashes are in source_registry.json and payloads remain local/private."
+}
