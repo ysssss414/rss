@@ -1,0 +1,18 @@
+{
+  "schema": "stage1-observation-pool-contract/1",
+  "version": "OBSERVATION_POOL_V1",
+  "admission_time": "T_EOD_FINALIZED",
+  "admission": ["HistoricalUniverse(T).eligible", "LIMIT_UP_COUNT_5_V1(T) READY and value in {4,5}", "RSI14_PROJECT_V1(T) READY and value >70"],
+  "admission_dependency_not_ready_or_invalid": "NO_ADMISSION_EVALUATION",
+  "horizon": "7 exchange trading sessions inclusive; admission session is index 1; session 7 EOD is final signal evaluation",
+  "suspension": "exchange session advances age; no entry evaluation; pure suspension is not hard invalidation",
+  "post_admission_limit_count": "not rechecked",
+  "rsi_below_70": "retained in pool as has_seen_rsi_below_70",
+  "hard_invalidation": ["delisted or unsupported lifecycle", "unsupported security type", "invalid DailyTradingConstraint", "non-10% or no-limit regime", "PIT/data conflict"],
+  "states": ["NOT_ADMITTED", "ACTIVE", "SIGNALLED", "EXPIRED", "INVALIDATED", "TERMINATED_AFTER_FILL"],
+  "observation_instance_id": "SHA-256(security_id|admission_date|OBSERVATION_POOL_V1)",
+  "overlap": "one ACTIVE or SIGNALLED instance per security; new admission only after terminal state on a later session",
+  "pending_execution": "SIGNALLED remains pending for EXECUTION_UNRESOLVED within the seven-session horizon; exchange-session age still advances, no new EOD signal before resolution, and an unresolved instance expires at session 7 EOD",
+  "no_fill": "ACTIVE if signal session <7, otherwise EXPIRED",
+  "modelled_fill": "TERMINATED_AFTER_FILL boundary only; no position implementation"
+}

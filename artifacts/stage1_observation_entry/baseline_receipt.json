@@ -1,0 +1,9 @@
+{
+  "schema": "stage1-observation-entry-baseline/1",
+  "public_main_after_pr11": "a44c0345ca3663bf466c4f41bc80fb810a063a78",
+  "primitive_pr": 11,
+  "primitive_pr_merge_commit": "a44c0345ca3663bf466c4f41bc80fb810a063a78",
+  "primitive_identity": "RSI14_PROJECT_V1",
+  "primitive_replay_origin": "LATEST_LISTING_OR_RELISTING",
+  "data_status": "SYNTHETIC_CONTRACT_TESTS_ONLY"
+}

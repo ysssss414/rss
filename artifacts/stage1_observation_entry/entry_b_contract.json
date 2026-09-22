@@ -1,0 +1,10 @@
+{
+  "schema": "stage1-entry-b-contract/1",
+  "version": "ENTRY_B_RSI_RECROSS_70_V1",
+  "evaluation_time": "T_EOD_FINALIZED, including session 7",
+  "requirements": ["ACTIVE pool", "eligible HistoricalUniverse(T)", "has_seen_rsi_below_70=true", "previous valid evaluation RSI14_PROJECT_V1<70", "current RSI14_PROJECT_V1>70", "PIT_ADJUSTED_CLOSE_V1(T)>PIT_ADJUSTED_CLOSE_V1(previous valid evaluation)"],
+  "exact_70": "neither below nor above; no crossing from or to exactly 70",
+  "suspension": "previous valid evaluation remains the last trading evaluation before suspension",
+  "ma5_required": false,
+  "signal_is_not_fill": true
+}
