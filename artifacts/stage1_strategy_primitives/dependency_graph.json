@@ -1,0 +1,14 @@
+{
+  "schema": "stage1-primitive-dependency-graph/1",
+  "version": "STAGE1_PRIMITIVE_GRAPH_V1",
+  "availability_rule": "latest admitted input available_at after T EOD finalization",
+  "nodes": {
+    "IS_CLOSE_LIMIT_UP_V1": {"depends_on": ["RAW_TRADING_CLOSE", "DAILY_TRADING_CONSTRAINT"], "minimum_limit_constraint_observations": 1, "price_basis": "RAW_TRADING_PRICE"},
+    "LIMIT_UP_COUNT_5_V1": {"depends_on": ["IS_CLOSE_LIMIT_UP_V1", "QUALIFIED_10_PERCENT_WINDOW"], "minimum_limit_constraint_observations": 5, "price_basis": "RAW_TRADING_PRICE"},
+    "MA5_SMA_V1": {"depends_on": ["INDICATOR_PRICE_SERIES"], "minimum_price_observations": 5, "price_basis": "PIT_ADJUSTED_CLOSE_V1"},
+    "RSI14_TONGHUASHUN_V1": {"depends_on": ["INDICATOR_PRICE_SERIES"], "minimum_price_observations": 2, "exact_replay": "all valid prices since reset", "price_basis": "PIT_ADJUSTED_CLOSE_V1"}
+  },
+  "enabled_example": ["LIMIT_UP_COUNT_5_V1", "MA5_SMA_V1", "RSI14_TONGHUASHUN_V1"],
+  "derived_example": {"price_history_required": 5, "limit_constraint_history_required": 5, "base_universe_minimum": 5, "rsi_replay_scope": "ALL_VALID_OBSERVATIONS_SINCE_RESET"},
+  "no_strategy_decision": true
+}

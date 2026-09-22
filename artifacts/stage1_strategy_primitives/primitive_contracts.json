@@ -1,0 +1,40 @@
+{
+  "schema": "stage1-primitive-contracts/1",
+  "readiness": ["READY", "NOT_ENOUGH_HISTORY", "INVALID_INPUT", "DEPENDENCY_INVALID"],
+  "rsi14": {
+    "id": "RSI14_TONGHUASHUN_V1",
+    "source": "three_board_rsi_entry/indicators.py and docs/three_board_rsi_entry_v0.1.md v0.1",
+    "formula": "SMA(MAX(delta,0),14,1) / SMA(ABS(delta),14,1) * 100",
+    "seed": "first valid delta seeds both recurrences; subsequent avg=(new+13*prior)/14",
+    "minimum_valid_price_observations": 2,
+    "exact_replay_scope": "all valid prices since latest listing/relisting reset",
+    "zero_gain_positive_change": "0",
+    "positive_gain_zero_change": "impossible with valid delta",
+    "zero_absolute_change": "DEPENDENCY_INVALID / undefined, matching legacy NaN",
+    "price_basis": "PIT_ADJUSTED_CLOSE_V1",
+    "precision": "Decimal 28 significant digits; ROUND_HALF_EVEN"
+  },
+  "ma5": {
+    "id": "MA5_SMA_V1",
+    "source": "three_board_rsi_entry/indicators.py and docs/three_board_rsi_entry_v0.1.md v0.1",
+    "formula": "mean of latest five valid indicator-price stock observations including T",
+    "minimum_valid_price_observations": 5,
+    "price_basis": "PIT_ADJUSTED_CLOSE_V1"
+  },
+  "is_close_limit_up": {
+    "id": "IS_CLOSE_LIMIT_UP_V1",
+    "source": "artifacts/stage1_gate_b_retry3/daily_constraint_contract.json",
+    "formula": "raw_close == validated raw limit_up_price on tick, for explicitly typed A-share common stock when trading is allowed and limit applies",
+    "states": ["TRUE", "FALSE", "INVALID"],
+    "regime_scope": "event detection accepts validated 5%, 10% and 20% daily regimes"
+  },
+  "limit_up_count5": {
+    "id": "LIMIT_UP_COUNT_5_V1",
+    "window": "last five qualified EOD stock observations through T, after latest listing/relisting reset",
+    "minimum_observations": 5,
+    "suspension": "explicit suspended sessions do not create an event or a zero",
+    "missing_or_invalid_bar": "DEPENDENCY_INVALID; never silently skipped",
+    "regime": "each of five observations must have VALID, limit-applicable, symmetric 10% Gate B constraint; 5%/20% invalidates window",
+    "output": "raw event count 0..5 only; no observation-pool or entry threshold"
+  }
+}

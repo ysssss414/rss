@@ -1,0 +1,12 @@
+{
+  "schema": "stage1-strategy-primitives-baseline/1",
+  "repository": "https://github.com/ysssss414/rss",
+  "base_main_sha": "33e2161b0b1d59a75321f54937b6647c5de26da0",
+  "foundation_pr": 10,
+  "foundation_merge_sha": "33e2161b0b1d59a75321f54937b6647c5de26da0",
+  "foundation_verdict": "STAGE1_FOUNDATION_IMPLEMENTATION_PASS",
+  "gate_b_verdict": "GATE_B_CORE_DATA_CONTRACT_PASS",
+  "gate_c_verdict": "GATE_C_CONTRACT_PASS",
+  "history_requirement": "DEPENDENCY_DRIVEN",
+  "strategy_signal_implemented": false
+}

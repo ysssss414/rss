@@ -1,0 +1,21 @@
+{
+  "schema": "stage1-primitive-golden-cases/1",
+  "fixture_kind": "SYNTHETIC_HAND_COMPUTABLE",
+  "rsi14_legacy_first_delta_seed": {
+    "prices": ["10", "11", "10", "12"],
+    "rows": [
+      {"price": "10", "delta": null, "gain": null, "absolute_change": null, "avg_gain": null, "avg_change": null, "rsi": null},
+      {"price": "11", "delta": "1", "gain": "1", "absolute_change": "1", "avg_gain": "1", "avg_change": "1", "rsi": "100"},
+      {"price": "10", "delta": "-1", "gain": "0", "absolute_change": "1", "avg_gain": "13/14", "avg_change": "1", "rsi": "100*13/14"},
+      {"price": "12", "delta": "2", "gain": "2", "absolute_change": "2", "avg_gain": "197/196", "avg_change": "15/14", "rsi": "100*197/210"}
+    ],
+    "first_valid_price_observation": 2,
+    "flat_case": "undefined (DEPENDENCY_INVALID), not 50"
+  },
+  "ma5": {"prices": ["1", "2", "3", "4", "5"], "first_valid_observation": 5, "value": "3"},
+  "split": {"raw_before": "10", "factor_before": "1", "raw_after": "5", "factor_after": "2", "anchor_factor": "2", "adjusted_before": "5", "adjusted_after": "5"},
+  "limit_count": [{"events": [true, true, true, true, true], "count": 5}, {"events": [true, true, true, true, false], "count": 4}, {"events": [true, true, true, false, false], "count": 3}],
+  "regime_transition": "a historical 5% or 20% event may itself be TRUE, but invalidates a five-observation 10% primitive window",
+  "lifecycle_reset": "pre-relisting prices/events never seed post-relisting RSI, MA5 or count",
+  "pit": "future effective factor and future raw bar cannot alter T prefix; late or unverified factor fails closed"
+}
