@@ -1,0 +1,4 @@
+[
+  {"id":"status_risk_warning_2026","api":"history_status","start":20260703,"end":20260707,"codes":["600187.SH"]},
+  {"id":"bars_risk_warning_2026","api":"bars","start":20260703,"end":20260707,"codes":["600187.SH"]}
+]

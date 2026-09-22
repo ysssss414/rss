@@ -1,0 +1,11 @@
+{
+  "schema": "gate-b-retry2-core-dependencies/1",
+  "strategy_description_only": "A-share; actual daily 10% constraint; 4 or 5 closes at limit in prior 5 sessions; RSI14; MA5; later observation/entry",
+  "minimum_causal_raw_fields": ["trade_date", "security_id", "open", "high", "low", "close", "volume", "amount", "reference_price", "limit_applicable", "limit_up_price", "limit_down_price", "trading_allowed", "suspended", "trading_calendar"],
+  "core_gates": ["C1", "C2", "C3"],
+  "auxiliary_gates": ["A1"],
+  "A1_HISTORICAL_STATUS_LABEL_QUALITY": "UNTRUSTED; IS_ST_SEC and security names cannot be admitted as causal features or override verified daily constraints",
+  "gate_logic": "PASS iff C1=CLOSED and C2=CLOSED and C3=CLOSED, A1 classified, tests/integrity/protected files pass",
+  "same_close_execution": "SAME_CLOSE_EXECUTION_REQUIRES_STAGE1_EXECUTION_POLICY",
+  "stage1_implementation_started": false
+}

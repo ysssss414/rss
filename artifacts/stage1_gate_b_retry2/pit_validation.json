@@ -1,0 +1,13 @@
+{
+  "schema": "gate-b-retry2-pit-validation/1",
+  "status": "CLOSED",
+  "fixture_snapshot": {"retrieved_at":"2026-09-22T00:00:00+08:00","provider_version":"AmazingData 1.1.6","request_parameters":{"period":"day","security_id":"600518.SH","trade_date":"2024-07-04"},"request_hash":"fixture-request-sha256","content_sha256":"fixture-content-sha256"},
+  "fixtures": [
+    {"case":"future_bar_leakage","class":"EOD_FINALIZED","trade_date":"2024-07-05","finalized_at":"2024-07-05T15:00:00+08:00","decision_at":"2024-07-04T15:01:00+08:00","expected":false},
+    {"case":"premature_same_day_eod","class":"EOD_FINALIZED","trade_date":"2024-07-04","finalized_at":"2024-07-04T15:00:00+08:00","decision_at":"2024-07-04T14:30:00+08:00","expected":false},
+    {"case":"eod_admission","class":"EOD_FINALIZED","trade_date":"2024-07-04","finalized_at":"2024-07-04T15:00:00+08:00","decision_at":"2024-07-04T15:01:00+08:00","expected":true},
+    {"case":"unknown_context","class":"CONTEXT_UNVERIFIED","trade_date":"2024-07-04","decision_at":"2024-07-04T15:01:00+08:00","expected":false}
+  ],
+  "unverified_context_rejected": true,
+  "same_close_execution_deferred": true
+}

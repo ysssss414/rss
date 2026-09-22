@@ -1,0 +1,16 @@
+{
+  "schema": "gate-b-retry2-baseline/1",
+  "repository": "https://github.com/ysssss414/rss",
+  "retry1_pr": 6,
+  "retry1_head_sha": "e69ede82cca9c04d41f26d277e7c58ce2858c381",
+  "retry1_premerge_state": "OPEN; targeted 31/31; Retry1 manifest 14/14; Round1 11/11; GateA 14/14",
+  "retry1_merge_state": "MERGED",
+  "retry1_merge_sha": "19ef0ffc7eeb595316f984349a06a67d28bc0c3a",
+  "baseline_main_sha": "19ef0ffc7eeb595316f984349a06a67d28bc0c3a",
+  "branch": "codex/rss-stage1-gate-b-core-contract-r2",
+  "stage0_tag": "research-stage0-v0.1.0",
+  "stage0_tag_target": "fdf4e5a15f120f7cf1c533c38b8c9214cb2130de",
+  "gate_a_verdict": "STOP",
+  "gate_b_round1_verdict": "GATE_B_STOP",
+  "gate_b_retry1_verdict": "GATE_B_STOP"
+}
