@@ -1,0 +1,29 @@
+{
+  "schema": "gate-b-baseline/1",
+  "recorded_at_utc": "2026-09-22T02:50:09Z",
+  "repository": "https://github.com/ysssss414/rss",
+  "authoritative_branch": "main",
+  "baseline_head": "03dae647d1b450e40a9eb1f308111253b1fb1334",
+  "gate_a_pr": 4,
+  "gate_a_merge_commit": "03dae647d1b450e40a9eb1f308111253b1fb1334",
+  "stage0_tag": "research-stage0-v0.1.0",
+  "stage0_tag_target": "fdf4e5a15f120f7cf1c533c38b8c9214cb2130de",
+  "stage0_source_commit": "d856f6f84911e55e9ed6208d3610272cc323ee4d",
+  "working_tree": "only three pre-existing user Excel states; one tracked modified and two untracked; staged files zero",
+  "merged_main_tests": {
+    "gate_a_targeted": "15 passed before merge",
+    "full_suite": "162 passed on merged main after temporarily restoring pipeline_reference.json to its committed LF bytes; original checkout bytes restored afterwards",
+    "line_ending_note": "core.autocrlf=true converts committed LF text to CRLF; raw-byte tests on the initial merged checkout stopped at 111 passed and one reference hash failure. This was an environment checkout effect, not a source change."
+  },
+  "gate_a_artifacts": {
+    "verification_basis": "committed Git blob bytes at merged main HEAD",
+    "manifest_sha256": "62e01e5d53201e67f5ff1741ef451df9496e0d501cf27685f1baaaf37fb866de",
+    "report_sha256": "528057dace277b8e86e69acb24be0aa1df411ccb2b6daec92766f7f0ce3f06b2",
+    "evidence_hashes_verified": "14/14"
+  },
+  "user_excel_before": {
+    "inputs/three_board_daily_input.xlsx": {"sha256": "38dabdc991d26d4d1b5873bfdcbfb5dd29db4671fa1760c20d932d3d17d9b9fe", "git_tracked": true, "git_staged": false},
+    "inputs/three_board_daily_input_2026_backtest.xlsx": {"sha256": "282c4abdbb5901f5e3ee33512e7256887c1e92ae129662f631397fbd6943cf22", "git_tracked": false, "git_staged": false},
+    "手工统计.xlsx": {"sha256": "2fdf23576a7d220e994cf74143236a0b3db34e9e495f769927d0a65c994f8277", "git_tracked": false, "git_staged": false}
+  }
+}

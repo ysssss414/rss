@@ -1,0 +1,14 @@
+{
+  "schema": "gate-b-effective-status/1",
+  "status": "OPEN",
+  "canonical_grain": "one exchange-qualified security_id × local trade_date × source_version",
+  "required_fields": ["security_id", "status_type", "effective_from", "effective_to_exclusive", "source_id", "source_document_hash", "first_published_at", "revision_published_at", "captured_at", "source_version"],
+  "status_types": ["LISTED", "DELISTED", "ST", "STAR_ST", "OTHER_RISK_WARNING", "SUSPENDED", "DELISTING_PERIOD", "BOARD", "NO_LIMIT_REGIME"],
+  "join": "security_id is the exchange-qualified symbol; resolve aliases and board membership with dated identity rows; join at security_id and effective_from <= trade_date < effective_to_exclusive; assert no same-priority overlap",
+  "as_of": "a decision at t may use only records whose first_published_at and relevant revision_published_at are <= decision timestamp; local trade_date alone is not a publication timestamp",
+  "authority": "exchange effective notice or daily static-reference row for trading regime, issuer/exchange announcement for risk-warning effective date, historical listing notice for existence; AmazingData status is corroboration only until conflicts resolved",
+  "conflict_precedence": "retain both sources and quarantine conflicts; never auto-shift a vendor field by one day or silently select a current-name value",
+  "missing": "UNKNOWN; exclude from eligible research, including missing bar, missing status, or missing publication time",
+  "known_conflict": {"security_id": "600518.SH", "date": "2024-07-04", "issuer_expected_st": false, "amazingdata_is_st_sec": "1", "independent_requery": "1", "issuer_notice": "https://static.cninfo.com.cn/finalpage/2024-07-03/1220520500.PDF"},
+  "coverage_gaps": ["normal-to-ST and *ST effective-date examples not source-validated", "full historical board/code transitions not inventoried", "delisting-period and relisting exceptions not covered", "2026 main-board risk-warning rule transition requires dated mapping", "complete source publication/revision archive unavailable"]
+}

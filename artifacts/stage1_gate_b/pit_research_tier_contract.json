@@ -1,0 +1,12 @@
+{
+  "schema": "gate-b-pit-tiers/1",
+  "status": "OPEN",
+  "cutoff": "Asia/Shanghai decision timestamp; EOD observation is not deemed published at 15:00 without source evidence",
+  "tier_0": {"definition": "raw fields with verified semantics, source identity, dated applicability, first publication/revision history and frozen source version", "candidates": ["raw OHLCV/amount", "trading calendar", "historical status", "official limit/reference"], "current_admission": "blocked for bars by units/availability and for status/limits by historical conflict/version gaps"},
+  "tier_1": {"definition": "deterministic derivations using only admitted Tier 0 data with event_time and published_at <= decision_at", "candidates": ["RSI", "moving average", "5-day close-limit count", "observation state"], "current_admission": "design only; not computed in this task"},
+  "tier_2": {"definition": "context needing explicit first_available_at, revision_at, original snapshot and dated membership", "candidates": ["theme", "sector", "mainline", "market style", "risk appetite", "news", "manual annotation"], "current_admission": "none without provenance"},
+  "tier_3": {"definition": "post-hoc/current-knowledge classifications or later-edited records without a frozen at-t snapshot", "candidates": ["current reconstructed theme tags", "backfilled board membership", "future outcome labels", "later-edited notes"], "causal_backtest": "FORBIDDEN", "permitted": ["ex-post diagnostics", "descriptive slicing with explicit label"]},
+  "guard": "reject missing or timezone-naive publication/revision times, future-published revisions, effective-date gaps, unknown source version, unknown units and conflicting source rows; preserve UNKNOWN and do not backfill current knowledge",
+  "known_stage0_state": "AmazingDataBridge sets availability_verified=false; observed kline_time is bar date, not publication time; current factor refresh does not prove historical PIT",
+  "negative_fixture": "record first_published_at=2024-07-05T09:00:00+08:00 cannot be used for decision_at=2024-07-04T15:00:00+08:00 even when effective_from=2024-07-04"
+}

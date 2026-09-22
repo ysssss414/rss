@@ -1,0 +1,17 @@
+{
+  "schema": "gate-b-units/1",
+  "status": "OPEN",
+  "source_api": "AmazingData 1.1.6 MarketData.query_kline(period=day)",
+  "volume": {"raw_field": "volume", "raw_unit": null, "canonical_unit": "share", "conversion_multiplier": null, "source_semantics": "local manual: 成交总量; SDK Kline field metadata: Optional[int], description null", "quality": "UNVERIFIED", "required_evidence": "version-specific A-share Kline field specification or exact reconciliation to an exchange-published per-security daily share count"},
+  "amount": {"raw_field": "amount", "raw_unit": null, "canonical_unit": "CNY", "conversion_multiplier": null, "source_semantics": "local manual: 成交总金额; SDK Kline field metadata: Optional[float], description null", "quality": "UNVERIFIED", "required_evidence": "version-specific A-share Kline currency/scale specification or exact reconciliation to an exchange-published per-security daily turnover amount"},
+  "other_fields": {
+    "open_high_low_close": {"source": "query_kline OHLC", "candidate_unit": "CNY per share", "rule": "raw unadjusted prices and exchange tick/reference must be independently checked; do not infer availability from kline_time"},
+    "pre_close": {"source": "get_history_stock_status.PRECLOSE", "candidate_unit": "CNY per share", "rule": "do not substitute prior raw close on corporate-action dates"},
+    "turnover_rate": {"source": "not present in qualified Kline capture", "unit": null, "rule": "requires verified share volume and effective-dated float shares"},
+    "market_cap": {"source": "not present in qualified Kline capture", "unit": null, "rule": "requires dated share count and price currency"},
+    "float_market_cap": {"source": "not present in qualified Kline capture", "unit": null, "rule": "requires dated float shares and price currency"}
+  },
+  "dependent_metrics": {"VWAP": "BLOCKED until both conversion multipliers and price unit are verified", "turnover_rate": "BLOCKED until volume and float-share denominator are verified", "amount_threshold": "BLOCKED until amount currency and scale are verified", "volume_comparison": "BLOCKED across sources until units are verified", "liquidity": "BLOCKED until all inputs and as-of semantics are verified"},
+  "arithmetic_validation": "For three Gate A samples, raw amount/raw volume falls inside raw OHLC range. This checks internal numerical consistency only. Equal scaling of numerator and denominator leaves the ratio unchanged and therefore cannot identify either unit.",
+  "capture_gate": "units_verified remains false; do not mark canonical bars research eligible"
+}
