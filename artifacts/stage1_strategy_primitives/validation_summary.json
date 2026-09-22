@@ -1,0 +1,13 @@
+{
+  "schema": "stage1-strategy-primitives-validation/1",
+  "qualification_scope": "Strategy-independent primitive contracts and synthetic golden tests only",
+  "primitive_targeted_passed": 27,
+  "foundation_gate_c_prior_gate_tests_passed": 161,
+  "full_repository_passed": 335,
+  "primitive_manifest_hashes_verified": 13,
+  "prior_qualification_hashes_verified": 92,
+  "foundation_hashes_verified": 7,
+  "gate_b_closure_hashes_verified": 10,
+  "real_market_primitive_validation": "NOT_CLAIMED: complete qualified historical PIT master/calendar and independently qualified live factor source unavailable",
+  "stage0_checkout_note": "The full-suite run temporarily uses verified LF bytes for the frozen Stage 0 reference on Windows and restores its original checkout bytes."
+}

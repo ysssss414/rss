@@ -1,0 +1,14 @@
+{
+  "schema": "stage1-indicator-price/1",
+  "price_basis": "PIT_ADJUSTED_CLOSE_V1",
+  "definition_source": ["research/data/adjustment.py", "docs/research_stage0.md", "docs/three_board_rsi_entry_v0.1.md"],
+  "formula": "raw_close(d) * factor(d) / factor(T), with T as the frozen decision anchor",
+  "factor_schema": ["daily", "effective_events"],
+  "fields": ["security_id", "trade_date", "price", "price_basis", "available_at", "source_snapshot_id", "valid"],
+  "pit_requirements": ["factor source independently verified as historical PIT", "effective_date <= T", "available_at <= decision_at", "frozen source snapshot and content hash", "complete calendar/status coverage since latest listing or relisting", "raw T bar finalized"],
+  "future_rows": "Filter out future raw bars and factor effective dates before validating the T prefix; never use today's latest-query adjusted history for historical T.",
+  "availability": "max(raw bar, effective factor, T anchor factor availability), no earlier than T finalized EOD",
+  "numeric_precision": "Decimal, 28 significant digits, ROUND_HALF_EVEN",
+  "raw_trading_price_lineage": "Separate; IsCloseLimitUp compares raw close and raw validated limit_up_price",
+  "real_factor_source_qualification": "NOT_CLAIMED; unverified source is rejected"
+}
