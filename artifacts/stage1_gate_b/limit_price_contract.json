@@ -1,0 +1,22 @@
+{
+  "schema": "gate-b-limits/1",
+  "status": "OPEN",
+  "canonical_key": ["security_id", "trade_date", "source_version"],
+  "limit_up_price": "exchange-published per-security upper limit for that date, after dated regime, corporate-action reference and tick rules; null for confirmed no-limit day",
+  "limit_down_price": "exchange-published per-security lower limit for that date; null for confirmed no-limit day",
+  "close_limit_up_definition": "valid trading-day raw close equals authoritative official upper limit at the applicable tick; intraday high touch is a separate diagnostic; pct_chg threshold is not a substitute",
+  "ten_percent_universe": "select only when effective-dated official regime for security/date is 10%; do not infer it from current ST name or ticker prefix; main-board risk-warning treatment changes from 5% to 10% on 2026-07-06",
+  "rules": [
+    {"case": "historical main-board ordinary", "rate": "0.10", "condition": "qualified dated ordinary regime; exceptions excluded"},
+    {"case": "historical main-board ST", "rate_before_2026_07_06": "0.05", "rate_from_2026_07_06": "0.10", "source": "https://www.sse.com.cn/aboutus/mediacenter/hotandd/c/c_20260424_10816474.shtml"},
+    {"case": "ChiNext", "rate_from_2020_reform": "0.20", "source": "https://investor.szse.cn/index/update/t20200807_580310.html"},
+    {"case": "STAR", "candidate_rate": "0.20", "rule_version_required": true},
+    {"case": "BSE", "candidate_rate": "0.30", "source": "https://www.bse.cn/qt/200025234.html"},
+    {"case": "IPO_or_relisting_no_limit", "rate": null, "limit_prices": null, "rule_version_required": true}
+  ],
+  "reference": "use exchange-approved ex-right/pre-close basis; 600519.SH 2024-06-19 PRECLOSE=1490.62 differs from 2024-06-18 raw close=1521.50",
+  "diagnostic_rounding": "Decimal ROUND_HALF_UP to CNY 0.01 reproduces selected vendor limits, but complete rule/tick exceptions and official source linkage are not closed",
+  "vendor_fields": ["HIGH_LIMITED", "LOW_LIMITED", "PRECLOSE", "PRICE_HIGH_LMT_RATE", "PRICE_LOW_LMT_RATE"],
+  "vendor_conflicts": ["600518.SH 2024-07-03 reports rate 0.10 while prices reflect about 0.05", "603194.SH initial five trading days have upper/lower=0 and rate=999, not verified as an official sentinel contract"],
+  "missing": ["historical exchange daily official limit/reference archive", "all effective rule versions and special regimes", "authoritative IPO/relisting and corporate-action reference linkage", "near-limit and close-at-limit independent exchange comparison across regimes"]
+}

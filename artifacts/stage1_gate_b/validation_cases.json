@@ -1,0 +1,45 @@
+{
+  "schema": "gate-b-validation-cases/1",
+  "evidence": "artifacts/stage1_gate_a/live_core_01.json (redacted live capture); issuer/exchange documents are cited in the contract",
+  "unit_ratio_cases": [
+    {"id": "unit_bank", "call": "bars_normal", "security_id": "000001.SZ", "date": "2024-01-08", "raw_volume": 112115619, "raw_amount": 1029006548.73, "raw_low": 9.11, "raw_high": 9.30},
+    {"id": "unit_chinext", "call": "bars_boards", "security_id": "300750.SZ", "date": "2024-09-27", "raw_volume": 70181326, "raw_amount": 15567947397.43, "raw_low": 211.67, "raw_high": 231.68},
+    {"id": "unit_maotai", "call": "bars_ex_dividend", "security_id": "600519.SH", "date": "2024-06-18", "raw_volume": 4125825, "raw_amount": 6317590942.71, "raw_low": 1516.68, "raw_high": 1554.54}
+  ],
+  "unit_interpretation": "amount/volume lies inside the raw price range in these samples, but a common amount and volume scale cancels. No raw unit or float-share denominator is established.",
+  "status_cases": [
+    {"id": "issuer_st_removal_conflict", "security_id": "600518.SH", "date": "2024-07-04", "call": "status_st_transition", "issuer_expected_st": false, "sdk_is_st_sec": "1", "expect_conflict": true},
+    {"id": "suspension", "security_id": "600518.SH", "date": "2024-07-03", "call": "status_st_transition", "sdk_is_susp_sec": "1"},
+    {"id": "normal_to_st_synthetic", "synthetic": true, "status_before": "NORMAL", "status_after": "ST", "effective_from": "2024-02-01", "first_published_at": "2024-01-31T17:00:00+08:00"},
+    {"id": "star_st_synthetic", "synthetic": true, "status_after": "STAR_ST", "effective_from": "2024-05-01", "first_published_at": "2024-04-30T17:00:00+08:00"},
+    {"id": "ipo_special", "security_id": "603194.SH", "date": "2024-12-24", "call": "status_ipo", "vendor_rate": 999, "vendor_upper": 0, "classification": "NO_LIMIT_CANDIDATE_ONLY"}
+  ],
+  "synthetic_effective_status": [
+    {"id": "normal_to_st", "records": [
+      {"status": "NORMAL", "effective_from": "2024-01-01", "effective_to_exclusive": "2024-02-01", "first_published_at": "2023-12-31T17:00:00+08:00", "source_version": "fixture-normal"},
+      {"status": "ST", "effective_from": "2024-02-01", "effective_to_exclusive": "2024-03-01", "first_published_at": "2024-01-31T17:00:00+08:00", "source_version": "fixture-st"}
+    ], "assertions": [{"date": "2024-01-31", "decision_at": "2024-01-31T18:00:00+08:00", "expected": "NORMAL"}, {"date": "2024-02-01", "decision_at": "2024-02-01T15:00:00+08:00", "expected": "ST"}]},
+    {"id": "st_to_normal", "records": [
+      {"status": "ST", "effective_from": "2024-07-01", "effective_to_exclusive": "2024-07-04", "first_published_at": "2024-06-30T17:00:00+08:00", "source_version": "fixture-st"},
+      {"status": "NORMAL", "effective_from": "2024-07-04", "effective_to_exclusive": "2024-07-06", "first_published_at": "2024-07-03T17:00:00+08:00", "source_version": "fixture-normal"}
+    ], "assertions": [{"date": "2024-07-03", "decision_at": "2024-07-03T18:00:00+08:00", "expected": "ST"}, {"date": "2024-07-04", "decision_at": "2024-07-04T15:00:00+08:00", "expected": "NORMAL"}]},
+    {"id": "star_st", "records": [
+      {"status": "STAR_ST", "effective_from": "2024-05-01", "effective_to_exclusive": "2024-06-01", "first_published_at": "2024-04-30T17:00:00+08:00", "source_version": "fixture-star-st"}
+    ], "assertions": [{"date": "2024-05-06", "decision_at": "2024-05-06T15:00:00+08:00", "expected": "STAR_ST"}]}
+  ],
+  "limit_cases": [
+    {"id": "main_10", "security_id": "000001.SZ", "date": "2024-10-09", "bar_call": "bars_boards", "status_call": "status_boards", "rate": "0.10", "upper": "14.17", "lower": "11.59", "close_at_vendor_upper": false},
+    {"id": "st_5", "security_id": "600518.SH", "date": "2024-07-02", "bar_call": "bars_st_transition", "status_call": "status_st_transition", "rate": "0.05", "upper": "2.02", "lower": "1.82", "close_at_vendor_upper": false},
+    {"id": "chinext_20", "security_id": "300750.SZ", "date": "2024-09-30", "bar_call": "bars_boards", "status_call": "status_boards", "rate": "0.20", "upper": "272.17", "lower": "181.45", "close_at_vendor_upper": false},
+    {"id": "star_20_close_at_limit", "security_id": "688981.SH", "date": "2024-09-30", "bar_call": "bars_boards", "status_call": "status_boards", "rate": "0.20", "upper": "59.99", "lower": "39.99", "close_at_vendor_upper": true},
+    {"id": "ipo_no_limit", "security_id": "603194.SH", "date": "2024-12-24", "bar_call": "bars_ipo", "status_call": "status_ipo", "rate": null, "vendor_upper": "0", "vendor_lower": "0", "vendor_rate": "999", "close_at_vendor_upper": false},
+    {"id": "ex_dividend_reference", "security_id": "600519.SH", "date": "2024-06-19", "bar_call": "bars_ex_dividend", "status_call": "status_ex_dividend", "rate": "0.10", "upper": "1639.68", "lower": "1341.56", "prior_raw_close": "1521.50", "vendor_reference": "1490.62", "close_at_vendor_upper": false}
+  ],
+  "conflict_case": {"security_id": "600518.SH", "date": "2024-07-03", "status_call": "status_st_transition", "reported_rate": "0.10", "vendor_reference": "1.93", "vendor_upper": "2.03", "expect_rate_price_conflict": true},
+  "synthetic_limit_cases": [
+    {"id": "half_up_rounding", "reference": "1.95", "rate": "0.05", "tick": "0.01", "expected_upper": "2.05"},
+    {"id": "high_touch_not_close_limit", "high": "10.00", "close": "9.99", "official_upper": "10.00", "expected_close_limit_up": false}
+  ],
+  "pit_negative": {"effective_from": "2024-07-04", "first_published_at": "2024-07-05T09:00:00+08:00", "source_version": "later-edit", "decision_at": "2024-07-04T15:00:00+08:00", "expected_admitted": false},
+  "limitation": "Live values are vendor fields, not a licensed exchange daily reference archive. Synthetic fixtures test guard mechanics, not historical coverage or authority."
+}
