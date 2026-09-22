@@ -9,9 +9,10 @@ Stage 1 的做法，尚不足以放行正式数据实现。没有实施 Stage 1 
 | 项目 | 本次实际环境 |
 |---|---|
 | Repository | `D:\ej\材料\codex\rss` |
-| 运行时分支 | `codex/rss-research-stage0-foundation` |
-| Stage 0 baseline commit | `d856f6f84911e55e9ed6208d3610272cc323ee4d` |
-| Stage 0 tag | 无 |
+| Qualification branch | `codex/rss-stage1-gate-a-qualification` |
+| Stage 0 正式冻结 baseline / merge commit | `fdf4e5a15f120f7cf1c533c38b8c9214cb2130de` |
+| Stage 0 tag | `research-stage0-v0.1.0` |
+| Stage 0 implementation/source commit | `d856f6f84911e55e9ed6208d3610272cc323ee4d` |
 | Python / AmazingData | 3.13.14 / 1.1.6 |
 | 凭据来源类型 | external config；未输出或保存内容/绝对凭据路径 |
 | Compatibility | 独立诊断进程显式启用 Numba shim |
