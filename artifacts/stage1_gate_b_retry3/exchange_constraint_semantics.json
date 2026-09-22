@@ -1,0 +1,141 @@
+{
+  "schema": "gate-b-retry3-exchange-constraint-semantics/1",
+  "rules": [
+    {
+      "id": "SSE-MAIN-NORMAL-2023-04-10",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "regime": "NORMAL",
+      "effective_from": "2023-04-10",
+      "effective_to": "2026-07-05",
+      "limit_mode": "RATE",
+      "limit_rate": "0.10",
+      "reference_price_rule": "SSE cpxx PrevClose, adjusted for ex-rights/dividend",
+      "price_tick": "0.01",
+      "rounding_rule": "ROUND_HALF_UP to tick; minimum one tick",
+      "source_url": "https://www.sse.com.cn/lawandrules/sselawsrules2025/repeal/rules/c/c_20250612_10824490.shtml"
+    },
+    {
+      "id": "SSE-MAIN-RISK_WARNING-2023-04-10",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "regime": "RISK_WARNING",
+      "effective_from": "2023-04-10",
+      "effective_to": "2026-07-05",
+      "limit_mode": "RATE",
+      "limit_rate": "0.05",
+      "reference_price_rule": "SSE cpxx PrevClose, adjusted for ex-rights/dividend",
+      "price_tick": "0.01",
+      "rounding_rule": "ROUND_HALF_UP to tick; minimum one tick",
+      "source_url": "https://www.sse.com.cn/lawandrules/sselawsrules2025/repeal/rules/c/c_20250612_10824490.shtml"
+    },
+    {
+      "id": "SSE-MAIN-NORMAL-2026-07-06",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "regime": "NORMAL",
+      "effective_from": "2026-07-06",
+      "effective_to": null,
+      "limit_mode": "RATE",
+      "limit_rate": "0.10",
+      "reference_price_rule": "SSE cpxx PrevClose, adjusted for ex-rights/dividend",
+      "price_tick": "0.01",
+      "rounding_rule": "ROUND_HALF_UP to tick; minimum one tick",
+      "source_url": "https://www.sse.com.cn/lawandrules/sselawsrules2025/stocks/exchange/c/c_20260424_10816482.shtml"
+    },
+    {
+      "id": "SSE-MAIN-RISK_WARNING-2026-07-06",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "regime": "RISK_WARNING",
+      "effective_from": "2026-07-06",
+      "effective_to": null,
+      "limit_mode": "RATE",
+      "limit_rate": "0.10",
+      "reference_price_rule": "SSE cpxx PrevClose, adjusted for ex-rights/dividend",
+      "price_tick": "0.01",
+      "rounding_rule": "ROUND_HALF_UP to tick; minimum one tick",
+      "source_url": "https://www.sse.com.cn/lawandrules/sselawsrules2025/stocks/exchange/c/c_20260424_10816482.shtml"
+    },
+    {
+      "id": "SSE-MAIN-IPO_FIRST_FIVE-2023-04-10",
+      "exchange": "SSE",
+      "board": "MAIN",
+      "regime": "IPO_FIRST_FIVE",
+      "effective_from": "2023-04-10",
+      "effective_to": null,
+      "limit_mode": "NONE",
+      "limit_rate": null,
+      "reference_price_rule": "SSE cpxx PrevClose, adjusted for ex-rights/dividend",
+      "price_tick": "0.01",
+      "rounding_rule": "ROUND_HALF_UP to tick; minimum one tick",
+      "source_url": "https://www.sse.com.cn/lawandrules/sselawsrules2025/repeal/rules/c/c_20250612_10824490.shtml"
+    },
+    {
+      "id": "SZSE-MAIN-NORMAL-2023-04-10",
+      "exchange": "SZSE",
+      "board": "MAIN",
+      "regime": "NORMAL",
+      "effective_from": "2023-04-10",
+      "effective_to": null,
+      "limit_mode": "RATE",
+      "limit_rate": "0.10",
+      "reference_price_rule": "SZSE ReferPriceType=1 previous close (qss)",
+      "price_tick": "0.01",
+      "rounding_rule": "ROUND_HALF_UP to tick; minimum one tick",
+      "source_url": "https://investor.szse.cn/lawrules/index/rule/t20230217_598773.html"
+    },
+    {
+      "id": "SZSE-CHINEXT-NORMAL-2023-04-10",
+      "exchange": "SZSE",
+      "board": "CHINEXT",
+      "regime": "NORMAL",
+      "effective_from": "2023-04-10",
+      "effective_to": null,
+      "limit_mode": "RATE",
+      "limit_rate": "0.20",
+      "reference_price_rule": "SZSE ReferPriceType=1 previous close (qss)",
+      "price_tick": "0.01",
+      "rounding_rule": "ROUND_HALF_UP to tick; minimum one tick",
+      "source_url": "https://investor.szse.cn/lawrules/index/rule/t20230217_598773.html"
+    },
+    {
+      "id": "SZSE-MAIN-IPO_FIRST_FIVE-2023-04-10",
+      "exchange": "SZSE",
+      "board": "MAIN",
+      "regime": "IPO_FIRST_FIVE",
+      "effective_from": "2023-04-10",
+      "effective_to": null,
+      "limit_mode": "NONE",
+      "limit_rate": null,
+      "reference_price_rule": "SZSE ReferPriceType=1 previous close (qss)",
+      "price_tick": "0.01",
+      "rounding_rule": "ROUND_HALF_UP to tick; minimum one tick",
+      "source_url": "https://investor.szse.cn/lawrules/index/rule/t20230217_598773.html"
+    }
+  ],
+  "sse_interface": {
+    "url": "https://www.sse.com.cn/services/tradingtech/development/c/10781338/files/b251f026187849cdb57db7d4e2205269.pdf",
+    "cpxx0201_limit_type": {
+      "N": "daily limit control; upper/lower are effective prices",
+      "P": "IPO first-day control, not daily price limit",
+      "R": "no daily price limit",
+      "U": "no price control",
+      "F": "reference price limit; not admitted without separate proof",
+      "S": "repo-specific; outside equity scope"
+    },
+    "cpxx0202_precedence": "For an actual historical security-day, use the last applicable exchange update before session open; unresolved same-time conflict invalidates the day.",
+    "historical_daily_rows_obtained": false
+  },
+  "szse_interface": {
+    "url": "https://www.szse.cn/marketServices/technicalservice/interface/P020241016554266648071.pdf",
+    "faq_url": "https://www.szse.cn/www/marketServices/technicalservice/introduce/P020180328467244590967.pdf",
+    "HasPriceLimit_N": "null canonical upper/lower; reject unknown sentinel",
+    "LimitType_1": "percentage; LimitUpAbsolute and LimitDownAbsolute are meaningless",
+    "LimitType_2": "absolute upper/lower limit prices; validate tick and reference ordering",
+    "ReferPriceType_1": "previous close",
+    "historical_daily_rows_obtained": false,
+    "reconstruction_basis": "official dated trading rule + exchange qss + tick/rounding; no raw cashauctionparams LimitType is asserted"
+  },
+  "source_level": "OFFICIAL_RECONSTRUCTED"
+}

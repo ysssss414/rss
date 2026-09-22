@@ -1,0 +1,57 @@
+{
+  "schema": "gate-b-retry3-daily-contract/1",
+  "canonical_object": "DailyTradingConstraint",
+  "fields": [
+    "security_id",
+    "trade_date",
+    "exchange",
+    "reference_price",
+    "price_tick",
+    "limit_applicable",
+    "limit_mode",
+    "limit_up_rate",
+    "limit_down_rate",
+    "limit_up_price",
+    "limit_down_price",
+    "trading_allowed",
+    "suspended",
+    "raw_provider_fields",
+    "source_provenance",
+    "validation_status"
+  ],
+  "authority_precedence": [
+    "final applicable official pre-open daily row, if available",
+    "official dated rule + issuer/exchange event + official reference + tick/rounding",
+    "vendor fields only after independent reconstruction comparison"
+  ],
+  "sse": "Use date-versioned rule, effective event, official previous close (adjusted ex-dividend), 0.01 tick, ROUND_HALF_UP and one-tick minimum; cpxx N absolute prices are authoritative when a historical row is present. Never infer actual 2024 IPO limit from obsolete P display bounds.",
+  "szse": "Use HasPriceLimit and LimitType when an actual cashauctionparams row is available. LimitType=1 ignores Absolute fields; LimitType=2 validates stated absolute upper/lower prices; HasPriceLimit=N nulls limits. These cases use official-rule reconstruction, not fabricated cashauctionparams rows.",
+  "close_limit_up": "trading_allowed AND limit_applicable AND integer-tick(close)==integer-tick(limit_up_price)",
+  "ten_percent_regime": "derived from validated historical rule and canonical constraint; never from ST label, stock name, or observed return",
+  "invalid_reasons": [
+    "MISSING_REFERENCE",
+    "UNKNOWN_RULE_VERSION",
+    "AMBIGUOUS_RULE_VERSION",
+    "UNKNOWN_LIMIT_MODE",
+    "INVALID_SENTINEL",
+    "IMPOSSIBLE_PRICE_ORDER",
+    "REFERENCE_MISMATCH",
+    "ROUNDING_MISMATCH",
+    "UNQUALIFIED_VENDOR_CONFLICT",
+    "OFF_TICK_PRICE",
+    "MISSING_EFFECTIVE_EVENT",
+    "MISSING_PROVENANCE"
+  ],
+  "on_invalid": {
+    "validation_status": "INVALID",
+    "causal_universe": "EXCLUDE_SECURITY_DAY",
+    "emit": "structured data-quality reason"
+  },
+  "coverage": "13 representative security-days, not exhaustive market-wide certification",
+  "C1": "CLOSED",
+  "C2": "CLOSED",
+  "C3": "CLOSED",
+  "A1": "UNTRUSTED",
+  "gate_b_verdict": "GATE_B_CORE_DATA_CONTRACT_PASS",
+  "strategy_implementation": "NONE"
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "gate-b-retry3-baseline/1",
+  "retry2_pr": 7,
+  "retry2_merged_main_sha": "216106c82837bc38f95902473e507ae28b63059c",
+  "retry2_head_sha": "dba9c05dcf62878b1abb1e72c9f00ef507a3b2eb",
+  "stage0_tag": "research-stage0-v0.1.0",
+  "stage0_target": "fdf4e5a15f120f7cf1c533c38b8c9214cb2130de",
+  "preserved": {
+    "C1": "CLOSED",
+    "C3": "CLOSED",
+    "A1": "UNTRUSTED",
+    "retry2_C2": "OPEN",
+    "retry2_gate_b": "GATE_B_STOP"
+  }
+}
