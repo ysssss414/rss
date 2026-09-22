@@ -1,0 +1,5 @@
+[
+  {"id":"status_st_effective_day_repeat","api":"history_status","start":20240704,"end":20240704,"codes":["600518.SH"]},
+  {"id":"factors_two_symbols","api":"backward_factor","codes":["000001.SZ","600519.SH"]},
+  {"id":"factors_repeat","api":"backward_factor","codes":["000001.SZ","600519.SH"]}
+]

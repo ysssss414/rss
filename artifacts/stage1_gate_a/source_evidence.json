@@ -1,0 +1,34 @@
+{
+  "local_manual": {
+    "title": "中国银河证券星耀数智量化平台金融资讯数据说明",
+    "file_name": "AmazingData开发手册.pdf",
+    "sha256": "8d2f671828140e1e16007beef218dc92d34bc81b9288afdcea8f6814cbbd8cd9",
+    "pdf_pages": 148,
+    "kline_pdf_page": 145,
+    "kline_printed_page": 141,
+    "volume_description": "成交总量",
+    "amount_description": "成交总金额",
+    "volume_unit": "UNVERIFIED",
+    "amount_unit": "UNVERIFIED",
+    "scope": "Kline table and related market-data appendices examined; no explicit A-share Kline unit evidence found",
+    "cache_semantics_pdf_page": 145,
+    "cache_semantics": "Local-cache parameter pair and date-range parameter pair are separate modes; do not assume all combinations are equivalent"
+  },
+  "installed_sdk_field_metadata": {
+    "sdk_version": "1.1.6",
+    "Kline.volume": {"annotation": "Optional[int]", "description": null},
+    "Kline.amount": {"annotation": "Optional[float]", "description": null},
+    "Kline.kline_time": {"annotation": "Optional[datetime]", "description": null},
+    "historical_publish_or_revision_timestamp": "NOT_PRESENT_IN_CAPTURED_SCHEMAS"
+  },
+  "public_sources": [
+    {"id": "sdk_manual_web", "url": "https://amazing.ptradeapi.com/", "use": "Public SDK API manual; interface/field semantics, not live capability proof"},
+    {"id": "sse_holidays_2024", "url": "https://www.sse.com.cn/disclosure/announcement/general/c/c_20231226_5733939.shtml", "use": "2024 spring-festival and national-day calendar boundaries"},
+    {"id": "szse_spring_festival", "url": "https://www.szse.cn/disclosure/notice/general/t20240201_605828.html", "use": "SZ spring-festival boundary"},
+    {"id": "kangmei_st_removal", "url": "https://static.cninfo.com.cn/finalpage/2024-07-03/1220520500.PDF", "use": "Issuer announcement: suspended 2024-07-03, risk-warning removed 2024-07-04, limit changes 5% to 10%"},
+    {"id": "zhongli_ipo", "url": "https://www.sse.com.cn/disclosure/announcement/listing/ipo/c/c_20241223_10767028.shtml", "use": "603194.SH first listed 2024-12-24"},
+    {"id": "wugang_delisting", "url": "https://www.sse.com.cn/disclosure/announcement/listing/c/c_20170208_4235564.shtml", "use": "600005.SH delisted 2017-02-14"},
+    {"id": "maotai_ex_dividend", "url": "https://www.sse.com.cn/assortment/options/mnjyzxxx/c/c_20240618_10758925.shtml", "use": "Exchange announcement cites underlying 600519 ex-dividend date 2024-06-19; option simulation data are not used"},
+    {"id": "maotai_bonus_share", "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=1866341", "use": "Issuer 2014 distribution implementation announcement mirrored by Sina; 2015-07-17 bonus-share boundary"}
+  ]
+}
