@@ -1,0 +1,34 @@
+{
+  "schema": "gate-b-retry1-pit-admission/1",
+  "status": "OPEN_FOR_MINIMUM_CAUSAL_SET",
+  "admission_states": ["PIT_SAFE_RAW", "PIT_SAFE_DERIVED", "PIT_SAFE_ASOF_VERIFIED", "RESEARCH_ONLY", "PIT_UNVERIFIED", "PROHIBITED_FOR_CAUSAL_BACKTEST"],
+  "admission_rule": "source state is safe; available_at <= decision_at; effective_from <= target trade date where relevant; immutable historical version and revision semantics are known; otherwise reject",
+  "sources": {
+    "amazingdata_kline": {"admission_state": "PIT_UNVERIFIED", "available_at": null, "historical_version": "AmazingData 1.1.6 query_kline", "revision_state": "UNKNOWN", "reason": "bar date is not publication timestamp; units and historical corrections unverified"},
+    "amazingdata_status": {"admission_state": "PROHIBITED_FOR_CAUSAL_BACKTEST", "available_at": null, "historical_version": "AmazingData 1.1.6", "revision_state": "UNKNOWN", "reason": "600518 official effective-date conflict"},
+    "vendor_limit_price": {"admission_state": "PROHIBITED_FOR_CAUSAL_BACKTEST", "available_at": null, "historical_version": "AmazingData 1.1.6", "revision_state": "UNKNOWN", "reason": "rate/price conflict and IPO sentinel ambiguity"},
+    "trading_calendar": {"admission_state": "PIT_UNVERIFIED", "available_at": null, "historical_version": "AmazingData 1.1.6", "revision_state": "UNKNOWN", "reason": "calendar dates captured but historical first availability/version not shown"},
+    "derived_rsi_or_limit_count": {"admission_state": "PROHIBITED_FOR_CAUSAL_BACKTEST", "available_at": null, "historical_version": null, "revision_state": "UNKNOWN", "reason": "may be admitted only after every input source is PIT-safe; no strategy implemented"},
+    "theme_news_manual_labels": {"admission_state": "RESEARCH_ONLY", "available_at": null, "historical_version": null, "revision_state": "UNKNOWN", "reason": "context labels have no verified as-of snapshot and cannot be causal features"}
+  },
+  "real_source_fixtures": [
+    {
+      "id": "official_rule_known_before_effective_date",
+      "source": {"source_id": "sse_rule_2026", "admission_state": "PIT_SAFE_ASOF_VERIFIED", "available_at": "2026-04-24T23:59:59+08:00", "effective_from": "2026-07-06", "historical_version": "上证发〔2026〕41号", "revision_state": "FROZEN_VERSION"},
+      "decision_at": "2026-07-06T15:00:00+08:00", "target_date": "2026-07-06", "expected_admission": true,
+      "scope": "Only the dated, versioned official rule; not a market-data or historical status feed"
+    },
+    {
+      "id": "official_rule_before_publication",
+      "source": {"source_id": "sse_rule_2026", "admission_state": "PIT_SAFE_ASOF_VERIFIED", "available_at": "2026-04-24T23:59:59+08:00", "effective_from": "2026-07-06", "historical_version": "上证发〔2026〕41号", "revision_state": "FROZEN_VERSION"},
+      "decision_at": "2026-04-23T15:00:00+08:00", "target_date": "2026-07-06", "expected_admission": false
+    },
+    {
+      "id": "real_source_revision_unverified",
+      "source": {"source_id": "amazingdata_kline", "admission_state": "PIT_UNVERIFIED", "available_at": null, "effective_from": null, "historical_version": "AmazingData 1.1.6", "revision_state": "UNKNOWN"},
+      "decision_at": "2024-07-04T15:00:00+08:00", "target_date": "2024-07-04", "expected_admission": false
+    }
+  ],
+  "positive_fixture_limit": "Rule publication date and version are official; the retrieved 2026-09-22 HTML hash is not an original 2026-04-24 byte snapshot. This fixture verifies rule-date admission only.",
+  "minimum_next_action": "For each core OHLCV/calendar/status/limit feed, acquire first-available timestamp plus immutable historical version and correction/supersession log; replay at a historical decision cutoff and reject any missing field."
+}

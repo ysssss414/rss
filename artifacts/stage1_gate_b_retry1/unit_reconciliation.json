@@ -1,0 +1,20 @@
+{
+  "schema": "gate-b-retry1-units/1",
+  "status": "OPEN",
+  "provider": "AmazingData",
+  "api": "MarketData.query_kline(period=day)",
+  "provider_version": "AmazingData 1.1.6",
+  "volume": {"raw_field": "volume", "raw_unit": null, "canonical_unit": "shares", "conversion_multiplier": null},
+  "amount": {"raw_field": "amount", "raw_unit": null, "canonical_unit": "CNY", "conversion_multiplier": null},
+  "sdk_unit_metadata": null,
+  "vendor_manual_labels": {"volume": "成交总量", "amount": "成交总金额", "explicit_unit": null},
+  "candidate_multipliers": [1, 10, 100, 1000, 10000],
+  "captured_cases": [
+    {"security_id": "000001.SZ", "trade_date": "2024-01-08", "raw_volume": 112115619, "raw_amount": 1029006548.73, "internal_ratio_in_low_high": true},
+    {"security_id": "300750.SZ", "trade_date": "2024-09-27", "raw_volume": 70181326, "raw_amount": 15567947397.43, "internal_ratio_in_low_high": true},
+    {"security_id": "600519.SH", "trade_date": "2024-06-18", "raw_volume": 4125825, "raw_amount": 6317590942.71, "internal_ratio_in_low_high": true}
+  ],
+  "external_exact_reconciliations": [],
+  "identifiability": "Equal rescaling of volume and amount leaves amount/volume unchanged; all internal ratios therefore fail to identify either absolute unit.",
+  "minimum_next_action": "Obtain AmazingData 1.1.6 query_kline A-share unit declaration and exact SSE/SZSE per-security daily volume+amount records for several normal/high-turnover sessions; test candidate multipliers independently for both fields."
+}

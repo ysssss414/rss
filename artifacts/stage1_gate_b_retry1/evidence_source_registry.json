@@ -1,0 +1,96 @@
+{
+  "schema": "gate-b-retry1-sources/1",
+  "retrieval_window_utc": "2026-09-22T03:28:46Z/2026-09-22T03:29:16Z for downloaded official source bytes; other references reviewed on 2026-09-22",
+  "sources": [
+    {
+      "id": "amazingdata_manual_116",
+      "authority": "AmazingData local vendor manual",
+      "locator": "D:/ej/材料/codex/yh/AmazingData开发手册.pdf",
+      "title": "AmazingData开发手册",
+      "published_at": null,
+      "retrieved_at": "2026-09-22T03:35:37Z (local file hash rechecked)",
+      "effective_at": null,
+      "version": "installed SDK 1.1.6 context; manual version itself unspecified",
+      "sha256": "8d2f671828140e1e16007beef218dc92d34bc81b9288afdcea8f6814cbbd8cd9",
+      "purpose": "Kline fields; page 145 labels成交总量/成交总金额 but supplies no A-share Kline units"
+    },
+    {
+      "id": "amazingdata_sdk_116",
+      "authority": "installed AmazingData SDK metadata",
+      "locator": "artifacts/stage1_gate_a/live_core_01.json#sdk_metadata",
+      "title": "Kline schema and query_kline metadata",
+      "published_at": null,
+      "retrieved_at": "2026-09-22T03:35:37Z (existing redacted capture reviewed)",
+      "effective_at": null,
+      "version": "1.1.6",
+      "sha256": "aeaa264c1463719d63832e25902051c85ff1077856ba39947ec3dc83ead605c5",
+      "purpose": "Field type and captured API version; no explicit field units or status timing semantics"
+    },
+    {
+      "id": "issuer_600518_removal",
+      "authority": "issuer announcement on CNINFO",
+      "locator": "https://static.cninfo.com.cn/finalpage/2024-07-03/1220520500.PDF",
+      "title": "康美药业关于公司股票撤销其他风险警示暨停牌的公告",
+      "published_at": "2024-07-03 (date only; exact time unavailable)",
+      "retrieved_at": "2026-09-22T03:28:47Z",
+      "effective_at": "2024-07-04",
+      "version": "公告编号 2024-024; CNINFO document 1220520500",
+      "sha256": "a8e43c796ca7946c224ba1f2d07271dea0b669c9d7dce5d50e9641f39f12b31e",
+      "purpose": "Official 600518 removal and July 3 suspension; conservative availability from end of publication date"
+    },
+    {
+      "id": "sse_rule_2026",
+      "authority": "Shanghai Stock Exchange",
+      "locator": "https://www.sse.com.cn/lawandrules/sselawsrules2025/stocks/exchange/c/c_20260424_10816482.shtml",
+      "title": "上海证券交易所交易规则（2026年修订）",
+      "published_at": "2026-04-24",
+      "retrieved_at": "2026-09-22T03:29:13Z",
+      "effective_at": "2026-07-06",
+      "version": "上证发〔2026〕41号",
+      "sha256": "428032a0963a9bb110f9d9992fd24a8d3c880f7b34fafb86b94fc55d3291dd81",
+      "purpose": "Dated rule supersession and PIT real-source fixture; hash is retrieved HTML, not an original publication snapshot"
+    },
+    {
+      "id": "sse_rule_2026_explanation",
+      "authority": "Shanghai Stock Exchange",
+      "locator": "https://www.sse.com.cn/aboutus/mediacenter/hotandd/c/c_20260424_10816474.shtml",
+      "title": "上交所修订发布《上海证券交易所交易规则》",
+      "published_at": "2026-04-24",
+      "retrieved_at": "2026-09-22T03:29:16Z",
+      "effective_at": "2026-07-06",
+      "version": "2026-04-24 press release",
+      "sha256": "18223769e90665229ef7eead3c7e68c7397787a7913340773a57e8127546f09b",
+      "purpose": "Confirms main-board risk-warning 5% to 10% boundary"
+    },
+    {
+      "id": "szse_static_reference_notice",
+      "authority": "Shenzhen Stock Exchange",
+      "locator": "https://www.szse.cn/marketServices/technicalservice/notice/t20200529_577838.html",
+      "title": "关于做好创业板改革并试点注册制技术准备的补充通知之二",
+      "published_at": "2020-05-29",
+      "retrieved_at": "2026-09-22T03:29:15Z",
+      "effective_at": null,
+      "version": "2020-05-29 notice",
+      "sha256": "a9b3692089846ef1c93094cb94212e7ca004af0f078280858092d7ca595bac2a",
+      "purpose": "Per-security limit parameters exist in exchange static reference and market snapshot distribution; historical daily file not obtained"
+    },
+    {
+      "id": "szse_chinext_2020",
+      "authority": "Shenzhen Stock Exchange",
+      "locator": "https://www.szse.cn/aboutus/trends/news/t20200821_580924.html",
+      "title": "深交所新闻发言人就创业板改革并试点注册制相关问题答记者问",
+      "published_at": "2020-08-21",
+      "retrieved_at": "2026-09-22T03:35:37Z (web review; raw bytes not captured)",
+      "effective_at": "2020-08-24",
+      "version": "2020 ChiNext trading reform",
+      "sha256": null,
+      "purpose": "Documents ChiNext 20% transition and first-five-days IPO exception"
+    }
+  ],
+  "unavailable_decisive_evidence": [
+    "AmazingData 1.1.6 A-share query_kline volume/amount unit declaration",
+    "independent exchange per-security daily volume/amount values matching captured SDK cases",
+    "historical official status event archive with publication/revision history",
+    "official historical daily per-security limit/reference-price archive"
+  ]
+}
