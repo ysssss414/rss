@@ -1,0 +1,26 @@
+{
+  "schema": "stage1-foundation-implementation/1",
+  "branch": "codex/rss-stage1-foundation-implementation",
+  "base_main_sha": "29baa0603a5279c91b80e47aad9c7ecc6886656b",
+  "history_requirement": "DEPENDENCY_DRIVEN",
+  "execution_policy": "NEXT_SESSION_V1",
+  "unqualified_policies": ["CLOSING_AUCTION_V1", "PRE_CLOSE_SNAPSHOT_V1"],
+  "lf_normalized_paths": [
+    "docs/stage1_foundation_implementation.md",
+    "research/foundation.py",
+    "scripts/verify_stage1_foundation_manifest.py",
+    "tests/test_stage1_foundation.py"
+  ],
+  "evidence_hashes": {
+    "artifacts/stage1_foundation/.gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+    "artifacts/stage1_foundation/baseline_receipt.json": "c7cb2e851043a8bf4406d4b8f332a1931d668933809b8fc92237c4bab2bcc8c6",
+    "artifacts/stage1_foundation/validation_summary.json": "f4765e41f37189a8d2572cde4b133628e57ba8e4d4eb96404e982a81368973e9",
+    "docs/stage1_foundation_implementation.md": "ebbd20b47e994fd3d4241bdef4411696a94dda80ff3fbf3c0ec1684031b08ca5",
+    "research/foundation.py": "f89dbdc919b36f6d301c6369e7233429a18fa266b3896fe670889ca72e8ae927",
+    "scripts/verify_stage1_foundation_manifest.py": "e8c9faff5caa7a9aab0286817cb7c1388c7bd5688748dce45e62c2f418a5be9d",
+    "tests/test_stage1_foundation.py": "a98d0cf705c8bfc7b980e01ce91d1243523d0d8157f648df11352d34524e80b6"
+  },
+  "hash_basis": "Literal bytes for artifact files under -text; LF-normalized UTF-8 bytes for listed source, test and documentation files; manifest excludes itself",
+  "no_strategy_implementation": true,
+  "no_live_data_qualification": true
+}
