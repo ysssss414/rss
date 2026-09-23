@@ -1,0 +1,58 @@
+{
+  "all_sessions_trading_status_confirmed": true,
+  "as_of_date": "2025-06-05",
+  "bars": 660,
+  "calendar_sessions": 660,
+  "factor_available_at": "effective trading date 15:30 Asia/Shanghai; derived-event diagnostic assumption",
+  "factor_capture_sha256": {
+    "backward": "21ae69c5db4b685e89960899745d3314cdfdd1ee814dc5a857cc475c514d306b",
+    "combined_snapshot": "a9f655a9ed092262e847c242a15d3592cf98a2660ea02fd6aaeb7f92e18d3232",
+    "single_event": "d412e6b21f42d0fe5ebac48b6b00c75ec1152d4e56eeb1acd7b1a4cd85a7337f"
+  },
+  "factor_price_basis": "PIT_ADJUSTED_CLOSE_V1",
+  "factor_source": "event-derived cumulative A(e), e <= trade date; checked against B(d)",
+  "implemented_event_dates": [
+    "2023-06-07",
+    "2024-07-17",
+    "2025-06-05"
+  ],
+  "listing_date": "2022-09-08",
+  "maximum_event_factor_vs_six_decimal_backward_error": "4.1576000000E-17",
+  "official_listing_source": "https://static.cninfo.com.cn/finalpage/2022-09-07/1214549028.PDF",
+  "private_capture_sha256": {
+    "bars": "15970c9edd01e39bbff84d112b97f31019d3c56230f9fe50d2a7a55bd7a21508",
+    "calendar": "0de035702c3e424cc479e07dd5d53b2fcbdc0d02883973266f9e3057a617afc0",
+    "status": "3ebdbd3f94f31c081d8ec36cea49c6532b8864dc93540492449d110fccf37984"
+  },
+  "raw_bar_available_at": "trading date 15:30 Asia/Shanghai; EOD diagnostic assumption",
+  "rsi": {
+    "full_prefix": {
+      "canonical": true,
+      "observations": 660,
+      "plan_status": "READY",
+      "primitive_status": "READY",
+      "rsi14": "54.11431724764353873722912937"
+    },
+    "warmup_120": {
+      "absolute_difference_from_full": "0.00128048721725780202569310",
+      "canonical": false,
+      "observations": 120,
+      "plan_status": "READY",
+      "primitive_status": "READY",
+      "rsi14": "54.11303676042628093520343627"
+    },
+    "warmup_150": {
+      "absolute_difference_from_full": "0.00006367625196188557652345",
+      "canonical": false,
+      "observations": 150,
+      "plan_status": "READY",
+      "primitive_status": "READY",
+      "rsi14": "54.11438092389550062280565282"
+    }
+  },
+  "schema": "stage1-factor-pit-rsi-real-adapter-smoke/1",
+  "scope_limit": "D5 adapter smoke only; D1/D3/D4/D6/D7/D8 remain unqualified",
+  "security": "001331.SZ",
+  "status": "PASS_ONE_SECURITY_DIAGNOSTIC",
+  "status_rows": 660
+}

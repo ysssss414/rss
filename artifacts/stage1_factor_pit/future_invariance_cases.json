@@ -1,0 +1,19 @@
+{
+  "schema": "stage1-factor-pit-future-invariance/1",
+  "qualification_path": "EVENT_DECOMPOSITION",
+  "direct_old_before_later_action_snapshot": "NOT_AVAILABLE",
+  "source_artifact": "artifacts/stage1_factor_pit/provider_validation.json",
+  "identity": "B(d)/B(T) = 1 / product(A(e) for d < e <= T); e > T excluded",
+  "tested_security_count": 8,
+  "provider_internal_pairs_with_future_action": 642,
+  "pairs_with_two_or_more_future_actions": 550,
+  "failures_outside_empirical_six_decimal_factor_bounds": 0,
+  "externally_reconciled_representatives": [
+    {"security": "600519.SH", "d": "2024-06-18", "T": "2024-06-19", "later_action_count": 4, "provider_ratio": "0.9797042375953993844766630277", "event_only_ratio": "0.9797042375953993577925980332"},
+    {"security": "600030.SH", "d": "2022-01-26", "T": "2022-01-27", "later_action_count": 7, "provider_ratio": "0.9428015557073443397412739632", "event_only_ratio": "0.9428015557073443736723231291"},
+    {"security": "300059.SZ", "d": "2023-04-17", "T": "2023-04-18", "later_action_count": 3, "provider_ratio": "0.8305084741575928840100972470", "event_only_ratio": "0.8305084741575928797571727455"},
+    {"security": "001331.SZ", "d": "2025-06-04", "T": "2025-06-05", "later_action_count": 1, "provider_ratio": "0.7142858332986212354729870454", "event_only_ratio": "0.7142858332986212582689610666"},
+    {"security": "688115.SH", "d": "2026-07-14", "T": "2026-07-15", "later_action_count": 1, "provider_ratio": "0.7135476663271944494589448659", "event_only_ratio": "0.7135476663271944207433620140"}
+  ],
+  "logical_scope": "This tests current factor ratios against an independently truncated effective-event product. It does not assert absolute B stability or prove absence of an unannounced post-effective restatement outside the sampled cases. Such a restatement must fail the event/issuer guard at materialization."
+}

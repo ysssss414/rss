@@ -1,0 +1,163 @@
+{
+  "backward_factor_empirical_decimal_places": 6,
+  "bonus_only": "NOT_PRESENT_IN_QUALIFICATION_RANGE",
+  "changed_implemented_cases": [
+    {
+      "effective": "2026-06-26",
+      "known": "2026-06-22",
+      "security": "600519.SH"
+    },
+    {
+      "effective": "2025-06-26",
+      "known": "2025-06-20",
+      "security": "600519.SH"
+    },
+    {
+      "effective": "2015-08-14",
+      "known": "2015-08-07",
+      "security": "600030.SH"
+    },
+    {
+      "effective": "2025-06-06",
+      "known": "2025-05-30",
+      "security": "600887.SH"
+    },
+    {
+      "effective": "2023-06-13",
+      "known": "2023-06-06",
+      "security": "600887.SH"
+    },
+    {
+      "effective": "2026-06-26",
+      "known": "2026-06-22",
+      "security": "001331.SZ"
+    },
+    {
+      "effective": "2026-07-15",
+      "known": "2026-07-08",
+      "security": "688115.SH"
+    },
+    {
+      "effective": "2024-10-31",
+      "known": "2024-10-25",
+      "security": "688115.SH"
+    }
+  ],
+  "composition": "B(t) = B(previous trading date) * A(t)",
+  "direct_pre_post_action_snapshot": "NOT_AVAILABLE",
+  "dividend_event_types_implemented_through_cutoff": {
+    "cash": 74,
+    "cash+bonus": 3,
+    "cash+bonus+transfer": 1,
+    "cash+transfer": 20,
+    "transfer": 1
+  },
+  "dividend_progress_counts": {
+    "1": 78,
+    "2": 1,
+    "3": 100
+  },
+  "factor_calendar_dates": 8732,
+  "factor_change_count_by_security": {
+    "000001.SZ": 15,
+    "001331.SZ": 4,
+    "002230.SZ": 13,
+    "300059.SZ": 13,
+    "600030.SH": 16,
+    "600519.SH": 17,
+    "600887.SH": 14,
+    "688115.SH": 8
+  },
+  "factor_change_count_since_2014": 100,
+  "factor_dates_without_implemented_event": [],
+  "factor_last_date": "2026-09-23",
+  "future_event_pair_count": 642,
+  "future_event_pair_failures": [],
+  "identity_failures": [],
+  "invalid_dividend_record_or_stock_terms": [],
+  "late_implementation_announcements": [],
+  "multiple_future_event_pair_count": 550,
+  "private_input_sha256": {
+    "0_backward_factor": "9be63b62bc7590683a4ed89749ac01ae4f63f9602c55c5324a5511ac9862b1d7",
+    "0_dividend": "554cb00675451179cbff85188e25019297df5441e7613601c646882b3ff8d4e4",
+    "0_right_issue": "a20fcaa52250423bac53725f58883265760fc14132a6d978edf928e32d4f5886",
+    "0_single_event_factor": "c1dcda379d7fe5e25284b9cc32cbb994a49ee89cdf1b23d82deaf33c5f1f8dcb",
+    "1_backward_factor": "21ae69c5db4b685e89960899745d3314cdfdd1ee814dc5a857cc475c514d306b",
+    "1_dividend": "cf15acb2d25ca20fa996f0586a84e9a991b8976159cc1916fb0868d360e7d29b",
+    "1_right_issue": "3e01cd7eca2346ce4a8016cdaad6e36114714a0162300ebac42288b4c97ef526",
+    "1_single_event_factor": "d412e6b21f42d0fe5ebac48b6b00c75ec1152d4e56eeb1acd7b1a4cd85a7337f"
+  },
+  "ratio": "B(d)/B(T) = 1 / product(A(e) for d < e <= T)",
+  "representative_future_pairs": [
+    {
+      "T": "2024-06-19",
+      "d": "2024-06-18",
+      "future_event_count": 4,
+      "provider_ratio": "0.9797042375953993844766630277",
+      "reconstructed_ratio": "0.9797042375953993577925980332",
+      "security": "600519.SH"
+    },
+    {
+      "T": "2022-01-27",
+      "d": "2022-01-26",
+      "future_event_count": 7,
+      "provider_ratio": "0.9428015557073443397412739632",
+      "reconstructed_ratio": "0.9428015557073443736723231291",
+      "security": "600030.SH"
+    },
+    {
+      "T": "2023-04-18",
+      "d": "2023-04-17",
+      "future_event_count": 3,
+      "provider_ratio": "0.8305084741575928840100972470",
+      "reconstructed_ratio": "0.8305084741575928797571727455",
+      "security": "300059.SZ"
+    },
+    {
+      "T": "2025-06-05",
+      "d": "2025-06-04",
+      "future_event_count": 1,
+      "provider_ratio": "0.7142858332986212354729870454",
+      "reconstructed_ratio": "0.7142858332986212582689610666",
+      "security": "001331.SZ"
+    },
+    {
+      "T": "2026-07-15",
+      "d": "2026-07-14",
+      "future_event_count": 1,
+      "provider_ratio": "0.7135476663271944494589448659",
+      "reconstructed_ratio": "0.7135476663271944207433620140",
+      "security": "688115.SH"
+    }
+  ],
+  "retrieved_at_utc": [
+    "2026-09-23T06:28:59.339559+00:00",
+    "2026-09-23T06:36:24.764776+00:00"
+  ],
+  "rights_semantics": [
+    {
+      "effective": "2022-01-27",
+      "execution_announcement": "2022-01-14",
+      "execution_known_before_effective": true,
+      "record_update_after_effective": true,
+      "record_updated": "2022-02-10",
+      "result": "2022-01-27",
+      "result_no_later_than_effective": true,
+      "security": "600030.SH"
+    }
+  ],
+  "schema": "stage1-factor-pit-provider-validation/1",
+  "security_count": 8,
+  "security_ids": [
+    "600519.SH",
+    "600030.SH",
+    "300059.SZ",
+    "002230.SZ",
+    "000001.SZ",
+    "600887.SH",
+    "001331.SZ",
+    "688115.SH"
+  ],
+  "source": "AmazingData 1.1.6, is_local=False, two bounded captures",
+  "unexplained_factor_changes": []
+}

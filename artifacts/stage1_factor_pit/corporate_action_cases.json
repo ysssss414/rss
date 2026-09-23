@@ -1,0 +1,91 @@
+{
+  "cases": [
+    {
+      "effective_date": "2022-01-27",
+      "expected_backward_ratio": "0.9428015564202334630350194553",
+      "id": "rights_600030",
+      "official_ex_reference": "24.23",
+      "official_issuer_or_exchange_notice": "https://www.citics.com/newsite/tzzgx/ggyth/gg/aggg/202201/P020220113696056948802.pdf",
+      "official_ratio_in_six_decimal_backward_bounds": true,
+      "official_terms": {
+        "cash_per_share": "0",
+        "new_shares_per_share": "0",
+        "rights_per_share": "0.15",
+        "rights_price": "14.43"
+      },
+      "previous_raw_close": "25.7",
+      "previous_trading_date": "2022-01-18",
+      "provider_backward_ratio": "0.9428015557073443397412739632",
+      "provider_single_event_factor": "1.060668593455748",
+      "revision_notice": "https://www.citics.com/newsite/news/202201/t20220127_1164678.html",
+      "security": "600030.SH",
+      "single_event_matches_backward": true
+    },
+    {
+      "effective_date": "2025-06-05",
+      "expected_backward_ratio": "0.7142857142857142857142857143",
+      "id": "transfer_001331",
+      "official_ex_reference": "9.85",
+      "official_issuer_or_exchange_notice": "https://static.cninfo.com.cn/finalpage/2025-05-28/1223695872.PDF",
+      "official_ratio_in_six_decimal_backward_bounds": true,
+      "official_terms": {
+        "cash_per_share": "0",
+        "new_shares_per_share": "0.4",
+        "rights_per_share": "0",
+        "rights_price": "0"
+      },
+      "previous_raw_close": "13.79",
+      "previous_trading_date": "2025-06-04",
+      "provider_backward_ratio": "0.7142858332986212354729870454",
+      "provider_single_event_factor": "1.3999997667347412",
+      "revision_notice": null,
+      "security": "001331.SZ",
+      "single_event_matches_backward": true
+    },
+    {
+      "effective_date": "2026-07-15",
+      "expected_backward_ratio": "0.7135476463834672789896670494",
+      "id": "bonus_688115",
+      "official_ex_reference": "49.72",
+      "official_issuer_or_exchange_notice": "https://static.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-07-08/688115_20260708_3QD6.pdf",
+      "official_ratio_in_six_decimal_backward_bounds": true,
+      "official_terms": {
+        "cash_per_share": "0.067",
+        "new_shares_per_share": "0.4",
+        "rights_per_share": "0",
+        "rights_price": "0"
+      },
+      "previous_raw_close": "69.68",
+      "previous_trading_date": "2026-07-14",
+      "provider_backward_ratio": "0.7135476663271944494589448659",
+      "provider_single_event_factor": "1.4014480702420993",
+      "revision_notice": "https://cniis.aastocks.com/CNSESH_STOCK/2026/2026-6/2026-06-13/12391849.pdf",
+      "security": "688115.SH",
+      "single_event_matches_backward": true
+    },
+    {
+      "effective_date": "2023-04-18",
+      "expected_backward_ratio": "0.8305084745762711864406779661",
+      "id": "cash_transfer_300059",
+      "official_ex_reference": "18.13",
+      "official_issuer_or_exchange_notice": "https://static.cninfo.com.cn/finalpage/2024-03-15/1219307793.PDF",
+      "official_ratio_in_six_decimal_backward_bounds": true,
+      "official_terms": {
+        "cash_per_share": "0.07",
+        "new_shares_per_share": "0.2",
+        "rights_per_share": "0",
+        "rights_price": "0"
+      },
+      "previous_raw_close": "21.83",
+      "previous_trading_date": "2023-04-17",
+      "provider_backward_ratio": "0.8305084741575928840100972470",
+      "provider_single_event_factor": "1.2040816332600663",
+      "revision_notice": null,
+      "security": "300059.SZ",
+      "single_event_matches_backward": true
+    }
+  ],
+  "prior_600519_supporting_cases": "artifacts/stage1_real_data_event_study/factor_qualification.json",
+  "private_bar_probe_sha256": "21c4803b155f4f645be237d598c6ed1307b03e8bcd90af335a3d65470083c20c",
+  "schema": "stage1-factor-pit-cases/1"
+}

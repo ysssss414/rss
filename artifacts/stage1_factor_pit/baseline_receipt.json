@@ -1,0 +1,28 @@
+{
+  "schema": "stage1-factor-pit-baseline/1",
+  "pr15": {
+    "url": "https://github.com/ysssss414/rss/pull/15",
+    "state": "MERGED",
+    "head": "2a206de89eba11b202698a7ae7479642985f9f83",
+    "merge_commit": "aed8e023189a45bdf698a07a1d6d5077306c2a2e",
+    "new_public_main": "aed8e023189a45bdf698a07a1d6d5077306c2a2e"
+  },
+  "premerge_verification": {
+    "targeted_tests_passed": 293,
+    "full_suite_passed": 440,
+    "manifest_validators_passed": 11,
+    "engine_status": "PASS",
+    "entry_edge_status": "REAL_DATA_BLOCKED",
+    "full_suite_note": "Frozen Stage 0 JSON baseline byte hash required temporary LF representation; original CRLF was restored without changing tracked content."
+  },
+  "protected_excel_before_sha256": {
+    "inputs/three_board_daily_input.xlsx": "38dabdc991d26d4d1b5873bfdcbfb5dd29db4671fa1760c20d932d3d17d9b9fe",
+    "inputs/three_board_daily_input_2026_backtest.xlsx": "282c4abdbb5901f5e3ee33512e7256887c1e92ae129662f631397fbd6943cf22",
+    "手工统计.xlsx": "2fdf23576a7d220e994cf74143236a0b3db34e9e495f769927d0a65c994f8277"
+  },
+  "protected_excel_git_state_before": {
+    "inputs/three_board_daily_input.xlsx": "MODIFIED_UNSTAGED",
+    "inputs/three_board_daily_input_2026_backtest.xlsx": "UNTRACKED",
+    "手工统计.xlsx": "UNTRACKED"
+  }
+}
