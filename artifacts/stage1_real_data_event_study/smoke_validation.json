@@ -1,0 +1,8 @@
+{
+  "schema": "stage1-real-smoke-validation/1",
+  "status": "NOT_RUN_DATA_CHAIN_BLOCKED",
+  "reason": "No qualified contiguous all-source range or REAL_RESEARCH_SNAPSHOT_V1",
+  "trace": null,
+  "categories": {"ENTRY_A": "NOT_EVALUATED", "ENTRY_B": "NOT_EVALUATED", "4_OF_5": "NOT_EVALUATED", "5_OF_5": "NOT_EVALUATED", "NORMAL_INTENT": "NOT_EVALUATED", "BOARD_INTENT": "NOT_EVALUATED", "ACTION_FREE_PATH": "NOT_EVALUATED", "ACTION_PATH": "NOT_EVALUATED", "NO_FILL": "NOT_EVALUATED"},
+  "interpretation": "NOT_EVALUATED is not NOT_PRESENT"
+}

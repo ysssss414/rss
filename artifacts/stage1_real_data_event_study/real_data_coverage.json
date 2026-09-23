@@ -1,0 +1,21 @@
+{
+  "schema": "stage1-real-data-coverage/1",
+  "research_start": null,
+  "research_end": null,
+  "warmup_start": null,
+  "real_study_range": null,
+  "range_status": "NO_CONTIGUOUS_ALL_SOURCE_QUALIFIED_INTERSECTION",
+  "calendar_only_candidate": {"validated_start": "2024-01-01", "validated_end": "2026-09-23", "earliest_start_after_150_prior_validated_sessions": "2024-08-15", "not_a_research_range": true},
+  "sources": [
+    {"source": "D1 security master", "coverage_start": null, "coverage_end": null, "security_days_total": null, "valid": null, "excluded": null, "unknown": null, "snapshot_sha256": "3a1033a102784eada2e880a97bd0d18c90bd6da80065700eed00e49d5c1e58b4", "qualification_status": "SAMPLE_ONLY"},
+    {"source": "D2 calendar", "coverage_start": "2024-01-01", "coverage_end": "2026-09-23", "security_days_total": null, "valid_sessions": 662, "excluded": 0, "unknown": 0, "snapshot_sha256": "0abaeb16a4dfc3a88f7b42acc612c2ef0625c8bf523c214c7c5c9a855d74f54b", "qualification_status": "QUALIFIED_FOR_WINDOW"},
+    {"source": "D3 EOD bars", "coverage_start": null, "coverage_end": null, "security_days_total": null, "valid": null, "excluded": null, "unknown": null, "snapshot_sha256": null, "qualification_status": "SAMPLE_ONLY"},
+    {"source": "D4 DailyTradingConstraint", "coverage_start": null, "coverage_end": null, "security_days_total": null, "valid": null, "invalid": null, "missing": null, "conflict": null, "regime_10pct": null, "regime_5pct": null, "regime_20pct": null, "regime_no_limit": null, "snapshot_sha256": null, "qualification_status": "NOT_PRODUCED"},
+    {"source": "D5 PIT factor", "coverage_start": null, "coverage_end": null, "security_days_total": null, "valid": null, "excluded": null, "unknown": null, "snapshot_sha256": "1a47dafdf62000f63efa9843fd44002fa8da2668abcd95a9d767555195be1489", "qualification_status": "PARTIAL_ONE_SECURITY"},
+    {"source": "D6 trading state", "coverage_start": null, "coverage_end": null, "security_days_total": null, "valid": null, "excluded": null, "unknown": null, "snapshot_sha256": "3a1033a102784eada2e880a97bd0d18c90bd6da80065700eed00e49d5c1e58b4", "qualification_status": "SAMPLE_ONLY"},
+    {"source": "D7 frozen combined snapshot", "coverage_start": null, "coverage_end": null, "security_days_total": null, "valid": null, "excluded": null, "unknown": null, "snapshot_sha256": null, "qualification_status": "NOT_BUILT"},
+    {"source": "D8 comparable outcome path", "coverage_start": null, "coverage_end": null, "security_days_total": null, "valid": null, "excluded": null, "unknown": null, "snapshot_sha256": null, "qualification_status": "CONTRACT_ONLY"}
+  ],
+  "exclusion_counts": {"unsupported_type": null, "not_listed": null, "suspended": null, "non_10pct_regime": null, "constraint_invalid": null, "missing_bar": null, "factor_unresolved": null, "lifecycle_unresolved": null, "other": null},
+  "null_meaning": "Not measured; never interpret as zero"
+}

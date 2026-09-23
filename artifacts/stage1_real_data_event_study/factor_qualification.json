@@ -1,0 +1,18 @@
+{
+  "schema": "stage1-real-factor-qualification/1",
+  "source": "AmazingData 1.1.6 backward_factor for 600519.SH",
+  "private_case_inputs_sha256": "474af970cd34d45ffd4b73f535930402a490ad77518817ad270fdc6ba0a500d1",
+  "private_older_factor_sha256": "8a2f7af343d1368a5f9edfd86a0efa1a027854eb4678c2dd4830fe1b73e9a8d4",
+  "private_newer_factor_sha256": "1a47dafdf62000f63efa9843fd44002fa8da2668abcd95a9d767555195be1489",
+  "repeated_retrieval": {"older_dates": 8730, "newer_dates": 8732, "common_dates": 8730, "absolute_factor_changed_common_dates": 0, "qualification_value": "NO_CROSS_ACTION_PIT_PROOF"},
+  "reconstruction_cases": [
+    {"id": "600519_2015_bonus_and_cash", "effective_date": "2015-07-17", "terms": "cash 4.374/share plus bonus 0.1/share", "official_ex_reference_ratio": "0.8932787471680114471958344926", "vendor_factor_ratio": "0.8932787140343101717579489441", "absolute_difference": "3.31337012754378855485E-8", "within_six_decimal_factor_rounding_bounds": true, "issuer_announcement": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=1866341"},
+    {"id": "600519_2024_cash", "effective_date": "2024-06-19", "terms": "cash 30.876/share", "official_ex_reference_ratio": "0.9797042392375944791324350969", "vendor_factor_ratio": "0.9797042375953993844766630277", "absolute_difference": "1.6421950946557720692E-9", "within_six_decimal_factor_rounding_bounds": true, "issuer_announcement": "https://static.cninfo.com.cn/finalpage/2024-06-12/1220324741.PDF"}
+  ],
+  "factor_ratio_invariance_across_later_action": "NOT_TESTED_NO_PRE_ACTION_RETRIEVAL",
+  "rights_and_multiple_action_reconstruction": "NOT_TESTED",
+  "target_universe_date_coverage": null,
+  "pit_adjusted_close_v1_status": "NOT_QUALIFIED_FOR_REAL_SIGNALS",
+  "qualification_status": "FACTOR_SOURCE_PARTIALLY_QUALIFIED",
+  "signal_generation_admitted": false
+}

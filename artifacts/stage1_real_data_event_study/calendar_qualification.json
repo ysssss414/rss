@@ -1,0 +1,13 @@
+{
+  "schema": "stage1-calendar-qualification/1",
+  "source": "AmazingData 1.1.6 SSE/SZSE session capture reconciled to annual SSE/SZSE closure notices",
+  "private_snapshot_sha256": "0abaeb16a4dfc3a88f7b42acc612c2ef0625c8bf523c214c7c5c9a855d74f54b",
+  "retrieved_at": "2026-09-23T05:31:27.536103+00:00",
+  "request": {"markets": ["SH", "SZ"], "as_of": 20260923},
+  "official_schedule_sha256": "13149694895bc5ac2fb764ceee46140b794031f89487c9815310f8eb0c2f7993",
+  "validated_window": {"start": "2024-01-01", "end": "2026-09-23", "official_sessions": 662, "sse_sessions": 662, "szse_sessions": 662, "missing": 0, "extra": 0, "exchange_symmetric_difference": 0},
+  "all_history_vendor_session_counts": {"SH": 8732, "SZ": 8724},
+  "all_history_vendor_session_hashes": {"SH": "7ce15906b0d7e0e6e5c6f8464fa35ce64cfdd16ec8300b3134b77aaa85182178", "SZ": "8bb83b42af97c84903e4d7ea9b96855205a298fc1f9f089534849ae9a8163f4e"},
+  "earliest_start_with_150_validated_prior_sessions": "2024-08-15",
+  "qualification_status": "QUALIFIED_FOR_VALIDATED_WINDOW_ONLY"
+}

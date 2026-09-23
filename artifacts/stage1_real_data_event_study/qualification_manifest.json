@@ -1,0 +1,22 @@
+{
+  "schema": "stage1-real-data-event-study-manifest/1",
+  "status": "STAGE1_REAL_DATA_EVENT_STUDY_STOP",
+  "data_chain_status": "BLOCKED",
+  "engine_status": "PASS",
+  "entry_edge_status": "REAL_DATA_BLOCKED",
+  "public_evidence_sha256": {
+    "baseline_receipt.json": "772a85bc217887a2f8a927810dd0ce6e04ff103bfecb81936204e5c65ff0f9d1",
+    "calendar_qualification.json": "4006814f0d9979f010f4ca38a8b25cb5c0bd03499114fed4670bdc90b2d0fb9c",
+    "corporate_action_outcome_contract.json": "f30e190d43fc47d7e6c0aa41ce1b85badb1ef59c8d79cdb7384f2baac73a98dc",
+    "event_study_summary.json": "87ccdb35ed2b80374b056573f74b2ecc666245a75fb17f7f4bf023ab3db607b4",
+    "factor_qualification.json": "9fddbde9a168ae000afaeeda72f4fb513697b97bab938d3c0d126638d13ac37e",
+    "official_calendar_2024_2026.json": "13149694895bc5ac2fb764ceee46140b794031f89487c9815310f8eb0c2f7993",
+    "real_data_coverage.json": "cc5b02640e1bdf3b53c181e62cb8ba314765e58ed53359b4a97a40ecf679e7d9",
+    "security_master_qualification.json": "73f0db44229416e37b1267a61b923e8b66a9c8b1ca3e78200c2da644d22d4d52",
+    "smoke_validation.json": "641b3a6dc3bfcf128bf6cc7b75418ece87877f8b05837c481463deaa4bf70318",
+    "source_qualification.json": "b52583ecb8028aeeec3b12adb7618a107bf91a1bdb9f9eec54904870aed9903c",
+    "trading_state_qualification.json": "e8b483a77a9ff118837a380526913a7eb6239bf192156983f83ac0b0618b6028"
+  },
+  "private_vendor_payload_committed": false,
+  "real_study_run_executed": false
+}
