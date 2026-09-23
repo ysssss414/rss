@@ -1,0 +1,40 @@
+{
+  "schema": "stage1-factor-pit-api-contract/1",
+  "provider": "AmazingData",
+  "installed_sdk_version": "1.1.6",
+  "official_documentation": "https://amazing.ptradeapi.com/",
+  "capture_cache_mode": "is_local=False: network retrieval and local cache refresh; raw rows retained only in ignored .local_research_data",
+  "factor_methods": {
+    "BaseData.get_backward_factor": {
+      "meaning": "cumulative backward adjustment factor",
+      "grain": "trading-date index by security-code columns",
+      "empirical_decimal_places": 6,
+      "documented_decimal_places": null
+    },
+    "BaseData.get_adj_factor": {
+      "meaning": "single-event adjustment factor; 1 on non-event dates",
+      "grain": "trading-date index by security-code columns",
+      "documented_decimal_places": null
+    }
+  },
+  "corporate_action_methods": {
+    "InfoData.get_dividend": {
+      "grain": "security/report-period distribution record; version history is NOT guaranteed, index not meaningful",
+      "begin_date_end_date_semantics": "announcement-date filter, NOT ex-date filter",
+      "required_fields": ["MARKET_CODE", "DIV_PROGRESS", "DATE_EX", "DATE_EQY_RECORD", "DVD_PER_SHARE_STK", "DVD_PER_SHARE_PRE_TAX_CASH", "DIV_BONUSRATE", "DIV_CONVERSEDRATE", "DATE_DVD_ANN", "ANN_DATE", "IS_CHANGED", "REPORT_PERIOD"],
+      "implemented_code": "3 observed on records with DATE_EX; corroborate with issuer implementation notice for qualification",
+      "effective_date": "DATE_EX",
+      "known_date": "DATE_DVD_ANN; ANN_DATE is the record announcement/update date"
+    },
+    "InfoData.get_right_issue": {
+      "grain": "security rights-event record; version history is NOT guaranteed, index not meaningful",
+      "begin_date_end_date_semantics": "announcement-date filter, NOT ex-date filter",
+      "required_fields": ["MARKET_CODE", "PROGRESS", "PRICE", "RATIO", "SHAREB_REG_DATE", "EX_DIVIDEND_DATE", "EXECUTE_DATE", "RESULT_DATE", "ANN_DATE"],
+      "implemented_code": "3 observed for the one sample; require official result confirmation",
+      "effective_date": "EX_DIVIDEND_DATE",
+      "known_date": "execution terms announcement and official success result, not necessarily ANN_DATE"
+    }
+  },
+  "date_only_safety": "Announcement on the preceding calendar day or earlier is accepted; same-day announcement without verified intraday time fails closed.",
+  "source_limitation": "SDK docs do not describe historical revision snapshots or decimal precision; no pre-action factor snapshot was available."
+}

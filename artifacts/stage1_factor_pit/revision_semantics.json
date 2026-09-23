@@ -1,0 +1,41 @@
+{
+  "schema": "stage1-factor-pit-revision-semantics/1",
+  "policy": {
+    "before_effective": "Do not apply a proposed or future event.",
+    "on_or_after_effective": "Apply only the final implemented terms known before effective date.",
+    "date_only_known_at": "Prior calendar date is required; same-day without time fails closed.",
+    "changed_plan": "IS_CHANGED=1 or multiple versions requires independent final implementation evidence and superseded-plan identification; otherwise affected security-date is UNRESOLVED and cannot enter a PIT factor snapshot.",
+    "later_correction": "Any post-effective correction to event terms or non-common factor normalization invalidates affected historical ratios; do not silently refresh a qualified snapshot."
+  },
+  "verified_changed_plan_case": {
+    "security": "688115.SH",
+    "superseded_proposal": "2026-04-23/2026-05-19 plan: 0.4 bonus shares per share, no cash",
+    "revised_proposal_announced": "2026-06-13: 0.4 bonus plus CNY 0.067 cash per share; still subject to shareholder approval",
+    "final_implementation_announced": "2026-07-08",
+    "effective_date": "2026-07-15",
+    "vendor_IS_CHANGED": 1,
+    "vendor_implemented_terms_match_final_notice": true,
+    "superseded_proposal_admitted": false,
+    "status": "RESOLVED_FINAL_IMPLEMENTATION",
+    "revision_notice": "https://cniis.aastocks.com/CNSESH_STOCK/2026/2026-6/2026-06-13/12391849.pdf",
+    "implementation_notice": "https://static.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-07-08/688115_20260708_3QD6.pdf"
+  },
+  "other_vendor_changed_implemented_dates": [
+    {"security": "600519.SH", "effective_date": "2025-06-26", "status": "UNRESOLVED_FOR_FUTURE_MATERIALIZATION"},
+    {"security": "600519.SH", "effective_date": "2026-06-26", "status": "UNRESOLVED_FOR_FUTURE_MATERIALIZATION"},
+    {"security": "600030.SH", "effective_date": "2015-08-14", "status": "UNRESOLVED_FOR_FUTURE_MATERIALIZATION"},
+    {"security": "600887.SH", "effective_date": "2023-06-13", "status": "UNRESOLVED_FOR_FUTURE_MATERIALIZATION"},
+    {"security": "600887.SH", "effective_date": "2025-06-06", "status": "UNRESOLVED_FOR_FUTURE_MATERIALIZATION"},
+    {"security": "001331.SZ", "effective_date": "2026-06-26", "status": "UNRESOLVED_FOR_FUTURE_MATERIALIZATION"},
+    {"security": "688115.SH", "effective_date": "2024-10-31", "status": "UNRESOLVED_FOR_FUTURE_MATERIALIZATION"}
+  ],
+  "rights_case": {
+    "security": "600030.SH",
+    "execution_terms_announcement": "2022-01-14",
+    "issuer_success_result_published": "2022-01-26 18:20 China time",
+    "ex_rights_date": "2022-01-27",
+    "vendor_ANN_DATE": "2022-02-10",
+    "interpretation": "ANN_DATE reflects a later record update and cannot be used as the first known-at timestamp; official terms and success result preceded ex-rights date.",
+    "issuer_result": "https://www.citics.com/newsite/news/202201/t20220127_1164678.html"
+  }
+}
