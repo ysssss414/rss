@@ -1,0 +1,37 @@
+# Stage 1 — Entry Signal Event Study / Forward Return Qualification
+
+## Scope and frozen baseline
+
+This stage studies the forward price path following frozen Entry A / Entry B signals. It does **not** design an Exit, call a fixed-horizon mark a strategy return, or produce PnL, NAV, position allocation, annualization, a regime filter, or a parameter search. Historical `STAGE1_EXIT_LIFECYCLE_STOP` remains the valid PR #13 conclusion: lifecycle foundation passed; Exit signal semantics were not authorized and `EXIT_SIGNAL_V1` remains unimplemented. `RSI_WARMUP_POLICY_V1` is unchanged (full replay from latest listing/relisting; 2 valid observations for computation; truncated minimum/default 120/150, never universe eligibility thresholds).
+
+Frozen inputs: `NEXT_SESSION_V1`, 5-session LimitUpCount of 4 or 5, RSI14 threshold 70, MA5, seven-session ObservationPool. Horizons are **pre-registered** `H=(1,3,5,7,10,20)` exchange sessions. Zero transaction costs and zero slippage: this is a **gross forward price-path study**, not net returns.
+
+## Event clock and prices
+
+For a primary `MODELLED_FILL`, D0 is its actual `NEXT_SESSION_V1` execution session and the denominator is the official **raw open**. Holding index 1 is D0, index 2 is the next exchange session, and H=5 is D0..D4. `RET_H` marks the close of the Hth holding session. `MFE_H=max(high/entry_price-1)` and `MAE_H=min(low/entry_price-1)` over valid observed bars at indices 1..H, including D0. `TIME_TO_MFE_H` is the **first** holding index reaching the maximum. No mark is an Exit or realized trade return.
+
+The all-signal diagnostic includes every valid Entry attempt, without claiming a fill. Its D0 is the next exchange session after signal T, but its **price reference** is T's raw close; thus `RET_H` there is a T-close-to-future-close signal diagnostic. Filled and NO_FILL attempts can be compared only on this same signal reference basis. The primary executable study is separate and uses raw execution open. A signal with no next calendar session remains visible but has `PATH_UNRESOLVED` metrics.
+
+Price lineage is strict: `RAW_TRADING_PRICE` for execution and daily limits; `PIT_ADJUSTED_CLOSE_V1` for RSI/MA; `ENTRY_COMPARABLE_PATH` for event metrics. When a price-scale action lies between the reference price and an H endpoint, comparable prices require an independently qualified PIT factor feed: each raw high/low/close is multiplied by `factor(day)/factor(reference_date)`, with positive factors, source provenance, and factor availability no later than the applicable session's end. Missing/unqualified factors make that horizon `CORPORATE_ACTION_UNRESOLVED` and exclude its metrics from comparable aggregates; the count remains. No latest-revised forward-adjusted history may silently substitute.
+
+Suspended, missing, or invalid security bars **do not** create synthetic OHLC. Their exchange sessions still advance H. MFE/MAE use available valid bars, with observed/expected/coverage; an unavailable H endpoint makes `RET_H=NOT_AVAILABLE` (never carry-forward). Delisting, relisting, or lifecycle termination inside a window yields `PATH_UNRESOLVED`, with no imputed zero or last close. Incomplete calendar tails are also unresolved.
+
+## Cohorts, overlap, and slices
+
+All Entry A/B attempts remain in the signal cohort with `MODELLED_FILL`, `NO_FILL`, or `EXECUTION_UNRESOLVED`. Executable-attempt denominator is `MODELLED_FILL+NO_FILL`; fill rate is filled attempts divided by that denominator. Unresolved attempts are separately counted and never treated as fills or ordinary NO_FILL. A board-close intent retains `EXECUTION_FIDELITY_GAP=true`; any primary entry remains the T+1 modeled raw open, not T's board price. Report normal and board-intent fillability separately.
+
+Primary filled sample is `FIRST_MODELLED_FILL_PER_OBSERVATION_INSTANCE`: at most one fill event per pool instance. Earlier or repeated NO_FILL attempts remain signal-level observations. The same security can contribute multiple pool instances; output event count, unique security count and events-per-security distribution. Bootstrap intervals are simple event-level diagnostics, **not** independence-corrected inference.
+
+Report ALL primary fills, ENTRY_A, ENTRY_B, and the disjoint A_ONLY/B_ONLY/A_AND_B labels (A+B is also present in both inclusive Entry groups). Descriptive slices: LimitUpCount5=4/5; RSI `(70,75]`, `(75,80]`, `>80` from `RSI14_PROJECT_V1`; original pool session 1..7; normal/board intent. None changes eligibility. NO_FILL signal paths and filled signal paths must be compared at the same T-close reference; a bootstrap difference interval strictly above zero raises `EXECUTION_SELECTION_BIAS` as a diagnostic, not an execution-model correction.
+
+## Aggregate definitions and interpretation
+
+Every cohort × H retains event N, valid metric N, coverage/exclusion counts; mean, median, P25, P75 for MFE/MAE/RET; median TIME_TO_MFE; `P(MFE>=3/5/10%)`; `P(MAE<=-3/-5/-10%)`; `P(RET>0)`, `P(RET>=3%)`, `P(RET<=-3%)`. Quantiles use linear interpolation of sorted values at `(N-1)*p`. Deterministic percentile bootstrap (seed 20260923; 1,000 draws) supplies 95% CIs for mean MFE and mean RET. Empty denominators produce NOT_AVAILABLE, never zero. Each horizon is descriptive; no horizon or threshold is optimized. MFE is an ex-post maximum and by itself cannot prove positive realizable expected return. Jointly inspect RET, MFE, MAE and fillability.
+
+`ENTRY_EDGE_ASSESSMENT_V1` states are SUPPORTED, INCONCLUSIVE, NOT_SUPPORTED, REAL_DATA_BLOCKED. SUPPORTED requires a complete qualified real-data chain, a pre-reported research sample requirement (none is frozen in this repo, so no N=30/100 is invented), at least one pre-registered H in 3/5/7/10 with positive mean and nonnegative median RET, non-contradictory uncertainty, meaningful MFE without unacceptable MAE, and fillability/selection-bias checks. Mixed or imprecise evidence is INCONCLUSIVE; weak executable RET, severe MAE or selection bias can be NOT_SUPPORTED. Entry A and B are assessed separately. This assessment is a documented research judgment; the engine never auto-declares edge from synthetic paths.
+
+## Real-data gate and publication safety
+
+Before any real study, independently qualify historical security master/lifecycle, daily trading constraints, raw bars, effective/versioned exchange calendar, the **real** PIT indicator factor source needed to reconstruct Entry A/B, and corporate-action/factor lineage for comparable paths. Freeze an auditable maximal bounded PIT-safe start/end and snapshot; run a small reconstruction/execution/path smoke before the full bounded range. No favorable market-window choice. Existing repository evidence does **not** qualify a complete historical PIT master/calendar or real factor source: see `artifacts/stage1_foundation/validation_summary.json`, `artifacts/stage1_strategy_primitives/validation_summary.json`, and `artifacts/stage1_strategy_primitives/indicator_price_contract.json`. Gate B's core *contract* PASS is not a completed real-market EntrySignal replay. This branch therefore records `ENGINE_STATUS=PASS` after synthetic tests and `ENTRY_EDGE_STATUS=REAL_DATA_BLOCKED`; no real counts, returns, date range, or A/B verdict are invented.
+
+If the gate later passes, raw vendor rows stay local unless publication rights are confirmed; public artifacts contain derived aggregates, schema, and hashes only. Exit research remains out of scope until a separate human authorization.
