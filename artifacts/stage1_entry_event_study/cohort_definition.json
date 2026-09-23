@@ -1,0 +1,12 @@
+{
+  "schema": "stage1-entry-cohorts/1",
+  "signal_cohort": "ALL_VALID_ENTRY_A_B_ATTEMPTS; T raw close reference, next exchange session D0; no fill claim",
+  "primary_filled_cohort": "FIRST_MODELLED_FILL_PER_OBSERVATION_INSTANCE; actual execution raw open reference",
+  "execution_statuses": ["MODELLED_FILL", "NO_FILL", "EXECUTION_UNRESOLVED"],
+  "fill_rate_denominator": "MODELLED_FILL + NO_FILL executable attempts",
+  "no_fill_diagnostic": "separate signal-level path, compared with filled signal-level path on same T-close reference",
+  "entry_labels": ["ENTRY_A", "ENTRY_B", "A_ONLY", "B_ONLY", "A_AND_B"],
+  "slices": ["LIMIT_UP_COUNT_4", "LIMIT_UP_COUNT_5", "RSI_70_75", "RSI_75_80", "RSI_GT_80", "POOL_SESSION_1..7", "NORMAL_CLOSE_INTENT", "LIMIT_UP_CLOSE_BOARD_INTENT"],
+  "board_execution_fidelity_gap": true,
+  "security_overlap_diagnostic": ["event_count", "unique_security_count", "events_per_security"]
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "stage1-entry-event-study-data-readiness/1",
+  "real_event_study": "REAL_EVENT_STUDY_BLOCKED",
+  "entry_edge_status": "REAL_DATA_BLOCKED",
+  "qualified_date_range": null,
+  "real_signal_count": null,
+  "real_fill_count": null,
+  "real_no_fill_count": null,
+  "real_unresolved_count": null,
+  "historical_universe_master": {"status": "NOT_QUALIFIED_FOR_FULL_PIT_REPLAY", "evidence": "artifacts/stage1_foundation/validation_summary.json"},
+  "daily_trading_constraint": {"status": "CORE_CONTRACT_QUALIFIED_NOT_FULL_REAL_REPLAY", "evidence": "artifacts/stage1_gate_b_retry3/qualification_manifest.json"},
+  "raw_bars": {"status": "CONTRACT_QUALIFIED_NOT_COMPLETE_HISTORICAL_REPLAY", "evidence": "artifacts/stage1_gate_b_retry3/qualification_manifest.json"},
+  "effective_trading_calendar": {"status": "NOT_QUALIFIED_FOR_FULL_PIT_REPLAY", "evidence": "artifacts/stage1_foundation/validation_summary.json"},
+  "real_indicator_factor_source": {"status": "NOT_INDEPENDENTLY_PIT_QUALIFIED", "evidence": "artifacts/stage1_strategy_primitives/indicator_price_contract.json"},
+  "corporate_action_comparable_path": {"status": "NOT_QUALIFIED_FOR_REAL_AGGREGATE", "evidence": "artifacts/stage1_strategy_primitives/indicator_price_contract.json"},
+  "next_action": "Qualify only the named real-data sources before a bounded smoke and full real event study; do not proceed to Exit"
+}

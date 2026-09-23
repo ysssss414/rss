@@ -1,0 +1,17 @@
+{
+  "schema": "stage1-entry-event-study-synthetic-validation/1",
+  "test_module": "tests/test_event_study.py",
+  "case_families": [
+    "monotonic rise", "monotonic fall", "rise then fall", "fall then rise",
+    "MFE first and final holding session", "MAE and fixed-horizon return",
+    "weekend and holiday exchange clock", "suspension with partial coverage",
+    "missing and invalid endpoint", "corporate action unresolved",
+    "qualified PIT comparable factor", "late PIT factor rejected",
+    "lifecycle termination and calendar tail", "NO_FILL and EXECUTION_UNRESOLVED",
+    "repeated attempts and first fill per observation instance",
+    "Entry A/B overlap and descriptive slices", "selection-bias diagnostic",
+    "deterministic bootstrap", "provenance conflict"
+  ],
+  "real_market_events": "NOT_RUN",
+  "private_vendor_rows_included": false
+}

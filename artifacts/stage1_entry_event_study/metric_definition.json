@@ -1,0 +1,13 @@
+{
+  "schema": "stage1-entry-forward-metrics/1",
+  "MFE_H": "max(valid comparable high in indices 1..H / reference price - 1)",
+  "MAE_H": "min(valid comparable low in indices 1..H / reference price - 1)",
+  "RET_H": "comparable close at exact holding index H / reference price - 1; unavailable endpoint => null",
+  "TIME_TO_MFE_H": "first 1-based holding index reaching H-window maximum",
+  "coverage": "observed valid bars / H exchange sessions; suspension and missing count in H, not observed",
+  "corporate_action": "qualified PIT raw-to-reference scale factor(day)/factor(reference date), else CORPORATE_ACTION_UNRESOLVED",
+  "lifecycle_termination": "PATH_UNRESOLVED; no imputation",
+  "thresholds": {"MFE_at_least": [0.03, 0.05, 0.10], "MAE_at_most": [-0.03, -0.05, -0.10], "RET": [">0", ">=0.03", "<=-0.03"]},
+  "distribution": ["N", "mean", "median", "P25", "P75"],
+  "bootstrap": {"seed": 20260923, "draws": 1000, "interval": "percentile 95%", "metrics": ["mean MFE", "mean RET"]}
+}

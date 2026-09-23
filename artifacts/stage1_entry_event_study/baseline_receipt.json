@@ -1,0 +1,13 @@
+{
+  "schema": "stage1-entry-event-study-baseline/1",
+  "repository": "https://github.com/ysssss414/rss",
+  "branch": "codex/rss-stage1-entry-event-study",
+  "pr13_merge_sha": "3c729b2706571809a693e352548de359c104d5a4",
+  "base_main_sha": "3c729b2706571809a693e352548de359c104d5a4",
+  "historical_exit_result": "STAGE1_EXIT_LIFECYCLE_STOP",
+  "historical_lifecycle_foundation": "PASS",
+  "exit_signal": "NOT_IMPLEMENTED",
+  "frozen_entry_execution": "NEXT_SESSION_V1",
+  "frozen_rsi_warmup": "RSI_WARMUP_POLICY_V1",
+  "real_market_study_executed": false
+}
