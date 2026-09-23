@@ -13,6 +13,7 @@ from scripts.validate_stage1_gate_c_contract import classify_security_day
 SHANGHAI = timezone(timedelta(hours=8))
 POLICY_STATUS = {
     "NEXT_SESSION_V1": "CONTRACT_QUALIFIED",
+    "NEXT_SESSION_SELL_V1": "CONTRACT_QUALIFIED",
     "CLOSING_AUCTION_V1": "NOT_QUALIFIED",
     "PRE_CLOSE_SNAPSHOT_V1": "NOT_QUALIFIED",
 }
@@ -293,7 +294,93 @@ class NextSessionV1(ExecutionPolicy):
                                self.policy_id, Decimal("0"))
 
 
+class NextSessionSellV1(ExecutionPolicy):
+    """Conservative next-session sell model using the validated raw lower limit."""
+
+    policy_id = "NEXT_SESSION_SELL_V1"
+    version = "1"
+    signal_time_rule = "T_EOD_FINALIZED"
+    order_time_rule = "NEXT_EXCHANGE_SESSION_09_15"
+    execution_time_rule = "OPENING_AUCTION_09_25"
+    price_rule = "OFFICIAL_RAW_OPEN"
+    fill_rule = "STRICTLY_ABOVE_VALIDATED_LOWER_LIMIT"
+    limit_rule = "AT_LOWER_LIMIT_NO_FILL"
+    slippage_rule = "ZERO_BPS_IDEALIZED"
+
+    def execute(self, *, context: RunContext, calendar: TradingCalendar, security_id: str,
+                signal_date: date, signal_at: datetime, latest_input_at: datetime,
+                side: str, next_day: Mapping[str, object] | None) -> ExecutionResult:
+        if (context.execution_policy_id != self.policy_id
+                or context.execution_policy_version != self.version
+                or context.calendar_version != calendar.version
+                or context.daily_constraint_contract_version != "gate-b-retry3-daily-contract/1"):
+            raise ValueError("Execution policy or calendar differs from frozen run context")
+        if (signal_at.utcoffset() is None or latest_input_at.utcoffset() is None
+                or signal_at.astimezone(SHANGHAI).date() != signal_date
+                or latest_input_at.astimezone(SHANGHAI).date() != signal_date
+                or latest_input_at.astimezone(SHANGHAI).time() < time(15, 0)
+                or latest_input_at > signal_at or side != "SELL"):
+            raise ValueError("Invalid causal T EOD signal or unsupported side")
+        if signal_date not in calendar.sessions:
+            return self._result("EXECUTION_UNRESOLVED", None, None, None,
+                                "SIGNAL_NOT_IN_CALENDAR")
+        target = calendar.next_after(signal_date)
+        if target is None:
+            return self._result("EXECUTION_UNRESOLVED", None, None, None,
+                                "NO_FOLLOWING_SESSION")
+        order_at = datetime.combine(target, time(9, 15), SHANGHAI)
+        execution_at = datetime.combine(target, time(9, 25), SHANGHAI)
+        if not signal_at < order_at:
+            raise ValueError("Signal cannot be ordered in the past")
+
+        def unresolved(reason: str) -> ExecutionResult:
+            return self._result("EXECUTION_UNRESOLVED", target, order_at,
+                                execution_at, reason)
+
+        if (next_day is None or next_day.get("security_id") != security_id
+                or next_day.get("trade_date") != target.isoformat()):
+            return unresolved("MISSING_NEXT_SESSION_DATA")
+        if next_day.get("trading_status") != "TRADING":
+            return unresolved("NON_TRADING_OR_SUSPENDED")
+        constraint = next_day.get("daily_constraint") or {}
+        try:
+            if (constraint.get("security_id") != security_id
+                    or constraint.get("trade_date") != target.isoformat()
+                    or _time(constraint["available_at"]) > order_at
+                    or constraint.get("validation_status") != "VALID"
+                    or constraint.get("trading_allowed") is not True
+                    or constraint.get("suspended") is not False
+                    or constraint.get("limit_applicable") is not True
+                    or not constraint.get("source_provenance")):
+                return unresolved("INVALID_DAILY_CONSTRAINT")
+            opening = _decimal(next_day["raw_open"])
+            lower = _decimal(constraint["limit_down_price"])
+            upper = _decimal(constraint["limit_up_price"])
+            tick = _decimal(constraint["price_tick"])
+            if (min(opening, lower, upper, tick) <= 0
+                    or opening % tick or lower % tick or upper % tick
+                    or lower > upper or not lower <= opening <= upper):
+                return unresolved("INVALID_OPEN_OR_LIMIT")
+        except (KeyError, TypeError, InvalidOperation, ValueError):
+            return unresolved("MISSING_OR_INVALID_OPEN_OR_CONSTRAINT")
+        if opening == lower:
+            return self._result("NO_FILL", target, order_at, execution_at,
+                                "OPEN_AT_LIMIT_DOWN")
+        return self._result("MODELLED_FILL", target, order_at, execution_at,
+                            None, opening)
+
+    def _result(self, status: str, day: date | None, order: datetime | None,
+                execution: datetime | None, reason: str | None,
+                price: Decimal | None = None) -> ExecutionResult:
+        return ExecutionResult(status, day, order, execution, price, reason,
+                               self.policy_id, Decimal("0"))
+
+
 def execution_policy(policy_id: str) -> ExecutionPolicy:
     if POLICY_STATUS.get(policy_id) != "CONTRACT_QUALIFIED":
         raise ValueError(f"Execution policy {policy_id} is NOT_QUALIFIED or unknown")
-    return NextSessionV1()
+    if policy_id == "NEXT_SESSION_V1":
+        return NextSessionV1()
+    if policy_id == "NEXT_SESSION_SELL_V1":
+        return NextSessionSellV1()
+    raise ValueError(f"Execution policy {policy_id} has no implementation")

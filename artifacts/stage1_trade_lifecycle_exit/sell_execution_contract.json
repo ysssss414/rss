@@ -1,0 +1,22 @@
+{
+  "schema": "stage1-next-session-sell/1",
+  "policy_id": "NEXT_SESSION_SELL_V1",
+  "version": "1",
+  "side": "SELL",
+  "signal_time": "T EOD FINALIZED",
+  "order_time": "NEXT EXCHANGE SESSION 09:15 ASIA/SHANGHAI",
+  "execution_decision_time": "NEXT EXCHANGE SESSION 09:25 ASIA/SHANGHAI",
+  "price_source": "OFFICIAL RAW OPEN",
+  "slippage_bps": "0",
+  "comparison_arithmetic": "Decimal prices and exact integer-tick divisibility; no float equality",
+  "modelled_fill": "Valid open and DailyTradingConstraint, trading allowed, lower_limit < raw_open <= upper_limit",
+  "no_fill": "raw_open == validated limit_down_price",
+  "execution_unresolved": [
+    "missing next exchange session or next-session data",
+    "non-trading or suspended",
+    "missing/late/invalid DailyTradingConstraint",
+    "missing, off-tick, non-positive or out-of-limit raw open"
+  ],
+  "automatic_rollover": false,
+  "actual_broker_fill_claim": false
+}

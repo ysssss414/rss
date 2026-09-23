@@ -1,0 +1,48 @@
+{
+  "schema": "stage1-trade-lifecycle/1",
+  "contract_id": "TRADE_LIFECYCLE_V1",
+  "scope": "Consume external entry/exit signals and execution outcomes; never generate strategy signals",
+  "states": [
+    "NO_POSITION",
+    "ENTRY_PENDING",
+    "OPEN",
+    "EXIT_PENDING",
+    "CLOSED",
+    "ENTRY_FAILED",
+    "EXIT_UNRESOLVED"
+  ],
+  "flow": [
+    "EntrySignal",
+    "EntryExecution",
+    "Position",
+    "ExitSignal",
+    "ExitExecution",
+    "ClosedTrade"
+  ],
+  "entry_outcomes": {
+    "MODELLED_FILL": "OPEN and create deterministic position_id",
+    "NO_FILL": "ENTRY_FAILED with no position",
+    "EXECUTION_UNRESOLVED": "ENTRY_FAILED with no position and structured issue"
+  },
+  "position_identity_fields": [
+    "security_id",
+    "entry_signal_date",
+    "entry_execution_date",
+    "entry_execution_price",
+    "entry_signal_reasons",
+    "observation_instance_id",
+    "execution_policy_id",
+    "data_snapshot_id",
+    "strategy_contract_versions"
+  ],
+  "baseline_position_rule": "One open position per security; a new entry while the economic position exists is IGNORED_WHILE_POSITION_OPEN",
+  "exit_outcomes": {
+    "MODELLED_FILL": "CLOSED and append ClosedTrade",
+    "NO_FILL": "OPEN, retain position, clear pending exit, and retain incremented exit_attempt_count",
+    "EXECUTION_UNRESOLVED": "EXIT_UNRESOLVED with the position and structured reason retained"
+  },
+  "corporate_action_handling": "SPLIT, DIVIDEND, RIGHTS and SECURITY_CODE_CHANGE produce POSITION_CORPORATE_ACTION_UNRESOLVED; raw entry price, indicator basis and quantity semantics remain recorded",
+  "trading_lifecycle_handling": "DELISTING, RELISTING, LONG_SUSPENSION and TRADING_LIFECYCLE_TERMINATION produce POSITION_TRADING_LIFECYCLE_UNRESOLVED; no forced price is fabricated",
+  "quantity_semantics": "ONE_BASELINE_POSITION_NO_QUANTITY_OR_LOTS",
+  "pnl_layer": "PROHIBITED"
+}

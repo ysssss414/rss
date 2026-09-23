@@ -1,9 +1,10 @@
 {
-  "schema": "stage1-strategy-primitives-validation/1",
+  "schema": "stage1-strategy-primitives-validation/2",
   "qualification_scope": "Strategy-independent primitive contracts and synthetic golden tests only",
   "primitive_targeted_passed": 27,
+  "rsi_warmup_targeted_passed": 16,
   "foundation_gate_c_prior_gate_tests_passed": 161,
-  "full_repository_passed": 335,
+  "full_repository_passed": 412,
   "primitive_manifest_hashes_verified": 13,
   "prior_qualification_hashes_verified": 92,
   "foundation_hashes_verified": 7,

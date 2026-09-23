@@ -1,0 +1,24 @@
+{
+  "schema": "stage1-trade-lifecycle-exit-baseline/1",
+  "repository": "https://github.com/ysssss414/rss",
+  "pr_12": {
+    "state_before_merge": "OPEN",
+    "base": "main",
+    "head_sha": "267828033ef59b4662e9169d089614c69d765713",
+    "merge_sha": "47e2c609d9c5c4d6b5ecb0b8ee5e05a8b8d6e0fc"
+  },
+  "base_main_sha": "47e2c609d9c5c4d6b5ecb0b8ee5e05a8b8d6e0fc",
+  "branch": "codex/rss-stage1-trade-lifecycle-exit",
+  "protected_excel_sha256": {
+    "inputs/three_board_daily_input.xlsx": "38dabdc991d26d4d1b5873bfdcbfb5dd29db4671fa1760c20d932d3d17d9b9fe",
+    "inputs/three_board_daily_input_2026_backtest.xlsx": "282c4abdbb5901f5e3ee33512e7256887c1e92ae129662f631397fbd6943cf22",
+    "手工统计.xlsx": "2fdf23576a7d220e994cf74143236a0b3db34e9e495f769927d0a65c994f8277"
+  },
+  "protected_excel_git_state": {
+    "inputs/three_board_daily_input.xlsx": "TRACKED_MODIFIED_PREEXISTING",
+    "inputs/three_board_daily_input_2026_backtest.xlsx": "UNTRACKED_PREEXISTING",
+    "手工统计.xlsx": "UNTRACKED_PREEXISTING"
+  },
+  "publication_scope": "Synthetic contracts, deterministic convergence data, tests and public source references only",
+  "private_raw_data_included": false
+}
