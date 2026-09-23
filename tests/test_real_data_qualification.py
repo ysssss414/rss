@@ -44,7 +44,7 @@ def test_security_type_and_trading_state_fail_closed():
     assert a_share_common_stock_at((listed("2020-01-01"),), "S", d("2024-01-02"))
     cases = (("TRADING", True, "TRADED"), ("SUSPENDED", False, "SUSPENDED"),
              (None, False, "UNKNOWN"), ("TRADING", False, "UNKNOWN"),
-             ("SUSPENDED", True, "UNKNOWN"))
+             ("SUSPENDED", True, "CONFLICT"))
     for status, bar, expected in cases:
         assert trading_state(identities=(listed("2020-01-01"),), security_id="S",
                              day=d("2024-01-02"), status=status, bar_present=bar) == expected
