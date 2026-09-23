@@ -1,0 +1,82 @@
+{
+  "schema": "stage1-d4-rule-matrix/1",
+  "scope": "A-share daily price-limit regime only; absent category is not a default",
+  "periods": [
+    {
+      "exchange": "SSE", "board": "MAIN", "effective_from": "2023-04-10", "effective_to": "2026-07-05", "known_at": "2023-02-17T23:59:00+08:00", "source_id": "SSE_2023_RULE",
+      "categories": {
+        "NORMAL": {"limit_regime": "LIMIT_10", "reason_code": "RULE_MAINBOARD_LIMIT_10", "clause": "3.4.13"},
+        "RISK_WARNING": {"limit_regime": "LIMIT_5", "reason_code": "RULE_RISK_WARNING_LIMIT_5", "clause": "4.5.5"},
+        "IPO_FIRST_FIVE": {"limit_regime": "NO_DAILY_LIMIT", "reason_code": "RULE_IPO_NO_LIMIT_WINDOW", "clause": "3.4.13"}
+      }
+    },
+    {
+      "exchange": "SSE", "board": "MAIN", "effective_from": "2026-07-06", "effective_to": null, "known_at": "2026-04-24T23:59:00+08:00", "source_id": "SSE_2026_RULE",
+      "categories": {
+        "NORMAL": {"limit_regime": "LIMIT_10", "reason_code": "RULE_MAINBOARD_LIMIT_10", "clause": "3.4.13"},
+        "RISK_WARNING": {"limit_regime": "LIMIT_10", "reason_code": "RULE_RISK_WARNING_LIMIT_10", "clause": "4.5.5"},
+        "IPO_FIRST_FIVE": {"limit_regime": "NO_DAILY_LIMIT", "reason_code": "RULE_IPO_NO_LIMIT_WINDOW", "clause": "3.4.13"}
+      }
+    },
+    {
+      "exchange": "SSE", "board": "STAR", "effective_from": "2023-04-10", "effective_to": "2026-07-05", "known_at": "2023-02-17T23:59:00+08:00", "source_id": "SSE_2023_RULE",
+      "categories": {
+        "NORMAL": {"limit_regime": "LIMIT_20", "reason_code": "RULE_STAR_LIMIT_20", "clause": "6.1.6"},
+        "RISK_WARNING": {"limit_regime": "LIMIT_20", "reason_code": "RULE_STAR_LIMIT_20", "clause": "6.1.6"}
+      }
+    },
+    {
+      "exchange": "SSE", "board": "STAR", "effective_from": "2026-07-06", "effective_to": null, "known_at": "2026-04-24T23:59:00+08:00", "source_id": "SSE_2026_RULE",
+      "categories": {
+        "NORMAL": {"limit_regime": "LIMIT_20", "reason_code": "RULE_STAR_LIMIT_20", "clause": "6.6"},
+        "RISK_WARNING": {"limit_regime": "LIMIT_20", "reason_code": "RULE_STAR_LIMIT_20", "clause": "6.6"},
+        "IPO_FIRST_FIVE": {"limit_regime": "NO_DAILY_LIMIT", "reason_code": "RULE_IPO_NO_LIMIT_WINDOW", "clause": "6.6"},
+        "DELIST_FIRST": {"limit_regime": "NO_DAILY_LIMIT", "reason_code": "RULE_DELISTING_FIRST_NO_LIMIT", "clause": "6.6"}
+      }
+    },
+    {
+      "exchange": "SZSE", "board": "MAIN", "effective_from": "2023-04-10", "effective_to": "2026-07-05", "known_at": "2023-02-17T23:59:00+08:00", "source_id": "SZSE_2023_RULE",
+      "categories": {
+        "NORMAL": {"limit_regime": "LIMIT_10", "reason_code": "RULE_MAINBOARD_LIMIT_10", "clause": "3.3.13"},
+        "RISK_WARNING": {"limit_regime": "LIMIT_5", "reason_code": "RULE_RISK_WARNING_LIMIT_5", "clause": "4.5.5"},
+        "IPO_FIRST_FIVE": {"limit_regime": "NO_DAILY_LIMIT", "reason_code": "RULE_IPO_NO_LIMIT_WINDOW", "clause": "3.3.15"},
+        "RELIST_FIRST": {"limit_regime": "NO_DAILY_LIMIT", "reason_code": "RULE_RELISTING_SPECIAL_WINDOW", "clause": "3.3.15"},
+        "DELIST_FIRST": {"limit_regime": "NO_DAILY_LIMIT", "reason_code": "RULE_DELISTING_FIRST_NO_LIMIT", "clause": "4.5.5"},
+        "DELIST_REST": {"limit_regime": "LIMIT_10", "reason_code": "RULE_DELISTING_REST_LIMIT_10", "clause": "4.5.5"}
+      }
+    },
+    {
+      "exchange": "SZSE", "board": "CHINEXT", "effective_from": "2023-04-10", "effective_to": "2026-07-05", "known_at": "2023-02-17T23:59:00+08:00", "source_id": "SZSE_2023_RULE",
+      "categories": {
+        "NORMAL": {"limit_regime": "LIMIT_20", "reason_code": "RULE_CHINEXT_LIMIT_20", "clause": "3.3.13"},
+        "RISK_WARNING": {"limit_regime": "LIMIT_20", "reason_code": "RULE_CHINEXT_LIMIT_20", "clause": "4.5.5"},
+        "IPO_FIRST_FIVE": {"limit_regime": "NO_DAILY_LIMIT", "reason_code": "RULE_IPO_NO_LIMIT_WINDOW", "clause": "3.3.15"},
+        "RELIST_FIRST": {"limit_regime": "NO_DAILY_LIMIT", "reason_code": "RULE_RELISTING_SPECIAL_WINDOW", "clause": "3.3.15"},
+        "DELIST_FIRST": {"limit_regime": "NO_DAILY_LIMIT", "reason_code": "RULE_DELISTING_FIRST_NO_LIMIT", "clause": "4.5.5"},
+        "DELIST_REST": {"limit_regime": "LIMIT_20", "reason_code": "RULE_DELISTING_REST_LIMIT_20", "clause": "4.5.5"}
+      }
+    },
+    {
+      "exchange": "SZSE", "board": "MAIN", "effective_from": "2026-07-06", "effective_to": null, "known_at": "2026-04-24T23:59:00+08:00", "source_id": "SZSE_2026_RULE",
+      "categories": {
+        "NORMAL": {"limit_regime": "LIMIT_10", "reason_code": "RULE_MAINBOARD_LIMIT_10", "clause": "3.3.13"},
+        "RISK_WARNING": {"limit_regime": "LIMIT_10", "reason_code": "RULE_RISK_WARNING_LIMIT_10", "clause": "3.3.13/4.5.1"},
+        "IPO_FIRST_FIVE": {"limit_regime": "NO_DAILY_LIMIT", "reason_code": "RULE_IPO_NO_LIMIT_WINDOW", "clause": "3.3.15"},
+        "RELIST_FIRST": {"limit_regime": "NO_DAILY_LIMIT", "reason_code": "RULE_RELISTING_SPECIAL_WINDOW", "clause": "3.3.15"},
+        "DELIST_FIRST": {"limit_regime": "NO_DAILY_LIMIT", "reason_code": "RULE_DELISTING_FIRST_NO_LIMIT", "clause": "3.3.15"},
+        "DELIST_REST": {"limit_regime": "LIMIT_10", "reason_code": "RULE_DELISTING_REST_LIMIT_10", "clause": "3.3.13"}
+      }
+    },
+    {
+      "exchange": "SZSE", "board": "CHINEXT", "effective_from": "2026-07-06", "effective_to": null, "known_at": "2026-04-24T23:59:00+08:00", "source_id": "SZSE_2026_RULE",
+      "categories": {
+        "NORMAL": {"limit_regime": "LIMIT_20", "reason_code": "RULE_CHINEXT_LIMIT_20", "clause": "3.3.13"},
+        "RISK_WARNING": {"limit_regime": "LIMIT_20", "reason_code": "RULE_CHINEXT_LIMIT_20", "clause": "3.3.13/4.5.1"},
+        "IPO_FIRST_FIVE": {"limit_regime": "NO_DAILY_LIMIT", "reason_code": "RULE_IPO_NO_LIMIT_WINDOW", "clause": "3.3.15"},
+        "RELIST_FIRST": {"limit_regime": "NO_DAILY_LIMIT", "reason_code": "RULE_RELISTING_SPECIAL_WINDOW", "clause": "3.3.15"},
+        "DELIST_FIRST": {"limit_regime": "NO_DAILY_LIMIT", "reason_code": "RULE_DELISTING_FIRST_NO_LIMIT", "clause": "3.3.15"},
+        "DELIST_REST": {"limit_regime": "LIMIT_20", "reason_code": "RULE_DELISTING_REST_LIMIT_20", "clause": "3.3.13"}
+      }
+    }
+  ]
+}
