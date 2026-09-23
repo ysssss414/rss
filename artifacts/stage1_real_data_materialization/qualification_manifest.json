@@ -1,0 +1,21 @@
+{
+  "schema": "stage1-real-materialization-qualification/1",
+  "status": "STAGE1_REAL_DATA_MATERIALIZATION_STOP",
+  "factor_source_status": "QUALIFIED_SCOPED",
+  "real_research_snapshot_id": null,
+  "real_smoke_status": "NOT_RUN",
+  "historical_universe_status": "NOT_RUN",
+  "full_event_study_run": false,
+  "source_hashes": {
+    "artifacts/stage1_real_data_event_study/official_calendar_2024_2026.json": "13149694895bc5ac2fb764ceee46140b794031f89487c9815310f8eb0c2f7993",
+    "artifacts/stage1_real_data_event_study/calendar_qualification.json": "4006814f0d9979f010f4ca38a8b25cb5c0bd03499114fed4670bdc90b2d0fb9c",
+    "artifacts/stage1_real_data_event_study/security_master_qualification.json": "73f0db44229416e37b1267a61b923e8b66a9c8b1ca3e78200c2da644d22d4d52",
+    "artifacts/stage1_real_data_event_study/trading_state_qualification.json": "e8b483a77a9ff118837a380526913a7eb6239bf192156983f83ac0b0618b6028",
+    "artifacts/stage1_gate_b_retry3/daily_constraint_contract.json": "a1f3392a0b51da5fd14ec35a2b59ba25636d5e33963fa68809b96ec0f165394e",
+    "artifacts/stage1_factor_pit/qualification_manifest.json": "14983729b7d0423a5963046de5dd3cd5a5a01ebb8bb48872d42113d1b66e3efc",
+    "artifacts/stage1_factor_pit/revision_semantics.json": "5300626e346b4d6c22a3c9702e03642017c147eed4684f6f656411e01749e03e"
+  },
+  "blockers": ["D4_SOURCE_AUTHORITY_GAP", "D1_D3_D6_NOT_MATERIALIZED", "D5_PREFIX_ADMISSION_NOT_MATERIALIZED", "D8_SOURCE_CHRONOLOGY_GAP"],
+  "bulk_vendor_download_attempted": false,
+  "bulk_download_reason": "An unresolved D4 authority gap would prevent qualifying any all-market smoke; avoid costly vendor-only capture and false snapshot publication"
+}

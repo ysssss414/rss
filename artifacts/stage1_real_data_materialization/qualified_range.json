@@ -1,0 +1,19 @@
+{
+  "schema": "stage1-real-qualified-range/1",
+  "data_start": "2024-01-01",
+  "data_end": "2026-09-23",
+  "calendar_session_count": 662,
+  "candidate_research_start": "2024-08-15",
+  "candidate_start_prior_validated_sessions": 150,
+  "max_full_h20_signal_date": "2026-08-26",
+  "boundary_execution_d0": "2026-08-27",
+  "boundary_h20_last_session": "2026-09-23",
+  "candidate_120_session_smoke_end": "2025-02-18",
+  "candidate_240_session_smoke_end": "2025-08-12",
+  "qualified_data_start": null,
+  "qualified_data_end": null,
+  "qualified_research_start": null,
+  "qualified_signal_end": null,
+  "qualified_session_count": null,
+  "reason": "D1/D3/D4/D5 per-prefix/D6/D8 security-day coverage is not jointly qualified; candidate dates are not a qualified research interval"
+}

@@ -45,6 +45,8 @@ def trading_state(*, identities: Sequence[EffectiveIdentity], security_id: str,
         return "UNKNOWN"
     if status == "SUSPENDED" and not bar_present:
         return "SUSPENDED"
+    if status == "SUSPENDED" and bar_present:
+        return "CONFLICT"
     if status == "TRADING" and bar_present:
         return "TRADED"
     return "UNKNOWN"

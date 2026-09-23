@@ -1,0 +1,53 @@
+{
+  "schema": "stage1-real-materialization-source-registry/1",
+  "candidate_window": ["2024-01-01", "2026-09-23"],
+  "sources": {
+    "D1": {
+      "source": "AmazingData 1.1.6 historical A-share list and stock_basic; exchange listing evidence",
+      "observed_scope": "2024-01-02: 5096 securities; 2026-09-22: 5222 securities; five stock_basic samples and one ETF negative control",
+      "full_security_day_coverage": null,
+      "status": "NOT_MATERIALIZED"
+    },
+    "D2": {
+      "source": "frozen AmazingData calendar reconciled with SSE/SZSE annual closure notices",
+      "observed_scope": "662 matching sessions, 2024-01-01 through 2026-09-23",
+      "status": "QUALIFIED_FOR_WINDOW"
+    },
+    "D3": {
+      "source": "AmazingData checked raw EOD bars",
+      "observed_scope": "three checked 600519.SH bars in 2024-06-18 through 2024-06-20; no full market capture",
+      "full_security_day_coverage": null,
+      "status": "NOT_MATERIALIZED"
+    },
+    "D4": {
+      "source": "Gate B C2 canonical DailyTradingConstraint contract; exchange dated rules and reference rows",
+      "observed_scope": "13 reconstructed representative cases; historical full-market exchange pre-open reference rows or equivalent complete official event/reference reconstruction not held",
+      "full_security_day_coverage": null,
+      "status": "SOURCE_AUTHORITY_GAP"
+    },
+    "D5": {
+      "source": "PIT_FACTOR_RATIO_SNAPSHOT_V1 event-decomposition contract",
+      "observed_scope": "eight-security probe; seven changed effective dates remain unresolved and fail closed",
+      "full_security_day_coverage": null,
+      "status": "CONTRACT_QUALIFIED_PREFIX_ADMISSION_PENDING"
+    },
+    "D6": {
+      "source": "AmazingData historical suspension status plus D1 lifecycle and D3 bars",
+      "observed_scope": "three 600519.SH dates and four 600518.SH dates including one issuer-confirmed suspension",
+      "full_security_day_coverage": null,
+      "status": "NOT_MATERIALIZED"
+    },
+    "D7": {
+      "source": "private source captures and hash receipts",
+      "observed_scope": "calendar and sampled factors only; no unified snapshot",
+      "snapshot_id": null,
+      "status": "NOT_FROZEN"
+    },
+    "D8": {
+      "source": "issuer corporate actions plus outcome-only price-scale adapter",
+      "observed_scope": "synthetic adapter test and limited published action cases; no full bounded event chronology",
+      "full_horizon_coverage": null,
+      "status": "SOURCE_CHRONOLOGY_GAP"
+    }
+  }
+}
