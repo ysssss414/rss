@@ -1,0 +1,11 @@
+{
+  "schema": "stage1-d4-acquisition-reconciliation/1",
+  "reconciliation_executed": false,
+  "reason": "NO_HISTORICAL_RAW_AUTHORITY_ROW",
+  "raw_input_count": 0,
+  "normalized_row_count": 0,
+  "resolver_comparison_count": 0,
+  "counts": {"MATCH": 0, "MISMATCH": 0, "UNRESOLVED": 0},
+  "pending_exchange_days": ["SSE:2024-10-09", "SSE:2026-07-03", "SSE:2026-07-06", "SSE:2026-07-07", "SZSE:2024-10-09", "SZSE:2026-07-03", "SZSE:2026-07-06", "SZSE:2026-07-07"],
+  "note": "Pending dates are not counted as attempted UNRESOLVED comparisons. No synthetic rows or inferred prices were used."
+}

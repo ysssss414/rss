@@ -1,0 +1,12 @@
+{
+  "schema": "stage1-d4-acquisition-qualification/1",
+  "gate_result": "STAGE1_D4_AUTHORITY_ACQUISITION_STOP",
+  "as_of": "2026-09-23",
+  "gates": {"A_historical_raw_evidence": false, "B_boundary_dates": false, "C_raw_provenance": false, "D_deterministic_parsing": false, "E_repeatability": false, "F_historical_coverage": false, "G_security_state_path": false},
+  "raw_sha256_verified_count": 0,
+  "reason": "Official interface and request-channel documents exist, but no dated historical exchange-originated pre-open raw row, guaranteed archive retrieval mechanism, or complete PIT state path was verified.",
+  "prior_d4_closure_result_unchanged": "STAGE1_D4_AUTHORITY_CLOSURE_STOP",
+  "qualified_research_start": null,
+  "qualified_signal_end": null,
+  "next_action": "MINIMUM_HUMAN_PROVIDER_ACQUISITION_CHECKLIST"
+}
