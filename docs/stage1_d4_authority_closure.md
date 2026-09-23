@@ -73,4 +73,4 @@ Acquire/verify D4-A1–A5, extend the real sample to each unresolved board and l
 
 ## O. Git delivery
 
-This is a stacked D4 branch based on open PR #17, intended as an independent Draft PR with that branch as base. No PR is merged and no protected workbook is staged. Commit/PR identifiers and final test/hash counts are reported separately after verification.
+This is a stacked D4 branch based on open PR #17. [Draft PR #18](https://github.com/ysssss414/rss/pull/18) has base `codex/rss-stage1-real-data-materialization` and head `codex/rss-stage1-d4-authority-closure`. No PR is merged and no protected workbook is staged.
