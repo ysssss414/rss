@@ -1,0 +1,12 @@
+{
+  "schema": "stage1-real-data-baseline/1",
+  "closed_pr": 14,
+  "pr_state": "MERGED",
+  "pre_merge_entry_branch_sha": "327cc40b3c260abb1d63c6c5530252aa7f136fde",
+  "merge_commit_and_new_main_sha": "b04eff2a8be845af636ace21ce5b046c9fa2659f",
+  "baseline_engine_status": "PASS",
+  "baseline_entry_edge_status": "REAL_DATA_BLOCKED",
+  "baseline_full_suite_passed": 430,
+  "baseline_targeted_passed": 283,
+  "new_branch": "codex/rss-stage1-real-data-event-study"
+}

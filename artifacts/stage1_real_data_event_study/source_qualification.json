@@ -1,0 +1,81 @@
+{
+  "schema": "stage1-real-source-qualification/1",
+  "data_chain_status": "BLOCKED",
+  "engine_status": "PASS",
+  "entry_edge_status": "REAL_DATA_BLOCKED",
+  "sources": [
+    {
+      "id": "D1", "source": "AmazingData historical_codes and stock_basic; SSE listing/type notices",
+      "required_semantic": "Effective-dated A-share common-stock identity, exchange, latest listing/relisting and lifecycle end for every security-day",
+      "available_coverage": "Two historical universe dates (2024-01-02: 5096; 2026-09-22: 5222) plus five stock_basic samples and an ETF negative control",
+      "missing_evidence": "Full contiguous effective-dated identity intervals, a tested relisting case, authoritative security type for every member and full date-by-date coverage",
+      "why_it_blocks_signal_reconstruction": "HistoricalUniverse and RSI prefix cannot include/exclude every security-day without future or current-master leakage",
+      "minimum_next_action": "Freeze a bounded daily historical A-share list and effective-dated lifecycle/type table, validate IPO, delisting, relisting and ETF exclusions against exchange notices",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "D2", "source": "AmazingData SH/SZ calendars; SSE/SZSE annual closure notices",
+      "required_semantic": "Exact SSE/SZSE sessions for next_trade_date and session clocks",
+      "available_coverage": "2024-01-01 through 2026-09-23: 662 exact sessions on each exchange, zero missing/extra or inter-exchange differences",
+      "missing_evidence": "None within validated window; earlier years are not claimed qualified",
+      "why_it_blocks_signal_reconstruction": "Does not block within validated window; any earlier warm-up needs separately validated sessions",
+      "minimum_next_action": "Use a study start no earlier than 2024-08-15 for a 150-session buffer, or extend official validation before that window",
+      "status": "QUALIFIED_FOR_WINDOW"
+    },
+    {
+      "id": "D3", "source": "AmazingData checked_bars with Gate B volume/amount unit contract",
+      "required_semantic": "Frozen raw OHLCV/amount for every selected security-day with correct historical date and reproducible snapshot",
+      "available_coverage": "Three checked 600519.SH bars on 2024-06-18 through 2024-06-20; four additional 2015 bars in a separate diagnostic",
+      "sample_probe_sha256": ["3a1033a102784eada2e880a97bd0d18c90bd6da80065700eed00e49d5c1e58b4", "7f2eca56ff16dd8304097730548ab4072c739212ba067a988801ffb14390cbe8"],
+      "missing_evidence": "Full bounded universe-date bar snapshot, completeness/outage reconciliation, raw and normalized artifact hashes and aggregate row/security counts",
+      "why_it_blocks_signal_reconstruction": "Indicators, limit-up counts, execution and forward paths lack complete frozen observations",
+      "minimum_next_action": "After D5 qualification, capture an exact bounded OHLCV/amount universe snapshot and reconcile missing dates to D1/D6",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "D4", "source": "Gate B canonical DailyTradingConstraint contract and AmazingData historical status inputs",
+      "required_semantic": "Per security-day valid, limit_applicable, regime, price limits and trading_allowed with conflict exclusion",
+      "available_coverage": "Gate B C2 contract CLOSED; no real bounded-range canonical output or regime totals",
+      "missing_evidence": "Full-range VALID/INVALID/MISSING/CONFLICT and 10%/5%/20%/no-limit counts; resolution of a sampled ST-label conflict",
+      "why_it_blocks_signal_reconstruction": "Real limit-up eligibility and order intent cannot be replayed safely",
+      "minimum_next_action": "Produce canonical constraints from qualified effective-date status and bars; tally all regimes and fail closed on conflicts",
+      "status": "NOT_PRODUCED"
+    },
+    {
+      "id": "D5", "source": "AmazingData backward_factor and issuer corporate-action announcements",
+      "required_semantic": "PIT-safe factor(d)/factor(T) for every signal T, or sufficient effective-date official-action reconstruction",
+      "available_coverage": "One security: 8730 overlapping dates across two post-action retrievals unchanged; two cash/bonus action ratios match six-decimal rounding bounds",
+      "missing_evidence": "Pre-vs-post later-action factor snapshots, or broad reconstruction covering rights/share-scale and multiple actions, plus full-universe target-window coverage",
+      "why_it_blocks_signal_reconstruction": "PIT_ADJUSTED_CLOSE_V1 can contaminate RSI/MA/Entry if future corporate actions alter historical ratios",
+      "minimum_next_action": "Obtain a true pre-action factor snapshot for ratio invariance, or reconstruct representative single and multiple action sequences from official effective-date terms; then freeze universe-wide factors",
+      "status": "FACTOR_SOURCE_PARTIALLY_QUALIFIED"
+    },
+    {
+      "id": "D6", "source": "AmazingData history_status(IS_SUSP_SEC), checked bars, issuer suspension notice",
+      "required_semantic": "Per security-day TRADED, SUSPENDED, NOT_LISTED, LIFECYCLE_ENDED or UNKNOWN without treating missing bar as suspension",
+      "available_coverage": "Three 600519 status/bar days and four 600518 status days including an issuer-confirmed suspension on 2024-07-03",
+      "missing_evidence": "Full bounded universe-date status/bar joins, conflict and UNKNOWN counts, effective-date reconciliation of vendor status flags",
+      "why_it_blocks_signal_reconstruction": "Suspended or unknown days could be misread as tradable, corrupting membership, fillability and observation clocks",
+      "minimum_next_action": "Freeze daily status for the qualified universe, join to bars/lifecycle, validate a wider suspension sample and report every UNKNOWN/conflict",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "D7", "source": "Private calendar/factor captures and probe receipts",
+      "required_semantic": "REAL_RESEARCH_SNAPSHOT_V1 with every source hash, request, retrieval time, code commit and contract version",
+      "available_coverage": "Calendar capture and two single-security factor files have private hashes; no complete cross-source study snapshot",
+      "missing_evidence": "Security master, bars, canonical constraints, factor, state and action snapshot receipts tied to one study range",
+      "why_it_blocks_signal_reconstruction": "Live re-query could silently change historical inputs, preventing deterministic replay",
+      "minimum_next_action": "Freeze all qualified source artifacts locally and issue a single immutable run manifest with raw/normalized hashes and coverage counts",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "D8", "source": "Existing ForwardEventStudy adjustment-factor path and issuer company-action evidence",
+      "required_semantic": "ENTRY_COMPARABLE_FORWARD_PATH_V1: realized future price-scale actions only in outcome, not in signal; PRICE_PATH_V1 excludes cash dividend income",
+      "available_coverage": "Contract and synthetic future-action/PIT guard test; two published action terms; no complete company-action outcome source",
+      "missing_evidence": "Full bounded action chronology, entry-date comparable high/low/close validation including rights/multiple actions, source hashes",
+      "why_it_blocks_signal_reconstruction": "Does not block signals directly, but prevents economically comparable MFE/MAE/RET after entry",
+      "minimum_next_action": "Freeze effective-date action source for every candidate event horizon and validate comparable path against official cash, bonus, rights and multiple-action examples",
+      "status": "CONTRACT_ONLY"
+    }
+  ]
+}

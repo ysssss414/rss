@@ -1,0 +1,26 @@
+{
+  "schema": "stage1-security-master-qualification/1",
+  "source": "AmazingData 1.1.6 historical_codes(EXTRA_STOCK_A_SH_SZ) and stock_basic",
+  "private_probe_sha256": "3a1033a102784eada2e880a97bd0d18c90bd6da80065700eed00e49d5c1e58b4",
+  "private_type_negative_control_probe_sha256": "2ebb2a8ec3c36ee6df145a3bb566fa32fd1cfbe4ad630ed0725a48df58c4282c",
+  "sample_dates": {
+    "2024-01-02": {"historical_list_count": 5096, "list_sha256": "b0dea2247637ff53e571295def7816ae49776c2c71975401f20d9beb78076a74"},
+    "2026-09-22": {"historical_list_count": 5222, "list_sha256": "654c791a1d11696937ef416bb1a1b3ff828b80bfb5c089c0bb79365a699164c4"}
+  },
+  "sample_checks": {
+    "long_listed": ["000001.SZ", "600519.SH"],
+    "recent_ipo": "603194.SH: absent 2024-01-02, present 2026-09-22; official listing 2024-12-24",
+    "delisted": "600005.SH: absent on both sampled dates; official delisting effective 2017-02-14",
+    "type_negative_control": "510300.SH ETF absent from sampled A-share list",
+    "relisting": "NOT_TESTED"
+  },
+  "official_evidence": {
+    "recent_ipo": "https://www.sse.com.cn/disclosure/announcement/listing/ipo/c/c_20241223_10767028.shtml",
+    "delisting": "https://www.sse.com.cn/disclosure/announcement/listing/c/c_20170208_4235564.shtml",
+    "etf_type": "https://www.sse.com.cn/assortment/options/rule/c/c_20210128_5312080.shtml"
+  },
+  "stock_basic_has_explicit_security_type": false,
+  "effective_dated_full_universe_coverage": null,
+  "qualification_status": "PARTIALLY_QUALIFIED_SAMPLE_ONLY",
+  "signal_generation_admitted": false
+}

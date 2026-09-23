@@ -1,0 +1,11 @@
+{
+  "schema": "stage1-trading-state-qualification/1",
+  "source": "AmazingData 1.1.6 history_status(IS_SUSP_SEC) joined with checked EOD bars and official issuer notice",
+  "private_probe_sha256": "3a1033a102784eada2e880a97bd0d18c90bd6da80065700eed00e49d5c1e58b4",
+  "bounded_samples": {"600519_2024_06_18_to_20": {"status_rows": 3, "bar_rows": 3}, "600518_2024_07_02_to_05": {"status_rows": 4, "known_suspended_date": "2024-07-03"}},
+  "issuer_notice": "https://static.cninfo.com.cn/finalpage/2024-07-03/1220520500.PDF",
+  "st_label_conflict": "Vendor IS_ST_SEC on 600518.SH 2024-07-04 conflicts with issuer-effective status; do not infer limit regime from this flag",
+  "classification_rule": "TRADED requires trading status plus bar; SUSPENDED requires suspension status and no bar; missing bar alone is UNKNOWN; lifecycle from effective-dated master",
+  "full_universe_counts": {"TRADED": null, "SUSPENDED": null, "NOT_LISTED": null, "LIFECYCLE_ENDED": null, "UNKNOWN": null},
+  "qualification_status": "PARTIALLY_QUALIFIED_SAMPLE_ONLY"
+}

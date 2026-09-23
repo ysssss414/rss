@@ -1,0 +1,13 @@
+{
+  "schema": "ENTRY_COMPARABLE_FORWARD_PATH_V1",
+  "measure": "PRICE_PATH_V1",
+  "entry_price_basis": "raw modelled execution price",
+  "forward_price_basis": "Realized future high/low/close mapped to entry-date comparable price scale using effective actions actually occurring within horizon",
+  "no_action": "Use raw future high/low/close",
+  "price_scale_action": "For ex-dividend, bonus/split or rights, use validated action-adjustment ratios to remove mechanical price-scale discontinuity",
+  "cash_dividend_income": "EXCLUDED; no total-shareholder-return claim",
+  "signal_lineage": "Future action or factor availability after T cannot enter HistoricalUniverse, LimitUpCount5, RSI, MA, ObservationPool or EntrySignal",
+  "outcome_lineage": "Realized post-entry action is admissible only for MFE, MAE, RET_H and TIME_TO_MFE normalization",
+  "existing_engine_contract": "ForwardEventStudy PricePath adjustment_factor and corporate_action_dates; no engine redesign",
+  "real_data_qualification": "BLOCKED_PENDING_D5_AND_D8"
+}

@@ -11,3 +11,4 @@ __pycache__/
 .cache/
 outputs/
 .numba_cache/
+/.local_research_data/
