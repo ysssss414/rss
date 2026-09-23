@@ -1,4 +1,5 @@
 artifacts/stage1_gate_b/** -text
+artifacts/stage1_d4_authority_closure/*.pdf -text -diff
 docs/stage1_gate_b_hybrid_data_contract.md -text
 scripts/validate_stage1_gate_b_contract.py -text
 tests/test_gate_b_contract.py -text

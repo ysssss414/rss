@@ -1,0 +1,29 @@
+{
+  "schema": "stage1-d4-security-facts/1",
+  "sample_case_source": "artifacts/stage1_gate_b_retry3/historical_validation_cases.json",
+  "additional_cases": [
+    {"case":"star_risk_removal_2026_04_21","security_id":"688511.SH","trade_date":"2026-04-21"},
+    {"case":"szse_risk_intro_2026_04_27","security_id":"000838.SZ","trade_date":"2026-04-27"},
+    {"case":"szse_risk_rule_boundary_2026_07_06","security_id":"000838.SZ","trade_date":"2026-07-06"}
+  ],
+  "policy": "Only fields directly supported by the named frozen official event are admitted. Missing fields are intentionally absent, not false.",
+  "facts": [
+    {"security_id":"603194.SH","field":"exchange","value":"SSE","source_id":"SSE_603194_IPO","known_at":"2024-12-23T23:59:00+08:00","effective_at":"2024-12-24T00:00:00+08:00","first_applicable_trading_date":"2024-12-24","covered_until":"2024-12-24"},
+    {"security_id":"603194.SH","field":"board","value":"MAIN","source_id":"SSE_603194_IPO","known_at":"2024-12-23T23:59:00+08:00","effective_at":"2024-12-24T00:00:00+08:00","first_applicable_trading_date":"2024-12-24","covered_until":"2024-12-24"},
+    {"security_id":"603194.SH","field":"security_type","value":"A_SHARE","source_id":"SSE_603194_IPO","known_at":"2024-12-23T23:59:00+08:00","effective_at":"2024-12-24T00:00:00+08:00","first_applicable_trading_date":"2024-12-24","covered_until":"2024-12-24"},
+    {"security_id":"603194.SH","field":"listing_kind","value":"IPO","source_id":"SSE_603194_IPO","known_at":"2024-12-23T23:59:00+08:00","effective_at":"2024-12-24T00:00:00+08:00","first_applicable_trading_date":"2024-12-24","covered_until":"2024-12-24"},
+    {"security_id":"603194.SH","field":"listing_session","value":1,"source_id":"SSE_603194_IPO","known_at":"2024-12-23T23:59:00+08:00","effective_at":"2024-12-24T00:00:00+08:00","first_applicable_trading_date":"2024-12-24","covered_until":"2024-12-24"},
+    {"security_id":"603194.SH","field":"special_status","value":"NONE","source_id":"SSE_603194_IPO","known_at":"2024-12-23T23:59:00+08:00","effective_at":"2024-12-24T00:00:00+08:00","first_applicable_trading_date":"2024-12-24","covered_until":"2024-12-24"},
+    {"security_id":"001391.SZ","field":"exchange","value":"SZSE","source_id":"SZSE_001391_IPO","known_at":"2024-12-27T23:59:00+08:00","effective_at":"2024-12-30T00:00:00+08:00","first_applicable_trading_date":"2024-12-30","covered_until":"2024-12-30"},
+    {"security_id":"001391.SZ","field":"board","value":"MAIN","source_id":"SZSE_001391_IPO","known_at":"2024-12-27T23:59:00+08:00","effective_at":"2024-12-30T00:00:00+08:00","first_applicable_trading_date":"2024-12-30","covered_until":"2024-12-30"},
+    {"security_id":"001391.SZ","field":"security_type","value":"A_SHARE","source_id":"SZSE_001391_IPO","known_at":"2024-12-27T23:59:00+08:00","effective_at":"2024-12-30T00:00:00+08:00","first_applicable_trading_date":"2024-12-30","covered_until":"2024-12-30"},
+    {"security_id":"001391.SZ","field":"listing_kind","value":"IPO","source_id":"SZSE_001391_IPO","known_at":"2024-12-27T23:59:00+08:00","effective_at":"2024-12-30T00:00:00+08:00","first_applicable_trading_date":"2024-12-30","covered_until":"2024-12-30"},
+    {"security_id":"001391.SZ","field":"listing_session","value":1,"source_id":"SZSE_001391_IPO","known_at":"2024-12-27T23:59:00+08:00","effective_at":"2024-12-30T00:00:00+08:00","first_applicable_trading_date":"2024-12-30","covered_until":"2024-12-30"},
+    {"security_id":"001391.SZ","field":"special_status","value":"NONE","source_id":"SZSE_001391_IPO","known_at":"2024-12-27T23:59:00+08:00","effective_at":"2024-12-30T00:00:00+08:00","first_applicable_trading_date":"2024-12-30","covered_until":"2024-12-30"},
+    {"security_id":"600187.SH","field":"risk_warning","value":true,"source_id":"SSE_600187_RISK_INTRO","known_at":"2026-04-30T16:30:14+08:00","effective_at":"2026-05-06T00:00:00+08:00","first_applicable_trading_date":"2026-05-06","covered_until":"2026-05-06"},
+    {"security_id":"600518.SH","field":"risk_warning","value":false,"source_id":"SSE_600518_RISK_REMOVAL","known_at":"2024-07-03T23:59:00+08:00","effective_at":"2024-07-04T00:00:00+08:00","first_applicable_trading_date":"2024-07-04","covered_until":"2024-07-04"},
+    {"security_id":"688511.SH","field":"risk_warning","value":false,"source_id":"SSE_688511_RISK_REMOVAL","known_at":"2026-04-18T23:59:00+08:00","effective_at":"2026-04-21T00:00:00+08:00","first_applicable_trading_date":"2026-04-21","covered_until":"2026-04-21"},
+    {"security_id":"688511.SH","field":"board","value":"STAR","source_id":"SSE_688511_RISK_REMOVAL","known_at":"2026-04-18T23:59:00+08:00","effective_at":"2026-04-21T00:00:00+08:00","first_applicable_trading_date":"2026-04-21","covered_until":"2026-04-21"},
+    {"security_id":"000838.SZ","field":"risk_warning","value":true,"source_id":"SZSE_000838_RISK_INTRO","known_at":"2026-04-24T23:59:00+08:00","effective_at":"2026-04-27T00:00:00+08:00","first_applicable_trading_date":"2026-04-27","covered_until":"2026-04-27"}
+  ]
+}

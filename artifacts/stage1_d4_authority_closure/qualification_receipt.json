@@ -1,0 +1,19 @@
+{
+  "schema": "stage1-d4-qualification-receipt/1",
+  "gate_result": "STAGE1_D4_AUTHORITY_CLOSURE_STOP",
+  "basis": "Rule paths are partially frozen and deterministic resolution is available, but complete PIT official security-day state and historical daily control rows are not acquired.",
+  "tested_security_days": 16,
+  "counts": {"VALID": 1, "INVALID": 0, "MISSING": 15, "CONFLICT": 0},
+  "candidate_window": {"data_start": "2024-01-01", "data_end": "2026-09-23", "candidate_research_start": "2024-08-15", "max_full_h20_signal_date": "2026-08-26"},
+  "qualified_research_start": null,
+  "qualified_signal_end": null,
+  "qualified_trading_day_count": null,
+  "blocking_acquisition_list": [
+    {"id": "D4-A1", "missing_source": "SSE official historical cpxx0201/cpxx0202 final pre-open security-day records, or an exchange-certified equivalent archive", "affected_state": "Daily effective limit mode, temporary/security-specific exceptions, conflicting updates", "manual_acquisition_possible": "Ask SSE market-data/technical service for dated archive or licensed participant export; confirm field semantics and timestamp", "requires_official_historical_interface": true, "minimum_next_action": "Obtain one 2024-2026 boundary-date archive sample with row timestamps and source permission, then import and compare with rule reconstruction"},
+    {"id": "D4-A2", "missing_source": "SZSE official historical cashauctionparams daily rows or exchange-certified equivalent", "affected_state": "HasPriceLimit, LimitType, absolute-vs-rate controls, security-specific exceptions", "manual_acquisition_possible": "Ask SZSE technical service or licensed participant for historical file access", "requires_official_historical_interface": true, "minimum_next_action": "Obtain dated rows including 2026-07-03/2026-07-06 and IPO/retirement examples; preserve final pre-open update"},
+    {"id": "D4-A3", "missing_source": "Complete official PIT event/state source for every A-share security: exchange/board/type, IPO session index, ST/*ST start and removal, relisting, delisting arrangement, and explicit negative coverage", "affected_state": "Normal, 5%, 10%, 20% and no-limit assignment across the candidate universe", "manual_acquisition_possible": "Individual exchange/issuer notices can be gathered manually but do not prove all-market absence of later events", "requires_official_historical_interface": true, "minimum_next_action": "Secure official listing/security master plus timestamped event feed or dated exchange-certified daily status; define completeness and gap detection before bulk import"},
+    {"id": "D4-A4", "missing_source": "Retrievable original official SZSE 2023 trading-rule PDF or an official replacement archive", "affected_state": "Replayable 2024-2026-07-05 SZSE rule authority, including 5% main-board risk warning and IPO/relisting/delisting windows", "manual_acquisition_possible": "Request archive from SZSE or locate a still-live official mirror; indexed/cached copies are not sufficient", "requires_official_historical_interface": false, "minimum_next_action": "Freeze original official PDF, record SHA256 and clause/page references, then set manifest admitted_for_replay=true"},
+    {"id": "D4-A5", "missing_source": "Enumerated official exchange temporary exception/adjustment notices with effective times", "affected_state": "OTHER_EXPLICIT, exchange-designated no-limit cases and ad-hoc price-limit adjustments", "manual_acquisition_possible": "Review official notices manually; automate only after complete source path/coverage is proven", "requires_official_historical_interface": false, "minimum_next_action": "Inventory exception categories and validate against historical daily control rows; unresolved categories remain UNKNOWN"}
+  ],
+  "next_action": "Acquire D4-A1 through D4-A5 and rerun bounded qualification before D1/D3/D6 bulk materialization or any real smoke."
+}

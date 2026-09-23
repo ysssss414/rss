@@ -1,0 +1,279 @@
+{
+  "schema": "stage1-d4-bounded-sample-summary/1",
+  "sample_source": "artifacts/stage1_gate_b_retry3/historical_validation_cases.json",
+  "tested_security_days": 16,
+  "counts": {
+    "VALID": 1,
+    "INVALID": 0,
+    "MISSING": 15,
+    "CONFLICT": 0
+  },
+  "valid_regimes": {
+    "LIMIT_5": 0,
+    "LIMIT_10": 0,
+    "LIMIT_20": 0,
+    "NO_DAILY_LIMIT": 1,
+    "OTHER_EXPLICIT": 0
+  },
+  "cases": [
+    {
+      "case": "sse_normal_2026_04_29",
+      "security_id": "600187.SH",
+      "trading_date": "2026-04-29",
+      "qualification_state": "MISSING",
+      "limit_regime": "UNKNOWN",
+      "reason_codes": [
+        "MISSING_EXCHANGE",
+        "MISSING_BOARD",
+        "MISSING_SECURITY_TYPE",
+        "MISSING_LISTING_KIND",
+        "MISSING_LISTING_SESSION",
+        "MISSING_SPECIAL_STATUS"
+      ],
+      "authority_trace": []
+    },
+    {
+      "case": "sse_suspension_2026_04_30",
+      "security_id": "600187.SH",
+      "trading_date": "2026-04-30",
+      "qualification_state": "MISSING",
+      "limit_regime": "UNKNOWN",
+      "reason_codes": [
+        "MISSING_EXCHANGE",
+        "MISSING_BOARD",
+        "MISSING_SECURITY_TYPE",
+        "MISSING_LISTING_KIND",
+        "MISSING_LISTING_SESSION",
+        "MISSING_SPECIAL_STATUS"
+      ],
+      "authority_trace": []
+    },
+    {
+      "case": "sse_risk_intro_2026_05_06",
+      "security_id": "600187.SH",
+      "trading_date": "2026-05-06",
+      "qualification_state": "MISSING",
+      "limit_regime": "UNKNOWN",
+      "reason_codes": [
+        "MISSING_EXCHANGE",
+        "MISSING_BOARD",
+        "MISSING_SECURITY_TYPE",
+        "MISSING_LISTING_KIND",
+        "MISSING_LISTING_SESSION",
+        "MISSING_SPECIAL_STATUS"
+      ],
+      "authority_trace": [
+        "SSE_600187_RISK_INTRO"
+      ]
+    },
+    {
+      "case": "sse_risk_before_rule_change",
+      "security_id": "600187.SH",
+      "trading_date": "2026-07-03",
+      "qualification_state": "MISSING",
+      "limit_regime": "UNKNOWN",
+      "reason_codes": [
+        "MISSING_EXCHANGE",
+        "MISSING_BOARD",
+        "MISSING_SECURITY_TYPE",
+        "MISSING_LISTING_KIND",
+        "MISSING_LISTING_SESSION",
+        "MISSING_SPECIAL_STATUS"
+      ],
+      "authority_trace": []
+    },
+    {
+      "case": "sse_risk_after_rule_change",
+      "security_id": "600187.SH",
+      "trading_date": "2026-07-06",
+      "qualification_state": "MISSING",
+      "limit_regime": "UNKNOWN",
+      "reason_codes": [
+        "MISSING_EXCHANGE",
+        "MISSING_BOARD",
+        "MISSING_SECURITY_TYPE",
+        "MISSING_LISTING_KIND",
+        "MISSING_LISTING_SESSION",
+        "MISSING_SPECIAL_STATUS"
+      ],
+      "authority_trace": []
+    },
+    {
+      "case": "sse_risk_pre_removal",
+      "security_id": "600518.SH",
+      "trading_date": "2024-07-02",
+      "qualification_state": "MISSING",
+      "limit_regime": "UNKNOWN",
+      "reason_codes": [
+        "MISSING_EXCHANGE",
+        "MISSING_BOARD",
+        "MISSING_SECURITY_TYPE",
+        "MISSING_LISTING_KIND",
+        "MISSING_LISTING_SESSION",
+        "MISSING_SPECIAL_STATUS"
+      ],
+      "authority_trace": []
+    },
+    {
+      "case": "sse_risk_removal_2024_07_04",
+      "security_id": "600518.SH",
+      "trading_date": "2024-07-04",
+      "qualification_state": "MISSING",
+      "limit_regime": "UNKNOWN",
+      "reason_codes": [
+        "MISSING_EXCHANGE",
+        "MISSING_BOARD",
+        "MISSING_SECURITY_TYPE",
+        "MISSING_LISTING_KIND",
+        "MISSING_LISTING_SESSION",
+        "MISSING_SPECIAL_STATUS"
+      ],
+      "authority_trace": [
+        "SSE_600518_RISK_REMOVAL"
+      ]
+    },
+    {
+      "case": "sse_ipo_first_day",
+      "security_id": "603194.SH",
+      "trading_date": "2024-12-24",
+      "qualification_state": "VALID",
+      "limit_regime": "NO_DAILY_LIMIT",
+      "reason_codes": [
+        "RULE_IPO_NO_LIMIT_WINDOW"
+      ],
+      "authority_trace": [
+        "SSE_2023_RULE",
+        "SSE_603194_IPO"
+      ]
+    },
+    {
+      "case": "sse_ex_dividend",
+      "security_id": "600519.SH",
+      "trading_date": "2024-06-19",
+      "qualification_state": "MISSING",
+      "limit_regime": "UNKNOWN",
+      "reason_codes": [
+        "MISSING_EXCHANGE",
+        "MISSING_BOARD",
+        "MISSING_SECURITY_TYPE",
+        "MISSING_LISTING_KIND",
+        "MISSING_LISTING_SESSION",
+        "MISSING_SPECIAL_STATUS"
+      ],
+      "authority_trace": []
+    },
+    {
+      "case": "szse_main_10",
+      "security_id": "000001.SZ",
+      "trading_date": "2024-10-09",
+      "qualification_state": "MISSING",
+      "limit_regime": "UNKNOWN",
+      "reason_codes": [
+        "MISSING_EXCHANGE",
+        "MISSING_BOARD",
+        "MISSING_SECURITY_TYPE",
+        "MISSING_LISTING_KIND",
+        "MISSING_LISTING_SESSION",
+        "MISSING_SPECIAL_STATUS"
+      ],
+      "authority_trace": []
+    },
+    {
+      "case": "szse_chinext_20",
+      "security_id": "300750.SZ",
+      "trading_date": "2024-09-27",
+      "qualification_state": "MISSING",
+      "limit_regime": "UNKNOWN",
+      "reason_codes": [
+        "MISSING_EXCHANGE",
+        "MISSING_BOARD",
+        "MISSING_SECURITY_TYPE",
+        "MISSING_LISTING_KIND",
+        "MISSING_LISTING_SESSION",
+        "MISSING_SPECIAL_STATUS"
+      ],
+      "authority_trace": []
+    },
+    {
+      "case": "szse_ipo_first_day",
+      "security_id": "001391.SZ",
+      "trading_date": "2024-12-30",
+      "qualification_state": "MISSING",
+      "limit_regime": "UNKNOWN",
+      "reason_codes": [
+        "MISSING_RULE_AUTHORITY",
+        "RULE_IPO_FIRST_FIVE"
+      ],
+      "authority_trace": [
+        "SZSE_001391_IPO"
+      ]
+    },
+    {
+      "case": "szse_post_ipo_day_six",
+      "security_id": "001391.SZ",
+      "trading_date": "2025-01-07",
+      "qualification_state": "MISSING",
+      "limit_regime": "UNKNOWN",
+      "reason_codes": [
+        "MISSING_EXCHANGE",
+        "MISSING_BOARD",
+        "MISSING_SECURITY_TYPE",
+        "MISSING_LISTING_KIND",
+        "MISSING_LISTING_SESSION",
+        "MISSING_SPECIAL_STATUS"
+      ],
+      "authority_trace": []
+    },
+    {
+      "case": "star_risk_removal_2026_04_21",
+      "security_id": "688511.SH",
+      "trading_date": "2026-04-21",
+      "qualification_state": "MISSING",
+      "limit_regime": "UNKNOWN",
+      "reason_codes": [
+        "MISSING_EXCHANGE",
+        "MISSING_SECURITY_TYPE",
+        "MISSING_LISTING_KIND",
+        "MISSING_LISTING_SESSION",
+        "MISSING_SPECIAL_STATUS"
+      ],
+      "authority_trace": [
+        "SSE_688511_RISK_REMOVAL"
+      ]
+    },
+    {
+      "case": "szse_risk_intro_2026_04_27",
+      "security_id": "000838.SZ",
+      "trading_date": "2026-04-27",
+      "qualification_state": "MISSING",
+      "limit_regime": "UNKNOWN",
+      "reason_codes": [
+        "MISSING_EXCHANGE",
+        "MISSING_BOARD",
+        "MISSING_SECURITY_TYPE",
+        "MISSING_LISTING_KIND",
+        "MISSING_LISTING_SESSION",
+        "MISSING_SPECIAL_STATUS"
+      ],
+      "authority_trace": [
+        "SZSE_000838_RISK_INTRO"
+      ]
+    },
+    {
+      "case": "szse_risk_rule_boundary_2026_07_06",
+      "security_id": "000838.SZ",
+      "trading_date": "2026-07-06",
+      "qualification_state": "MISSING",
+      "limit_regime": "UNKNOWN",
+      "reason_codes": [
+        "MISSING_EXCHANGE",
+        "MISSING_BOARD",
+        "MISSING_SECURITY_TYPE",
+        "MISSING_LISTING_KIND",
+        "MISSING_LISTING_SESSION",
+        "MISSING_SPECIAL_STATUS"
+      ],
+      "authority_trace": []
+    }
+  ]
+}
