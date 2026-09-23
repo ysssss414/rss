@@ -1,0 +1,49 @@
+{
+  "schema": "stage1-exit-discovery/1",
+  "result": "EXIT_CANDIDATE_FOUND_NOT_AUTHORIZED",
+  "stage1_authoritative_exit_contract_found": false,
+  "current_repository_evidence": {
+    "path": "docs/three_board_rsi_entry_v0.1.md",
+    "commit": "47e2c609d9c5c4d6b5ecb0b8ee5e05a8b8d6e0fc",
+    "semantics": "The RSS/entry project excludes stop-profit, stop-loss, execution and equity-curve behavior and explicitly states that it is not merged with any rsi_exit business module"
+  },
+  "legacy_candidate": {
+    "repository": "https://github.com/ysssss414/rsi-exit",
+    "reviewed_commit": "cb7a7d3",
+    "classification": "RELATED_LEGACY_LOGIC",
+    "sources": [
+      "rsi_exit/state_machine.py",
+      "rsi_exit/position_rules.py",
+      "config/rsi_exit_v04.yaml",
+      "docs/specs/rsi_exit_v0.3_top_divergence_spec_v0.2.md",
+      "docs/specs/rsi_exit_v0.4_warning_lifecycle_spec.md"
+    ],
+    "candidate_semantics": {
+      "base_exit": [
+        "hard_exit input",
+        "RSI below 50",
+        "RSI below 60 while close below MA20",
+        "RSI below 60 for two consecutive observations"
+      ],
+      "divergence_exit": "Third formal bearish divergence reduces the legacy position cap to zero",
+      "reentry": "After S3/S4, RSI at least 70 and close above MA20 emits ALLOW_REENTRY",
+      "warning_layer": "Read-only; never generates a trading action"
+    },
+    "data_requirements": [
+      "the legacy repository's RSI calculation and warm-up identity",
+      "MA20 and close",
+      "external_risk and hard_exit inputs",
+      "canonical/structural peak and divergence lifecycle",
+      "position-cap state and re-entry state"
+    ],
+    "causal_differences_from_stage1": [
+      "Outputs actions and position caps rather than an RSS ExitSignal contract",
+      "No authorization binds the legacy state machine to the RSS Entry A/B positions",
+      "No RSS priority contract covers simultaneous base-state and divergence exits",
+      "No RSS minimum/maximum holding or same-day state contract is authorized",
+      "No mapping to NEXT_SESSION_SELL_V1 and limit-down retry behavior is authorized"
+    ]
+  },
+  "exit_signal_v1_implemented": false,
+  "stop_reason": "EXIT_STRATEGY_SEMANTICS_UNAUTHORIZED"
+}

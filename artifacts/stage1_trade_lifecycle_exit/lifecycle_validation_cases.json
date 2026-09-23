@@ -1,0 +1,21 @@
+{
+  "schema": "stage1-lifecycle-validation-cases/1",
+  "synthetic_only": true,
+  "cases": [
+    {"case": "entry_fill", "expected": "OPEN"},
+    {"case": "entry_no_fill_at_limit_up", "expected": "ENTRY_FAILED_WITHOUT_POSITION"},
+    {"case": "entry_execution_unresolved", "expected": "ENTRY_FAILED_WITHOUT_POSITION"},
+    {"case": "open_exit_fill", "expected": "CLOSED"},
+    {"case": "open_exit_no_fill_at_limit_down", "expected": "OPEN"},
+    {"case": "open_exit_execution_unresolved", "expected": "EXIT_UNRESOLVED"},
+    {"case": "entry_while_open", "expected": "IGNORED_WHILE_POSITION_OPEN"},
+    {"case": "weekend_next_session", "expected": "NEXT_LISTED_EXCHANGE_SESSION"},
+    {"case": "holiday_next_session", "expected": "NEXT_LISTED_EXCHANGE_SESSION"},
+    {"case": "suspension", "expected": "EXECUTION_UNRESOLVED"},
+    {"case": "missing_constraint", "expected": "EXECUTION_UNRESOLVED"},
+    {"case": "missing_open", "expected": "EXECUTION_UNRESOLVED"},
+    {"case": "corporate_action", "expected": "POSITION_CORPORATE_ACTION_UNRESOLVED"},
+    {"case": "delisting_or_long_suspension", "expected": "POSITION_TRADING_LIFECYCLE_UNRESOLVED"}
+  ],
+  "performance_metrics_computed": false
+}

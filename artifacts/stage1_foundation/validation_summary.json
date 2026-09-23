@@ -1,11 +1,13 @@
 {
-  "schema": "stage1-foundation-validation/1",
-  "fixture_source": "20 synthetic Gate C security-days plus synthetic execution/calendar cases",
+  "schema": "stage1-foundation-validation/2",
+  "fixture_source": "20 synthetic Gate C security-days plus synthetic buy/sell execution, calendar and trade-lifecycle cases",
   "real_data_smoke": "NOT_RUN: complete PIT historical security master and fully qualified calendar are unavailable; no live qualification claimed",
   "foundation_targeted_passed": 50,
+  "trade_lifecycle_targeted_passed": 21,
+  "rsi_warmup_targeted_passed": 16,
   "gate_c_passed": 39,
   "prior_gate_a_b_passed": 72,
-  "full_repository_passed": 308,
+  "full_repository_passed": 412,
   "manifest_integrity": "PASS: 7 foundation hashes, 6 Gate C hashes and prior qualification manifests",
   "stage0_checkout_note": "Full-suite test temporarily uses verified frozen LF reference bytes on Windows and restores the original checkout bytes."
 }

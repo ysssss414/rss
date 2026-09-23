@@ -1,0 +1,20 @@
+{
+  "schema": "stage1-rsi-warmup-policy/1",
+  "policy_id": "RSI_WARMUP_POLICY_V1",
+  "rsi_version": "RSI14_PROJECT_V1",
+  "price_basis": "PIT_ADJUSTED_CLOSE_V1",
+  "minimum_ready_observations": 2,
+  "requires_full_prefix": true,
+  "canonical_replay_origin": "LATEST_LISTING_OR_RELISTING",
+  "canonical_mode": "FULL_AVAILABLE_PREFIX",
+  "truncated_slice_min_warmup": 120,
+  "truncated_slice_default_warmup": 150,
+  "truncated_policy": {
+    "available_below_120": "INSUFFICIENT_TRUNCATED_WARMUP",
+    "available_120_to_149": "READY_WITH_BELOW_DEFAULT_TARGET_DISCLOSURE",
+    "available_at_least_150": "USE_REQUESTED_SUFFIX; DEFAULT_REQUEST_IS_150"
+  },
+  "short_listing_history": "Use the complete available prefix even when fewer than 120 observations; normal RSI readiness still requires two observations",
+  "historical_universe_eligibility_effect": "NONE",
+  "algorithm_change": "NONE"
+}
