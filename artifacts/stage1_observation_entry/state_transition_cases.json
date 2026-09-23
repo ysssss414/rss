@@ -1,0 +1,18 @@
+{
+  "schema": "stage1-observation-entry-transition-cases/1",
+  "synthetic_only": true,
+  "cases": [
+    {"from": "NOT_ADMITTED", "input": "eligible, count 4/5, RSI>70", "to": "ACTIVE", "event": "POOL_ADMISSION"},
+    {"from": "NOT_ADMITTED", "input": "dependency NOT_READY or INVALID", "to": "NOT_ADMITTED", "event": "NO_ADMISSION_EVALUATION"},
+    {"from": "ACTIVE", "input": "Entry A or Entry B at T EOD", "to": "SIGNALLED", "event": "ENTRY_SIGNAL"},
+    {"from": "ACTIVE", "input": "pure suspension", "to": "ACTIVE or EXPIRED after session 7", "event": "SUSPENDED_NO_ENTRY_EVALUATION"},
+    {"from": "ACTIVE", "input": "hard invalidation", "to": "INVALIDATED", "event": "HARD_INVALIDATION"},
+    {"from": "ACTIVE", "input": "session 7 EOD no signal", "to": "EXPIRED", "event": "POOL_OBSERVATION"},
+    {"from": "SIGNALLED", "input": "NEXT_SESSION_V1 NO_FILL before session 7", "to": "ACTIVE", "event": "may retry on later EOD"},
+    {"from": "SIGNALLED", "input": "NEXT_SESSION_V1 NO_FILL after session 7 signal", "to": "EXPIRED", "event": "no new signal on session 8"},
+    {"from": "SIGNALLED", "input": "NEXT_SESSION_V1 EXECUTION_UNRESOLVED", "to": "SIGNALLED", "event": "pending; no fill claim"},
+    {"from": "SIGNALLED", "input": "unresolved through session 7 EOD", "to": "EXPIRED", "event": "pending intent does not extend pool horizon"},
+    {"from": "SIGNALLED", "input": "NEXT_SESSION_V1 MODELLED_FILL", "to": "TERMINATED_AFTER_FILL", "event": "no position modeled"},
+    {"from": "EXPIRED or INVALIDATED or TERMINATED_AFTER_FILL", "input": "future session eligible and new admission gate", "to": "ACTIVE", "event": "new instance_id"}
+  ]
+}

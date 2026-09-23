@@ -1,0 +1,37 @@
+{
+  "schema": "stage1-observation-entry-qualification/1",
+  "branch": "codex/rss-stage1-observation-entry-foundation",
+  "base_main_sha": "a44c0345ca3663bf466c4f41bc80fb810a063a78",
+  "result": "STAGE1_OBSERVATION_ENTRY_PASS",
+  "observation_pool_version": "OBSERVATION_POOL_V1",
+  "entry_versions": [
+    "ENTRY_A_PULLBACK_TO_MA5_V1",
+    "ENTRY_B_RSI_RECROSS_70_V1"
+  ],
+  "rsi_version": "RSI14_PROJECT_V1",
+  "price_basis": "PIT_ADJUSTED_CLOSE_V1",
+  "execution_policy": "NEXT_SESSION_V1",
+  "synthetic_only": true,
+  "lf_normalized_paths": [
+    "docs/stage1_observation_entry_contract.md",
+    "research/observation_pool.py",
+    "research/entry_signals.py",
+    "scripts/verify_stage1_observation_entry_manifest.py",
+    "tests/test_observation_entry.py"
+  ],
+  "evidence_hashes": {
+    "artifacts/stage1_observation_entry/.gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+    "artifacts/stage1_observation_entry/baseline_receipt.json": "81cad8fbe2ee6f641bbac534e4437d87867f3e468df20676884d1cba040eaeff",
+    "artifacts/stage1_observation_entry/observation_pool_contract.json": "af4e48b5575a93e106d4743d1b0ba15c6244a028075b6cb5724ce5e0a1cd78a7",
+    "artifacts/stage1_observation_entry/entry_a_contract.json": "3f78a553bf73b35fff32da9a211cae2facbf7e90e0252a7b4e734cfe3063a610",
+    "artifacts/stage1_observation_entry/entry_b_contract.json": "391cd0dbb103a6390418d1d1743072fe8952e351f1f054738b23fa14a2bce46a",
+    "artifacts/stage1_observation_entry/state_transition_cases.json": "f04c777d73547247c1d520d22ddc8ba20fa23ceed0133747db348427353d7abd",
+    "docs/stage1_observation_entry_contract.md": "bb86f146882630496c699f2499315f3fcd58dced175eb74088da191a0d65e5c8",
+    "research/observation_pool.py": "de4ebfbb9f6fe077455493d9a1c5a23ca5e82eb04ad30d21824142daa6e31e36",
+    "research/entry_signals.py": "e4e0b59397b529f213fed1ead2ecf17ea456b18af0203232a4a3e1762f165a65",
+    "scripts/verify_stage1_observation_entry_manifest.py": "62ed9ce040863d27e2a26c97202a7490a1dfaa9ef63017444d8c353dbdffa0a1",
+    "tests/test_observation_entry.py": "4dee549c3932ad13eba9c96533b4f47a003a971b546daa147b78cedc73ab355f"
+  },
+  "hash_basis": "Literal bytes for -text artifact files; LF-normalized UTF-8 bytes for listed source, tests and docs; manifest excludes itself",
+  "no_exit_pnl_backtest_or_parameter_sweep": true
+}

@@ -1,0 +1,13 @@
+{
+  "schema": "stage1-entry-a-contract/1",
+  "version": "ENTRY_A_PULLBACK_TO_MA5_V1",
+  "evaluation_time": "T_EOD_FINALIZED, including admission day and session 7",
+  "requirements": ["ACTIVE pool", "eligible HistoricalUniverse(T)", "RSI14_PROJECT_V1(T)>70", "has_seen_rsi_below_70=false", "MA5_SMA_V1(T) READY", "qualified PIT price lineage"],
+  "price_basis": "PIT_ADJUSTED_CLOSE_V1",
+  "ma5_t_raw_equivalent": "MA5_adjusted(T) / (factor(T)/anchor_factor(T)); PIT_ADJUSTED_CLOSE_V1 anchors at T, so ratio=1 and indicator_close(T)=raw_close(T)",
+  "touch": "raw_low(T) <= MA5_T_RAW_EQUIVALENT",
+  "hold": "raw_close(T) >= MA5_T_RAW_EQUIVALENT",
+  "no_arbitrary_tolerance": true,
+  "strict_rsi_threshold": 70,
+  "signal_is_not_fill": true
+}
