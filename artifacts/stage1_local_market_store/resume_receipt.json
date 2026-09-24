@@ -1,0 +1,83 @@
+{
+  "D1_basic": {
+    "bounded_interruption_verified": true,
+    "checkpoint_records_completed": 66,
+    "segments": [
+      {
+        "elapsed_seconds": 1.182639,
+        "finished_at": "2026-09-24T04:50:50.819608+00:00",
+        "new_completed": 2,
+        "phase": "D1_basic",
+        "remote_request_attempts": 2,
+        "skipped_completed": 0,
+        "started_at": "2026-09-24T04:50:49.636935+00:00"
+      },
+      {
+        "elapsed_seconds": 36.986616,
+        "finished_at": "2026-09-24T04:51:44.629192+00:00",
+        "new_completed": 64,
+        "phase": "D1_basic",
+        "remote_request_attempts": 64,
+        "skipped_completed": 2,
+        "started_at": "2026-09-24T04:51:07.642583+00:00"
+      },
+      {
+        "elapsed_seconds": 0.997478,
+        "finished_at": "2026-09-24T05:54:03.331045+00:00",
+        "new_completed": 0,
+        "phase": "D1_basic",
+        "remote_request_attempts": 0,
+        "skipped_completed": 66,
+        "started_at": "2026-09-24T05:54:02.333521+00:00"
+      }
+    ]
+  },
+  "D4_D6_status": {
+    "checkpoint_records_completed": 5222,
+    "interrupted_then_batch_resumed": true,
+    "segments": [
+      {
+        "elapsed_seconds": 993.614943,
+        "new_completed": 669,
+        "phase": "D4_D6_status",
+        "remote_request_attempts": 669,
+        "skipped_completed": 100,
+        "started_at": "2026-09-24T05:54:36.815720+00:00"
+      },
+      {
+        "batch_size": 20,
+        "elapsed_seconds": 1819.226534,
+        "finished_at": "2026-09-24T06:48:34.356951+00:00",
+        "mode": "batch20",
+        "new_completed": 4453,
+        "phase": "D4_D6_status",
+        "remote_request_attempts": 223,
+        "skipped_completed": 769,
+        "started_at": "2026-09-24T06:18:15.130572+00:00"
+      }
+    ]
+  },
+  "D5_factor": {
+    "checkpoint_records_completed": 53,
+    "interrupted_then_resumed": true,
+    "segments": [
+      {
+        "elapsed_seconds": 1503.033704,
+        "new_completed": 36,
+        "phase": "D5_factor",
+        "remote_request_attempts": 36,
+        "skipped_completed": 5,
+        "started_at": "2026-09-24T06:49:49.379948+00:00"
+      },
+      {
+        "elapsed_seconds": 338.64509,
+        "finished_at": "2026-09-24T07:26:20.968757+00:00",
+        "new_completed": 12,
+        "phase": "D5_factor",
+        "remote_request_attempts": 12,
+        "skipped_completed": 41,
+        "started_at": "2026-09-24T07:20:42.323662+00:00"
+      }
+    ]
+  }
+}

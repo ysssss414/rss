@@ -1,0 +1,33 @@
+{
+  "schema": "stage1-local-market-store-controlled-incremental/1",
+  "mode": "CONTROLLED_SYNTHETIC_FIXTURE",
+  "reason": "The 2026-09-24 session had not finished when the test was run; no intraday bar was represented as final EOD data.",
+  "test": "tests/test_market_store.py::test_gap_plan_update_and_identical_rerun",
+  "fixture_securities": 2,
+  "fixture_existing_sessions": ["2026-09-21", "2026-09-22"],
+  "missing_dates": ["2026-09-23"],
+  "first_update": {
+    "simulated_provider_calls": 6,
+    "actual_amazingdata_remote_calls": 0,
+    "new_trading_calendar_rows": 1,
+    "new_daily_bars_rows": 2,
+    "new_daily_status_rows": 2,
+    "duplicate_keys": 0,
+    "manifest_daily_bars_rows_after": 6
+  },
+  "second_identical_update": {
+    "simulated_provider_calls": 0,
+    "actual_amazingdata_remote_calls": 0,
+    "new_rows": 0,
+    "status": "NO_OP"
+  },
+  "bounded_factor_refresh": {
+    "test": "tests/test_market_store.py::test_bounded_factor_refresh_adds_latest_and_preserves_history",
+    "trailing_sessions": 3,
+    "simulated_provider_calls": 2,
+    "actual_amazingdata_remote_calls": 0,
+    "new_adjustment_factor_rows": 2,
+    "historical_values_unchanged": true,
+    "common_renormalization_test": "tests/test_market_store.py::test_factor_refresh_common_renormalization_keeps_old_anchor"
+  }
+}

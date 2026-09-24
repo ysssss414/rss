@@ -1,0 +1,17 @@
+{
+  "active_time_is_lower_bound": true,
+  "actual_hours": 2.3244,
+  "buffered_eta_hours": 2.419,
+  "component_active_seconds": {
+    "D1_basic": 39.167,
+    "D3_bars": 3674.187,
+    "D4_D6_status": 2812.841,
+    "D5_factor": 1841.679
+  },
+  "definition": "sum of checkpointed phase acquisition segments; excludes engineering pauses, materialization, and uncheckpointed in-flight time of interrupted requests",
+  "eta_error_pct": 15.36,
+  "previous_eta_hours": 2.015,
+  "previous_eta_seconds": 7254.0,
+  "total_active_seconds": 8367.874,
+  "unit": "seconds"
+}

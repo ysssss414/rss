@@ -1,0 +1,25 @@
+{
+  "D1_note": "100 prior D1 rows were valid; display encoding was misread and all D1 batches were refetched. Zero D1 remote calls avoided.",
+  "by_dataset": {
+    "D3_bars": {
+      "remote_calls_avoided": 100,
+      "rows": 62126,
+      "securities": 100
+    },
+    "D4_D6_status": {
+      "remote_calls_avoided": 100,
+      "rows": 62239,
+      "securities": 100
+    },
+    "D5_factor": {
+      "remote_calls_avoided": 5,
+      "rows": 318150,
+      "securities": 500
+    }
+  },
+  "remote_calls_avoided": 205,
+  "reused_rows": 442515,
+  "security_endpoint_instances": 700,
+  "separate_status_validation_probe_calls": 5,
+  "unique_securities": 500
+}

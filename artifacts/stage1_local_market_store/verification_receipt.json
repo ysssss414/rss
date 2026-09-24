@@ -1,0 +1,48 @@
+{
+  "datasets": {
+    "adjustment_factor": {
+      "duplicate_keys": 0,
+      "max_trade_date": "2026-09-23",
+      "min_trade_date": "2024-01-02",
+      "null_keys": 0,
+      "partition_files": 33,
+      "rows": 3380290,
+      "unique_securities": 5222,
+      "unique_trade_dates": 662
+    },
+    "daily_bars": {
+      "duplicate_keys": 0,
+      "max_trade_date": "2026-09-23",
+      "min_trade_date": "2024-01-02",
+      "null_keys": 0,
+      "partition_files": 33,
+      "rows": 3375103,
+      "unique_securities": 5222,
+      "unique_trade_dates": 662
+    },
+    "daily_status": {
+      "duplicate_keys": 0,
+      "max_trade_date": "2026-09-23",
+      "min_trade_date": "2024-01-02",
+      "null_keys": 0,
+      "partition_files": 33,
+      "rows": 3379281,
+      "unique_securities": 5222,
+      "unique_trade_dates": 662
+    },
+    "security_master": {
+      "duplicate_security_id": 0,
+      "partition_files": 1,
+      "rows": 5222
+    },
+    "trading_calendar": {
+      "partition_files": 1,
+      "rows": 662
+    }
+  },
+  "invalid_bar_rows": 0,
+  "invalid_factor_rows": 0,
+  "source": "independent DuckDB Parquet readback",
+  "status": "PASS",
+  "status_missing_field_rows": 0
+}

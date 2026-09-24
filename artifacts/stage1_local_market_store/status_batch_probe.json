@@ -1,0 +1,13 @@
+{
+  "schema": "stage1-d4-batch-probe/1",
+  "source": "AmazingData SDK 1.1.6",
+  "date_start": "2024-01-01",
+  "date_end": "2026-09-23",
+  "comparison_method": "Per-security, all-row comparison against validated 100-security cache after numeric type normalization and order-independent sorting",
+  "probes": [
+    {"security_count": 5, "rows": 3310, "elapsed_seconds": 1.494, "matching_securities": 5, "mismatches": 0},
+    {"security_count": 20, "rows": 12847, "elapsed_seconds": 5.89, "matching_securities": 20, "mismatches": 0}
+  ],
+  "production_remaining_batch_size": 20,
+  "note": "The first five-name comparisons initially appeared mismatched because SDK object/string numeric fields were compared to cached numeric CSV values as text; normalized numeric comparisons matched."
+}

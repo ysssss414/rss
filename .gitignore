@@ -12,3 +12,4 @@ __pycache__/
 outputs/
 .numba_cache/
 /.local_research_data/
+/data/market_store/
