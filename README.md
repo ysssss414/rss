@@ -26,3 +26,7 @@ CLI 说明见
 
 Stage 0 的数据契约、不可变 snapshot、研究入口、manifest 与冻结回归说明见
 [`docs/research_stage0.md`](docs/research_stage0.md)。
+
+Stage 1 的 D8 结果路径归一化、离线冻结研究输入与
+`REAL_RESEARCH_SNAPSHOT_V1` 使用说明见
+[`docs/stage1_d8_and_research_snapshot.md`](docs/stage1_d8_and_research_snapshot.md)。

@@ -1,0 +1,23 @@
+{
+  "constituent_files_checked": 104,
+  "dataset_fingerprints": {
+    "adjustment_factor": "c343305415f88c40e12e4cda7c6fbb4521409883035eba7a2174a34565359998",
+    "daily_bars": "b592907e2d9edbad106edd63b3b62ea9983a8cc54f9c406539d04b240e724a98",
+    "daily_status": "10a62607ddbd6b448f70762ff6ffcc95e62eea8ff1bf779644f1ca34dda0c6d4",
+    "outcome_adjustment": "4e1811ae70548605265f28dfad9a63b899b74fe92a5bc9d41043853895e68cbf",
+    "outcome_adjustment_exclusions": "b43a05e1fd1b7757882ca8bb4a5549a25c6af23f6064ba7222651c555c4fecf8",
+    "security_master": "9f8d05f1aac027d850581b32b79604d8b5201f5f06245b66cec307d1241f5347",
+    "trading_calendar": "79b601366ade53456a86747c8eb72b9302a0b6e9bfbfb2ff391817fe0c3ba037"
+  },
+  "deterministic_reopen": "PASS",
+  "immutability": {
+    "mode": "PHYSICAL_COPY_EXCLUSIVE_CREATE",
+    "mutable_store_updates_affect_snapshot": false,
+    "validation": "EVERY_OPEN_SHA256_AND_ROW_COUNT"
+  },
+  "manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+  "missing_file_test": "PASS_BY_UNIT_TEST",
+  "schema": "real-research-snapshot-reproducibility/1",
+  "status": "PASS",
+  "tamper_test": "PASS_BY_UNIT_TEST"
+}

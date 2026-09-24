@@ -1,0 +1,12 @@
+{
+  "batch_count": 53,
+  "batch_size": 100,
+  "checkpoint_active_seconds_lower_bound": 1972.263854,
+  "failed_remote_attempts": 0,
+  "interrupted_host_process_segments": 2,
+  "record_count": 159,
+  "retry_count": 0,
+  "schema": "stage1-d8-sync-timing/1",
+  "successful_remote_requests": 159,
+  "timing_caveat": "in-flight time before native host exits was not checkpointed"
+}

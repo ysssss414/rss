@@ -1,0 +1,3 @@
+dataset,disk_bytes,max_effective_date,min_effective_date,rows,unique_effective_dates,unique_securities
+outcome_adjustment,583517,2026-09-23,2024-01-02,12457,566.0,4125
+outcome_adjustment_exclusions,8558,,,718,,510

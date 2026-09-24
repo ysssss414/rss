@@ -1,0 +1,10 @@
+{
+  "cache_hash_required": true,
+  "completed_cache_records_skipped_on_final_resume": 159,
+  "final_completed_records": 159,
+  "final_incomplete_records": 0,
+  "host_exit_recoveries": 2,
+  "intentional_stop_after_records": 1,
+  "schema": "stage1-d8-resume/1",
+  "status": "PASS"
+}

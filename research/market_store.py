@@ -10,10 +10,13 @@ from pathlib import Path
 import duckdb
 import pandas as pd
 
+from .d8 import D8_DATASET
+
 
 STORE_SCHEMA_VERSION = 1
 DATASETS = ("security_master", "trading_calendar", "daily_bars", "daily_status", "adjustment_factor")
 DAY_DATASETS = DATASETS[2:]
+OPTIONAL_DATASETS = (D8_DATASET,)
 
 
 def _now() -> str:
@@ -253,7 +256,8 @@ class LocalMarketStore:
 
     def _load(self, dataset: str, codes: list[str] | None = None,
               start: date | str | None = None, end: date | str | None = None) -> pd.DataFrame:
-        if dataset not in DATASETS:
+        available = tuple(self.manifest.get("datasets", DATASETS))
+        if dataset not in DATASETS + OPTIONAL_DATASETS or dataset not in available:
             raise ValueError(dataset)
         paths = _partition_paths(self.root, dataset) if dataset in DAY_DATASETS else [self.root / dataset / "part.parquet"]
         filters, args = [], [[str(path) for path in paths]]
@@ -261,13 +265,15 @@ class LocalMarketStore:
             filters.append("security_id IN (SELECT UNNEST(?))")
             args.append(codes)
         if start is not None:
-            filters.append("trade_date >= ?")
+            filters.append(f"{'effective_date' if dataset == D8_DATASET else 'trade_date'} >= ?")
             args.append(str(start))
         if end is not None:
-            filters.append("trade_date <= ?")
+            filters.append(f"{'effective_date' if dataset == D8_DATASET else 'trade_date'} <= ?")
             args.append(str(end))
         predicate = " WHERE " + " AND ".join(filters) if filters else ""
-        order = "trade_date, security_id" if dataset in DAY_DATASETS else "trade_date" if dataset == "trading_calendar" else "security_id"
+        order = ("trade_date, security_id" if dataset in DAY_DATASETS else
+                 "trade_date" if dataset == "trading_calendar" else
+                 "effective_date, security_id" if dataset == D8_DATASET else "security_id")
         return self.con.execute(f"SELECT * FROM read_parquet(?, hive_partitioning=false) {predicate} ORDER BY {order}", args).df()
 
     def load_security_master(self, codes: list[str] | None = None) -> pd.DataFrame:
@@ -285,3 +291,6 @@ class LocalMarketStore:
 
     def load_adjustment_factor(self, codes: list[str] | None = None, start=None, end=None) -> pd.DataFrame:
         return self._load("adjustment_factor", codes, start, end)
+
+    def load_outcome_adjustment(self, codes: list[str] | None = None, start=None, end=None) -> pd.DataFrame:
+        return self._load(D8_DATASET, codes, start, end)

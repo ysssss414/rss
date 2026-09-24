@@ -1,0 +1,17 @@
+{
+  "daily_full_universe_factor_refresh": "FORBIDDEN_UNNECESSARY",
+  "factor_policy": "get_adj_factor full-history payload only for securities returned by bounded action refresh",
+  "materializer_second_run": {
+    "files_rewritten": 0,
+    "status": "NO_OP"
+  },
+  "normal_policy": "bounded announcement-date refresh for dividends/rights",
+  "same_parameter_second_run": {
+    "remote_request_attempts": 0,
+    "skipped": 159,
+    "status": "NO_OP_NO_SESSION"
+  },
+  "schema": "stage1-d8-refresh/1",
+  "status": "PASS",
+  "tested_planner": "planned_factor_refresh_codes returns only affected securities"
+}

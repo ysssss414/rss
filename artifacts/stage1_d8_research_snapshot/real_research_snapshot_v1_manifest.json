@@ -1,0 +1,932 @@
+{
+  "adjustment_policy": {
+    "allowed_revision": "COMMON_FACTOR_RENORMALIZATION_ONLY",
+    "canonical_adjusted_close": "PIT_ADJUSTED_CLOSE_V1",
+    "cash_dividend_income": "EXCLUDED",
+    "factor_dataset": "adjustment_factor",
+    "forbidden_revision": "NON_COMMON_HISTORICAL_RATIO_CHANGE",
+    "raw_price_dataset": "daily_bars"
+  },
+  "calendar": {
+    "count": 662,
+    "dataset": "trading_calendar",
+    "end": "2026-09-23",
+    "start": "2024-01-02"
+  },
+  "code_commit": "ec592f0",
+  "created_at": "2026-09-24T09:17:59.816922+00:00",
+  "cutoff_date": "2026-09-23",
+  "datasets": {
+    "adjustment_factor": {
+      "coverage": {
+        "disk_bytes": 6679795,
+        "max_trade_date": "2026-09-23",
+        "min_trade_date": "2024-01-02",
+        "rows": 3380290,
+        "unique_securities": 5222,
+        "unique_trade_dates": 662
+      },
+      "files": [
+        {
+          "bytes": 196553,
+          "path": "adjustment_factor/year=2024/month=01/part.parquet",
+          "row_count": 110024,
+          "sha256": "fcd79ac9ec4176daea98bafc8f6d3d2efc3bf0ee3db848b955a9ccd0a2629ef5"
+        },
+        {
+          "bytes": 178296,
+          "path": "adjustment_factor/year=2024/month=02/part.parquet",
+          "row_count": 75137,
+          "sha256": "62849b9a43dadb25dde6e77749b05a5d160879584e4bc792e524d6a946d45c03"
+        },
+        {
+          "bytes": 168036,
+          "path": "adjustment_factor/year=2024/month=03/part.parquet",
+          "row_count": 105298,
+          "sha256": "f0912890556f1c8b63ed87a281158418441b86c529bda076f9d25cf93fed6e71"
+        },
+        {
+          "bytes": 176353,
+          "path": "adjustment_factor/year=2024/month=04/part.parquet",
+          "row_count": 100422,
+          "sha256": "60836b3e7303c5594973290fc953b559615d76645ff3dfce71fe5d3148990895"
+        },
+        {
+          "bytes": 156759,
+          "path": "adjustment_factor/year=2024/month=05/part.parquet",
+          "row_count": 100472,
+          "sha256": "b571bba7e8be722b70e95212273593dd2aa16a85834122d3f72016bce78ea2ad"
+        },
+        {
+          "bytes": 212958,
+          "path": "adjustment_factor/year=2024/month=06/part.parquet",
+          "row_count": 95514,
+          "sha256": "62f5a24db50f2544c6ae05f2d207a669e1bf5e0e9e4c13ff36cf1034f6d3ecf7"
+        },
+        {
+          "bytes": 224354,
+          "path": "adjustment_factor/year=2024/month=07/part.parquet",
+          "row_count": 115759,
+          "sha256": "ec76933f2be2373b3e282559f49e5a8db81fedbe25ea84c3520d019140f4e25b"
+        },
+        {
+          "bytes": 216836,
+          "path": "adjustment_factor/year=2024/month=08/part.parquet",
+          "row_count": 110873,
+          "sha256": "ce3e320278c5834cf1eae9ffdbbbf1411034474036555ed547111a123aebeedb"
+        },
+        {
+          "bytes": 197011,
+          "path": "adjustment_factor/year=2024/month=09/part.parquet",
+          "row_count": 95896,
+          "sha256": "23042524e85591966e684c01c9b2e0604744155cc7f1825165e15ddbcd76fdd1"
+        },
+        {
+          "bytes": 194819,
+          "path": "adjustment_factor/year=2024/month=10/part.parquet",
+          "row_count": 90977,
+          "sha256": "05ad3c0e9289c9676cf459f42cc4c04a80b9b2060376b5b8662923994da6526d"
+        },
+        {
+          "bytes": 221476,
+          "path": "adjustment_factor/year=2024/month=11/part.parquet",
+          "row_count": 106292,
+          "sha256": "0813f7a91d2c75176d47a93ca52d0a0eb764b2a311d40275529649153d040ff2"
+        },
+        {
+          "bytes": 205740,
+          "path": "adjustment_factor/year=2024/month=12/part.parquet",
+          "row_count": 111522,
+          "sha256": "84012091c2c0665492606ec703415fba2f091d100c8b6d5a99e1caf02f8d012a"
+        },
+        {
+          "bytes": 217069,
+          "path": "adjustment_factor/year=2025/month=01/part.parquet",
+          "row_count": 91403,
+          "sha256": "a1502a6f83a7551ace591b60e6f9fc8446b8785f44d46a825ecc4d26e2c1d4f0"
+        },
+        {
+          "bytes": 115835,
+          "path": "adjustment_factor/year=2025/month=02/part.parquet",
+          "row_count": 91512,
+          "sha256": "3818946ed2230b4b42cd7b71c20f61b84ba31c87fb709479ecc50fe0cb3e0df1"
+        },
+        {
+          "bytes": 196469,
+          "path": "adjustment_factor/year=2025/month=03/part.parquet",
+          "row_count": 106906,
+          "sha256": "d5e6fc16475e895d200820703c4f19c4f05cd63a647e02dc869d4dded04b048c"
+        },
+        {
+          "bytes": 213733,
+          "path": "adjustment_factor/year=2025/month=04/part.parquet",
+          "row_count": 107151,
+          "sha256": "1a078548f4f0b5c79ebe6e95869f11c080054cca52d564132f7a780ec22c5ffc"
+        },
+        {
+          "bytes": 221064,
+          "path": "adjustment_factor/year=2025/month=05/part.parquet",
+          "row_count": 97077,
+          "sha256": "28ebeb2ca4f1f0912f809beb79abb7c5c7c9012842afed4ba5bf83bfb0db67df"
+        },
+        {
+          "bytes": 205761,
+          "path": "adjustment_factor/year=2025/month=06/part.parquet",
+          "row_count": 102317,
+          "sha256": "f3dde7406e38e801d9c280d85459727ec21b29469c6aa4dda969f2a5738e4884"
+        },
+        {
+          "bytes": 321990,
+          "path": "adjustment_factor/year=2025/month=07/part.parquet",
+          "row_count": 117799,
+          "sha256": "b8aa5cf2a294856b2dc84783cccc788f1ee5f9f8d49e9e935d862168bdc8c007"
+        },
+        {
+          "bytes": 168925,
+          "path": "adjustment_factor/year=2025/month=08/part.parquet",
+          "row_count": 107673,
+          "sha256": "381fdf4688e12c984829ca9884cde514529c3cf442b56c8a0fb2e1d7641e8135"
+        },
+        {
+          "bytes": 193704,
+          "path": "adjustment_factor/year=2025/month=09/part.parquet",
+          "row_count": 112868,
+          "sha256": "4490039454c969fb0b5b5c26862d16277edd7a39d6bc9c2fed39da60df110774"
+        },
+        {
+          "bytes": 188124,
+          "path": "adjustment_factor/year=2025/month=10/part.parquet",
+          "row_count": 87349,
+          "sha256": "5b10966208b2bc5f09d42fec58f0768936b1d8ce7920153e8066654a36760f59"
+        },
+        {
+          "bytes": 203135,
+          "path": "adjustment_factor/year=2025/month=11/part.parquet",
+          "row_count": 102913,
+          "sha256": "7e6bd8ba07dc48e19ae878ece8dccd402ee1f5d45461df36fd62b788c7e6b2b2"
+        },
+        {
+          "bytes": 207338,
+          "path": "adjustment_factor/year=2025/month=12/part.parquet",
+          "row_count": 118536,
+          "sha256": "b6f53679611973915aac1c0c9c78273988a4cd87db98ce2c9b2b569d8c000ea8"
+        },
+        {
+          "bytes": 205245,
+          "path": "adjustment_factor/year=2026/month=01/part.parquet",
+          "row_count": 103296,
+          "sha256": "d3d1641985b0088a6d51d5788f4bda6d62bc4a965e97a508ea06250d95e09235"
+        },
+        {
+          "bytes": 154730,
+          "path": "adjustment_factor/year=2026/month=02/part.parquet",
+          "row_count": 72385,
+          "sha256": "88eb0c582eb1e440c534522620e83c281c3e7e6c457f47376a5ac3b6e01ef6a8"
+        },
+        {
+          "bytes": 212139,
+          "path": "adjustment_factor/year=2026/month=03/part.parquet",
+          "row_count": 113814,
+          "sha256": "a179e766da54ca0a9fa2ece12264a74748465b6fc2dae3889800dfcb17bdfedd"
+        },
+        {
+          "bytes": 205117,
+          "path": "adjustment_factor/year=2026/month=04/part.parquet",
+          "row_count": 108839,
+          "sha256": "b40226115a95d489da386a67e08ab8259051f09160158275dd1090b1d70f1a85"
+        },
+        {
+          "bytes": 198511,
+          "path": "adjustment_factor/year=2026/month=05/part.parquet",
+          "row_count": 93450,
+          "sha256": "012d4dbd715cbcd5e4aef693ba62f191edd59fd01f8f671d03b6d79f1d6c409a"
+        },
+        {
+          "bytes": 239310,
+          "path": "adjustment_factor/year=2026/month=06/part.parquet",
+          "row_count": 109118,
+          "sha256": "03977f217f95b7aa83b52bbb365123c5a8f06715eadc710c03228600dcc4e69e"
+        },
+        {
+          "bytes": 224203,
+          "path": "adjustment_factor/year=2026/month=07/part.parquet",
+          "row_count": 119608,
+          "sha256": "fb82c7db17838cd4a42dc42ef429c25dd6c41e9006869e14a6e527ff8b9dcd3c"
+        },
+        {
+          "bytes": 190709,
+          "path": "adjustment_factor/year=2026/month=08/part.parquet",
+          "row_count": 109380,
+          "sha256": "ba61954869a2a5bf427b07d3d96325a674c8f7a4bb7b650812bc843c35f5010b"
+        },
+        {
+          "bytes": 247493,
+          "path": "adjustment_factor/year=2026/month=09/part.parquet",
+          "row_count": 88710,
+          "sha256": "91cf1c4adcc6b0970f72ef9dd1ec74527c152bdfe8edf3e4ba3553e005dc812f"
+        }
+      ],
+      "fingerprint": "c343305415f88c40e12e4cda7c6fbb4521409883035eba7a2174a34565359998",
+      "row_count": 3380290,
+      "schema_version": 1,
+      "source": {
+        "date_end": "2026-09-23",
+        "date_start": "2024-01-02",
+        "retrieved_at": "2026-09-24T07:26:20.404136+00:00",
+        "row_count": 3380290,
+        "schema_version": 1,
+        "source": "AmazingData"
+      }
+    },
+    "daily_bars": {
+      "coverage": {
+        "disk_bytes": 66581369,
+        "max_trade_date": "2026-09-23",
+        "min_trade_date": "2024-01-02",
+        "rows": 3375103,
+        "unique_securities": 5222,
+        "unique_trade_dates": 662
+      },
+      "files": [
+        {
+          "bytes": 2091529,
+          "path": "daily_bars/year=2024/month=01/part.parquet",
+          "row_count": 109951,
+          "sha256": "839b13129e5270cbd3608eb9321d9111196c98e7c8146cda4a55d68eac45e519"
+        },
+        {
+          "bytes": 1476100,
+          "path": "daily_bars/year=2024/month=02/part.parquet",
+          "row_count": 75109,
+          "sha256": "184c25cc56bd5a4da92a83d245c3b9e26a0a203495baafdd86e86ee9b4c52f79"
+        },
+        {
+          "bytes": 2042767,
+          "path": "daily_bars/year=2024/month=03/part.parquet",
+          "row_count": 105235,
+          "sha256": "9c6c15222326b5a94ae7fce5b99747daee706c3e174412f322b9f17d5591b692"
+        },
+        {
+          "bytes": 1927986,
+          "path": "daily_bars/year=2024/month=04/part.parquet",
+          "row_count": 100320,
+          "sha256": "dacb0926f6d7663a4821acbcdaa760a90210528883dd09c88935796cd54372ed"
+        },
+        {
+          "bytes": 1923446,
+          "path": "daily_bars/year=2024/month=05/part.parquet",
+          "row_count": 100408,
+          "sha256": "a017cd4f6980c3abd29769a034c008f3ef2e107b68a4043213bb162607357dfe"
+        },
+        {
+          "bytes": 1808320,
+          "path": "daily_bars/year=2024/month=06/part.parquet",
+          "row_count": 95457,
+          "sha256": "5d42c3ff0f66119e3c7cc38d5b9f69e184e4b7c7aa3dd16e0a0eb23225ad32ca"
+        },
+        {
+          "bytes": 2130246,
+          "path": "daily_bars/year=2024/month=07/part.parquet",
+          "row_count": 115692,
+          "sha256": "28b1c7e6edbb63975f0f3a28af47d4d441be73364d939da2a1e6759d1e53ab60"
+        },
+        {
+          "bytes": 2041101,
+          "path": "daily_bars/year=2024/month=08/part.parquet",
+          "row_count": 110813,
+          "sha256": "939fc9fc99aa5aa657620baa7dc7ac5a70a2b1f76a9330fb69d48c138d5472a9"
+        },
+        {
+          "bytes": 1801538,
+          "path": "daily_bars/year=2024/month=09/part.parquet",
+          "row_count": 95792,
+          "sha256": "8ed83eb113c7c8089fc001add8383c3d247ddbffb4e6a5c936221568c4b7ee68"
+        },
+        {
+          "bytes": 1802717,
+          "path": "daily_bars/year=2024/month=10/part.parquet",
+          "row_count": 90799,
+          "sha256": "6d55dbe111187b9791fb706c9fe342866c2e24775367f11fa72a268d08641c69"
+        },
+        {
+          "bytes": 2095262,
+          "path": "daily_bars/year=2024/month=11/part.parquet",
+          "row_count": 106031,
+          "sha256": "e07efe1b1fb7c006fd192d335130e709bdf07da20add9e7ed43531f5b2799e70"
+        },
+        {
+          "bytes": 2186336,
+          "path": "daily_bars/year=2024/month=12/part.parquet",
+          "row_count": 111262,
+          "sha256": "7eccfdcdf14d1e5d38584de052355fb43c369072fc37e618637073af0c8e22e5"
+        },
+        {
+          "bytes": 1786673,
+          "path": "daily_bars/year=2025/month=01/part.parquet",
+          "row_count": 91198,
+          "sha256": "a252d0689789f40bd8c5865cbb01f6beb65fe4b097b5c223703220fa591f78be"
+        },
+        {
+          "bytes": 1838742,
+          "path": "daily_bars/year=2025/month=02/part.parquet",
+          "row_count": 91407,
+          "sha256": "b8cd38298182f8705fb50ecb4c10f110a05c4adf95165763b3d00b472045abfa"
+        },
+        {
+          "bytes": 2095988,
+          "path": "daily_bars/year=2025/month=03/part.parquet",
+          "row_count": 106674,
+          "sha256": "537a9a75656a568805bc09c05906d32a6b5cab7569b852bc7184cabd241fbac2"
+        },
+        {
+          "bytes": 2080331,
+          "path": "daily_bars/year=2025/month=04/part.parquet",
+          "row_count": 106913,
+          "sha256": "62320b74accad09ca131ab99ce292552a6d1ee3f41689a8018a31d6c77b9a158"
+        },
+        {
+          "bytes": 1900502,
+          "path": "daily_bars/year=2025/month=05/part.parquet",
+          "row_count": 96862,
+          "sha256": "1c7202d76399c73c0d3d97136f5e044cbfa9e02b28f1bdc64b51aef8a509c097"
+        },
+        {
+          "bytes": 2000915,
+          "path": "daily_bars/year=2025/month=06/part.parquet",
+          "row_count": 102104,
+          "sha256": "6717850e670f2e97d88c7b35f6308e02eb3f234e5b120d2b3bcd7744faf72113"
+        },
+        {
+          "bytes": 2294954,
+          "path": "daily_bars/year=2025/month=07/part.parquet",
+          "row_count": 117580,
+          "sha256": "6d9a5bf3ac97d19ee589934beb455d9a975f0ef99c0e1e49d6d3355de0800d8b"
+        },
+        {
+          "bytes": 2146959,
+          "path": "daily_bars/year=2025/month=08/part.parquet",
+          "row_count": 107500,
+          "sha256": "ecc86e6e1d36b8c849ab6c7743a75563a6279977d8177e8141c5b4506c4a22d5"
+        },
+        {
+          "bytes": 2248062,
+          "path": "daily_bars/year=2025/month=09/part.parquet",
+          "row_count": 112725,
+          "sha256": "ccb6040bc2a21647fc5b6412128931bfa2e5927174558340efa39b20f4157f7c"
+        },
+        {
+          "bytes": 1785413,
+          "path": "daily_bars/year=2025/month=10/part.parquet",
+          "row_count": 87197,
+          "sha256": "fd19ffdc7e49c03b3a4c068013827ce969a917984438f2cb506b2627542d116b"
+        },
+        {
+          "bytes": 2075212,
+          "path": "daily_bars/year=2025/month=11/part.parquet",
+          "row_count": 102719,
+          "sha256": "51a6a307f28404009c3f5b559a7402cfe0042cc57f2ff9ba35ece002e022f68b"
+        },
+        {
+          "bytes": 2332592,
+          "path": "daily_bars/year=2025/month=12/part.parquet",
+          "row_count": 118241,
+          "sha256": "aca3d04dde1b270409d1c08ca5940f3b6555cee4a0e88d3cf81e13629f0cc079"
+        },
+        {
+          "bytes": 2114847,
+          "path": "daily_bars/year=2026/month=01/part.parquet",
+          "row_count": 103099,
+          "sha256": "5f9859e661fffe40ed6b6f3f5c379f02b29df2c88dc6a8ebe9e0189e4c7b4e1d"
+        },
+        {
+          "bytes": 1532466,
+          "path": "daily_bars/year=2026/month=02/part.parquet",
+          "row_count": 72276,
+          "sha256": "2655fdacc09368fde9eb04d6efeb2c0841ded420739fe0e235ccb8ba81963634"
+        },
+        {
+          "bytes": 2280039,
+          "path": "daily_bars/year=2026/month=03/part.parquet",
+          "row_count": 113652,
+          "sha256": "9b52e04c041399c8f749d1d966ec1117c2d4b13f9df9d90399fa13693dfade82"
+        },
+        {
+          "bytes": 2190802,
+          "path": "daily_bars/year=2026/month=04/part.parquet",
+          "row_count": 108576,
+          "sha256": "c0d4df4fb45cb3b61bb549e44d465506d1f3c54efa466159dff860dc6bd31690"
+        },
+        {
+          "bytes": 1947043,
+          "path": "daily_bars/year=2026/month=05/part.parquet",
+          "row_count": 93331,
+          "sha256": "9771b38a011ea2b3f91cc4f01b18774a1fb0b151e465d806021ed0cb8549f7e3"
+        },
+        {
+          "bytes": 2220631,
+          "path": "daily_bars/year=2026/month=06/part.parquet",
+          "row_count": 108910,
+          "sha256": "04d2f682f4dd130aeb464b82d1b80894a73bf758383e40b933632c9da5da56e0"
+        },
+        {
+          "bytes": 2381030,
+          "path": "daily_bars/year=2026/month=07/part.parquet",
+          "row_count": 119455,
+          "sha256": "bbe5c9e9aad72acb95976fdcc670cbcb1bec90e9259e9676a0bf7563e5bfd3f7"
+        },
+        {
+          "bytes": 2189931,
+          "path": "daily_bars/year=2026/month=08/part.parquet",
+          "row_count": 109286,
+          "sha256": "19824ded7954bd4450deffc45377d01e40a6ae441256b3e8ee8c008e95bb1766"
+        },
+        {
+          "bytes": 1810889,
+          "path": "daily_bars/year=2026/month=09/part.parquet",
+          "row_count": 88529,
+          "sha256": "1d6abae1a5ff1b7ae74b81743ca4d03953169acd9eacafe44323f6e6cac0f7f9"
+        }
+      ],
+      "fingerprint": "b592907e2d9edbad106edd63b3b62ea9983a8cc54f9c406539d04b240e724a98",
+      "row_count": 3375103,
+      "schema_version": 1,
+      "source": {
+        "date_end": "2026-09-23",
+        "date_start": "2024-01-02",
+        "retrieved_at": "2026-09-24T05:53:28.406574+00:00",
+        "row_count": 3375103,
+        "schema_version": 1,
+        "source": "AmazingData"
+      }
+    },
+    "daily_status": {
+      "coverage": {
+        "disk_bytes": 24964912,
+        "max_trade_date": "2026-09-23",
+        "min_trade_date": "2024-01-02",
+        "rows": 3379281,
+        "unique_securities": 5222,
+        "unique_trade_dates": 662
+      },
+      "files": [
+        {
+          "bytes": 783255,
+          "path": "daily_status/year=2024/month=01/part.parquet",
+          "row_count": 110024,
+          "sha256": "4b3c62e544db1b2570ae93c09f750906419d9bd0310d66cfd3de281357040c68"
+        },
+        {
+          "bytes": 563177,
+          "path": "daily_status/year=2024/month=02/part.parquet",
+          "row_count": 75137,
+          "sha256": "c39f01f0f9e6af1f7dfb0364960411e7b03f5a87a007bad8cd6e13d3745b56a9"
+        },
+        {
+          "bytes": 736742,
+          "path": "daily_status/year=2024/month=03/part.parquet",
+          "row_count": 105298,
+          "sha256": "2f0fa6a8814d0e7893f2892cbf163ab8ed564de503d94a47bb728b9d268aae77"
+        },
+        {
+          "bytes": 718078,
+          "path": "daily_status/year=2024/month=04/part.parquet",
+          "row_count": 100422,
+          "sha256": "712e45cd127b3ebac2358c3e10c029601867bfc9431e8d90e24945ff30581151"
+        },
+        {
+          "bytes": 700467,
+          "path": "daily_status/year=2024/month=05/part.parquet",
+          "row_count": 100472,
+          "sha256": "a0407af97796d591cded7c20d008746a6d4aebed6635e333447b15d084e4d505"
+        },
+        {
+          "bytes": 686560,
+          "path": "daily_status/year=2024/month=06/part.parquet",
+          "row_count": 95514,
+          "sha256": "9417df33a8ac02c276aad1658ef0035f9103d5a51c6408710f2c5d72f9c50e0c"
+        },
+        {
+          "bytes": 790066,
+          "path": "daily_status/year=2024/month=07/part.parquet",
+          "row_count": 115759,
+          "sha256": "c0d00af2c0de18f6481776b808f68ce00000d6a5ae182b761cb9a03238518b4b"
+        },
+        {
+          "bytes": 747050,
+          "path": "daily_status/year=2024/month=08/part.parquet",
+          "row_count": 110873,
+          "sha256": "792fbfb449bd95bb320e6c460e8c2a0879bb038ae6f925bcc965aaf2caa8c44d"
+        },
+        {
+          "bytes": 659684,
+          "path": "daily_status/year=2024/month=09/part.parquet",
+          "row_count": 95896,
+          "sha256": "8a74dfbac2f3b0989719ce5028e686460a844d041be16332f53d758357fec088"
+        },
+        {
+          "bytes": 672826,
+          "path": "daily_status/year=2024/month=10/part.parquet",
+          "row_count": 90977,
+          "sha256": "09b44ee29307b97ed723f0a6c5a25ba25faaa88fd02aa1ac02bd91bac1f5d704"
+        },
+        {
+          "bytes": 775840,
+          "path": "daily_status/year=2024/month=11/part.parquet",
+          "row_count": 106292,
+          "sha256": "5c3e00b4463c005d56918738c51af18a7b41801029e02034ae7301498ea9f26e"
+        },
+        {
+          "bytes": 801693,
+          "path": "daily_status/year=2024/month=12/part.parquet",
+          "row_count": 111522,
+          "sha256": "1c63d74a0268871ca15a3d0d45c78a3a8528397fd095d0b69c65fd7598e146da"
+        },
+        {
+          "bytes": 686279,
+          "path": "daily_status/year=2025/month=01/part.parquet",
+          "row_count": 91403,
+          "sha256": "789c9f75817f24817bcf73d90213c230c748d82729e87cabe470ad0ace78b620"
+        },
+        {
+          "bytes": 636244,
+          "path": "daily_status/year=2025/month=02/part.parquet",
+          "row_count": 91512,
+          "sha256": "3d5a6e978aa5a8e0daf58537b701a843ff9ed7f92b7057cdf4c4aa433c2ef147"
+        },
+        {
+          "bytes": 778350,
+          "path": "daily_status/year=2025/month=03/part.parquet",
+          "row_count": 106906,
+          "sha256": "6b8a26ac3454c0d77b8b3df62e396ab9ec6f632273e30eea1966e9f52ead318f"
+        },
+        {
+          "bytes": 774184,
+          "path": "daily_status/year=2025/month=04/part.parquet",
+          "row_count": 107151,
+          "sha256": "65229b6c6eb7688f90b8a99afe82035581b872db7d07db6b2ac7f8627fd96b76"
+        },
+        {
+          "bytes": 724067,
+          "path": "daily_status/year=2025/month=05/part.parquet",
+          "row_count": 97077,
+          "sha256": "7f2691f9ceb53786775aef5215ec9e19d7adf26469bf1630a435f51e91204979"
+        },
+        {
+          "bytes": 739201,
+          "path": "daily_status/year=2025/month=06/part.parquet",
+          "row_count": 102317,
+          "sha256": "85bc80a21b25a41eb9e0565c5f970cd7f0854e08680c9a9a376296107348e686"
+        },
+        {
+          "bytes": 896450,
+          "path": "daily_status/year=2025/month=07/part.parquet",
+          "row_count": 117799,
+          "sha256": "40777641cf82f60e2f067656380777fe433672233b10ca48cd864521dd4c5c1c"
+        },
+        {
+          "bytes": 776924,
+          "path": "daily_status/year=2025/month=08/part.parquet",
+          "row_count": 107673,
+          "sha256": "8b1db977d5019f7d9c6b7b97c3c665f13c6241fe244a76b65e3b708d4fed048f"
+        },
+        {
+          "bytes": 823949,
+          "path": "daily_status/year=2025/month=09/part.parquet",
+          "row_count": 112868,
+          "sha256": "409b2ab93360eff6bae576eef853042be9444c128318341001bae67f71436868"
+        },
+        {
+          "bytes": 685831,
+          "path": "daily_status/year=2025/month=10/part.parquet",
+          "row_count": 87349,
+          "sha256": "62048e293b3120fac478aae4197dc489e969f8eb6fa4ee19c69ea5825504ebb0"
+        },
+        {
+          "bytes": 775483,
+          "path": "daily_status/year=2025/month=11/part.parquet",
+          "row_count": 102913,
+          "sha256": "afd1bdfc842c8c9e5a00c4eed93dd541a409c1fdc0dae5390df3bfbf8782f817"
+        },
+        {
+          "bytes": 868201,
+          "path": "daily_status/year=2025/month=12/part.parquet",
+          "row_count": 118536,
+          "sha256": "290dac7b48ca79a9a93f596da966e2909e074caa3d14a52236cd0eb21b7f85fb"
+        },
+        {
+          "bytes": 796435,
+          "path": "daily_status/year=2026/month=01/part.parquet",
+          "row_count": 103296,
+          "sha256": "3b6c304e3f2b60d1ec9d5935a76ccb5a842c84d1752e7c004969f630612bfd76"
+        },
+        {
+          "bytes": 595228,
+          "path": "daily_status/year=2026/month=02/part.parquet",
+          "row_count": 72385,
+          "sha256": "f8ea11694bc52ddbdef2e94b0c3ba1a6876cef7affe085e73ca2a1b9a5ca8793"
+        },
+        {
+          "bytes": 858130,
+          "path": "daily_status/year=2026/month=03/part.parquet",
+          "row_count": 113814,
+          "sha256": "638ad4222474be352dfefaaaa42007ff0ab215ff733eb3bc3bfb8ced3f40fa84"
+        },
+        {
+          "bytes": 849764,
+          "path": "daily_status/year=2026/month=04/part.parquet",
+          "row_count": 108839,
+          "sha256": "9c80ec74d789893d85e964e87a9f506e90459e9caf2f980a4d9f5cd130d4319f"
+        },
+        {
+          "bytes": 764623,
+          "path": "daily_status/year=2026/month=05/part.parquet",
+          "row_count": 93450,
+          "sha256": "a5616daf6233fe9189b7a4681c62cceaad3d1578f3c09cbcf05eac7723ba6a5d"
+        },
+        {
+          "bytes": 857630,
+          "path": "daily_status/year=2026/month=06/part.parquet",
+          "row_count": 109118,
+          "sha256": "466fce7385bca42bb0a82849eaa8c49e5ecb33228f85b468744d3498d2aa0608"
+        },
+        {
+          "bytes": 909774,
+          "path": "daily_status/year=2026/month=07/part.parquet",
+          "row_count": 118599,
+          "sha256": "2b548ff4468186eb618581f160ef9be0d814e9420e1a293cc9d4028ebc23f78f"
+        },
+        {
+          "bytes": 815166,
+          "path": "daily_status/year=2026/month=08/part.parquet",
+          "row_count": 109380,
+          "sha256": "722ee75cc63205ae0130bb02f765f1ceb80ed3d46832bad230b5b010bf60ca20"
+        },
+        {
+          "bytes": 717561,
+          "path": "daily_status/year=2026/month=09/part.parquet",
+          "row_count": 88710,
+          "sha256": "935d0c1a87631ba63c770b2194c6919bd07d9c0781d09358ba3cd24b09726721"
+        }
+      ],
+      "fingerprint": "10a62607ddbd6b448f70762ff6ffcc95e62eea8ff1bf779644f1ca34dda0c6d4",
+      "row_count": 3379281,
+      "schema_version": 1,
+      "source": {
+        "date_end": "2026-09-23",
+        "date_start": "2024-01-02",
+        "retrieved_at": "2026-09-24T06:48:33.522466+00:00",
+        "row_count": 3379281,
+        "schema_version": 1,
+        "source": "AmazingData"
+      }
+    },
+    "outcome_adjustment": {
+      "coverage": {
+        "disk_bytes": 583517,
+        "max_effective_date": "2026-09-23",
+        "min_effective_date": "2024-01-02",
+        "rows": 12457,
+        "unique_effective_dates": 566,
+        "unique_securities": 4125
+      },
+      "files": [
+        {
+          "bytes": 583517,
+          "path": "outcome_adjustment/part.parquet",
+          "row_count": 12457,
+          "sha256": "619bba85e7bad874f99c79c556ceef56008f4aa40663bf511495142c28b00909"
+        }
+      ],
+      "fingerprint": "4e1811ae70548605265f28dfad9a63b899b74fe92a5bc9d41043853895e68cbf",
+      "row_count": 12457,
+      "schema_version": 1,
+      "source": {
+        "acquisition_fingerprint": "90680d9cb6160c04c5d42834e42e12213de3c80d6eaa2bb00b50db3ff81600ba",
+        "canonical_sha256": "619bba85e7bad874f99c79c556ceef56008f4aa40663bf511495142c28b00909",
+        "canonicalizer_version": 1,
+        "date_end": "2026-09-23",
+        "date_start": "2024-01-01",
+        "exclusion_sha256": "5d883e3218023e1ea57f1efbf050181d0393850aef0d60dbbb7ec432a5218348",
+        "retrieved_at": "2026-09-24T09:01:47.032029+00:00",
+        "row_count": 12457,
+        "schema_version": 1,
+        "source": "AmazingData 1.1.6 get_adj_factor/get_dividend/get_right_issue"
+      }
+    },
+    "outcome_adjustment_exclusions": {
+      "coverage": {
+        "disk_bytes": 8558,
+        "rows": 718,
+        "unique_securities": 510
+      },
+      "files": [
+        {
+          "bytes": 8558,
+          "path": "outcome_adjustment_exclusions/part.parquet",
+          "row_count": 718,
+          "sha256": "5d883e3218023e1ea57f1efbf050181d0393850aef0d60dbbb7ec432a5218348"
+        }
+      ],
+      "fingerprint": "b43a05e1fd1b7757882ca8bb4a5549a25c6af23f6064ba7222651c555c4fecf8",
+      "row_count": 718,
+      "schema_version": 1,
+      "source": {
+        "retrieved_at": "2026-09-24T09:01:47.032029+00:00",
+        "row_count": 718,
+        "schema_version": 1,
+        "source": "D8 fail-closed exclusion audit"
+      }
+    },
+    "security_master": {
+      "coverage": {
+        "disk_bytes": 53383,
+        "rows": 5222,
+        "unique_securities": 5222
+      },
+      "files": [
+        {
+          "bytes": 53383,
+          "path": "security_master/part.parquet",
+          "row_count": 5222,
+          "sha256": "6ed129409229ba11e013c07f09728929ef4ac2a381858ad508aad4032f05ad4d"
+        }
+      ],
+      "fingerprint": "9f8d05f1aac027d850581b32b79604d8b5201f5f06245b66cec307d1241f5347",
+      "row_count": 5222,
+      "schema_version": 1,
+      "source": {
+        "date_end": null,
+        "date_start": null,
+        "retrieved_at": "2026-09-24T04:51:44.608612+00:00",
+        "row_count": 5222,
+        "schema_version": 1,
+        "source": "AmazingData"
+      }
+    },
+    "trading_calendar": {
+      "coverage": {
+        "disk_bytes": 1690,
+        "max_trade_date": "2026-09-23",
+        "min_trade_date": "2024-01-02",
+        "rows": 662,
+        "unique_securities": 0,
+        "unique_trade_dates": 662
+      },
+      "files": [
+        {
+          "bytes": 1690,
+          "path": "trading_calendar/part.parquet",
+          "row_count": 662,
+          "sha256": "f957c7c839b8810b914486893ba18999d206dc9e2ba217aef6400ce28b43908d"
+        }
+      ],
+      "fingerprint": "79b601366ade53456a86747c8eb72b9302a0b6e9bfbfb2ff391817fe0c3ba037",
+      "row_count": 662,
+      "schema_version": 1,
+      "source": {
+        "date_end": "2026-09-23",
+        "date_start": "2024-01-02",
+        "retrieved_at": "2026-09-23T05:31:27.536103+00:00",
+        "row_count": 662,
+        "schema_version": 1,
+        "source": "AmazingData"
+      }
+    }
+  },
+  "immutability": {
+    "mode": "PHYSICAL_COPY_EXCLUSIVE_CREATE",
+    "mutable_store_updates_affect_snapshot": false,
+    "validation": "EVERY_OPEN_SHA256_AND_ROW_COUNT"
+  },
+  "pit_policy": {
+    "as_of_policy": "decision inputs use rows available by decision time; D8 only normalizes realized outcome",
+    "d8_contract": "ENTRY_COMPARABLE_FORWARD_PATH_V1",
+    "d8_revision_policy": "UNRESOLVED_ROWS_EXCLUDED_AND_PATH_FAILS_CLOSED",
+    "d8_usage": "OUTCOME_ONLY_NEVER_SIGNAL",
+    "factor_contract": "PIT_ADJUSTED_CLOSE_V1",
+    "factor_ratio_contract": "HISTORICAL_FACTOR_RATIO_V1",
+    "future_leakage_prevention": "signal modules cannot import outcome_path or event_study"
+  },
+  "quality": {
+    "d8_excluded_rows": 718,
+    "evidence": "dataset inventory, constituent SHA256, source store quality",
+    "status": "PASS",
+    "store_quality": {
+      "adjustment_factor": {
+        "canonical_rows": 3380290,
+        "conflicting_duplicate_key_rows": 0,
+        "duplicate_keys": 0,
+        "exact_duplicate_rows": 0,
+        "excluded_duplicate_rows": 0,
+        "excluded_invalid_measurement_rows": 0,
+        "missing_factor": 0,
+        "non_positive_factor": 0,
+        "null_key_rows": 0,
+        "out_of_window_rows": 0,
+        "raw_rows": 3380290
+      },
+      "daily_bars": {
+        "canonical_rows": 3375103,
+        "conflicting_duplicate_key_rows": 0,
+        "duplicate_keys": 0,
+        "exact_duplicate_rows": 0,
+        "excluded_duplicate_rows": 0,
+        "excluded_invalid_measurement_rows": 0,
+        "invalid_ohlc": 0,
+        "negative_amount": 0,
+        "negative_volume": 0,
+        "null_key_rows": 0,
+        "out_of_window_rows": 0,
+        "raw_rows": 3375103
+      },
+      "daily_status": {
+        "canonical_rows": 3379281,
+        "conflicting_duplicate_key_rows": 0,
+        "duplicate_keys": 0,
+        "exact_duplicate_rows": 0,
+        "excluded_duplicate_rows": 0,
+        "excluded_invalid_measurement_rows": 0,
+        "missing_key_status_fields": 0,
+        "null_key_rows": 1009,
+        "out_of_window_rows": 0,
+        "raw_rows": 3380290
+      },
+      "outcome_adjustment": {
+        "canonical_duplicate_keys": 0,
+        "canonical_rows": 12457,
+        "canonical_status": "PASS",
+        "cutoff_enforced": "2026-09-23",
+        "d5_reconciliation": {
+          "d5_event_rows": 13052,
+          "d5_without_d8": 0,
+          "d5_without_d8_examples": [],
+          "d8_event_rows": 13053,
+          "d8_without_d5": 1,
+          "d8_without_d5_examples": [
+            {
+              "effective_date": "2024-01-02",
+              "security_id": "002937.SZ",
+              "single_factor": 1.0038523187038777
+            }
+          ],
+          "matched_event_rows": 13052,
+          "qualified_window_boundary_events": 1,
+          "ratio_mismatch_examples": [],
+          "ratio_mismatch_rows": 0,
+          "status": "PASS",
+          "unqualified_d8_without_d5": 0
+        },
+        "duplicate_keys": 0,
+        "excluded_rows": 718,
+        "exclusion_reasons": {
+          "DIVIDEND_REVISION_HISTORY_UNRESOLVED": 554,
+          "IMPLEMENTED_ACTION_WITHOUT_FACTOR_EVENT": 122,
+          "LATE_OR_UNKNOWN_IMPLEMENTATION_ANNOUNCEMENT": 1,
+          "NO_IMPLEMENTED_ACTION_RECORD": 41
+        },
+        "implemented_action_dates": 13134,
+        "invalid_factor_rows": 0,
+        "null_key_rows": 0,
+        "raw_dividend_rows": 105055,
+        "raw_factor_cells": 45603726,
+        "raw_factor_events": 13053,
+        "raw_factor_trading_dates": 8733,
+        "raw_rights_rows": 161,
+        "raw_to_canonical_reconciled": true
+      },
+      "outcome_adjustment_exclusions": {
+        "rows": 718,
+        "status": "AUDIT_ONLY_NOT_RESEARCH_CANONICAL"
+      },
+      "security_master": {
+        "duplicate_security_id": 0,
+        "invalid_listing_date": 0,
+        "missing_board": 0,
+        "missing_security_id": 0,
+        "missing_security_name": 0,
+        "rows": 5222
+      },
+      "trading_calendar": {
+        "SH_SZ_equal": true,
+        "duplicate_trade_date": 0,
+        "rows": 662
+      }
+    }
+  },
+  "schema": "real-research-snapshot/1",
+  "schema_version": 1,
+  "snapshot_id": "REAL_RESEARCH_SNAPSHOT_V1",
+  "snapshot_version": 1,
+  "source_store_manifest": {
+    "bytes": 7759,
+    "path": "metadata/source_store_manifest.json",
+    "row_count": null,
+    "sha256": "a3fb971c4394c505916d993345063361912757a6fee21842541cbc2e1c09ba1c"
+  },
+  "universe": {
+    "count": 5222,
+    "d1_provenance": "AmazingData 1.1.6 D1",
+    "dataset": "security_master",
+    "inclusion_rule": "AmazingData EXTRA_STOCK_A SH/SZ at cutoff; rows before listing excluded"
+  }
+}

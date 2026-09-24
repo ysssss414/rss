@@ -1,0 +1,55 @@
+{
+  "datasets": [
+    {
+      "dataset": "adjustment_factor",
+      "file_count": 33,
+      "fingerprint": "c343305415f88c40e12e4cda7c6fbb4521409883035eba7a2174a34565359998",
+      "row_count": 3380290,
+      "schema_version": 1
+    },
+    {
+      "dataset": "daily_bars",
+      "file_count": 33,
+      "fingerprint": "b592907e2d9edbad106edd63b3b62ea9983a8cc54f9c406539d04b240e724a98",
+      "row_count": 3375103,
+      "schema_version": 1
+    },
+    {
+      "dataset": "daily_status",
+      "file_count": 33,
+      "fingerprint": "10a62607ddbd6b448f70762ff6ffcc95e62eea8ff1bf779644f1ca34dda0c6d4",
+      "row_count": 3379281,
+      "schema_version": 1
+    },
+    {
+      "dataset": "outcome_adjustment",
+      "file_count": 1,
+      "fingerprint": "4e1811ae70548605265f28dfad9a63b899b74fe92a5bc9d41043853895e68cbf",
+      "row_count": 12457,
+      "schema_version": 1
+    },
+    {
+      "dataset": "outcome_adjustment_exclusions",
+      "file_count": 1,
+      "fingerprint": "b43a05e1fd1b7757882ca8bb4a5549a25c6af23f6064ba7222651c555c4fecf8",
+      "row_count": 718,
+      "schema_version": 1
+    },
+    {
+      "dataset": "security_master",
+      "file_count": 1,
+      "fingerprint": "9f8d05f1aac027d850581b32b79604d8b5201f5f06245b66cec307d1241f5347",
+      "row_count": 5222,
+      "schema_version": 1
+    },
+    {
+      "dataset": "trading_calendar",
+      "file_count": 1,
+      "fingerprint": "79b601366ade53456a86747c8eb72b9302a0b6e9bfbfb2ff391817fe0c3ba037",
+      "row_count": 662,
+      "schema_version": 1
+    }
+  ],
+  "schema": "real-research-snapshot-inventory/1",
+  "snapshot_id": "REAL_RESEARCH_SNAPSHOT_V1"
+}
