@@ -1,0 +1,8 @@
+mode,batch_size,security_count,batch_count,request_attempts,wall_clock_seconds,sec_per_security,rows,rows_per_sec,successful_batches,failed_batches,failures,retries,timeout_count,rate_limit_count,session_restart_count,speedup_vs_serial,speedup_vs_batch20,serial_reference
+historical_serial100,1,100,100,101,3343.358637,33.433586,62239,18.616,100,0,1,1,0,0,1,1.0,,historical_serial100_same_100
+serial20,1,20,20,20,526.837579,26.341879,12847,24.385,20,0,0,0,0,0,0,1.0,,fresh_serial20_self
+batch20_100,20,100,5,5,131.890407,1.318904,62239,471.899,5,0,0,0,0,0,0,25.35,1.0,historical_serial100_same_100
+batch50_100,50,100,2,2,49.260542,0.492605,62239,1263.466,2,0,0,0,0,0,0,67.871,2.677,historical_serial100_same_100
+batch100_100,100,100,1,1,30.782674,0.307827,62239,2021.884,1,0,0,0,0,0,0,108.612,4.285,historical_serial100_same_100
+sustained500,100,500,5,5,141.047126,0.282094,318150,2255.629,5,0,0,0,0,0,0,,,not_same_sample
+resume200,100,200,2,2,53.248539,0.266243,125962,2365.548,2,0,0,0,0,0,0,,,not_same_sample

@@ -1,0 +1,501 @@
+security_id,exchange,board,listing_date,sample_reason
+600039.SH,SH,SSE Main,20030325,board-stratified random
+600160.SH,SH,SSE Main,19980626,board-stratified random
+600187.SH,SH,SSE Main,19981111,historical ST/rule-boundary case
+600399.SH,SH,SSE Main,20001229,board-stratified random
+600518.SH,SH,SSE Main,20010319,historical ST and suspension case
+600519.SH,SH,SSE Main,20010827,long-history control
+600758.SH,SH,SSE Main,19961029,board-stratified random
+601010.SH,SH,SSE Main,20110603,board-stratified random
+601601.SH,SH,SSE Main,20071225,board-stratified random
+601778.SH,SH,SSE Main,20200519,board-stratified random
+603161.SH,SH,SSE Main,20180105,board-stratified random
+603179.SH,SH,SSE Main,20170317,board-stratified random
+603194.SH,SH,SSE Main,20241224,2024 new listing
+603207.SH,SH,SSE Main,20240826,board-stratified random
+603228.SH,SH,SSE Main,20170106,board-stratified random
+603399.SH,SH,SSE Main,20120824,board-stratified random
+603529.SH,SH,SSE Main,20210615,board-stratified random
+603583.SH,SH,SSE Main,20180921,board-stratified random
+603717.SH,SH,SSE Main,20170327,board-stratified random
+603829.SH,SH,SSE Main,20171017,board-stratified random
+603918.SH,SH,SSE Main,20150528,board-stratified random
+603967.SH,SH,SSE Main,20190429,board-stratified random
+605086.SH,SH,SSE Main,20210416,board-stratified random
+605336.SH,SH,SSE Main,20201019,board-stratified random
+605376.SH,SH,SSE Main,20201208,board-stratified random
+000411.SZ,SZ,SZSE Main,19960716,board-stratified random
+000541.SZ,SZ,SZSE Main,19931123,board-stratified random
+000592.SZ,SZ,SZSE Main,19960327,board-stratified random
+000628.SZ,SZ,SZSE Main,19961118,board-stratified random
+001212.SZ,SZ,SZSE Main,20210823,board-stratified random
+001257.SZ,SZ,SZSE Main,20260331,board-stratified random
+001331.SZ,SZ,SZSE Main,20220908,factor case
+001356.SZ,SZ,SZSE Main,20250123,board-stratified random
+001391.SZ,SZ,SZSE Main,20241230,2024-2026 new listing
+001396.SZ,SZ,SZSE Main,20251230,board-stratified random
+002011.SZ,SZ,SZSE Main,20040705,board-stratified random
+002016.SZ,SZ,SZSE Main,20040708,board-stratified random
+002144.SZ,SZ,SZSE Main,20070803,board-stratified random
+002163.SZ,SZ,SZSE Main,20070823,board-stratified random
+002187.SZ,SZ,SZSE Main,20071122,board-stratified random
+002239.SZ,SZ,SZSE Main,20080522,board-stratified random
+002396.SZ,SZ,SZSE Main,20100623,board-stratified random
+002445.SZ,SZ,SZSE Main,20100713,board-stratified random
+002461.SZ,SZ,SZSE Main,20100818,board-stratified random
+002518.SZ,SZ,SZSE Main,20101207,board-stratified random
+002536.SZ,SZ,SZSE Main,20110111,board-stratified random
+002616.SZ,SZ,SZSE Main,20110920,board-stratified random
+002735.SZ,SZ,SZSE Main,20141203,board-stratified random
+002747.SZ,SZ,SZSE Main,20150320,board-stratified random
+003026.SZ,SZ,SZSE Main,20201218,board-stratified random
+688026.SH,SH,STAR,20200122,board-stratified random
+688047.SH,SH,STAR,20220624,board-stratified random
+688115.SH,SH,STAR,20220314,factor case
+688137.SH,SH,STAR,20220929,board-stratified random
+688196.SH,SH,STAR,20191121,board-stratified random
+688202.SH,SH,STAR,20191105,board-stratified random
+688285.SH,SH,STAR,20211020,board-stratified random
+688323.SH,SH,STAR,20210428,board-stratified random
+688327.SH,SH,STAR,20220527,board-stratified random
+688515.SH,SH,STAR,20230210,board-stratified random
+688545.SH,SH,STAR,20250122,board-stratified random
+688557.SH,SH,STAR,20201202,board-stratified random
+688571.SH,SH,STAR,20201211,board-stratified random
+688586.SH,SH,STAR,20200731,board-stratified random
+688595.SH,SH,STAR,20200928,board-stratified random
+688598.SH,SH,STAR,20200518,board-stratified random
+688602.SH,SH,STAR,20230720,board-stratified random
+688663.SH,SH,STAR,20210413,board-stratified random
+688669.SH,SH,STAR,20210125,board-stratified random
+688682.SH,SH,STAR,20210420,board-stratified random
+688729.SH,SH,STAR,20250708,board-stratified random
+688750.SH,SH,STAR,20241120,2024-2026 new listing
+688766.SH,SH,STAR,20210823,board-stratified random
+688795.SH,SH,STAR,20251205,board-stratified random
+688981.SH,SH,STAR,20200716,STAR control
+300031.SZ,SZ,ChiNext,20091225,board-stratified random
+300054.SZ,SZ,ChiNext,20100211,board-stratified random
+300236.SZ,SZ,ChiNext,20110629,board-stratified random
+300285.SZ,SZ,ChiNext,20120113,board-stratified random
+300307.SZ,SZ,ChiNext,20120329,board-stratified random
+300427.SZ,SZ,ChiNext,20150217,board-stratified random
+300487.SZ,SZ,ChiNext,20150702,board-stratified random
+300497.SZ,SZ,ChiNext,20151222,board-stratified random
+300643.SZ,SZ,ChiNext,20170505,board-stratified random
+300682.SZ,SZ,ChiNext,20170801,board-stratified random
+300750.SZ,SZ,ChiNext,20180611,long-history control
+300772.SZ,SZ,ChiNext,20190426,board-stratified random
+300831.SZ,SZ,ChiNext,20200507,board-stratified random
+300894.SZ,SZ,ChiNext,20201231,board-stratified random
+300908.SZ,SZ,ChiNext,20201123,board-stratified random
+300971.SZ,SZ,ChiNext,20210415,board-stratified random
+301062.SZ,SZ,ChiNext,20210914,board-stratified random
+301068.SZ,SZ,ChiNext,20210928,board-stratified random
+301228.SZ,SZ,ChiNext,20220128,board-stratified random
+301290.SZ,SZ,ChiNext,20221130,board-stratified random
+301319.SZ,SZ,ChiNext,20220929,board-stratified random
+301377.SZ,SZ,ChiNext,20221122,board-stratified random
+301498.SZ,SZ,ChiNext,20230816,board-stratified random
+301607.SZ,SZ,ChiNext,20240904,2024-2026 new listing
+301669.SZ,SZ,ChiNext,20260609,2024-2026 new listing
+600048.SH,SH,SSE Main,20060731,deterministic 500 extension
+603605.SH,SH,SSE Main,20171115,deterministic 500 extension
+603189.SH,SH,SSE Main,20160914,deterministic 500 extension
+603439.SH,SH,SSE Main,20200428,deterministic 500 extension
+603755.SH,SH,SSE Main,20190828,deterministic 500 extension
+600405.SH,SH,SSE Main,20040401,deterministic 500 extension
+603217.SH,SH,SSE Main,20190620,deterministic 500 extension
+603248.SH,SH,SSE Main,20251223,deterministic 500 extension
+605155.SH,SH,SSE Main,20201231,deterministic 500 extension
+603868.SH,SH,SSE Main,20160418,deterministic 500 extension
+605566.SH,SH,SSE Main,20211025,deterministic 500 extension
+600162.SH,SH,SSE Main,19980609,deterministic 500 extension
+601615.SH,SH,SSE Main,20190123,deterministic 500 extension
+600763.SH,SH,SSE Main,19961030,deterministic 500 extension
+601018.SH,SH,SSE Main,20100928,deterministic 500 extension
+603992.SH,SH,SSE Main,20190826,deterministic 500 extension
+603567.SH,SH,SSE Main,20150424,deterministic 500 extension
+601808.SH,SH,SSE Main,20070928,deterministic 500 extension
+603955.SH,SH,SSE Main,20170310,deterministic 500 extension
+603170.SH,SH,SSE Main,20220715,deterministic 500 extension
+600905.SH,SH,SSE Main,20210610,deterministic 500 extension
+600960.SH,SH,SSE Main,20040407,deterministic 500 extension
+601799.SH,SH,SSE Main,20110201,deterministic 500 extension
+603173.SH,SH,SSE Main,20230130,deterministic 500 extension
+600682.SH,SH,SSE Main,19931018,deterministic 500 extension
+002878.SZ,SZ,SZSE Main,20170606,deterministic 500 extension
+002615.SZ,SZ,SZSE Main,20110909,deterministic 500 extension
+002116.SZ,SZ,SZSE Main,20070215,deterministic 500 extension
+002270.SZ,SZ,SZSE Main,20080905,deterministic 500 extension
+002716.SZ,SZ,SZSE Main,20140128,deterministic 500 extension
+000066.SZ,SZ,SZSE Main,19970626,deterministic 500 extension
+000711.SZ,SZ,SZSE Main,19970411,deterministic 500 extension
+002799.SZ,SZ,SZSE Main,20160608,deterministic 500 extension
+003030.SZ,SZ,SZSE Main,20210106,deterministic 500 extension
+001386.SZ,SZ,SZSE Main,20251022,deterministic 500 extension
+002524.SZ,SZ,SZSE Main,20101217,deterministic 500 extension
+002133.SZ,SZ,SZSE Main,20070427,deterministic 500 extension
+003000.SZ,SZ,SZSE Main,20200914,deterministic 500 extension
+002981.SZ,SZ,SZSE Main,20200417,deterministic 500 extension
+002320.SZ,SZ,SZSE Main,20091216,deterministic 500 extension
+002258.SZ,SZ,SZSE Main,20080708,deterministic 500 extension
+002564.SZ,SZ,SZSE Main,20110310,deterministic 500 extension
+000001.SZ,SZ,SZSE Main,19910403,deterministic 500 extension
+000850.SZ,SZ,SZSE Main,19981007,deterministic 500 extension
+002093.SZ,SZ,SZSE Main,20061215,deterministic 500 extension
+000069.SZ,SZ,SZSE Main,19970910,deterministic 500 extension
+000672.SZ,SZ,SZSE Main,19961218,deterministic 500 extension
+002972.SZ,SZ,SZSE Main,20191227,deterministic 500 extension
+002081.SZ,SZ,SZSE Main,20061120,deterministic 500 extension
+002793.SZ,SZ,SZSE Main,20160415,deterministic 500 extension
+688825.SH,SH,STAR,20260727,deterministic 500 extension
+688230.SH,SH,STAR,20211201,deterministic 500 extension
+688119.SH,SH,STAR,20220606,deterministic 500 extension
+688388.SH,SH,STAR,20190722,deterministic 500 extension
+688510.SH,SH,STAR,20201216,deterministic 500 extension
+688561.SH,SH,STAR,20200722,deterministic 500 extension
+688339.SH,SH,STAR,20200810,deterministic 500 extension
+688585.SH,SH,STAR,20200928,deterministic 500 extension
+688076.SH,SH,STAR,20210520,deterministic 500 extension
+688200.SH,SH,STAR,20200218,deterministic 500 extension
+688239.SH,SH,STAR,20210705,deterministic 500 extension
+688281.SH,SH,STAR,20220307,deterministic 500 extension
+688478.SH,SH,STAR,20230424,deterministic 500 extension
+688229.SH,SH,STAR,20200817,deterministic 500 extension
+688639.SH,SH,STAR,20210422,deterministic 500 extension
+688566.SH,SH,STAR,20200518,deterministic 500 extension
+688779.SH,SH,STAR,20210811,deterministic 500 extension
+688275.SH,SH,STAR,20220929,deterministic 500 extension
+688083.SH,SH,STAR,20210311,deterministic 500 extension
+688591.SH,SH,STAR,20230825,deterministic 500 extension
+688292.SH,SH,STAR,20220818,deterministic 500 extension
+688088.SH,SH,STAR,20190722,deterministic 500 extension
+688835.SH,SH,STAR,20260825,deterministic 500 extension
+688403.SH,SH,STAR,20220818,deterministic 500 extension
+688272.SH,SH,STAR,20211018,deterministic 500 extension
+300102.SZ,SZ,ChiNext,20100812,deterministic 500 extension
+300598.SZ,SZ,ChiNext,20170120,deterministic 500 extension
+301003.SZ,SZ,ChiNext,20210601,deterministic 500 extension
+300415.SZ,SZ,ChiNext,20150123,deterministic 500 extension
+300094.SZ,SZ,ChiNext,20100708,deterministic 500 extension
+301519.SZ,SZ,ChiNext,20230727,deterministic 500 extension
+300339.SZ,SZ,ChiNext,20120718,deterministic 500 extension
+300946.SZ,SZ,ChiNext,20210208,deterministic 500 extension
+300137.SZ,SZ,ChiNext,20101105,deterministic 500 extension
+300953.SZ,SZ,ChiNext,20210318,deterministic 500 extension
+300969.SZ,SZ,ChiNext,20210412,deterministic 500 extension
+301389.SZ,SZ,ChiNext,20221031,deterministic 500 extension
+300672.SZ,SZ,ChiNext,20170712,deterministic 500 extension
+300807.SZ,SZ,ChiNext,20191219,deterministic 500 extension
+301047.SZ,SZ,ChiNext,20210816,deterministic 500 extension
+300145.SZ,SZ,ChiNext,20101209,deterministic 500 extension
+301053.SZ,SZ,ChiNext,20210901,deterministic 500 extension
+300168.SZ,SZ,ChiNext,20110125,deterministic 500 extension
+300026.SZ,SZ,ChiNext,20091030,deterministic 500 extension
+301665.SZ,SZ,ChiNext,20250411,deterministic 500 extension
+300780.SZ,SZ,ChiNext,20190531,deterministic 500 extension
+301525.SZ,SZ,ChiNext,20230830,deterministic 500 extension
+300032.SZ,SZ,ChiNext,20091225,deterministic 500 extension
+300841.SZ,SZ,ChiNext,20200616,deterministic 500 extension
+300746.SZ,SZ,ChiNext,20180525,deterministic 500 extension
+603828.SH,SH,SSE Main,20150226,deterministic 500 extension
+600165.SH,SH,SSE Main,19980529,deterministic 500 extension
+600730.SH,SH,SSE Main,19960726,deterministic 500 extension
+600583.SH,SH,SSE Main,20020205,deterministic 500 extension
+600734.SH,SH,SSE Main,19960808,deterministic 500 extension
+600105.SH,SH,SSE Main,19970929,deterministic 500 extension
+600239.SH,SH,SSE Main,19991202,deterministic 500 extension
+603315.SH,SH,SSE Main,20150424,deterministic 500 extension
+601021.SH,SH,SSE Main,20150121,deterministic 500 extension
+605122.SH,SH,SSE Main,20210310,deterministic 500 extension
+601999.SH,SH,SSE Main,20071221,deterministic 500 extension
+603977.SH,SH,SSE Main,20161111,deterministic 500 extension
+600880.SH,SH,SSE Main,19951115,deterministic 500 extension
+600211.SH,SH,SSE Main,19990721,deterministic 500 extension
+600711.SH,SH,SSE Main,19960531,deterministic 500 extension
+601965.SH,SH,SSE Main,20120611,deterministic 500 extension
+600616.SH,SH,SSE Main,19920929,deterministic 500 extension
+603073.SH,SH,SSE Main,20230316,deterministic 500 extension
+603325.SH,SH,SSE Main,20240110,deterministic 500 extension
+603053.SH,SH,SSE Main,20191217,deterministic 500 extension
+601928.SH,SH,SSE Main,20111130,deterministic 500 extension
+601882.SH,SH,SSE Main,20161107,deterministic 500 extension
+601678.SH,SH,SSE Main,20100223,deterministic 500 extension
+601828.SH,SH,SSE Main,20180117,deterministic 500 extension
+600760.SH,SH,SSE Main,19961011,deterministic 500 extension
+001228.SZ,SZ,SZSE Main,20220429,deterministic 500 extension
+002895.SZ,SZ,SZSE Main,20170825,deterministic 500 extension
+003029.SZ,SZ,SZSE Main,20201224,deterministic 500 extension
+000715.SZ,SZ,SZSE Main,19970508,deterministic 500 extension
+002580.SZ,SZ,SZSE Main,20110506,deterministic 500 extension
+000791.SZ,SZ,SZSE Main,19971014,deterministic 500 extension
+000548.SZ,SZ,SZSE Main,19931220,deterministic 500 extension
+002798.SZ,SZ,SZSE Main,20160525,deterministic 500 extension
+002660.SZ,SZ,SZSE Main,20120316,deterministic 500 extension
+002847.SZ,SZ,SZSE Main,20170208,deterministic 500 extension
+000153.SZ,SZ,SZSE Main,20000920,deterministic 500 extension
+002106.SZ,SZ,SZSE Main,20070112,deterministic 500 extension
+002923.SZ,SZ,SZSE Main,20180105,deterministic 500 extension
+002204.SZ,SZ,SZSE Main,20080116,deterministic 500 extension
+000589.SZ,SZ,SZSE Main,19960308,deterministic 500 extension
+002946.SZ,SZ,SZSE Main,20190125,deterministic 500 extension
+000428.SZ,SZ,SZSE Main,19960808,deterministic 500 extension
+002554.SZ,SZ,SZSE Main,20110225,deterministic 500 extension
+000639.SZ,SZ,SZSE Main,19961126,deterministic 500 extension
+001256.SZ,SZ,SZSE Main,20221205,deterministic 500 extension
+002757.SZ,SZ,SZSE Main,20150527,deterministic 500 extension
+002936.SZ,SZ,SZSE Main,20180919,deterministic 500 extension
+002010.SZ,SZ,SZSE Main,20040629,deterministic 500 extension
+002685.SZ,SZ,SZSE Main,20120612,deterministic 500 extension
+000968.SZ,SZ,SZSE Main,20000622,deterministic 500 extension
+688120.SH,SH,STAR,20220608,deterministic 500 extension
+688677.SH,SH,STAR,20210226,deterministic 500 extension
+688488.SH,SH,STAR,20200720,deterministic 500 extension
+688567.SH,SH,STAR,20200717,deterministic 500 extension
+688418.SH,SH,STAR,20200722,deterministic 500 extension
+688623.SH,SH,STAR,20230608,deterministic 500 extension
+688837.SH,SH,STAR,20260916,deterministic 500 extension
+688257.SH,SH,STAR,20211027,deterministic 500 extension
+688291.SH,SH,STAR,20221026,deterministic 500 extension
+688765.SH,SH,STAR,20251028,deterministic 500 extension
+688095.SH,SH,STAR,20200908,deterministic 500 extension
+688755.SH,SH,STAR,20250516,deterministic 500 extension
+688139.SH,SH,STAR,20191025,deterministic 500 extension
+688551.SH,SH,STAR,20200910,deterministic 500 extension
+688004.SH,SH,STAR,20200612,deterministic 500 extension
+688727.SH,SH,STAR,20251118,deterministic 500 extension
+688365.SH,SH,STAR,20200429,deterministic 500 extension
+688618.SH,SH,STAR,20201230,deterministic 500 extension
+688055.SH,SH,STAR,20200817,deterministic 500 extension
+688199.SH,SH,STAR,20191105,deterministic 500 extension
+688425.SH,SH,STAR,20210622,deterministic 500 extension
+688662.SH,SH,STAR,20210401,deterministic 500 extension
+688520.SH,SH,STAR,20200622,deterministic 500 extension
+688027.SH,SH,STAR,20200709,deterministic 500 extension
+688380.SH,SH,STAR,20220805,deterministic 500 extension
+300540.SZ,SZ,ChiNext,20160823,deterministic 500 extension
+301107.SZ,SZ,ChiNext,20220524,deterministic 500 extension
+300120.SZ,SZ,ChiNext,20100917,deterministic 500 extension
+300353.SZ,SZ,ChiNext,20120927,deterministic 500 extension
+300859.SZ,SZ,ChiNext,20200806,deterministic 500 extension
+300716.SZ,SZ,ChiNext,20171109,deterministic 500 extension
+301308.SZ,SZ,ChiNext,20220805,deterministic 500 extension
+301536.SZ,SZ,ChiNext,20240328,deterministic 500 extension
+300452.SZ,SZ,ChiNext,20150515,deterministic 500 extension
+301262.SZ,SZ,ChiNext,20230620,deterministic 500 extension
+301618.SZ,SZ,ChiNext,20240930,deterministic 500 extension
+300757.SZ,SZ,ChiNext,20190108,deterministic 500 extension
+301503.SZ,SZ,ChiNext,20230717,deterministic 500 extension
+300290.SZ,SZ,ChiNext,20120216,deterministic 500 extension
+301555.SZ,SZ,ChiNext,20231031,deterministic 500 extension
+300070.SZ,SZ,ChiNext,20100421,deterministic 500 extension
+300340.SZ,SZ,ChiNext,20120726,deterministic 500 extension
+300657.SZ,SZ,ChiNext,20170523,deterministic 500 extension
+300702.SZ,SZ,ChiNext,20170919,deterministic 500 extension
+300036.SZ,SZ,ChiNext,20091225,deterministic 500 extension
+300645.SZ,SZ,ChiNext,20170421,deterministic 500 extension
+301577.SZ,SZ,ChiNext,20240124,deterministic 500 extension
+300388.SZ,SZ,ChiNext,20140801,deterministic 500 extension
+300494.SZ,SZ,ChiNext,20151231,deterministic 500 extension
+301511.SZ,SZ,ChiNext,20230817,deterministic 500 extension
+600111.SH,SH,SSE Main,19970924,deterministic 500 extension
+605580.SH,SH,SSE Main,20210819,deterministic 500 extension
+603216.SH,SH,SSE Main,20211215,deterministic 500 extension
+600482.SH,SH,SSE Main,20040714,deterministic 500 extension
+603195.SH,SH,SSE Main,20200206,deterministic 500 extension
+601166.SH,SH,SSE Main,20070205,deterministic 500 extension
+603587.SH,SH,SSE Main,20180622,deterministic 500 extension
+603871.SH,SH,SSE Main,20180206,deterministic 500 extension
+603338.SH,SH,SSE Main,20150325,deterministic 500 extension
+601375.SH,SH,SSE Main,20170103,deterministic 500 extension
+600330.SH,SH,SSE Main,20010118,deterministic 500 extension
+603077.SH,SH,SSE Main,20120731,deterministic 500 extension
+600751.SH,SH,SSE Main,19960909,deterministic 500 extension
+600498.SH,SH,SSE Main,20010823,deterministic 500 extension
+601900.SH,SH,SSE Main,20160215,deterministic 500 extension
+605338.SH,SH,SSE Main,20201012,deterministic 500 extension
+603106.SH,SH,SSE Main,20170920,deterministic 500 extension
+603272.SH,SH,SSE Main,20220520,deterministic 500 extension
+601577.SH,SH,SSE Main,20180926,deterministic 500 extension
+603086.SH,SH,SSE Main,20170511,deterministic 500 extension
+600668.SH,SH,SSE Main,19930728,deterministic 500 extension
+603889.SH,SH,SSE Main,20141231,deterministic 500 extension
+600064.SH,SH,SSE Main,19970506,deterministic 500 extension
+603037.SH,SH,SSE Main,20170120,deterministic 500 extension
+600622.SH,SH,SSE Main,19921203,deterministic 500 extension
+000697.SZ,SZ,SZSE Main,19970325,deterministic 500 extension
+000607.SZ,SZ,SZSE Main,19960830,deterministic 500 extension
+002608.SZ,SZ,SZSE Main,20110810,deterministic 500 extension
+002759.SZ,SZ,SZSE Main,20150528,deterministic 500 extension
+000538.SZ,SZ,SZSE Main,19931215,deterministic 500 extension
+002557.SZ,SZ,SZSE Main,20110302,deterministic 500 extension
+002077.SZ,SZ,SZSE Main,20061116,deterministic 500 extension
+000032.SZ,SZ,SZSE Main,19931028,deterministic 500 extension
+002211.SZ,SZ,SZSE Main,20080201,deterministic 500 extension
+002526.SZ,SZ,SZSE Main,20101217,deterministic 500 extension
+002276.SZ,SZ,SZSE Main,20090710,deterministic 500 extension
+000709.SZ,SZ,SZSE Main,19970416,deterministic 500 extension
+002436.SZ,SZ,SZSE Main,20100618,deterministic 500 extension
+002394.SZ,SZ,SZSE Main,20100423,deterministic 500 extension
+002391.SZ,SZ,SZSE Main,20100416,deterministic 500 extension
+002292.SZ,SZ,SZSE Main,20090910,deterministic 500 extension
+002233.SZ,SZ,SZSE Main,20080516,deterministic 500 extension
+002842.SZ,SZ,SZSE Main,20170119,deterministic 500 extension
+002537.SZ,SZ,SZSE Main,20110110,deterministic 500 extension
+000899.SZ,SZ,SZSE Main,19971126,deterministic 500 extension
+002431.SZ,SZ,SZSE Main,20100610,deterministic 500 extension
+000536.SZ,SZ,SZSE Main,19931126,deterministic 500 extension
+002291.SZ,SZ,SZSE Main,20090903,deterministic 500 extension
+002153.SZ,SZ,SZSE Main,20070813,deterministic 500 extension
+001328.SZ,SZ,SZSE Main,20230410,deterministic 500 extension
+688708.SH,SH,STAR,20241205,deterministic 500 extension
+688192.SH,SH,STAR,20211210,deterministic 500 extension
+688728.SH,SH,STAR,20210818,deterministic 500 extension
+688093.SH,SH,STAR,20200930,deterministic 500 extension
+688122.SH,SH,STAR,20190722,deterministic 500 extension
+688720.SH,SH,STAR,20231206,deterministic 500 extension
+688584.SH,SH,STAR,20240208,deterministic 500 extension
+688017.SH,SH,STAR,20200828,deterministic 500 extension
+688121.SH,SH,STAR,20210906,deterministic 500 extension
+688579.SH,SH,STAR,20200717,deterministic 500 extension
+688159.SH,SH,STAR,20200123,deterministic 500 extension
+688206.SH,SH,STAR,20211228,deterministic 500 extension
+688685.SH,SH,STAR,20210513,deterministic 500 extension
+688616.SH,SH,STAR,20210318,deterministic 500 extension
+688556.SH,SH,STAR,20200807,deterministic 500 extension
+688661.SH,SH,STAR,20210329,deterministic 500 extension
+688212.SH,SH,STAR,20211115,deterministic 500 extension
+688001.SH,SH,STAR,20190722,deterministic 500 extension
+688188.SH,SH,STAR,20190808,deterministic 500 extension
+688689.SH,SH,STAR,20210127,deterministic 500 extension
+688678.SH,SH,STAR,20201223,deterministic 500 extension
+688517.SH,SH,STAR,20210618,deterministic 500 extension
+688382.SH,SH,STAR,20220725,deterministic 500 extension
+688378.SH,SH,STAR,20200903,deterministic 500 extension
+688108.SH,SH,STAR,20191030,deterministic 500 extension
+300377.SZ,SZ,ChiNext,20140127,deterministic 500 extension
+300648.SZ,SZ,ChiNext,20170425,deterministic 500 extension
+301396.SZ,SZ,ChiNext,20221111,deterministic 500 extension
+301090.SZ,SZ,ChiNext,20211026,deterministic 500 extension
+301005.SZ,SZ,ChiNext,20210601,deterministic 500 extension
+301584.SZ,SZ,ChiNext,20250925,deterministic 500 extension
+301070.SZ,SZ,ChiNext,20210923,deterministic 500 extension
+301007.SZ,SZ,ChiNext,20210616,deterministic 500 extension
+300722.SZ,SZ,ChiNext,20171110,deterministic 500 extension
+300576.SZ,SZ,ChiNext,20161220,deterministic 500 extension
+300892.SZ,SZ,ChiNext,20200924,deterministic 500 extension
+301655.SZ,SZ,ChiNext,20260820,deterministic 500 extension
+300450.SZ,SZ,ChiNext,20150518,deterministic 500 extension
+300380.SZ,SZ,ChiNext,20140128,deterministic 500 extension
+300476.SZ,SZ,ChiNext,20150611,deterministic 500 extension
+300007.SZ,SZ,ChiNext,20091030,deterministic 500 extension
+300005.SZ,SZ,ChiNext,20091030,deterministic 500 extension
+300642.SZ,SZ,ChiNext,20170421,deterministic 500 extension
+300543.SZ,SZ,ChiNext,20160908,deterministic 500 extension
+301077.SZ,SZ,ChiNext,20210930,deterministic 500 extension
+300644.SZ,SZ,ChiNext,20180206,deterministic 500 extension
+300895.SZ,SZ,ChiNext,20200924,deterministic 500 extension
+301126.SZ,SZ,ChiNext,20211207,deterministic 500 extension
+300803.SZ,SZ,ChiNext,20191118,deterministic 500 extension
+300771.SZ,SZ,ChiNext,20190422,deterministic 500 extension
+605151.SH,SH,SSE Main,20201215,deterministic 500 extension
+603310.SH,SH,SSE Main,20240814,deterministic 500 extension
+600797.SH,SH,SSE Main,19970418,deterministic 500 extension
+601399.SH,SH,SSE Main,20200608,deterministic 500 extension
+600298.SH,SH,SSE Main,20000818,deterministic 500 extension
+600358.SH,SH,SSE Main,20000922,deterministic 500 extension
+600381.SH,SH,SSE Main,20010508,deterministic 500 extension
+600071.SH,SH,SSE Main,19970528,deterministic 500 extension
+600035.SH,SH,SSE Main,20040310,deterministic 500 extension
+600846.SH,SH,SSE Main,19940311,deterministic 500 extension
+601328.SH,SH,SSE Main,20070515,deterministic 500 extension
+600540.SH,SH,SSE Main,20040107,deterministic 500 extension
+601091.SH,SH,SSE Main,20260917,deterministic 500 extension
+603209.SH,SH,SSE Main,20220324,deterministic 500 extension
+603448.SH,SH,SSE Main,20260907,deterministic 500 extension
+603360.SH,SH,SSE Main,20170206,deterministic 500 extension
+600971.SH,SH,SSE Main,20040817,deterministic 500 extension
+603277.SH,SH,SSE Main,20170911,deterministic 500 extension
+603031.SH,SH,SSE Main,20160822,deterministic 500 extension
+600612.SH,SH,SSE Main,19920814,deterministic 500 extension
+603045.SH,SH,SSE Main,20180517,deterministic 500 extension
+605318.SH,SH,SSE Main,20200803,deterministic 500 extension
+600615.SH,SH,SSE Main,19920910,deterministic 500 extension
+601065.SH,SH,SSE Main,20230410,deterministic 500 extension
+600169.SH,SH,SSE Main,19980904,deterministic 500 extension
+002052.SZ,SZ,SZSE Main,20060627,deterministic 500 extension
+002188.SZ,SZ,SZSE Main,20071122,deterministic 500 extension
+000757.SZ,SZ,SZSE Main,19970627,deterministic 500 extension
+002884.SZ,SZ,SZSE Main,20170711,deterministic 500 extension
+002454.SZ,SZ,SZSE Main,20100720,deterministic 500 extension
+000860.SZ,SZ,SZSE Main,19981104,deterministic 500 extension
+000663.SZ,SZ,SZSE Main,19961206,deterministic 500 extension
+000877.SZ,SZ,SZSE Main,19990107,deterministic 500 extension
+002528.SZ,SZ,SZSE Main,20101224,deterministic 500 extension
+002707.SZ,SZ,SZSE Main,20140123,deterministic 500 extension
+002767.SZ,SZ,SZSE Main,20150612,deterministic 500 extension
+000625.SZ,SZ,SZSE Main,19970610,deterministic 500 extension
+001965.SZ,SZ,SZSE Main,20171225,deterministic 500 extension
+002390.SZ,SZ,SZSE Main,20100416,deterministic 500 extension
+002694.SZ,SZ,SZSE Main,20120816,deterministic 500 extension
+002073.SZ,SZ,SZSE Main,20061018,deterministic 500 extension
+002108.SZ,SZ,SZSE Main,20070124,deterministic 500 extension
+002340.SZ,SZ,SZSE Main,20100122,deterministic 500 extension
+002137.SZ,SZ,SZSE Main,20070613,deterministic 500 extension
+000906.SZ,SZ,SZSE Main,19990707,deterministic 500 extension
+000045.SZ,SZ,SZSE Main,19940815,deterministic 500 extension
+000059.SZ,SZ,SZSE Main,19970130,deterministic 500 extension
+002717.SZ,SZ,SZSE Main,20140219,deterministic 500 extension
+000039.SZ,SZ,SZSE Main,19940408,deterministic 500 extension
+000809.SZ,SZ,SZSE Main,19980616,deterministic 500 extension
+688227.SH,SH,STAR,20211230,deterministic 500 extension
+688805.SH,SH,STAR,20251224,deterministic 500 extension
+688231.SH,SH,STAR,20220722,deterministic 500 extension
+688023.SH,SH,STAR,20191105,deterministic 500 extension
+688549.SH,SH,STAR,20230908,deterministic 500 extension
+688485.SH,SH,STAR,20230118,deterministic 500 extension
+688392.SH,SH,STAR,20220927,deterministic 500 extension
+688030.SH,SH,STAR,20190930,deterministic 500 extension
+688048.SH,SH,STAR,20220401,deterministic 500 extension
+688223.SH,SH,STAR,20220126,deterministic 500 extension
+688158.SH,SH,STAR,20200120,deterministic 500 extension
+688550.SH,SH,STAR,20200902,deterministic 500 extension
+688308.SH,SH,STAR,20201210,deterministic 500 extension
+688046.SH,SH,STAR,20220425,deterministic 500 extension
+688288.SH,SH,STAR,20191106,deterministic 500 extension
+688759.SH,SH,STAR,20251028,deterministic 500 extension
+688776.SH,SH,STAR,20210831,deterministic 500 extension
+688270.SH,SH,STAR,20220127,deterministic 500 extension
+688171.SH,SH,STAR,20220127,deterministic 500 extension
+688071.SH,SH,STAR,20210729,deterministic 500 extension
+688133.SH,SH,STAR,20201030,deterministic 500 extension
+688220.SH,SH,STAR,20220114,deterministic 500 extension
+688106.SH,SH,STAR,20200616,deterministic 500 extension
+688049.SH,SH,STAR,20211129,deterministic 500 extension
+688582.SH,SH,STAR,20230630,deterministic 500 extension
+300496.SZ,SZ,ChiNext,20151210,deterministic 500 extension
+300289.SZ,SZ,ChiNext,20120216,deterministic 500 extension
+300805.SZ,SZ,ChiNext,20191121,deterministic 500 extension
+301059.SZ,SZ,ChiNext,20210913,deterministic 500 extension
+300484.SZ,SZ,ChiNext,20160322,deterministic 500 extension
+300638.SZ,SZ,ChiNext,20170413,deterministic 500 extension
+300815.SZ,SZ,ChiNext,20200123,deterministic 500 extension
+300691.SZ,SZ,ChiNext,20170811,deterministic 500 extension
+300013.SZ,SZ,ChiNext,20091030,deterministic 500 extension
+300862.SZ,SZ,ChiNext,20200824,deterministic 500 extension
+301491.SZ,SZ,ChiNext,20250806,deterministic 500 extension
+300620.SZ,SZ,ChiNext,20170310,deterministic 500 extension
+300324.SZ,SZ,ChiNext,20120608,deterministic 500 extension
+300259.SZ,SZ,ChiNext,20110831,deterministic 500 extension
+300198.SZ,SZ,ChiNext,20110407,deterministic 500 extension
+301202.SZ,SZ,ChiNext,20230705,deterministic 500 extension
+301360.SZ,SZ,ChiNext,20230425,deterministic 500 extension
+300889.SZ,SZ,ChiNext,20200916,deterministic 500 extension
+301631.SZ,SZ,ChiNext,20241122,deterministic 500 extension
+301089.SZ,SZ,ChiNext,20211027,deterministic 500 extension
+300884.SZ,SZ,ChiNext,20201112,deterministic 500 extension
+300701.SZ,SZ,ChiNext,20170915,deterministic 500 extension
+301207.SZ,SZ,ChiNext,20220218,deterministic 500 extension
+301369.SZ,SZ,ChiNext,20220922,deterministic 500 extension
+300144.SZ,SZ,ChiNext,20101209,deterministic 500 extension

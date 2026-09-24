@@ -3,3 +3,4 @@ docs/stage1_gate_b_hybrid_data_contract.md -text
 scripts/validate_stage1_gate_b_contract.py -text
 tests/test_gate_b_contract.py -text
 artifacts/stage1_amazingdata_100_benchmark/** -text
+artifacts/stage1_amazingdata_acquisition_optimization/** -text

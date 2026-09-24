@@ -1,0 +1,14 @@
+{
+  "batch_size": 100,
+  "completed_batch_duplicate_remote_acquisitions": 0,
+  "completed_security_count": 200,
+  "duplicate_output_rows": 0,
+  "first_segment_new_completed_batches": 1,
+  "missing_securities": [],
+  "resumed_remote_request_attempts": 1,
+  "resumed_skipped_completed_batches": 1,
+  "segment_wall_clock_seconds": [
+    24.780241,
+    28.468298
+  ]
+}
