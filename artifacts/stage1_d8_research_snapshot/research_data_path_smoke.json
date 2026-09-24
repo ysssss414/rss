@@ -1,0 +1,23 @@
+{
+  "calendar_count": 662,
+  "date_contract": "PASS",
+  "key_contract": "PASS",
+  "loaded_datasets": [
+    "universe",
+    "calendar",
+    "daily_bars",
+    "daily_status",
+    "adjustment_factor",
+    "outcome_adjustment"
+  ],
+  "manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+  "network_or_vendor_session": false,
+  "sample_security": "600519.SH",
+  "schema": "stage1-research-data-path-smoke/1",
+  "schema_consumable": true,
+  "scope": "DATA_PATH_ONLY_NO_EDGE_ASSESSMENT",
+  "snapshot_id": "REAL_RESEARCH_SNAPSHOT_V1",
+  "status": "PASS",
+  "strategy_metrics_computed": false,
+  "universe_count": 5222
+}

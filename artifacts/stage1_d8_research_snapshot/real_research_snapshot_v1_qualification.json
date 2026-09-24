@@ -1,0 +1,35 @@
+{
+  "adjustment_policy": {
+    "allowed_revision": "COMMON_FACTOR_RENORMALIZATION_ONLY",
+    "canonical_adjusted_close": "PIT_ADJUSTED_CLOSE_V1",
+    "cash_dividend_income": "EXCLUDED",
+    "factor_dataset": "adjustment_factor",
+    "forbidden_revision": "NON_COMMON_HISTORICAL_RATIO_CHANGE",
+    "raw_price_dataset": "daily_bars"
+  },
+  "calendar_count": 662,
+  "cutoff": "2026-09-23",
+  "manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+  "pit_policy": {
+    "as_of_policy": "decision inputs use rows available by decision time; D8 only normalizes realized outcome",
+    "d8_contract": "ENTRY_COMPARABLE_FORWARD_PATH_V1",
+    "d8_revision_policy": "UNRESOLVED_ROWS_EXCLUDED_AND_PATH_FAILS_CLOSED",
+    "d8_usage": "OUTCOME_ONLY_NEVER_SIGNAL",
+    "factor_contract": "PIT_ADJUSTED_CLOSE_V1",
+    "factor_ratio_contract": "HISTORICAL_FACTOR_RATIO_V1",
+    "future_leakage_prevention": "signal modules cannot import outcome_path or event_study"
+  },
+  "required_datasets": [
+    "adjustment_factor",
+    "daily_bars",
+    "daily_status",
+    "outcome_adjustment",
+    "outcome_adjustment_exclusions",
+    "security_master",
+    "trading_calendar"
+  ],
+  "schema": "real-research-snapshot-qualification/1",
+  "snapshot_id": "REAL_RESEARCH_SNAPSHOT_V1",
+  "status": "PASS",
+  "universe_count": 5222
+}

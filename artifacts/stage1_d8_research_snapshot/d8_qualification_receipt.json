@@ -1,0 +1,88 @@
+{
+  "canonical_key": [
+    "security_id",
+    "effective_date"
+  ],
+  "contract": "ENTRY_COMPARABLE_FORWARD_PATH_V1",
+  "cutoff_policy": "SDK factor response extended through 2026-09-24; canonical hard cutoff is 2026-09-23",
+  "d5_reconciliation": {
+    "d5_event_rows": 13052,
+    "d5_without_d8": 0,
+    "d5_without_d8_examples": [],
+    "d8_event_rows": 13053,
+    "d8_without_d5": 1,
+    "d8_without_d5_examples": [
+      {
+        "effective_date": "2024-01-02",
+        "security_id": "002937.SZ",
+        "single_factor": 1.0038523187038777
+      }
+    ],
+    "matched_event_rows": 13052,
+    "qualified_window_boundary_events": 1,
+    "ratio_mismatch_examples": [],
+    "ratio_mismatch_rows": 0,
+    "status": "PASS",
+    "unqualified_d8_without_d5": 0
+  },
+  "endpoints": {
+    "BaseData.get_adj_factor": {
+      "batch": true,
+      "date_range": false,
+      "grain": "trading-date x security matrix",
+      "meaning": "single-event price-scale factor; 1 on non-event dates",
+      "pagination": "not exposed",
+      "parameters": [
+        "code_list",
+        "local_path",
+        "is_local"
+      ]
+    },
+    "InfoData.get_dividend": {
+      "batch": true,
+      "date_filter": "announcement date",
+      "effective_date": "DATE_EX",
+      "grain": "security/report-period distribution record",
+      "known_date": "DATE_DVD_ANN"
+    },
+    "InfoData.get_right_issue": {
+      "batch": true,
+      "date_filter": "announcement date",
+      "effective_date": "EX_DIVIDEND_DATE",
+      "grain": "security rights-event record",
+      "known_date": "EXECUTE_DATE"
+    }
+  },
+  "pit_semantics": "outcome-only; never available to signal construction",
+  "provider": "AmazingData",
+  "repeat_request_stability": {
+    "backward_factor": {
+      "content_equal": true,
+      "ordered_unique_dates": true,
+      "returned_through": "2026-09-24",
+      "rows": 8733,
+      "securities": 5
+    },
+    "dividend": {
+      "byte_sha256": "ab1458c835d7a11c3d7492f08a8c2138ec9f435bf78bbdc7f84d13204e564129",
+      "content_equal": true,
+      "rows": 100
+    },
+    "right_issue": {
+      "byte_sha256": "a20fcaa52250423bac53725f58883265760fc14132a6d978edf928e32d4f5886",
+      "content_equal": true,
+      "rows": 1
+    },
+    "single_event_factor": {
+      "content_equal": true,
+      "ordered_unique_dates": true,
+      "returned_through": "2026-09-24",
+      "rows": 8733,
+      "securities": 5
+    }
+  },
+  "revision_policy": "IS_CHANGED or unresolved/late implementation is excluded",
+  "schema": "stage1-d8-qualification/1",
+  "sdk_version": "1.1.6",
+  "status": "PASS"
+}

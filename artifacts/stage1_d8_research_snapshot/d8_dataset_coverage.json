@@ -1,0 +1,18 @@
+{
+  "canonical": {
+    "disk_bytes": 583517,
+    "max_effective_date": "2026-09-23",
+    "min_effective_date": "2024-01-02",
+    "rows": 12457,
+    "unique_effective_dates": 566,
+    "unique_securities": 4125
+  },
+  "cutoff": "2026-09-23",
+  "exclusions": {
+    "disk_bytes": 8558,
+    "rows": 718,
+    "unique_securities": 510
+  },
+  "schema": "stage1-d8-coverage/1",
+  "universe_count": 5222
+}
