@@ -1,0 +1,101 @@
+security_id,exchange,board,listing_date,sample_reason
+600039.SH,SH,SSE Main,20030325,board-stratified random
+600160.SH,SH,SSE Main,19980626,board-stratified random
+600187.SH,SH,SSE Main,19981111,historical ST/rule-boundary case
+600399.SH,SH,SSE Main,20001229,board-stratified random
+600518.SH,SH,SSE Main,20010319,historical ST and suspension case
+600519.SH,SH,SSE Main,20010827,long-history control
+600758.SH,SH,SSE Main,19961029,board-stratified random
+601010.SH,SH,SSE Main,20110603,board-stratified random
+601601.SH,SH,SSE Main,20071225,board-stratified random
+601778.SH,SH,SSE Main,20200519,board-stratified random
+603161.SH,SH,SSE Main,20180105,board-stratified random
+603179.SH,SH,SSE Main,20170317,board-stratified random
+603194.SH,SH,SSE Main,20241224,2024 new listing
+603207.SH,SH,SSE Main,20240826,board-stratified random
+603228.SH,SH,SSE Main,20170106,board-stratified random
+603399.SH,SH,SSE Main,20120824,board-stratified random
+603529.SH,SH,SSE Main,20210615,board-stratified random
+603583.SH,SH,SSE Main,20180921,board-stratified random
+603717.SH,SH,SSE Main,20170327,board-stratified random
+603829.SH,SH,SSE Main,20171017,board-stratified random
+603918.SH,SH,SSE Main,20150528,board-stratified random
+603967.SH,SH,SSE Main,20190429,board-stratified random
+605086.SH,SH,SSE Main,20210416,board-stratified random
+605336.SH,SH,SSE Main,20201019,board-stratified random
+605376.SH,SH,SSE Main,20201208,board-stratified random
+000411.SZ,SZ,SZSE Main,19960716,board-stratified random
+000541.SZ,SZ,SZSE Main,19931123,board-stratified random
+000592.SZ,SZ,SZSE Main,19960327,board-stratified random
+000628.SZ,SZ,SZSE Main,19961118,board-stratified random
+001212.SZ,SZ,SZSE Main,20210823,board-stratified random
+001257.SZ,SZ,SZSE Main,20260331,board-stratified random
+001331.SZ,SZ,SZSE Main,20220908,factor case
+001356.SZ,SZ,SZSE Main,20250123,board-stratified random
+001391.SZ,SZ,SZSE Main,20241230,2024-2026 new listing
+001396.SZ,SZ,SZSE Main,20251230,board-stratified random
+002011.SZ,SZ,SZSE Main,20040705,board-stratified random
+002016.SZ,SZ,SZSE Main,20040708,board-stratified random
+002144.SZ,SZ,SZSE Main,20070803,board-stratified random
+002163.SZ,SZ,SZSE Main,20070823,board-stratified random
+002187.SZ,SZ,SZSE Main,20071122,board-stratified random
+002239.SZ,SZ,SZSE Main,20080522,board-stratified random
+002396.SZ,SZ,SZSE Main,20100623,board-stratified random
+002445.SZ,SZ,SZSE Main,20100713,board-stratified random
+002461.SZ,SZ,SZSE Main,20100818,board-stratified random
+002518.SZ,SZ,SZSE Main,20101207,board-stratified random
+002536.SZ,SZ,SZSE Main,20110111,board-stratified random
+002616.SZ,SZ,SZSE Main,20110920,board-stratified random
+002735.SZ,SZ,SZSE Main,20141203,board-stratified random
+002747.SZ,SZ,SZSE Main,20150320,board-stratified random
+003026.SZ,SZ,SZSE Main,20201218,board-stratified random
+688026.SH,SH,STAR,20200122,board-stratified random
+688047.SH,SH,STAR,20220624,board-stratified random
+688115.SH,SH,STAR,20220314,factor case
+688137.SH,SH,STAR,20220929,board-stratified random
+688196.SH,SH,STAR,20191121,board-stratified random
+688202.SH,SH,STAR,20191105,board-stratified random
+688285.SH,SH,STAR,20211020,board-stratified random
+688323.SH,SH,STAR,20210428,board-stratified random
+688327.SH,SH,STAR,20220527,board-stratified random
+688515.SH,SH,STAR,20230210,board-stratified random
+688545.SH,SH,STAR,20250122,board-stratified random
+688557.SH,SH,STAR,20201202,board-stratified random
+688571.SH,SH,STAR,20201211,board-stratified random
+688586.SH,SH,STAR,20200731,board-stratified random
+688595.SH,SH,STAR,20200928,board-stratified random
+688598.SH,SH,STAR,20200518,board-stratified random
+688602.SH,SH,STAR,20230720,board-stratified random
+688663.SH,SH,STAR,20210413,board-stratified random
+688669.SH,SH,STAR,20210125,board-stratified random
+688682.SH,SH,STAR,20210420,board-stratified random
+688729.SH,SH,STAR,20250708,board-stratified random
+688750.SH,SH,STAR,20241120,2024-2026 new listing
+688766.SH,SH,STAR,20210823,board-stratified random
+688795.SH,SH,STAR,20251205,board-stratified random
+688981.SH,SH,STAR,20200716,STAR control
+300031.SZ,SZ,ChiNext,20091225,board-stratified random
+300054.SZ,SZ,ChiNext,20100211,board-stratified random
+300236.SZ,SZ,ChiNext,20110629,board-stratified random
+300285.SZ,SZ,ChiNext,20120113,board-stratified random
+300307.SZ,SZ,ChiNext,20120329,board-stratified random
+300427.SZ,SZ,ChiNext,20150217,board-stratified random
+300487.SZ,SZ,ChiNext,20150702,board-stratified random
+300497.SZ,SZ,ChiNext,20151222,board-stratified random
+300643.SZ,SZ,ChiNext,20170505,board-stratified random
+300682.SZ,SZ,ChiNext,20170801,board-stratified random
+300750.SZ,SZ,ChiNext,20180611,long-history control
+300772.SZ,SZ,ChiNext,20190426,board-stratified random
+300831.SZ,SZ,ChiNext,20200507,board-stratified random
+300894.SZ,SZ,ChiNext,20201231,board-stratified random
+300908.SZ,SZ,ChiNext,20201123,board-stratified random
+300971.SZ,SZ,ChiNext,20210415,board-stratified random
+301062.SZ,SZ,ChiNext,20210914,board-stratified random
+301068.SZ,SZ,ChiNext,20210928,board-stratified random
+301228.SZ,SZ,ChiNext,20220128,board-stratified random
+301290.SZ,SZ,ChiNext,20221130,board-stratified random
+301319.SZ,SZ,ChiNext,20220929,board-stratified random
+301377.SZ,SZ,ChiNext,20221122,board-stratified random
+301498.SZ,SZ,ChiNext,20230816,board-stratified random
+301607.SZ,SZ,ChiNext,20240904,2024-2026 new listing
+301669.SZ,SZ,ChiNext,20260609,2024-2026 new listing

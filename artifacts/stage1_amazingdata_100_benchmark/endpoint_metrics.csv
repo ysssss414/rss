@@ -1,0 +1,5 @@
+endpoint_name,security_count,request_count,row_count,wall_clock_seconds,call_mode,securities_per_request,rows_per_request,batch_80_seconds,successful_requests,failed_requests,retry_count,timeout_count,rate_limit_count,seconds_per_security,rows_per_second,failure_rate,retry_rate
+D1_basic,100,3,100,2.544049,BATCH_SECURITIES,5|15|80,33.333,0.558206,3,0,0,0,0,0.02544,39.307,0.0,0.0
+D3_bars,100,100,62126,35.454861,PER_SECURITY,1,621.26,,100,0,0,0,0,0.354549,1752.256,0.0,0.0
+D4_D6_status,100,100,62239,74.572603,PER_SECURITY,1,622.39,,100,0,0,0,0,0.745726,834.609,0.0,0.0
+D5_factor,100,101,62239,3343.358637,PER_SECURITY,1,616.228,,100,1,1,0,0,33.433586,18.616,0.009901,0.009901
