@@ -1,0 +1,15 @@
+{
+  "baseline_serial_d5_eta_hours": 48.497,
+  "buffer_assumption": "20% engineering allowance, not measured",
+  "d1_eta": 36.84,
+  "d3_eta": 1851.45,
+  "d4_d6_eta": 3894.18,
+  "d5_eta": 1473.1,
+  "full_market_size": 5222,
+  "model": "500-security active D5 wall-clock linear, plus prior measured D1/D3/D4_D6 endpoint models",
+  "optimized_d5_buffered_eta_hours": 0.491,
+  "optimized_d5_eta_hours": 0.409,
+  "recommended_batch_size": 100,
+  "stage1_total_buffered_eta_hours": 2.419,
+  "stage1_total_eta_hours": 2.015
+}

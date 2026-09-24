@@ -1,0 +1,22 @@
+{
+  "board_quota_extended": 125,
+  "board_quota_fixed": 25,
+  "comparison_scope": "100-name batches versus same-100 historical serial; fresh serial20 versus first 20-name batch; cross-sample 500-name speedup is indicative only",
+  "date_end": "2026-09-23",
+  "date_start": "2024-01-01",
+  "extended_sample_count": 500,
+  "fixed_sample_count": 100,
+  "fixed_seed": 20260924,
+  "force_remote_fetch": true,
+  "max_retries_per_batch": 3,
+  "modes": [
+    "serial20",
+    "batch20_100",
+    "batch50_100",
+    "batch100_100",
+    "sustained500",
+    "resume200"
+  ],
+  "selected_sustained_batch_size": 100,
+  "timing_scope": "SDK request, response/parsing, normalization, cache and checkpoint writes; excludes login, sample setup, manual idle time, tests and Git"
+}

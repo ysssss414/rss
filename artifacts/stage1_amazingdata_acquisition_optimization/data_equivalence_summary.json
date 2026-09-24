@@ -1,0 +1,81 @@
+{
+  "comparisons": [
+    {
+      "comparison": "fresh_serial20_vs_batch20_first20",
+      "extra_in_batch": 0,
+      "matching_keys": 12847,
+      "maximum_absolute_difference": 0.0,
+      "missing_in_batch": 0,
+      "numeric_comparison": "exact float64 after round-trip CSV parsing; row order ignored",
+      "rows_batch": 12847,
+      "rows_serial": 12847,
+      "value_mismatch": 0
+    },
+    {
+      "comparison": "historical_serial100_vs_batch20_100",
+      "extra_in_batch": 0,
+      "matching_keys": 62239,
+      "maximum_absolute_difference": 0.0,
+      "missing_in_batch": 0,
+      "numeric_comparison": "exact float64 after round-trip CSV parsing; row order ignored",
+      "rows_batch": 62239,
+      "rows_serial": 62239,
+      "value_mismatch": 0
+    },
+    {
+      "comparison": "historical_serial100_vs_batch50_100",
+      "extra_in_batch": 0,
+      "matching_keys": 62239,
+      "maximum_absolute_difference": 0.0,
+      "missing_in_batch": 0,
+      "numeric_comparison": "exact float64 after round-trip CSV parsing; row order ignored",
+      "rows_batch": 62239,
+      "rows_serial": 62239,
+      "value_mismatch": 0
+    },
+    {
+      "comparison": "historical_serial100_vs_batch100_100",
+      "extra_in_batch": 0,
+      "matching_keys": 62239,
+      "maximum_absolute_difference": 0.0,
+      "missing_in_batch": 0,
+      "numeric_comparison": "exact float64 after round-trip CSV parsing; row order ignored",
+      "rows_batch": 62239,
+      "rows_serial": 62239,
+      "value_mismatch": 0
+    },
+    {
+      "comparison": "batch20_100_vs_batch50_100",
+      "extra_in_batch": 0,
+      "matching_keys": 62239,
+      "maximum_absolute_difference": 0.0,
+      "missing_in_batch": 0,
+      "numeric_comparison": "exact float64 after round-trip CSV parsing; row order ignored",
+      "rows_batch": 62239,
+      "rows_serial": 62239,
+      "value_mismatch": 0
+    },
+    {
+      "comparison": "batch20_100_vs_batch100_100",
+      "extra_in_batch": 0,
+      "matching_keys": 62239,
+      "maximum_absolute_difference": 0.0,
+      "missing_in_batch": 0,
+      "numeric_comparison": "exact float64 after round-trip CSV parsing; row order ignored",
+      "rows_batch": 62239,
+      "rows_serial": 62239,
+      "value_mismatch": 0
+    },
+    {
+      "comparison": "sustained_first200_vs_resumed200",
+      "extra_in_batch": 0,
+      "matching_keys": 125962,
+      "maximum_absolute_difference": 0.0,
+      "missing_in_batch": 0,
+      "numeric_comparison": "exact float64 after round-trip CSV parsing; row order ignored",
+      "rows_batch": 125962,
+      "rows_serial": 125962,
+      "value_mismatch": 0
+    }
+  ]
+}
