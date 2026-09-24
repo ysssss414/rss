@@ -1,0 +1,29 @@
+{
+  "buffer_assumption": "20% engineering allowance, not measured",
+  "endpoint_eta": {
+    "D1_basic": {
+      "batch_count": 66,
+      "batch_size": 80,
+      "linear_seconds": 36.84,
+      "model": "ESTIMATION_ONLY: ceil(market/80) × observed 80-security batch seconds"
+    },
+    "D3_bars": {
+      "linear_seconds": 1851.45,
+      "model": "PER_SECURITY_LINEAR"
+    },
+    "D4_D6_status": {
+      "linear_seconds": 3894.18,
+      "model": "PER_SECURITY_LINEAR"
+    },
+    "D5_factor": {
+      "linear_seconds": 174590.19,
+      "model": "PER_SECURITY_LINEAR"
+    }
+  },
+  "endpoint_sum_seconds": 180372.66,
+  "eta_buffered_seconds": 218930.51,
+  "eta_linear_seconds": 182442.09,
+  "eta_model": "MEASURED_TOTAL_WALL_CLOCK_LINEAR",
+  "full_market_security_count": 5222,
+  "scope": "SH/SZ historical A shares as of 2026-09-23"
+}

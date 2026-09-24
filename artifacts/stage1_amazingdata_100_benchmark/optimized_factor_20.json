@@ -1,0 +1,17 @@
+{
+  "benchmark": "OPTIMIZED_20_SECURITY_RETEST",
+  "source": "AmazingData",
+  "endpoint": "D5_factor",
+  "call_mode": "BATCH_SECURITIES",
+  "batch_size": 20,
+  "sdk_method_requests": 1,
+  "started_at": "2026-09-24T03:02:24.350136+00:00",
+  "finished_at": "2026-09-24T03:03:07.538602+00:00",
+  "wall_clock_seconds": 42.998789,
+  "rows": 13240,
+  "cache_sha256": "934e9bad41a88b4200fa7fc36ec7da5a8ebb143bdf5be54a8f93c363628b198e",
+  "error_type": null,
+  "baseline_20_seconds": 512.310289,
+  "speedup": 11.915,
+  "comparison_note": "Five fixed codes per board; baseline uses the same 20 codes. Fresh SDK retrieval; batch returns a calendar-wide factor matrix."
+}
