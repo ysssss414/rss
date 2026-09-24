@@ -1,0 +1,57 @@
+{
+  "classification": "raw anomalous rows retained in ignored staging; null-key rows excluded from canonical without default values",
+  "quality": {
+    "adjustment_factor": {
+      "canonical_rows": 3380290,
+      "conflicting_duplicate_key_rows": 0,
+      "duplicate_keys": 0,
+      "exact_duplicate_rows": 0,
+      "excluded_duplicate_rows": 0,
+      "excluded_invalid_measurement_rows": 0,
+      "missing_factor": 0,
+      "non_positive_factor": 0,
+      "null_key_rows": 0,
+      "out_of_window_rows": 0,
+      "raw_rows": 3380290
+    },
+    "daily_bars": {
+      "canonical_rows": 3375103,
+      "conflicting_duplicate_key_rows": 0,
+      "duplicate_keys": 0,
+      "exact_duplicate_rows": 0,
+      "excluded_duplicate_rows": 0,
+      "excluded_invalid_measurement_rows": 0,
+      "invalid_ohlc": 0,
+      "negative_amount": 0,
+      "negative_volume": 0,
+      "null_key_rows": 0,
+      "out_of_window_rows": 0,
+      "raw_rows": 3375103
+    },
+    "daily_status": {
+      "canonical_rows": 3379281,
+      "conflicting_duplicate_key_rows": 0,
+      "duplicate_keys": 0,
+      "exact_duplicate_rows": 0,
+      "excluded_duplicate_rows": 0,
+      "excluded_invalid_measurement_rows": 0,
+      "missing_key_status_fields": 0,
+      "null_key_rows": 1009,
+      "out_of_window_rows": 0,
+      "raw_rows": 3380290
+    },
+    "security_master": {
+      "duplicate_security_id": 0,
+      "invalid_listing_date": 0,
+      "missing_board": 0,
+      "missing_security_id": 0,
+      "missing_security_name": 0,
+      "rows": 5222
+    },
+    "trading_calendar": {
+      "SH_SZ_equal": true,
+      "duplicate_trade_date": 0,
+      "rows": 662
+    }
+  }
+}

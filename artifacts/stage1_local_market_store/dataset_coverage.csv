@@ -1,0 +1,6 @@
+dataset,rows,min_trade_date,max_trade_date,unique_securities,unique_trade_dates,disk_bytes
+security_master,5222,,,5222,,53383
+trading_calendar,662,2024-01-02,2026-09-23,0,662,1690
+daily_bars,3375103,2024-01-02,2026-09-23,5222,662,66581369
+daily_status,3379281,2024-01-02,2026-09-23,5222,662,24964912
+adjustment_factor,3380290,2024-01-02,2026-09-23,5222,662,6679795
