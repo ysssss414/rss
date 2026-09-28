@@ -1,0 +1,26 @@
+{
+  "schema": "targeted-limit-regime-evidence-inventory/1",
+  "source_inventory": "artifacts/stage1_limit_regime/limit_regime_official_evidence_inventory.json",
+  "source_inventory_sha256": "43dc68ebf18e540ebf85cf4459ab347d08ff81a17fb4564aadb61e0c5dd6ab93",
+  "existing_official_documents_reused": 6,
+  "documents_intersecting_dependencies": [],
+  "new_targeted_candidate_searches": [
+    {
+      "security_id": "603099.SH",
+      "candidate_trigger_date": "2024-01-08",
+      "outcome": "NO_PRE_EFFECTIVE_OFFICIAL_DOCUMENT_ADMITTED"
+    },
+    {
+      "security_id": "600289.SH",
+      "candidate_trigger_date": "2024-02-22",
+      "outcome": "LATER_ISSUER_DISCLOSURE_FOUND_NOT_PIT_FOR_TRIGGER"
+    },
+    {
+      "security_id": "000609.SZ",
+      "candidate_trigger_date": "2024-06-14",
+      "outcome": "NO_PRE_EFFECTIVE_OFFICIAL_DOCUMENT_ADMITTED"
+    }
+  ],
+  "new_official_documents_admitted": 0,
+  "caveat": "Three bounded candidate searches yielded no pre-trigger official fact admitted; the six prior case documents do not intersect dependency dates. No complete exchange status/reference archive is claimed."
+}

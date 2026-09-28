@@ -1,0 +1,29 @@
+{
+  "schema": "provisional-observation-candidate-inventory/1",
+  "status": "REGIME_UNVERIFIED_NOT_FORMAL_OBSERVATION",
+  "v1_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+  "pre_window_context_sha256": "4a0124930ae95820526ddcf54d5ab4284f48eaf98b64eae01a3cf58b09a06513",
+  "candidate_count": 6388,
+  "unique_securities": 1391,
+  "first_trigger_date": "2024-01-08",
+  "last_trigger_date": "2026-09-23",
+  "dependency_security_dates": 15489,
+  "detector_version": "LIMIT_UP_LIKE_DISCOVERY_V1",
+  "detector_contract": "raw close matches vendor upper OR raw close rises >=5% versus vendor preclose OR previous raw close; all are discovery-only",
+  "rsi_basis": "raw close times V1 PIT-qualified D5 factor; common T anchor cancels in RSI ratio",
+  "candidate_parquet_sha256": "28ef9daf78cafc3e17a3c0e0ecdd291db16ee45faf9b156b0c9d3ca5ac344037",
+  "dependency_inventory_sha256": "9563f13f54bc8f61441b0b05aeb5400e69c870a3750cdd64ab47c89a6b629892",
+  "quality": {
+    "master_duplicate_keys": 0,
+    "status_duplicate_keys": 0,
+    "bars_duplicate_keys": 0,
+    "factor_duplicate_keys": 0,
+    "scoped_status_rows": 2086653,
+    "tradable_missing_bar": 0,
+    "tradable_missing_factor": 0,
+    "suspended_rows": 3133,
+    "four_of_five": 4649,
+    "five_of_five": 1739,
+    "rsi_warmup_unverified": 856
+  }
+}

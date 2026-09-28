@@ -1,0 +1,35 @@
+{
+  "schema": "targeted-limit-regime-qualification-receipt/1",
+  "status": "BLOCKED_CANONICAL_LIMIT_UP_UNQUALIFIED",
+  "provisional_candidates": 6388,
+  "dependency_security_dates": 15489,
+  "full_market_old_rule_main_board_security_dates": 1902063,
+  "dependency_reduction_vs_full_market": 0.9918567366065162,
+  "qualification_status_counts": {
+    "UNRESOLVED": 15489
+  },
+  "qualification_method_counts": {
+    "NONE": 15489
+  },
+  "unresolved_reason_counts": {
+    "HISTORICAL_RISK_STATE_AND_EXCEPTION_UNQUALIFIED": 14858,
+    "SPECIAL_EXCEPTION_NOT_EXCLUDED": 631
+  },
+  "dependency_year_counts": {
+    "2024": 7027,
+    "2025": 5167,
+    "2026": 3295
+  },
+  "raw_price_move_ge_5pct_discovery_hints_not_qualification": 11129,
+  "candidate_disposition_counts": {
+    "UNRESOLVED": 6388
+  },
+  "candidate_qualified_formal_upgrade_count": 0,
+  "candidate_formal_upgrade_status": "NOT_RUN_CANONICAL_DAILY_UPPER_LIMIT_UNQUALIFIED",
+  "qualified_daily_absolute_limit_reference_rows_acquired": 0,
+  "smoke_run_manifest_written": false,
+  "qualification_parquet_sha256": "b3b314e7b5c4d8c0b95c6f0f7cf92a302e1c21084c9e5a4a0857118ef6685354",
+  "targeted_evidence_sha256": "313e5cc1c575536f9dcf6701a13f93a8e047e4fad976a96af49581393f236bd9",
+  "rejection_inventory_sha256": "ba11036f12d021b444c86f08c742c6aa118d8621a2d5cdb461102f86bc37d6fe",
+  "unresolved_inventory_sha256": "58401f837bd1f571dbb067cd07986d314e0abbf99c5d5049c79df0063087eb5d"
+}
