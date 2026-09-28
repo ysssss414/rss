@@ -1,0 +1,143 @@
+{
+  "candidate_sha256": "f1146fe7c16685817e9c813ef85d4ac30731dcc3b2a9cecfb65241947b3f9c96",
+  "code_sha256": {
+    "research/observation_runtime_v2.py": "a0a68d049a337ee6e30e66967eff01925d5757d2ee6042599e25b3f9c0246874",
+    "research/operational_trigger_qualification.py": "24e2162121b436ba2a7c5e47a102f47497e371cc52e886eb97b844acdb7c1dbd",
+    "scripts/run_real_strategy_smoke_v1.py": "64c60686122ffde738e675ee88c1bbeafeba6f562f647b0e94cf4c292228541e"
+  },
+  "config": {
+    "cutoff": "2026-09-23",
+    "lookback_valid_observations": 5,
+    "observation_horizon_exchange_sessions": 7,
+    "target_boards": [
+      "SSE Main",
+      "SZSE Main"
+    ],
+    "truncated_rsi_minimum": 120,
+    "truncated_rsi_target": 150
+  },
+  "contracts": [
+    "CLOSE_LIMIT_UP_10PCT_V3",
+    "OBSERVATION_POOL_CONTRACT_V2",
+    "OPERATIONAL_TRIGGER_QUALIFICATION_V1",
+    "RSI14_PROJECT_V1",
+    "RSI_WARMUP_POLICY_V1",
+    "TRADE_LIFECYCLE_V1",
+    "ENTRY_A_PULLBACK_TO_MA5_V1",
+    "ENTRY_B_RSI_RECROSS_70_V1"
+  ],
+  "counts": {
+    "entry": {
+      "ENTRY_A_PULLBACK_TO_MA5_V1": 426,
+      "ENTRY_B_RSI_RECROSS_70_V1": 79
+    },
+    "formal_observation_count": 993,
+    "formal_observation_securities": 752,
+    "intent": {
+      "LIMIT_UP_CLOSE_BOARD_INTENT": 263,
+      "NORMAL_CLOSE_INTENT": 242
+    },
+    "known_official_false_normal_candidates": 0,
+    "lifecycle": {
+      "ENTRY_SIGNAL": 505,
+      "EXECUTION_PENDING": 1242,
+      "HARD_INVALIDATION": 9,
+      "PENDING_SIGNAL_HORIZON_EXPIRED": 500,
+      "POOL_ADMISSION": 903,
+      "POOL_EXPIRED": 469,
+      "POOL_OBSERVATION": 3265,
+      "SUSPENDED_NO_ENTRY_EVALUATION": 33
+    },
+    "nonoverlap_reentry_securities": 183,
+    "observation_hits": {
+      "4": 972,
+      "5": 21
+    },
+    "observation_method": {
+      "QUALIFIED_BY_OPERATIONAL_STATUS": 20,
+      "QUALIFIED_BY_V3_PRICE_PATH": 973
+    },
+    "provisional_candidates": 5540,
+    "qualification": {
+      "QUALIFIED_BY_OPERATIONAL_STATUS": 2071,
+      "QUALIFIED_BY_V3_PRICE_PATH": 3337,
+      "REJECTED_BY_OPERATIONAL_STATUS": 111,
+      "REVIEW_REQUIRED": 21
+    },
+    "review_reasons": {
+      "REFERENCE_OR_V3_UNRESOLVED": 21
+    },
+    "review_years": {
+      "2024": 1,
+      "2025": 6,
+      "2026": 14
+    },
+    "rsi_replay": {
+      "NOT_READY": 715,
+      "READY": 4825
+    },
+    "strict_v3_rsi_candidates": 2749,
+    "vendor_conflict_candidates": 2
+  },
+  "d8_accessed": false,
+  "files": {
+    "case_audit": {
+      "path": "case_audit.json",
+      "sha256": "2d74ae8a77888ea426430ca076d0aa2a63db1351c2465bfb885c86dbef8b7c0d"
+    },
+    "entries": {
+      "count": 505,
+      "path": "entries.csv",
+      "sha256": "82d16ddf0f3c1af3c5015dd34ae08b9bbe83e23ed90c03b2c8b7ade7ec4bb0f1"
+    },
+    "lifecycle": {
+      "count": 6926,
+      "path": "lifecycle.csv",
+      "sha256": "e54f1d748f0e9d859a1f4f5add5aec25f8472f88e1a3b558e21cb74885de73e8"
+    },
+    "observations": {
+      "count": 993,
+      "path": "observations.csv",
+      "sha256": "d811b3f150e0aeb22c33d7b7d4fe4f0d07fcbbae4dee9715bb49d5975f7e6153"
+    },
+    "qualification": {
+      "count": 5540,
+      "path": "qualification.csv",
+      "sha256": "d3fbd4177859292339762056dcd85c4d2d3e05dad1ae6e60c5b381672626c8ce"
+    },
+    "review": {
+      "count": 21,
+      "path": "review.csv",
+      "sha256": "80d2f929c4d2612775aad7c549904f9951a05e19c57b81d7967c00e615580331"
+    }
+  },
+  "future_mutation_prefix_invariant": true,
+  "future_status_mutation_key": [
+    "000006.SZ",
+    "2025-10-14"
+  ],
+  "official_inventory_sha256": "43dc68ebf18e540ebf85cf4459ab347d08ff81a17fb4564aadb61e0c5dd6ab93",
+  "operational_contract_sha256": "5292171ec4ccfccd41e68dd1e85c942955f1a0566f44621d7aa6d8cffcb4b656",
+  "outcomes_accessed": false,
+  "prefix_invariance_dates": [
+    "2025-06-30",
+    "2026-07-06"
+  ],
+  "reruns_identical": true,
+  "rsi_old_listing_mode": "TRUNCATED_SLICE_150_NONCANONICAL; minimum 120",
+  "run_id": "REAL_STRATEGY_SMOKE_RUN_V1",
+  "schema": "real-strategy-smoke-run-v1/1",
+  "signal_source_datasets": [
+    "adjustment_factor",
+    "daily_bars",
+    "daily_status",
+    "security_master",
+    "trading_calendar"
+  ],
+  "snapshot_id": "REAL_RESEARCH_SNAPSHOT_V1",
+  "snapshot_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+  "status": "RUN_MATERIALIZED",
+  "v3_application": "OPERATIONAL_EXCEPTION_CLEARANCE_NOT_CANONICAL_HISTORICAL_FACT",
+  "vendor_operational_source": "REAL_RESEARCH_SNAPSHOT_V1/daily_status.is_st_sec",
+  "vendor_source_role": "OPERATIONAL_SCREEN_NOT_CANONICAL_HISTORY"
+}

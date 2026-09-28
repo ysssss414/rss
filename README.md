@@ -30,3 +30,8 @@ Stage 0 的数据契约、不可变 snapshot、研究入口、manifest 与冻结
 Stage 1 的 D8 结果路径归一化、离线冻结研究输入与
 `REAL_RESEARCH_SNAPSHOT_V1` 使用说明见
 [`docs/stage1_d8_and_research_snapshot.md`](docs/stage1_d8_and_research_snapshot.md)。
+
+Stage 1 当前正式信号研究入口为 `python -m scripts.run_real_strategy_smoke_v1`：
+使用冻结快照、V3、Observation V2 和 T 日运营资格筛选，输出 Observation、
+生命周期与 Entry（不读取 D8 或未来收益）。证据降级、待复核清单及复跑审计见
+[`docs/stage1_operational_trigger_qualification_and_real_smoke.md`](docs/stage1_operational_trigger_qualification_and_real_smoke.md)。
