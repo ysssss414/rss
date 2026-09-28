@@ -1,0 +1,12 @@
+{
+  "version": "REFERENCE_PRICE_DAY_CLASSIFICATION_V1",
+  "scope": "SSE/SZSE main-board frozen Snapshot V1, evaluated at T EOD",
+  "classes": ["ORDINARY", "CORPORATE_ACTION_SPECIAL", "IPO_NO_LIMIT", "RELISTING_OR_OTHER_NO_LIMIT", "OTHER_SPECIAL", "UNRESOLVED"],
+  "ordinary_reference": "previous valid raw trading close on the same security; requires qualified ordinary-day status before formal admission",
+  "special_screens": ["D5 factor change", "same-day ex-right/ex-dividend status", "listing phase", "delisting-arrangement status", "missing reference/factor/status"],
+  "special_reference_policy": "UNRESOLVED unless an independently qualified canonical exchange reference price is available; none is available in Snapshot V1",
+  "exception_policy": "even an ordinary mechanical hit remains UNRESOLVED until independent dated evidence excludes other no-limit exceptions",
+  "d8_policy": "OUTCOME_ONLY_NEVER_SIGNAL; D8 may be joined only in a separate post-hoc quality audit, never as a reference or candidate/signal input",
+  "historical_risk_policy": "old 5% regime can be excluded by a V3 price path only when tick-rounded 10% upper is strictly above tick-rounded 5% upper, and other exceptions are independently excluded",
+  "limitation": "the ordinary label is a screen based on available PIT fields, not a market-wide official exception-clearance certificate"
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "close-limit-up-v3-contract-qualification/1",
+  "contract": "CLOSE_LIMIT_UP_10PCT_V3",
+  "mechanical_contract_status": "QUALIFIED_FOR_STRATEGY_RESEARCH",
+  "scope": "Only ordinary, 0.01-CNY-tick, independently confirmed symmetric 10% SSE/SZSE main-board A-share trading days with independently excluded no-limit exceptions",
+  "gates": {
+    "official_rounding_semantics": "PASS_SCOPED",
+    "fixed_point_and_half_tick": "PASS",
+    "low_price_matrix": "PASS",
+    "600518_2024_07_04": "PASS_TRUE",
+    "ordinary_reference_screen": "PASS_SCOPED",
+    "special_reference_fail_closed": "PASS",
+    "board_and_no_limit_phase": "PASS",
+    "gate_b_ordinary_conflicts": 0,
+    "provisional_ordinary_v3_hits_missed": 0
+  },
+  "formal_strategy_runtime_status": "BLOCKED_TARGETED_REGIME_EVIDENCE_INSUFFICIENT",
+  "reason": "Contract qualification is conditional on dated day-level regime, tick, reference and exception evidence; Snapshot V1 does not supply this across provisional candidate dependencies.",
+  "active_runtime_switched": false,
+  "formal_observations_materialized": false,
+  "real_strategy_smoke_run_manifest_created": false
+}

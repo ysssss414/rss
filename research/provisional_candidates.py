@@ -13,6 +13,8 @@ CANDIDATE_VERSION = "PROVISIONAL_OBSERVATION_CANDIDATE_V1"
 BROAD_RETURN_FLOOR = Decimal("0.05")
 V2_DETECTOR_VERSION = "RAW_RETURN_GE_5PCT_OR_SPECIAL_REFERENCE_V2"
 V2_CANDIDATE_VERSION = "PROVISIONAL_OBSERVATION_CANDIDATE_V2"
+V3_DETECTOR_VERSION = "RAW_RETURN_GE_5PCT_OR_SPECIAL_REFERENCE_V3"
+V3_CANDIDATE_VERSION = "PROVISIONAL_OBSERVATION_CANDIDATE_V3"
 
 
 def _positive(value: object) -> Decimal | None:
@@ -105,3 +107,7 @@ def candidate_id(security_id: str, trigger_date: str) -> str:
 
 def candidate_id_v2(security_id: str, trigger_date: str) -> str:
     return sha256(f"{security_id}|{trigger_date}|{V2_CANDIDATE_VERSION}".encode()).hexdigest()
+
+
+def candidate_id_v3(security_id: str, trigger_date: str) -> str:
+    return sha256(f"{security_id}|{trigger_date}|{V3_CANDIDATE_VERSION}".encode()).hexdigest()
