@@ -1,0 +1,140 @@
+{
+  "schema": "observation-v2-blocked-case-audit/1",
+  "scope": "V1 Snapshot inputs through each trigger T only; no post-Entry or outcome fields",
+  "status": "DIAGNOSTIC_NOT_FORMAL_EVENT_AUDIT",
+  "cases": {
+    "TRIGGER_NON_LIMIT": {
+      "candidate_id": "7a052ba8fc75f2087b9e20fb0f48a967b6e73a1a03f8aaaefc51d09ef0397b3c",
+      "security_id": "000002.SZ",
+      "trigger_date": "2024-10-08",
+      "five_observation_dates": [
+        "2024-09-25",
+        "2024-09-26",
+        "2024-09-27",
+        "2024-09-30",
+        "2024-10-08"
+      ],
+      "qualified_v3_hits": 0,
+      "possible_v3_hits": 3,
+      "trigger_v3_status": "FALSE",
+      "trigger_regime_status": "UNRESOLVED",
+      "evidence_need": "TARGETED_RISK_STATE_AND_EXCEPTION",
+      "rsi_filter_status": "READY_PROVISIONAL",
+      "observation_v2_status": "REJECTED"
+    },
+    "POSSIBLE_4_OF_5": {
+      "candidate_id": "a424acbed49bafaa3576fd879ad04c63e52af45546ad4b4a7c7b625f4f7289bc",
+      "security_id": "000006.SZ",
+      "trigger_date": "2024-10-24",
+      "five_observation_dates": [
+        "2024-10-18",
+        "2024-10-21",
+        "2024-10-22",
+        "2024-10-23",
+        "2024-10-24"
+      ],
+      "qualified_v3_hits": 0,
+      "possible_v3_hits": 4,
+      "trigger_v3_status": "UNRESOLVED",
+      "trigger_regime_status": "UNRESOLVED",
+      "evidence_need": "V3_PATH_EXCEPTION_CLEARANCE",
+      "rsi_filter_status": "READY_PROVISIONAL",
+      "observation_v2_status": "UNRESOLVED"
+    },
+    "TRIGGER_MECHANICAL_HIT_PENDING_EXCEPTION": {
+      "candidate_id": "a424acbed49bafaa3576fd879ad04c63e52af45546ad4b4a7c7b625f4f7289bc",
+      "security_id": "000006.SZ",
+      "trigger_date": "2024-10-24",
+      "five_observation_dates": [
+        "2024-10-18",
+        "2024-10-21",
+        "2024-10-22",
+        "2024-10-23",
+        "2024-10-24"
+      ],
+      "qualified_v3_hits": 0,
+      "possible_v3_hits": 4,
+      "trigger_v3_status": "UNRESOLVED",
+      "trigger_regime_status": "UNRESOLVED",
+      "evidence_need": "V3_PATH_EXCEPTION_CLEARANCE",
+      "rsi_filter_status": "READY_PROVISIONAL",
+      "observation_v2_status": "UNRESOLVED"
+    },
+    "POSSIBLE_5_OF_5": {
+      "candidate_id": "9d6210739973e7cd84a4e6b37077858b6bab3150b00344c52914578f51f39a05",
+      "security_id": "000016.SZ",
+      "trigger_date": "2024-10-30",
+      "five_observation_dates": [
+        "2024-10-24",
+        "2024-10-25",
+        "2024-10-28",
+        "2024-10-29",
+        "2024-10-30"
+      ],
+      "qualified_v3_hits": 0,
+      "possible_v3_hits": 5,
+      "trigger_v3_status": "UNRESOLVED",
+      "trigger_regime_status": "UNRESOLVED",
+      "evidence_need": "V3_PATH_EXCEPTION_CLEARANCE",
+      "rsi_filter_status": "READY_PROVISIONAL",
+      "observation_v2_status": "UNRESOLVED"
+    },
+    "RSI_WARMUP_PENDING": {
+      "candidate_id": "7045e29cb3dbb01d4022416d597003f49e5eceab5f37f5df2c0c8fa635df488a",
+      "security_id": "000017.SZ",
+      "trigger_date": "2024-01-12",
+      "five_observation_dates": [
+        "2024-01-08",
+        "2024-01-09",
+        "2024-01-10",
+        "2024-01-11",
+        "2024-01-12"
+      ],
+      "qualified_v3_hits": 0,
+      "possible_v3_hits": 4,
+      "trigger_v3_status": "UNRESOLVED",
+      "trigger_regime_status": "UNRESOLVED",
+      "evidence_need": "V3_PATH_EXCEPTION_CLEARANCE",
+      "rsi_filter_status": "UNVERIFIED_WARMUP",
+      "observation_v2_status": "UNRESOLVED"
+    },
+    "POST_RULE_TRIGGER_PENDING_EXCEPTION": {
+      "candidate_id": "c2cb2105a1d0e726e980ed9ec2abf37f76e1b8ca7222eef86d0705c97b4cc644",
+      "security_id": "000017.SZ",
+      "trigger_date": "2026-08-25",
+      "five_observation_dates": [
+        "2026-08-19",
+        "2026-08-20",
+        "2026-08-21",
+        "2026-08-24",
+        "2026-08-25"
+      ],
+      "qualified_v3_hits": 0,
+      "possible_v3_hits": 4,
+      "trigger_v3_status": "UNRESOLVED",
+      "trigger_regime_status": "UNRESOLVED",
+      "evidence_need": "POST_RULE_EXCEPTION_CLEARANCE",
+      "rsi_filter_status": "READY_PROVISIONAL",
+      "observation_v2_status": "UNRESOLVED"
+    },
+    "TRIGGER_SPECIAL_REFERENCE": {
+      "candidate_id": "b682831e7486a11c34be10d93001141457552b126d61b0a31edb16a9f8391be4",
+      "security_id": "000811.SZ",
+      "trigger_date": "2026-06-25",
+      "five_observation_dates": [
+        "2026-06-18",
+        "2026-06-22",
+        "2026-06-23",
+        "2026-06-24",
+        "2026-06-25"
+      ],
+      "qualified_v3_hits": 0,
+      "possible_v3_hits": 3,
+      "trigger_v3_status": "UNRESOLVED",
+      "trigger_regime_status": "UNRESOLVED",
+      "evidence_need": "SPECIAL_REFERENCE_OR_PHASE",
+      "rsi_filter_status": "READY_PROVISIONAL",
+      "observation_v2_status": "REJECTED"
+    }
+  }
+}

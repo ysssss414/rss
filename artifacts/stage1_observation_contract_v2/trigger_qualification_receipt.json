@@ -1,0 +1,47 @@
+{
+  "schema": "observation-v2-trigger-regime-audit/1",
+  "status": "BLOCKED_TRIGGER_DATE_REGIME_EVIDENCE_INSUFFICIENT",
+  "snapshot_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+  "candidate_parquet_sha256": "f1146fe7c16685817e9c813ef85d4ac30731dcc3b2a9cecfb65241947b3f9c96",
+  "old_all_five_day_dependency_count": 13958,
+  "new_trigger_only_dependency_count": 5540,
+  "dependency_reduction_pct": 60.3095,
+  "trigger_qualification_calls": 5540,
+  "lookback_regime_qualification_calls": 0,
+  "v3_self_qualified_count": 0,
+  "direct_rule_qualified_count": 0,
+  "targeted_official_status_qualified_count": 0,
+  "official_case_documents_intersecting_triggers": [],
+  "formal_observation_count": null,
+  "formal_observation_materialized": false,
+  "formal_lifecycle_and_entries_run": false,
+  "counts": {
+    "EVIDENCE_NEED_POST_RULE_EXCEPTION_CLEARANCE": 256,
+    "EVIDENCE_NEED_SPECIAL_REFERENCE_OR_PHASE": 21,
+    "EVIDENCE_NEED_TARGETED_RISK_STATE_AND_EXCEPTION": 2084,
+    "EVIDENCE_NEED_V3_PATH_EXCEPTION_CLEARANCE": 3179,
+    "POTENTIAL_PRICE_PATH_5PCT_SEPARATED": 3179,
+    "PROVISIONAL_RSI_READY_PROVISIONAL": 4825,
+    "PROVISIONAL_RSI_UNVERIFIED_WARMUP": 715,
+    "TRIGGER_REFERENCE_CORPORATE_ACTION_SPECIAL": 21,
+    "TRIGGER_REFERENCE_ORDINARY": 5519,
+    "TRIGGER_REGIME_UNRESOLVED": 5540,
+    "TRIGGER_V3_FALSE": 2182,
+    "TRIGGER_V3_UNRESOLVED": 3358,
+    "V2_DECISION_REJECTED": 2295,
+    "V2_DECISION_UNRESOLVED": 3245
+  },
+  "observation_decision_reasons": {
+    "FEWER_THAN_FOUR_POSSIBLE_V3_HITS": 2295,
+    "TRIGGER_REGIME_UNRESOLVED": 3245
+  },
+  "trigger_regime_methods": {
+    "NONE": 5540
+  },
+  "inventory_sha256": "9ef3c0b70d55ab8e9d9cbd890446770a91d6e641d0383831096361404cbfc73a",
+  "blocked_case_audit_sha256": "7ce35dc62ea8039ce882320c20fde44be164160321c96d19feccf33503c83369",
+  "official_inventory_sha256": "43dc68ebf18e540ebf85cf4459ab347d08ff81a17fb4564aadb61e0c5dd6ab93",
+  "observation_contract_sha256": "9ef1003a116af3e9fe63d7d25621daf4d119a80e098019c68dfca5e90509148b",
+  "episode_contract_sha256": "f29276c893dfd935e0ed7eb1fc614362634c4d89f8258fbc73aec3dcdf71618e",
+  "reason": "Trigger-day no-limit exception clearance and historical risk-state evidence do not overlap provisional triggers; counterfactual V3 hits and provisional RSI cannot be promoted to formal events."
+}

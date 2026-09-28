@@ -1,0 +1,20 @@
+{
+  "version": "OBSERVATION_POOL_CONTRACT_V2",
+  "supersedes": "OBSERVATION_POOL_V1 only for target-regime eligibility timing in current strategy research",
+  "legacy_contract_preserved": "artifacts/stage1_observation_entry/observation_pool_contract.json",
+  "target_boards": ["SSE Main", "SZSE Main"],
+  "regime_qualification_scope": "TRIGGER_DATE_ONLY",
+  "trigger_regime_required_status": "QUALIFIED_10PCT",
+  "lookback_limit_up_predicate": "CLOSE_LIMIT_UP_10PCT_V3",
+  "lookback_observation_count": 5,
+  "lookback_qualified_v3_hit_count": [4, 5],
+  "lookback_non_limit_days_require_regime_qualification": false,
+  "lookback_other_days_require_independent_regime_qualification": false,
+  "unresolved_v3_event_counts_as_limit_up": false,
+  "rsi_contract": "RSI14_PROJECT_V1",
+  "rsi_trigger_condition": ">70 and formally READY at T EOD",
+  "episode_eligibility_mode": "QUALIFIED_AT_TRIGGER",
+  "entry_date_regime_requalification": false,
+  "explicit_lifecycle_invalidation_preserved": true,
+  "no_outcome_access": true
+}

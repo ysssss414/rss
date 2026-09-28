@@ -1,0 +1,10 @@
+{
+  "version": "EPISODE_START_ELIGIBILITY_V1",
+  "admission_condition": "OBSERVATION_POOL_CONTRACT_V2 trigger decision QUALIFIED",
+  "eligibility_after_admission": "carried within the episode; no repeated historical ST or 10% regime lookup",
+  "preserved_lifecycle": "TRADE_LIFECYCLE_V1 and frozen seven-session Observation state rules",
+  "suspension": "advances exchange-session age and prevents entry evaluation; pure suspension is not hard invalidation",
+  "hard_invalidation": "explicit delisting, unsupported security class, invalid quote/constraint, known material regime change, or PIT/data conflict according to frozen lifecycle contracts",
+  "entry_evaluation": "frozen Entry A and Entry B price/RSI predicates; no separate entry-date regime qualification",
+  "execution": "no fill or position is inferred from an Entry signal"
+}
