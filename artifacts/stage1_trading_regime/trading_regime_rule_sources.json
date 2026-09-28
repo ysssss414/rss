@@ -1,0 +1,63 @@
+{
+  "schema": "trading-regime-rule-sources/1",
+  "retrieved_date": "2026-09-28",
+  "sources": [
+    {
+      "source_id": "SSE_2023",
+      "authority": "上海证券交易所",
+      "title": "上海证券交易所交易规则（2023年修订）",
+      "url": "https://www.sse.com.cn/lawandrules/sselawsrules2025/repeal/rules/c/c_20250612_10824490.shtml",
+      "published": "2023-02-17",
+      "effective": "2023-04-10",
+      "effective_date_support_url": "https://big5.sse.com.cn/site/cht/www.sse.com.cn/aboutus/mediacenter/hotandd/c/c_20230404_5719112.shtml"
+    },
+    {
+      "source_id": "SSE_2026",
+      "authority": "上海证券交易所",
+      "title": "上海证券交易所交易规则（2026年修订）",
+      "url": "https://www.sse.com.cn/lawandrules/sselawsrules2025/stocks/exchange/c/c_20260424_10816482.shtml",
+      "published": "2026-04-24",
+      "effective": "2026-07-06"
+    },
+    {
+      "source_id": "SZSE_2023",
+      "authority": "深圳证券交易所",
+      "title": "深圳证券交易所交易规则（2023年修订）",
+      "url": "https://docs.static.szse.cn/www/lawrules/rule/trade/W020230217564423808793.pdf",
+      "published": "2023-02-17",
+      "effective": "2023-04-10",
+      "effective_date_support_url": "https://www.szse.cn/www/marketServices/technicalservice/doc/P020230724535729507237.pdf"
+    },
+    {
+      "source_id": "SZSE_2026",
+      "authority": "深圳证券交易所",
+      "title": "深圳证券交易所交易规则（2026年修订）",
+      "url": "https://docs.static.szse.cn/www/lawrules/rule/trade/W020260424690713155663.pdf",
+      "published": "2026-04-24",
+      "effective": "2026-07-06"
+    },
+    {
+      "source_id": "BSE_2021",
+      "authority": "北京证券交易所",
+      "title": "北京证券交易所交易规则（试行）",
+      "url": "https://www.bse.cn/jygl_list/200010919.html",
+      "published": "2021-11-02",
+      "effective": "2021-11-15"
+    },
+    {
+      "source_id": "BSE_2026",
+      "authority": "北京证券交易所",
+      "title": "北京证券交易所交易规则",
+      "url": "https://www.bse.cn/jygl_list/200028217.html",
+      "published": "2026-04-24",
+      "effective": "2026-07-06"
+    }
+  ],
+  "explanatory_cross_check": {
+    "authority": "中国证监会上海监管局",
+    "url": "https://www.csrc.gov.cn/shanghai/c105566/c7643909/content.shtml",
+    "finding": "2026-07-06: SSE/SZSE main risk warning 5% to 10%; ChiNext/STAR 20% and BSE 30% unchanged",
+    "not_rule_authority": true
+  },
+  "effective_date_note": "SSE/SZSE 2023 rules took effect with the first registration-system main-board IPO on 2023-04-10; the rulebook is clipped to the research window."
+}
