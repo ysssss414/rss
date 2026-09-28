@@ -1,0 +1,25 @@
+{
+  "version": "OPERATIONAL_TRIGGER_QUALIFICATION_V1",
+  "scope": "Provisional Observation trigger date T only",
+  "source_snapshot": "REAL_RESEARCH_SNAPSHOT_V1",
+  "evidence_precedence": [
+    "OFFICIAL_EFFECTIVE_DAY_OR_QUALIFIED_RULE",
+    "CLOSE_LIMIT_UP_10PCT_V3_OPERATIONAL_PRICE_PATH",
+    "FROZEN_VENDOR_DAILY_STATUS_OPERATIONAL_SCREEN",
+    "UNRESOLVED"
+  ],
+  "vendor_status_source": "REAL_RESEARCH_SNAPSHOT_V1/daily_status.is_st_sec",
+  "vendor_status_role": "OPERATIONAL_SCREEN_NOT_CANONICAL_HISTORICAL_TRUTH",
+  "states": {
+    "QUALIFIED_BY_V3_PRICE_PATH": "Ordinary supported reference, known special states excluded, exact 10% tick ceiling close=high; vendor ST cannot veto; official risk-day conflict requires review",
+    "QUALIFIED_BY_OPERATIONAL_STATUS": "Non-V3 trigger with T-day vendor normal or dated official normal override; source evidence level retained",
+    "REJECTED_BY_OPERATIONAL_STATUS": "Non-V3 trigger with frozen T-day vendor ST and no higher-grade override; accepted false-negative bias",
+    "REVIEW_REQUIRED": "Missing/invalid vendor state, special/unresolved reference or phase, official risk-day contradiction, or pre-2026 vendor status/rate anomaly"
+  },
+  "lookback_regime_requalification": false,
+  "entry_date_st_requalification": false,
+  "operational_v3_exception_clearance": "Research downgrade only; not independent official no-limit exception evidence",
+  "rsi": "RSI14_PROJECT_V1 with RSI_WARMUP_POLICY_V1; old-listing 120 minimum/150 target slice explicitly noncanonical",
+  "review_blocks_other_candidates": false,
+  "outcome_access": false
+}
