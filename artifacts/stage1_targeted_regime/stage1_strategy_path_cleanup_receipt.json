@@ -1,0 +1,71 @@
+{
+  "schema": "stage1-strategy-path-cleanup/1",
+  "branch_base": "88bd59a",
+  "historical_blocker_commits": ["0af305a", "00d4c1d"],
+  "retained": [
+    {
+      "path": "research/trading_regime_rulebook.py",
+      "git_status": "TRACKED_IN_PR24_BASE",
+      "rationale": "Official effective-dated rule matrix remains the regime authority."
+    },
+    {
+      "path": "artifacts/stage1_trading_regime/",
+      "git_status": "TRACKED_IN_PR24_BASE",
+      "rationale": "Official source receipts and blocked rulebook evidence remain readable."
+    },
+    {
+      "path": "research/primitives.py; research/observation_pool.py; research/entry_signals.py; research/trade_lifecycle.py",
+      "git_status": "TRACKED_IN_PR24_BASE",
+      "rationale": "Frozen strategy and lifecycle contracts were not redesigned or modified."
+    },
+    {
+      "path": "docs/stage1_pit_risk_warning_event_backfill_blocked.md; docs/stage1_limit_regime_fact_qualification_blocked.md",
+      "git_status": "TRACKED_IN_PRESERVED_LOCAL_BLOCKER_COMMITS_ONLY",
+      "rationale": "Negative evidence remains reachable through 0af305a and 00d4c1d, without merging the abandoned runtime path."
+    }
+  ],
+  "reused_or_refactored": [
+    {
+      "path": "research/pre_window_calendar_context.py; scripts/build_pre_window_calendar_context.py; artifacts/stage1_limit_regime/pre_window_calendar_context_*; tests/test_pre_window_calendar_context.py",
+      "git_status": "COPIED_FROM_00d4c1d_TO_NEW_BRANCH",
+      "rationale": "Qualified seven-row IPO calendar prefix prevents early-window phase mistakes."
+    },
+    {
+      "path": "artifacts/stage1_limit_regime/limit_regime_official_evidence_inventory.json",
+      "git_status": "COPIED_FROM_00d4c1d_TO_NEW_BRANCH",
+      "rationale": "Six bounded official case documents remain reusable as exact-day regression evidence, not full coverage."
+    },
+    {
+      "path": "research/provisional_candidates.py; research/targeted_limit_regime.py",
+      "git_status": "NEW_BRANCH_ADDITION",
+      "rationale": "Small reusable discovery and fail-closed qualification interfaces; no global ST history dependency."
+    }
+  ],
+  "retired_active_paths": [
+    {
+      "path": "0af305a full-market risk-warning event-backfill attempt",
+      "git_status": "PRESERVED_LOCAL_HISTORY_NOT_IN_NEW_BRANCH",
+      "active_cli_reference": false,
+      "rationale": "Blocked historical audit is not a strategy prerequisite."
+    },
+    {
+      "path": "00d4c1d full old-rule main-board candidate-episode inventory builder",
+      "git_status": "PRESERVED_LOCAL_HISTORY_NOT_COPIED",
+      "active_cli_reference": false,
+      "rationale": "Historical broad episode search remains audit-only; new route searches actual strategy dependency dates."
+    },
+    {
+      "path": "global DailyTradingConstraint and REAL_RESEARCH_SNAPSHOT_V2 prerequisite",
+      "git_status": "NEVER_MATERIALIZED_IN_PR24_BASE",
+      "active_cli_reference": false,
+      "rationale": "The targeted route does not call or wait for a global day-state build."
+    }
+  ],
+  "deleted_local_only_files": [],
+  "history_preserved": true,
+  "protected_files_touched": false,
+  "default_active_command": "python -m scripts.build_provisional_observation_candidates, then python -m scripts.build_targeted_regime_triage",
+  "default_active_command_calls_full_market_crawler": false,
+  "default_active_command_calls_d8_outcome": false,
+  "note": "No historical evidence or canonical artifact was deleted. The prior full-backfill work contains blocked receipts/docs, not an active crawler on this clean PR24 base."
+}

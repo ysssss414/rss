@@ -1,0 +1,114 @@
+{
+  "schema": "pre-window-calendar-context/1",
+  "dataset": "PRE_WINDOW_CALENDAR_CONTEXT_V1",
+  "qualification_status": "QUALIFIED_MINIMAL_CONTEXT",
+  "v1_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+  "scope": "SZ: 2023-12-26 through 2023-12-29; SH: 2023-12-27 through 2023-12-29",
+  "rows": 7,
+  "unique_pre_window_sessions": [
+    "2023-12-26",
+    "2023-12-27",
+    "2023-12-28",
+    "2023-12-29"
+  ],
+  "exchange_holiday_sources": {
+    "SH": "https://www.sse.com.cn/disclosure/dealinstruc/closed/c/c_20231226_5733941.shtml",
+    "SZ": "https://www.szse.cn/disclosure/notice/t20231226_605108.html"
+  },
+  "listings": [
+    {
+      "security_id": "301526.SZ",
+      "listing_date": "2023-12-26",
+      "official_listing_notice": "https://www.szse.cn/disclosure/notice/company/t20231225_605090.html",
+      "first_four_v1_sessions": [
+        {
+          "trade_date": "2024-01-02",
+          "ipo_session_number": 5
+        },
+        {
+          "trade_date": "2024-01-03",
+          "ipo_session_number": 6
+        },
+        {
+          "trade_date": "2024-01-04",
+          "ipo_session_number": 7
+        },
+        {
+          "trade_date": "2024-01-05",
+          "ipo_session_number": 8
+        }
+      ]
+    },
+    {
+      "security_id": "603004.SH",
+      "listing_date": "2023-12-27",
+      "official_listing_notice": "https://big5.sse.com.cn/disclosure/listedinfo/announcement/c/new/2023-12-26/603004_20231226_0WNX.pdf",
+      "first_four_v1_sessions": [
+        {
+          "trade_date": "2024-01-02",
+          "ipo_session_number": 4
+        },
+        {
+          "trade_date": "2024-01-03",
+          "ipo_session_number": 5
+        },
+        {
+          "trade_date": "2024-01-04",
+          "ipo_session_number": 6
+        },
+        {
+          "trade_date": "2024-01-05",
+          "ipo_session_number": 7
+        }
+      ]
+    },
+    {
+      "security_id": "301578.SZ",
+      "listing_date": "2023-12-28",
+      "official_listing_notice": "https://www.szse.cn/disclosure/notice/t20231227_605117.html",
+      "first_four_v1_sessions": [
+        {
+          "trade_date": "2024-01-02",
+          "ipo_session_number": 3
+        },
+        {
+          "trade_date": "2024-01-03",
+          "ipo_session_number": 4
+        },
+        {
+          "trade_date": "2024-01-04",
+          "ipo_session_number": 5
+        },
+        {
+          "trade_date": "2024-01-05",
+          "ipo_session_number": 6
+        }
+      ]
+    },
+    {
+      "security_id": "301566.SZ",
+      "listing_date": "2023-12-29",
+      "official_listing_notice": "https://www.szse.cn/disclosure/notice/t20231228_605136.html",
+      "first_four_v1_sessions": [
+        {
+          "trade_date": "2024-01-02",
+          "ipo_session_number": 2
+        },
+        {
+          "trade_date": "2024-01-03",
+          "ipo_session_number": 3
+        },
+        {
+          "trade_date": "2024-01-04",
+          "ipo_session_number": 4
+        },
+        {
+          "trade_date": "2024-01-05",
+          "ipo_session_number": 5
+        }
+      ]
+    }
+  ],
+  "v1_calendar_modified": false,
+  "artifact_sha256": "4a0124930ae95820526ddcf54d5ab4284f48eaf98b64eae01a3cf58b09a06513"
+}

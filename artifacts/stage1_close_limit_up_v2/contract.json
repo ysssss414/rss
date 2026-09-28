@@ -1,0 +1,18 @@
+{
+  "schema": "close-limit-up-10pct-v2-contract/1",
+  "id": "CLOSE_LIMIT_UP_10PCT_V2",
+  "status": "VALIDATION_BLOCKED_NOT_ACTIVE",
+  "purpose": "Operational strategy-research close-at-high predicate, not an official absolute limit-up price reconstruction",
+  "comparison": "9.91 <= DAILY_PCT_CHANGE <= 10.09 AND RAW_CLOSE == RAW_HIGH",
+  "percentage_interval": ["9.91", "10.09"],
+  "interval_closed": true,
+  "return": "(raw close T / raw close at preceding valid trading observation - 1) * 100",
+  "price_comparison": "Decimal(str(raw DOUBLE)) validated on 0.01-CNY tick; exact equality, no tolerance",
+  "board_scope": ["SSE Main", "SZSE Main"],
+  "special_phase": "IPO first five, relisting first day, delisting-arrangement first day and qualified no-limit exceptions are excluded",
+  "reference_special": "D5 factor change or ex-right screen requires qualified raw exchange reference; otherwise UNRESOLVED",
+  "special_exception": "Independent day evidence must clear other no-limit exceptions before TRUE; UNKNOWN is UNRESOLVED",
+  "d8_signal_path": "FORBIDDEN",
+  "v1_relation": "IS_CLOSE_LIMIT_UP_V1 remains unchanged and has different official-absolute semantics",
+  "blocking_validation": "600518.SH 2024-07-04 ordinary 10% official close-limit: 2.12 / 1.93 - 1 = 9.844559585492...%, below 9.91%"
+}
