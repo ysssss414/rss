@@ -1,0 +1,102 @@
+{
+  "schema": "trading-regime-rulebook-qualification/1",
+  "result": "BLOCKED_PIT_RISK_WARNING_STATE_UNQUALIFIED",
+  "rulebook_source_qualification": "PASS",
+  "daily_fact_qualification": "FAIL",
+  "v1_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+  "rulebook_sha256": "c9e0bc8599742ae62291b38dc5cf4afca29397fd04ccfdbbfa7e394f0f129b74",
+  "source_receipt_sha256": "079f0ca3868483b4148e17cecf5fe8962679cb59d932ab5a7705ac1d53830e9f",
+  "rule_count": 38,
+  "v1_universe": 5222,
+  "v1_board_counts": [
+    {
+      "exchange": "SH",
+      "board": "SSE Main",
+      "securities": 1702
+    },
+    {
+      "exchange": "SH",
+      "board": "STAR",
+      "securities": 618
+    },
+    {
+      "exchange": "SZ",
+      "board": "ChiNext",
+      "securities": 1408
+    },
+    {
+      "exchange": "SZ",
+      "board": "SZSE Main",
+      "securities": 1494
+    }
+  ],
+  "bse_in_v1": false,
+  "v1_daily_status_rows": 3379281,
+  "v1_daily_status_securities": 5222,
+  "v1_vendor_st_true_rows": 91033,
+  "v1_vendor_suspended_rows": 4917,
+  "v1_master_dated_delistings": 0,
+  "prewindow_ipo_needing_2023_sessions": [
+    {
+      "security_id": "301526.SZ",
+      "listing_date": "2023-12-26"
+    },
+    {
+      "security_id": "603004.SH",
+      "listing_date": "2023-12-27"
+    },
+    {
+      "security_id": "301578.SZ",
+      "listing_date": "2023-12-28"
+    },
+    {
+      "security_id": "301566.SZ",
+      "listing_date": "2023-12-29"
+    }
+  ],
+  "v1_master_has_security_type": false,
+  "v1_status_has_effective_date": false,
+  "v1_status_has_available_at": false,
+  "observed_vendor_rows": [
+    {
+      "security_id": "600187.SH",
+      "trade_date": "2026-07-06",
+      "vendor_is_st_sec": true,
+      "vendor_limit_up_rate": 0.05,
+      "vendor_limit_up_price": 1.62
+    },
+    {
+      "security_id": "600518.SH",
+      "trade_date": "2024-07-04",
+      "vendor_is_st_sec": true,
+      "vendor_limit_up_rate": 0.1,
+      "vendor_limit_up_price": 2.12
+    }
+  ],
+  "counterexamples": [
+    {
+      "security_id": "600518.SH",
+      "trade_date": "2024-07-04",
+      "official_fact": "Risk warning removed at market open; ordinary 10% limit applies",
+      "official_issuer_notice": "https://static.cninfo.com.cn/finalpage/2024-07-03/1220520500.PDF",
+      "vendor_conflict": "is_st_sec remains true on removal date"
+    },
+    {
+      "security_id": "600187.SH",
+      "trade_date": "2026-07-06",
+      "official_rule": "SSE main-board risk-warning rate changed to 10%",
+      "vendor_conflict": "price_high_lmt_rate remains 0.05; absolute high_limited is 1.62"
+    }
+  ],
+  "missing_to_unblock": [
+    "Dated official issuer/exchange risk-warning introduction, removal and conversion events with comprehensive universe coverage",
+    "Per-security-day effective status and as-of provenance, reconciled against V1 vendor labels",
+    "Explicit qualified security type and lifecycle provenance where Gate C requires them",
+    "Official late-2023 exchange sessions to classify IPO days crossing into the 2024 window"
+  ],
+  "not_materialized": [
+    "DAILY_TRADING_CONSTRAINT_V1",
+    "REAL_RESEARCH_SNAPSHOT_V2"
+  ],
+  "forbidden_fallback": "Vendor ST or limit-rate fields cannot define canonical status or rule"
+}
