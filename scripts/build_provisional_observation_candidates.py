@@ -7,18 +7,20 @@ import argparse
 import hashlib
 import json
 from bisect import bisect_left
-from collections import deque
+from collections import Counter, deque
 from datetime import date
 from pathlib import Path
 
 import duckdb
 
 from research.provisional_candidates import (
-    CANDIDATE_VERSION, DETECTOR_VERSION, V2_CANDIDATE_VERSION,
-    V2_DETECTOR_VERSION, RsiPrefix, candidate_id, candidate_id_v2,
+    CANDIDATE_VERSION, DETECTOR_VERSION, V2_CANDIDATE_VERSION, V3_CANDIDATE_VERSION,
+    V2_DETECTOR_VERSION, V3_DETECTOR_VERSION, RsiPrefix,
+    candidate_id, candidate_id_v2, candidate_id_v3,
     limit_up_like, limit_up_like_v2, provisional_window,
 )
 from research.close_limit_up_v2 import evaluate_close_limit_up_v2
+from research.close_limit_up_v3 import evaluate_close_limit_up_v3
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -50,7 +52,9 @@ def _phase(listed: date, day: date, exchange: str, sessions: tuple[date, ...],
     return f"IPO_DAY_{number}" if number <= 5 else "NORMAL_LISTED"
 
 
-def main(*, v2: bool = False) -> None:
+def main(*, v2: bool = False, v3: bool = False) -> None:
+    if v2 and v3:
+        raise ValueError("Select only one provisional version")
     manifest_hash = hashlib.sha256((V1 / "metadata/manifest.json").read_bytes()).hexdigest()
     if manifest_hash != MANIFEST_SHA:
         raise ValueError("REAL_RESEARCH_SNAPSHOT_V1 changed")
@@ -107,6 +111,10 @@ def main(*, v2: bool = False) -> None:
                "rsi_warmup_unverified": 0}
     if v2:
         quality["v2_ordinary_hit_not_detected"] = 0
+    if v3:
+        quality["v3_ordinary_hit_not_detected"] = 0
+    v3_daily = Counter()
+    v3_daily_fingerprint = hashlib.sha256()
     observation_count = 0
     for batch in iter(lambda: cursor.fetchmany(10000), []):
         for (security_id, exchange, board, listed, day, preclose, vendor_upper,
@@ -127,23 +135,41 @@ def main(*, v2: bool = False) -> None:
                 quality["tradable_missing_factor"] += 1
             observation_count += 1
             phase = _phase(listed, day, exchange, calendar, prefix)
-            if v2:
+            if v2 or v3:
                 special = (adjustment is None or previous_factor is None
-                           or adjustment != previous_factor or is_xr is True or is_wd is True)
+                           or adjustment != previous_factor or is_xr is True or is_wd is True
+                           or (v3 and (is_xr is None or is_wd is None)))
                 hit, methods = limit_up_like_v2(
                     close=close, previous_raw_close=previous_close,
                     reference_special=special,
                 )
-                # CLEARED is a counterfactual for a pure detector-recall proof,
-                # not actual daily exception evidence or a formal event.
-                ordinary = evaluate_close_limit_up_v2(
-                    board=board, listing_phase=phase, close=close, high=high,
-                    previous_raw_close=previous_close, factor=adjustment,
-                    previous_factor=previous_factor, is_xr_sec=is_xr,
-                    special_exception="CLEARED",
-                )
-                if ordinary.status == "TRUE" and not hit:
-                    quality["v2_ordinary_hit_not_detected"] += 1
+                # CLEARED is a counterfactual detector-recall proof only; it
+                # never supplies actual exception evidence to formal events.
+                if v3:
+                    ordinary = evaluate_close_limit_up_v3(
+                        board=board, listing_phase=phase, close=close, high=high,
+                        previous_raw_close=previous_close, factor=adjustment,
+                        previous_factor=previous_factor, is_xr_sec=is_xr,
+                        is_wd_sec=is_wd, special_exception="CLEARED",
+                    )
+                    v3_daily[ordinary.reference_day.classification] += 1
+                    v3_daily[f"EVENT_{ordinary.status}"] += 1
+                    v3_daily_fingerprint.update(
+                        f"{security_id}|{day.isoformat()}|{ordinary.reference_day.classification}|"
+                        f"{ordinary.status}|{ordinary.canonical_limit_up_cents}|{ordinary.reason}\n"
+                        .encode("utf-8")
+                    )
+                    if ordinary.status == "TRUE" and not hit:
+                        quality["v3_ordinary_hit_not_detected"] += 1
+                else:
+                    ordinary = evaluate_close_limit_up_v2(
+                        board=board, listing_phase=phase, close=close, high=high,
+                        previous_raw_close=previous_close, factor=adjustment,
+                        previous_factor=previous_factor, is_xr_sec=is_xr,
+                        special_exception="CLEARED",
+                    )
+                    if ordinary.status == "TRUE" and not hit:
+                        quality["v2_ordinary_hit_not_detected"] += 1
             else:
                 hit, methods = limit_up_like(
                     close=close, vendor_upper=vendor_upper,
@@ -169,22 +195,24 @@ def main(*, v2: bool = False) -> None:
             count = sum(flags)
             quality["four_of_five" if count == 4 else "five_of_five"] += 1
             trigger = day.isoformat()
-            identity = candidate_id_v2(security_id, trigger) if v2 else candidate_id(security_id, trigger)
+            identity = (candidate_id_v3(security_id, trigger) if v3 else
+                        candidate_id_v2(security_id, trigger) if v2 else
+                        candidate_id(security_id, trigger))
             dates = [row[0] for row in window]
             candidates.append((
                 identity, security_id, trigger, json.dumps(dates),
                 json.dumps(flags), count, str(value) if value is not None else None,
                 "UNVERIFIED_WARMUP" if warmup_unverified else "READY_PROVISIONAL",
                 board, "NORMAL_LISTED", "UNVERIFIED", "PENDING", "REAL_RESEARCH_SNAPSHOT_V1",
-                V2_CANDIDATE_VERSION if v2 else CANDIDATE_VERSION,
-                V2_DETECTOR_VERSION if v2 else DETECTOR_VERSION,
+                V3_CANDIDATE_VERSION if v3 else V2_CANDIDATE_VERSION if v2 else CANDIDATE_VERSION,
+                V3_DETECTOR_VERSION if v3 else V2_DETECTOR_VERSION if v2 else DETECTOR_VERSION,
                 json.dumps([row[2].split("|") if row[2] else [] for row in window]),
             ))
             for dependency_day in dates:
                 dependencies.setdefault((security_id, dependency_day), set()).add(identity)
 
     OUT.mkdir(parents=True, exist_ok=True)
-    suffix = "v2" if v2 else "v1"
+    suffix = "v3" if v3 else "v2" if v2 else "v1"
     output = OUT / f"provisional_observation_candidate_{suffix}.parquet"
     db.execute("""CREATE TABLE provisional (
         candidate_id VARCHAR, security_id VARCHAR, trigger_date DATE,
@@ -199,7 +227,7 @@ def main(*, v2: bool = False) -> None:
         db.executemany("INSERT INTO provisional VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", candidates)
     db.execute(f"COPY (SELECT * FROM provisional ORDER BY security_id, trigger_date) "
                f"TO '{str(output).replace(chr(92), '/')}' (FORMAT PARQUET, OVERWRITE_OR_IGNORE true)")
-    dependency_path = OUT / ("targeted_regime_dependency_inventory_v2.csv" if v2
+    dependency_path = OUT / (f"targeted_regime_dependency_inventory_{suffix}.csv" if v2 or v3
                              else "targeted_regime_dependency_inventory.csv")
     with dependency_path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.writer(handle)
@@ -207,8 +235,7 @@ def main(*, v2: bool = False) -> None:
         for (security_id, day), ids in sorted(dependencies.items()):
             writer.writerow((security_id, day, "OBSERVATION_FIVE_DAY_WINDOW", len(ids), "|".join(sorted(ids))))
     receipt = {
-        "schema": "provisional-observation-candidate-inventory/2" if v2
-                  else "provisional-observation-candidate-inventory/1",
+        "schema": f"provisional-observation-candidate-inventory/{3 if v3 else 2 if v2 else 1}",
         "status": "REGIME_UNVERIFIED_NOT_FORMAL_OBSERVATION",
         "v1_manifest_sha256": manifest_hash,
         "pre_window_context_sha256": pre_receipt["artifact_sha256"],
@@ -217,17 +244,23 @@ def main(*, v2: bool = False) -> None:
         "first_trigger_date": min((row[2] for row in candidates), default=None),
         "last_trigger_date": max((row[2] for row in candidates), default=None),
         "dependency_security_dates": len(dependencies),
-        "detector_version": V2_DETECTOR_VERSION if v2 else DETECTOR_VERSION,
+        "detector_version": V3_DETECTOR_VERSION if v3 else V2_DETECTOR_VERSION if v2 else DETECTOR_VERSION,
         "detector_contract": ("previous valid raw close move >=5% OR special-reference review; vendor absolute price not used; discovery only"
-                              if v2 else "raw close matches vendor upper OR raw close rises >=5% versus vendor preclose OR previous raw close; all are discovery-only"),
+                              if v2 or v3 else "raw close matches vendor upper OR raw close rises >=5% versus vendor preclose OR previous raw close; all are discovery-only"),
         "rsi_basis": "raw close times V1 PIT-qualified D5 factor; common T anchor cancels in RSI ratio",
         "candidate_parquet_sha256": hashlib.sha256(output.read_bytes()).hexdigest(),
         "dependency_inventory_sha256": hashlib.sha256(dependency_path.read_bytes()).hexdigest(),
         "quality": {**checks, **quality},
     }
+    if v3:
+        receipt["v3_counterfactual_ordinary_daily_classification"] = dict(sorted(v3_daily.items()))
+        receipt["v3_daily_classification_semantic_sha256"] = v3_daily_fingerprint.hexdigest()
     if v2 and quality["v2_ordinary_hit_not_detected"]:
         raise ValueError("Provisional detector missed ordinary V2 events")
-    receipt_name = "provisional_candidate_inventory_v2.json" if v2 else "provisional_candidate_inventory.json"
+    if v3 and quality["v3_ordinary_hit_not_detected"]:
+        raise ValueError("Provisional detector missed ordinary V3 events")
+    receipt_name = (f"provisional_candidate_inventory_{suffix}.json" if v2 or v3
+                    else "provisional_candidate_inventory.json")
     (OUT / receipt_name).write_text(
         json.dumps(receipt, indent=2) + "\n", encoding="utf-8"
     )
@@ -238,5 +271,8 @@ def main(*, v2: bool = False) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--v2", action="store_true")
-    main(v2=parser.parse_args().v2)
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--v2", action="store_true")
+    mode.add_argument("--v3", action="store_true")
+    arguments = parser.parse_args()
+    main(v2=arguments.v2, v3=arguments.v3)

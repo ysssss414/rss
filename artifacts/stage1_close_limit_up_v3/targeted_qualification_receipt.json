@@ -1,0 +1,56 @@
+{
+  "schema": "close-limit-up-v3-targeted-dependency-audit/1",
+  "status": "BLOCKED_TARGETED_REGIME_EVIDENCE_INSUFFICIENT",
+  "snapshot_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+  "v3_daily_classification_semantic_sha256": "fe73cf64795e21830349ba8d8e9831881a2c3ec699628ccb0d12734478fad3e1",
+  "rounding_contract_sha256": "dc744b5698f6136393b0ba6d6dd4208e85fb0887389d878c47ef1b53f0794348",
+  "reference_day_contract_sha256": "e23a256a765df4244bf6f921c6068698eba197f5beb0e32c7ee8d006be21e3ab",
+  "v3_implementation_sha256": "f94ed8fca2120ce0f1edd4f63c1c828b5ca0bbf24de134d61ed04ac3ba0fd800",
+  "provisional_candidate_count": 5540,
+  "dependency_security_dates": 13958,
+  "reference_and_tier_counts": {
+    "A_MECHANICAL_V3_HIT_EXCEPTION_PENDING": 7817,
+    "B_NON_LIMIT_UP": 6054,
+    "CORPORATE_ACTION_SPECIAL": 77,
+    "C_SPECIAL_REFERENCE_OR_PHASE": 79,
+    "C_UNRESOLVED_REFERENCE": 8,
+    "EVENT_FALSE": 6054,
+    "EVENT_UNRESOLVED": 7904,
+    "ORDINARY": 13871,
+    "OTHER_SPECIAL": 2,
+    "POTENTIAL_OLD_RULE_PRICE_PATH_SEPARATED": 7418,
+    "REGIME_UNRESOLVED": 13958,
+    "STRICT_MECHANICAL_0_OF_5": 236,
+    "STRICT_MECHANICAL_1_OF_5": 332,
+    "STRICT_MECHANICAL_2_OF_5": 614,
+    "STRICT_MECHANICAL_3_OF_5": 1158,
+    "STRICT_MECHANICAL_4_OF_5": 2238,
+    "STRICT_MECHANICAL_5_OF_5": 962,
+    "UNRESOLVED": 8
+  },
+  "regime_method_counts": {
+    "NONE": 13958
+  },
+  "official_case_documents_intersecting": [],
+  "posthoc_outcome_only_d8_overlap_by_reference_class": {
+    "outcome_adjustment": {
+      "CORPORATE_ACTION_SPECIAL": 72
+    },
+    "outcome_adjustment_exclusions": {
+      "CORPORATE_ACTION_SPECIAL": 3,
+      "OTHER_SPECIAL": 2
+    }
+  },
+  "formal_observations": 0,
+  "candidate_disposition_counts": {
+    "REJECTED_STRICT_PREDICATE": 2295,
+    "UNRESOLVED_REGIME_OR_EXCEPTION": 2792,
+    "UNRESOLVED_RSI_WARMUP": 453
+  },
+  "reason": "No independent per-dependency evidence clears no-limit exceptions or old-rule risk state for all five Observation days; V3 price hits remain mechanical leads only.",
+  "dependency_csv_sha256": "e1afc5400fab1e3fcb7572b408ad1609153a3897456bba88e07f4c034eed3511",
+  "candidate_csv_sha256": "f6bf42d0bdf9bbdef3291b190a5157a2a424e0a7bddad1ef189745445e855c97",
+  "source_candidate_sha256": "f1146fe7c16685817e9c813ef85d4ac30731dcc3b2a9cecfb65241947b3f9c96",
+  "source_dependency_sha256": "2001a325008e0bf3bdb486ada93b1149cb2bc4544c1c0c2034f41168b2148568",
+  "official_evidence_inventory_sha256": "43dc68ebf18e540ebf85cf4459ab347d08ff81a17fb4564aadb61e0c5dd6ab93"
+}
