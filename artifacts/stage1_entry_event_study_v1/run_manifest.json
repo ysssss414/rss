@@ -1,0 +1,61 @@
+{
+  "adjustment": "raw future OHLC multiplied by cumulative canonical D8 single_factor after T through session; T scale",
+  "censoring": "each horizon independent; no endpoint after snapshot cutoff; excursions NULL for censored horizon",
+  "code_sha256": {
+    "research/entry_event_outcome_v1.py": "c8d4d87102169ff00244f3287b331992aaf549f387bbccfb8f355c2e7349a526",
+    "scripts/run_entry_event_study_v1.py": "536fdb993e80b11ea4c5d89bee618ba145b50f864afaa71f84678c93dc4f661c"
+  },
+  "config": {
+    "anchor": "SIGNAL_T_RAW_CLOSE",
+    "case_selection": "DETERMINISTIC",
+    "max_horizon": 20
+  },
+  "cutoff": "2026-09-23",
+  "d8_contract": "ENTRY_COMPARABLE_FORWARD_PATH_V1",
+  "entry_contract_versions": [
+    "ENTRY_A_PULLBACK_TO_MA5_V1",
+    "ENTRY_B_RSI_RECROSS_70_V1"
+  ],
+  "entry_count": 505,
+  "entry_population_sha256": "82d16ddf0f3c1af3c5015dd34ae08b9bbe83e23ed90c03b2c8b7ade7ec4bb0f1",
+  "horizons": [
+    1,
+    3,
+    5,
+    10,
+    20
+  ],
+  "observation_sha256": "d811b3f150e0aeb22c33d7b7d4fe4f0d07fcbbae4dee9715bb49d5975f7e6153",
+  "outcome_contract": "ENTRY_EVENT_OUTCOME_V1",
+  "parent_manifest_sha256": "9e4945169fb967d89c479693f873c0b1edbce7227e7382cd942d5128cfd83fd9",
+  "parent_run_id": "REAL_STRATEGY_SMOKE_RUN_V1",
+  "private_artifacts": {
+    "entry_event_outcome_v1.parquet": "3741d921cbb3cb5145a371baf677d49cc29c67d669fbf934bf40ed25d987810e",
+    "entry_forward_path_h1_h20_v1.parquet": "8f69dadb7219cae4db65073b885130970d2182a1c15ad5b837a5a73832ce49eb"
+  },
+  "public_artifacts": {
+    "entry_event_horizon_summary.csv": "e00903d502b9ac54041c9ec59768b7c518f998a2a4b9585182b196947c0b255f",
+    "entry_event_outcome_coverage.json": "592a0662feda4a09539af47ea87618279cf3af8d93da5cf35f16f82a9a85ffa2",
+    "entry_event_path_excursion_summary.csv": "98a40d5d3b8c792ef231f7c94638692928dec9a86b6517f749febfcbbd7634c9",
+    "entry_event_provenance_sensitivity.csv": "45fb1512df13a9c14cde5d125c6520262f8aaf8e97d1c0b42b9c95abec63ae7b",
+    "entry_event_study_case_audit.json": "3d7e2c98b0217c1e9cab4a2ee625e0214246ddd71e503d7d999a50f0417d804d",
+    "entry_event_study_contract_v1.json": "6e896dbad2d10f5621c33782784f38b9f94aff6ba62a3a12a07efecad8b97f22",
+    "entry_event_study_quality_receipt.json": "a7a736864596911f9ae857e0df5f2840cce4ac6d766056f0294e5fd6824caf60",
+    "entry_event_study_reproducibility.json": "d6ccdc1c90f97e9cc2bda2b21eb694ac8e1a46926d53f2172df979fdb04d4df4",
+    "entry_event_study_summary.json": "1a8c263cd1e6cf02eb681daf63d66092af4d35d9900ec3555d2bd43a754752db",
+    "entry_event_subgroup_summary.csv": "2f085ed74d11417addbe1c99cfafab2dfbf3797d056ad5e2e1374b2993609985"
+  },
+  "run_id": "ENTRY_EVENT_STUDY_RUN_V1",
+  "runtime": {
+    "duckdb": "1.5.5",
+    "pandas": "2.2.3",
+    "python": "3.13.14"
+  },
+  "snapshot_id": "REAL_RESEARCH_SNAPSHOT_V1",
+  "snapshot_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+  "status": "MATERIALIZED",
+  "tests": {
+    "focused": "PASS_10",
+    "full_suite": "597_PASS_1_PREEXISTING_FAILURE"
+  }
+}

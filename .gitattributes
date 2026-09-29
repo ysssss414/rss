@@ -7,3 +7,6 @@ artifacts/stage1_observation_contract_v2/** -text whitespace=cr-at-eol
 artifacts/stage1_targeted_regime/*_v3.* -text whitespace=cr-at-eol
 artifacts/stage1_amazingdata_100_benchmark/** -text
 artifacts/stage1_amazingdata_acquisition_optimization/** -text
+artifacts/stage1_entry_event_study_v1/** -text
+research/entry_event_outcome_v1.py -text
+scripts/run_entry_event_study_v1.py -text

@@ -1,0 +1,9 @@
+{
+  "anchor_nulls": 0,
+  "daily_path_rows": 10100,
+  "entry_rows": 505,
+  "failures": [],
+  "signal_firewall": "outcome reader consumes frozen CSV; signal modules unchanged; D8 loaded only here",
+  "status": "PASS",
+  "unique_event_ids": 505
+}

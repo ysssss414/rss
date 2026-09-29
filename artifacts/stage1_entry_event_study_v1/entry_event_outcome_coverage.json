@@ -1,0 +1,47 @@
+{
+  "H1": {
+    "adjustment_unresolved": 0,
+    "available": 504,
+    "no_valid_quote": 1,
+    "other_missing": 0,
+    "right_censored": 0,
+    "terminal": 0,
+    "total": 505
+  },
+  "H10": {
+    "adjustment_unresolved": 1,
+    "available": 500,
+    "no_valid_quote": 0,
+    "other_missing": 3,
+    "right_censored": 2,
+    "terminal": 0,
+    "total": 505
+  },
+  "H20": {
+    "adjustment_unresolved": 3,
+    "available": 486,
+    "no_valid_quote": 1,
+    "other_missing": 3,
+    "right_censored": 15,
+    "terminal": 0,
+    "total": 505
+  },
+  "H3": {
+    "adjustment_unresolved": 0,
+    "available": 502,
+    "no_valid_quote": 1,
+    "other_missing": 0,
+    "right_censored": 2,
+    "terminal": 0,
+    "total": 505
+  },
+  "H5": {
+    "adjustment_unresolved": 0,
+    "available": 503,
+    "no_valid_quote": 0,
+    "other_missing": 0,
+    "right_censored": 2,
+    "terminal": 0,
+    "total": 505
+  }
+}
