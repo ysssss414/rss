@@ -1,0 +1,13 @@
+{
+  "determinism": "rerun refuses a changed existing parquet hash; JSON/CSV are fixed LF and sorted inputs",
+  "prior_parquet_sha256": {
+    "entry_event_outcome_v1.parquet": "3741d921cbb3cb5145a371baf677d49cc29c67d669fbf934bf40ed25d987810e",
+    "entry_forward_path_h1_h20_v1.parquet": "8f69dadb7219cae4db65073b885130970d2182a1c15ad5b837a5a73832ce49eb"
+  },
+  "private_parquet_sha256": {
+    "entry_event_outcome_v1.parquet": "3741d921cbb3cb5145a371baf677d49cc29c67d669fbf934bf40ed25d987810e",
+    "entry_forward_path_h1_h20_v1.parquet": "8f69dadb7219cae4db65073b885130970d2182a1c15ad5b837a5a73832ce49eb"
+  },
+  "semantic_rows_sha256": "0a4c40608bb28cc5b049f48880e56a1aa78f42755e79540b3933c840996a2849",
+  "status": "PASS"
+}
