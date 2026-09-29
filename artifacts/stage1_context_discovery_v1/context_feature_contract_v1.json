@@ -5,6 +5,7 @@
   "source": "REAL_RESEARCH_SNAPSHOT_V1 AmazingData D3 daily_bars, D4/D6 daily_status, trading_calendar; frozen entries.csv. Scope is Shanghai/Shenzhen A shares only; Beijing exchange is absent, so market turnover is an SH/SZ A proxy rather than literal all-China A.",
   "source_semantics": "D3 amount/close and D4/D6 preclose/limit bounds are T end-of-day observations. D4 preclose incorporates daily ex-right reference where applicable. No intraday availability or post-close execution is claimed.",
   "forbidden": ["H1+ market rows for an Entry", "D8 economic records", "Entry Event Study outcome", "Exit/PnL", "future theme classifications"],
+  "read_boundary": "The chronological D3/D4 scan is explicitly capped at the latest frozen Entry T (2026-09-22); each earlier Entry receives only its <=T rolling prefix through an as-of guard.",
   "snapshot_integrity_note": "Snapshot open hashes all constituents including D8; feature SQL loads only D3/D4 economic rows and calendar.",
   "primary_features": ["turnover_20d_percentile", "market_breadth_score", "prior_limit_up_next_day_median_return", "high_position_negative_feedback_rate", "high_board_advancement_rate", "shortline_style_score", "trend_style_score", "style_differential"],
   "primary_feature_provenance": {

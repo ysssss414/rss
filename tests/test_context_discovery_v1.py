@@ -123,6 +123,8 @@ def test_independent_one_day_market_source_reconciliation():
     finally:
         con.close()
     daily = read_parquet(PRIVATE / "daily_market_style_context_v1.parquet")
+    features = read_parquet(PRIVATE / "entry_context_features_v1.parquet")
+    assert max(x["trade_date"] for x in daily) == max(x["entry_date"] for x in features)
     row = next(x for x in daily if x["trade_date"] == day)
     assert row["market_turnover"] == pytest.approx(amount)
     assert row["n_valid_status"] == n_valid

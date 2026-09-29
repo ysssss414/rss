@@ -58,8 +58,9 @@ def _daily_base(snapshot: FrozenResearchSnapshot, calendar: list[str]) -> list[d
              FROM read_parquet(?, hive_partitioning=false) b
              LEFT JOIN read_parquet(?, hive_partitioning=false) s
                USING (trade_date, security_id)
+             WHERE b.trade_date <= CAST(? AS DATE)
              ORDER BY b.trade_date, b.security_id"""
-    cursor = snapshot.con.execute(sql, list(paths))
+    cursor = snapshot.con.execute(sql, [*paths, calendar[-1]])
     positions = {day: i for i, day in enumerate(calendar)}
     states: dict[str, tuple[int, int, bool, float, deque[float]]] = {}
     daily: list[dict] = []
@@ -212,7 +213,9 @@ def build() -> dict:
     with FrozenResearchSnapshot(SNAPSHOT) as snapshot:
         if snapshot.validation["manifest_sha256"] != SNAPSHOT_SHA:
             raise ValueError("BLOCKED_CONTEXT_POPULATION_DRIFT: snapshot")
-        calendar = [x.date().isoformat() for x in snapshot.load_calendar().trade_date]
+        last_entry_day = max(x["entry_date"] for x in entries)
+        calendar = [day for x in snapshot.load_calendar().trade_date
+                    if (day := x.date().isoformat()) <= last_entry_day]
         daily_rows = _derived_daily(_daily_base(snapshot, calendar))
     daily = {x["trade_date"]: x for x in daily_rows}
     entry_rows = []

@@ -90,7 +90,7 @@ Eight correlated numeric features, two regimes and one interaction were inspecte
 
 ## V. Quality / no-lookahead
 
-The [quality receipt](../artifacts/stage1_context_discovery_v1/context_discovery_quality_receipt.json) is PASS: 505 unique Entry-feature/outcome joins, 4040 fixed trade keys, exact regime/bin coverage, and all eight exits independently reconciled with the parent baseline in the [fixed-exit regime table](../artifacts/stage1_context_discovery_v1/context_all_exits_regime_summary.csv). One daily status gap, 2026-07-10 (1007 of D3 stocks, 80.60% coverage), is explicitly null-gated with its adjacent streak window; no frozen Entry is on that date. The as-of guard rejects T+1 access. Source end-of-day timestamp is not historical order-execution evidence.
+The [quality receipt](../artifacts/stage1_context_discovery_v1/context_discovery_quality_receipt.json) is PASS: 505 unique Entry-feature/outcome joins, 4040 fixed trade keys, exact regime/bin coverage, and all eight exits independently reconciled with the parent baseline in the [fixed-exit regime table](../artifacts/stage1_context_discovery_v1/context_all_exits_regime_summary.csv). One daily status gap, 2026-07-10 (1007 of D3 stocks, 80.60% coverage), is explicitly null-gated with its adjacent streak window; no frozen Entry is on that date. The daily D3/D4 scan stops at the last frozen Entry T (2026-09-22), and each earlier Entry receives only its chronological <=T prefix; the as-of guard rejects T+1 access. Source end-of-day timestamp is not historical order-execution evidence.
 
 ## W. Determinism
 
