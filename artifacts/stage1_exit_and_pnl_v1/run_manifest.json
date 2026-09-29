@@ -1,0 +1,67 @@
+{
+  "code_sha256": {
+    "research/exit_pnl_v1.py": "7ead2c18b58cea39d656f838a47308e3e35334507b70f503f8a7ba9046ee843d",
+    "scripts/run_exit_and_pnl_v1.py": "2e1b4369ef0aad5c2d047a8ed13345b90b0a27604c059d96a165bc6f085f460e"
+  },
+  "contract_sha256": {
+    "execution_contract_v1.json": "40788345c5caf9238da0717f4921e03a557bed81ba45dba9e0703dda192bf948",
+    "exit_contract_registry_v1.json": "63c451bf2980135b753515dc3173e33ada23550d2a121fd8590e174ffd431fdd",
+    "transaction_cost_contract_v1.json": "5226ca0f7339bd2e93a0ceb86258be084aec308ea697ad206952302b0b51be1a"
+  },
+  "cost_contract": "TRANSACTION_COST_CONTRACT_V1",
+  "cutoff": "2026-09-23",
+  "entry_count": 505,
+  "entry_population_sha256": "82d16ddf0f3c1af3c5015dd34ae08b9bbe83e23ed90c03b2c8b7ade7ec4bb0f1",
+  "execution_contract": "ENTRY_EXECUTION_CONTRACT_V1",
+  "exit_contract_ids": [
+    "TIME_H1",
+    "TIME_H3",
+    "TIME_H5",
+    "TP5_H5",
+    "TP10_H5",
+    "TP5_SL5_H5",
+    "TP10_SL10_H5",
+    "TP10_SL5_H5"
+  ],
+  "exit_registry": "EXIT_CONTRACT_REGISTRY_V1",
+  "parent_manifest_sha256": "c6afdbaf7575fce8526d4c56725ae8c9caba3fc57218a05b2c40bfe59c962d33",
+  "parent_run_id": "ENTRY_EVENT_STUDY_RUN_V1",
+  "population": {
+    "board_conditional_only": 263,
+    "board_unconditional_executable": 0,
+    "normal_research_executable": 242
+  },
+  "price_return_only": true,
+  "private_artifacts": {
+    "entry_trade_pnl_v1.parquet": "ef750a52c95275b41184ac3df4f115ddefb3ff68edfb7736393af0951448cbec"
+  },
+  "private_dataset": "ENTRY_TRADE_PNL_V1",
+  "public_artifacts": {
+    "execution_contract_v1.json": "40788345c5caf9238da0717f4921e03a557bed81ba45dba9e0703dda192bf948",
+    "execution_population_summary.csv": "5cc8a19c26da71e4a7e0ffff208b84c1bfb6a4e9b9e2d32d7182edf81a01dc91",
+    "exit_contract_registry_v1.json": "63c451bf2980135b753515dc3173e33ada23550d2a121fd8590e174ffd431fdd",
+    "exit_contract_summary.csv": "84c0dda5892befd2cca8723b3e366e4687422ab34ddfc7ecbc86aa0cdf81f9a6",
+    "exit_efficiency_summary.csv": "678274d49c6830d0726acf37adb4467f2e7238bf71e7f76390fc77b025093b57",
+    "exit_pnl_case_audit.json": "0a377c806483b23b59903201a18df49052e2d77b5e97e6b7f49d74557cbe606c",
+    "exit_pnl_quality_receipt.json": "232b570bc679aeb6de264b7e39c075ac64280249fb319559bd398ab176716f17",
+    "exit_pnl_reproducibility.json": "79f132ba56888233b437ffa062ea1cd3e8302103ace880614a0de3d59fe1dc2a",
+    "exit_pnl_subgroup_summary.csv": "df6a3e6a3cf74bdc2a98ec20e2b269a25f27fab65a3802c2efb136c5d3904dcd",
+    "exit_reason_summary.csv": "82b69cbea0c841655ce1aefa8fa8c5d7329923d47a6628fb54f2ffde67ddccd3",
+    "transaction_cost_contract_v1.json": "5226ca0f7339bd2e93a0ceb86258be084aec308ea697ad206952302b0b51be1a"
+  },
+  "run_id": "EXIT_AND_PNL_RUN_V1",
+  "runtime": {
+    "duckdb": "1.5.5",
+    "pandas": "2.2.3",
+    "python": "3.13.14"
+  },
+  "snapshot_id": "REAL_RESEARCH_SNAPSHOT_V1",
+  "snapshot_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+  "status": "MATERIALIZED",
+  "tests": {
+    "focused": "PASS",
+    "full_suite": "ONE_PREEXISTING_FAILURE"
+  },
+  "total_return_qualified": false,
+  "trade_rows": 4040
+}

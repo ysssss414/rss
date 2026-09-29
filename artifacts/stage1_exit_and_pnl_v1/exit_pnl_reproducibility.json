@@ -1,0 +1,6 @@
+{
+  "determinism": "sorted frozen Entry and fixed registry; rerun rejects a changed private parquet hash; public hashes checked by replay",
+  "private_parquet_sha256": "ef750a52c95275b41184ac3df4f115ddefb3ff68edfb7736393af0951448cbec",
+  "semantic_rows_and_trace_sha256": "4d47ee1487c514c19b4e8b23aa4d18039bb1ac93dc3c4b0d62d7a3233a14cf55",
+  "status": "PASS"
+}

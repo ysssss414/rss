@@ -1,0 +1,35 @@
+{
+  "id": "ENTRY_EXECUTION_CONTRACT_V1",
+  "parent": "REAL_STRATEGY_SMOKE_RUN_V1",
+  "formal_entry_population": 505,
+  "normal_close_intent": {
+    "population": 242,
+    "contract": "SIMULATED_CLOSE_FILL_V1",
+    "layer": "EXECUTABLE_PNL_BASELINE_RESEARCH_ASSUMPTION",
+    "fill_date": "signal_date_T",
+    "fill_price": "D3_raw_close_T",
+    "truth_claim": "COUNTERFACTUAL_RESEARCH_ASSUMPTION_NOT_HISTORICAL_FILL",
+    "causality_caveat": "Signal is finalized at T close; a same-close fill is not independently verified by orders or auction data."
+  },
+  "limit_up_close_board_intent": {
+    "population": 263,
+    "contract": "BOARD_INTENT_CONDITIONAL_FILL_V1",
+    "layer": "CONDITIONAL_ON_FILL_ONLY",
+    "fill_date_if_filled": "signal_date_T",
+    "fill_price_if_filled": "D3_raw_close_T",
+    "board_fillability": "BOARD_FILLABILITY_UNQUALIFIED",
+    "unconditional_executable_population": 0,
+    "fill_probability": null,
+    "truth_claim": "CONDITIONAL_COUNTERFACTUAL_NOT_HISTORICAL_FILL"
+  },
+  "slippage_interface": {
+    "baseline_fixed_bps_buy": 0,
+    "baseline_fixed_ticks_buy": 0,
+    "implementation": "optional nonnegative fixed bps or fixed ticks, adverse buy-side, rounded up to the legal raw-price tick",
+    "parameter_optimization": "FORBIDDEN"
+  },
+  "price_tick_cny": "0.01",
+  "position_notional": "1.0_normalized_per_event",
+  "share_lots_and_minimum_commission": "NOT_MODELLED",
+  "signal_population_mutation": "FORBIDDEN"
+}

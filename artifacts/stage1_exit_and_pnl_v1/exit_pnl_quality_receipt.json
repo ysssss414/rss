@@ -1,0 +1,15 @@
+{
+  "board_unconditional_trade_rows": 0,
+  "cash_income_scope": "NOT_MODELLED; D8 price-scale exposure is not account-level total return",
+  "d8_event_kind_in_traces": {
+    "DIVIDEND": 15
+  },
+  "d8_exposed_entry_events": 4,
+  "d8_exposed_trade_rows": 15,
+  "entry_events": 505,
+  "failures": [],
+  "signal_firewall": "frozen Entry CSV only; outcome and D8 read after Entry; no Entry module invoked",
+  "status": "PASS",
+  "trade_rows": 4040,
+  "unique_event_exit_keys": 4040
+}
