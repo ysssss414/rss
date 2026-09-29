@@ -1,0 +1,27 @@
+{
+  "id": "TRANSACTION_COST_CONTRACT_V1",
+  "notional": "1.0_normalized_per_event",
+  "buy_commission_bps": "3.0",
+  "sell_commission_bps": "3.0",
+  "commission_role": "RESEARCH_ASSUMPTION_INCLUSIVE_OF_EXCHANGE_HANDLING_AND_REGULATORY_FEES_NOT_ACCOUNT_RATE",
+  "buy_transfer_bps": "0.1",
+  "sell_transfer_bps": "0.1",
+  "transfer_role": "2024_2026_UNIFORM_RESEARCH_ASSUMPTION_SUPPORTED_BY_CHINACLEAR_RATE",
+  "sell_stamp_duty_bps": "5.0",
+  "stamp_role": "2024_2026_SELL_SIDE_A_SHARE_RULE",
+  "buy_stamp_duty_bps": "0",
+  "exchange_handling_additional_bps": "0",
+  "exchange_handling_reason": "INCLUDED_IN_ASSUMED_BROKER_COMMISSION_NOT_DOUBLE_COUNTED",
+  "gross_return": "comparable_exit_price / simulated_fill_price - 1",
+  "transaction_cost": "buy_notional_times_buy_rates_plus_comparable_sell_proceeds_times_sell_rates",
+  "net_return": "gross_return_minus_transaction_cost",
+  "cash_dividend_income": "EXCLUDED_PRICE_RETURN_ONLY",
+  "broker_minimum_cny": "NOT_APPLICABLE_TO_NORMALIZED_NOTIONAL; NOT_ACCOUNT_LEVEL_NET_RETURN",
+  "sources": {
+    "sse_fees_and_tax": "https://one.sse.com.cn/onething/gptz/",
+    "chinaclear_transfer": "https://www.chinaclear.cn/zdjs/editor_file/20220701154723234.pdf",
+    "mof_stamp_reduction": "https://m.mof.gov.cn/czxw/202308/t20230827_3904226.htm",
+    "sse_tick": "https://www.sse.com.cn/lawandrules/sselawsrules2025/trade/universal/c/c_20260424_10816492.shtml",
+    "szse_tick": "https://investor.szse.cn/institute/rules/t20230706_601604.html"
+  }
+}

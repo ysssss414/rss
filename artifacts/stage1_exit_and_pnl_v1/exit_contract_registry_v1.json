@@ -1,0 +1,29 @@
+{
+  "id": "EXIT_CONTRACT_REGISTRY_V1",
+  "exploratory_after_event_study": true,
+  "out_of_sample_edge_proof": false,
+  "T_PLUS_ONE_EXIT_ONLY": true,
+  "exchange_session_clock": true,
+  "price_tick_cny": "0.01",
+  "entry_execution_contract": "ENTRY_EXECUTION_CONTRACT_V1",
+  "cost_contract": "TRANSACTION_COST_CONTRACT_V1",
+  "same_bar_dual_hit": "SAME_BAR_DUAL_HIT_V1_STOP_FIRST",
+  "gap_stop": "OPEN_IF_OPEN_AT_OR_BELOW_STOP",
+  "gap_take_profit": "OPEN_IF_OPEN_AT_OR_ABOVE_TARGET",
+  "one_price_limit_down": "EXIT_BLOCKED_BY_LIMIT_DOWN_CARRY_TO_NEXT_TRADABLE_OPEN",
+  "suspended_or_invalid_timeout": "TIME_EXIT_BLOCKED_THEN_NEXT_VALID_TRADABLE_OPEN",
+  "unresolved_non_suspension_quote": "FAIL_CLOSED_NO_PNL",
+  "d8_exclusion": "FAIL_CLOSED_NO_PNL_FROM_EFFECTIVE_DATE",
+  "exit_contracts": [
+    {"id": "TIME_H1", "family": "TIME", "timeout_exchange_sessions": 1, "take_profit": null, "stop_loss": null},
+    {"id": "TIME_H3", "family": "TIME", "timeout_exchange_sessions": 3, "take_profit": null, "stop_loss": null},
+    {"id": "TIME_H5", "family": "TIME", "timeout_exchange_sessions": 5, "take_profit": null, "stop_loss": null},
+    {"id": "TP5_H5", "family": "TP_TIMEOUT", "timeout_exchange_sessions": 5, "take_profit": "0.05", "stop_loss": null},
+    {"id": "TP10_H5", "family": "TP_TIMEOUT", "timeout_exchange_sessions": 5, "take_profit": "0.10", "stop_loss": null},
+    {"id": "TP5_SL5_H5", "family": "TP_SL_TIMEOUT", "timeout_exchange_sessions": 5, "take_profit": "0.05", "stop_loss": "0.05"},
+    {"id": "TP10_SL10_H5", "family": "TP_SL_TIMEOUT", "timeout_exchange_sessions": 5, "take_profit": "0.10", "stop_loss": "0.10"},
+    {"id": "TP10_SL5_H5", "family": "TP_SL_TIMEOUT", "timeout_exchange_sessions": 5, "take_profit": "0.10", "stop_loss": "0.05"}
+  ],
+  "selection_policy": "REPORT_ALL_EIGHT_NO_OPTIMIZATION",
+  "trailing_profit_protection_family": "CONTRACT_ONLY_NOT_SIMULATED_DAILY_OHLC_INTRABAR_ORDER_UNQUALIFIED"
+}
