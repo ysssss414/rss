@@ -1,0 +1,34 @@
+{
+  "board_conditional_only": true,
+  "board_n": 263,
+  "entry_n": 505,
+  "event_join_n": 505,
+  "failures": [],
+  "feature_count": 8,
+  "feature_source_max_date": "ENTRY_T_CLOSE",
+  "no_parameter_optimization": true,
+  "no_population_reselection": true,
+  "normal_n": 242,
+  "post_outcome_exploratory": true,
+  "status": "PASS",
+  "tested_interactions": [
+    "MARKET_RISK_REGIME_X_STYLE_REGIME"
+  ],
+  "tested_numeric_features": [
+    "turnover_20d_percentile",
+    "market_breadth_score",
+    "prior_limit_up_next_day_median_return",
+    "high_position_negative_feedback_rate",
+    "high_board_advancement_rate",
+    "shortline_style_score",
+    "trend_style_score",
+    "style_differential"
+  ],
+  "tested_regimes": [
+    "MARKET_RISK_REGIME",
+    "STYLE_REGIME"
+  ],
+  "theme_deferred": true,
+  "theme_interactions": "NOT_TESTED_DATA_UNQUALIFIED",
+  "trade_keys": 4040
+}

@@ -1,0 +1,30 @@
+{
+  "bins_sha256": "a0914ec8325260f1dc9ba2fa5908cf8bcd1bc4b23e3e53ff9c0dc968e8fe12a4",
+  "board_n": 263,
+  "code_sha256": {
+    "research/context_features_v1.py": "a3f2f14f637936bb2e3b5320975fb46c67cbc78a25c05b8b47bef8594820eb9b",
+    "scripts/build_entry_context_features_v1.py": "f728a8bdfa8f1a82e49af736d5b0f777bc9a25394b3ad2d82ba0f9e0dbaea6b9"
+  },
+  "contract_sha256": "b06dfa561a4e6b812dce4f8fb2780a46ddb5ee89b2a9cd443d964f216b2dff9a",
+  "daily_low_status_coverage": [
+    {
+      "coverage": 0.8060104026199191,
+      "date": "2026-07-10",
+      "missing_status": 1007
+    }
+  ],
+  "daily_sessions": 662,
+  "entry_n": 505,
+  "forbidden_economic_datasets_loaded": false,
+  "inventory_sha256": "86dfbd17c929f994903c9944ad9c7e02cda345591011f85fafdf1d27041869e2",
+  "normal_n": 242,
+  "parquet_sha256": {
+    "daily_market_style_context_v1.parquet": "83261e67fc2f257de1b6201651ec3710cda2a8e38be23c903ce8d0ae3bb18884",
+    "entry_context_features_v1.parquet": "cc06f4ebed7062e2da6bf4323c168479b06969cc3bac57a15bb97e4273288b38"
+  },
+  "snapshot_integrity_note": "Snapshot open hashes all constituents including D8; feature SQL loads only D3/D4 economic rows and calendar.",
+  "snapshot_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+  "source_entry_sha256": "82d16ddf0f3c1af3c5015dd34ae08b9bbe83e23ed90c03b2c8b7ade7ec4bb0f1",
+  "status": "PASS",
+  "theme_qualification_sha256": "f84668a9e6892b0d5020d74ec74f3a039cde971511901f58d0c0d7102dbe7274"
+}

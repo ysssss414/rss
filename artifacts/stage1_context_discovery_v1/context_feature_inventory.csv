@@ -1,0 +1,9 @@
+feature,n_available,n_missing,source_max_date,diagnostic
+turnover_20d_percentile,505,0,ENTRY_T_CLOSE,PRE_REGISTERED_TERCILES
+market_breadth_score,505,0,ENTRY_T_CLOSE,PRE_REGISTERED_TERCILES
+prior_limit_up_next_day_median_return,505,0,ENTRY_T_CLOSE,PRE_REGISTERED_TERCILES
+high_position_negative_feedback_rate,422,83,ENTRY_T_CLOSE,PRE_REGISTERED_TERCILES
+high_board_advancement_rate,505,0,ENTRY_T_CLOSE,PRE_REGISTERED_TERCILES
+shortline_style_score,505,0,ENTRY_T_CLOSE,PRE_REGISTERED_TERCILES
+trend_style_score,505,0,ENTRY_T_CLOSE,PRE_REGISTERED_TERCILES
+style_differential,505,0,ENTRY_T_CLOSE,PRE_REGISTERED_TERCILES

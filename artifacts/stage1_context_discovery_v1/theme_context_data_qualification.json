@@ -1,0 +1,25 @@
+{
+  "daily_strength_rank_2024_2026": false,
+  "historical_reproducibility": false,
+  "market_style_can_continue": true,
+  "pit_membership_2024_2026": false,
+  "reason": "Frozen snapshot and inspected repository provide no dated security-theme membership plus dated theme strength/rank; no retrospective mainline labels or proxy substitution.",
+  "repo_theme_paths_found": [],
+  "repo_theme_paths_inspected": [
+    "research/theme_pool_analyzer.py",
+    "theme_pool_analyzer.py",
+    "artifacts/theme_pool_analyzer",
+    ".local_research_data/theme_pool_analyzer"
+  ],
+  "snapshot_datasets_inspected": [
+    "adjustment_factor",
+    "daily_bars",
+    "daily_status",
+    "outcome_adjustment",
+    "outcome_adjustment_exclusions",
+    "security_master",
+    "trading_calendar"
+  ],
+  "snapshot_theme_dataset": false,
+  "status": "THEME_CONTEXT_DEFERRED_DATA_UNQUALIFIED"
+}

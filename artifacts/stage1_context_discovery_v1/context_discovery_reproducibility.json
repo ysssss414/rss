@@ -1,0 +1,7 @@
+{
+  "all_prior_output_hashes_match": true,
+  "compared_public_artifact_n": 9,
+  "meaning": "Same frozen inputs/code yield byte-identical public assessment outputs; feature builder separately rerun for private Parquet",
+  "private_feature_parquet_sha256": "cc06f4ebed7062e2da6bf4323c168479b06969cc3bac57a15bb97e4273288b38",
+  "status": "PASS"
+}

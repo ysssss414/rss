@@ -1,0 +1,178 @@
+{
+  "candidates": [],
+  "hypothesis_status": "NO_STABLE_CONTEXT_HYPOTHESIS",
+  "no_approved_filter": true,
+  "pre_registered_questions_checked": [
+    {
+      "bootstrap_ci95": [
+        -0.05521481115788611,
+        0.012709820627030343
+      ],
+      "caveats": [
+        "Post-outcome hypothesis, not independent validation",
+        "Same-close research fill; board fillability separate"
+      ],
+      "development": {
+        "adverse_n": 58,
+        "favorable_n": 58,
+        "tp5_net_difference": -0.008564208892072725
+      },
+      "economic_rationale": "Prior limit-up stocks continuing to earn may permit high-position rebound.",
+      "feature_or_regime": "prior_limit_up_next_day_median_return_bucket",
+      "full_sample_n": {
+        "adverse": 85,
+        "favorable": 71
+      },
+      "gates": {
+        "full_n_each_ge20": true,
+        "leave_one_security_out_positive": false,
+        "monotonic_if_numeric": false,
+        "net_improvement_ge_2pp": false,
+        "tail_reduction_ge_5pp": false,
+        "year_n_each_ge10": true,
+        "yearly_net_and_tail_direction": false
+      },
+      "hypothesis_id": "H1A_PRIOR_STRONG_FEEDBACK",
+      "left_tail_h5_10_difference": 0.09776304888152443,
+      "rule_candidate_description": "prior_limit_up_next_day_median_return_bucket HIGH rather than LOW; no filter approved",
+      "status": "NOT_ADMITTED",
+      "temporal_2026_grade": "DESCRIPTIVE_POST_OUTCOME_NOT_OOS",
+      "tp5_net_difference": -0.02104256802694948,
+      "yearly": {
+        "2024": {
+          "adverse_n": 14,
+          "favorable_n": 31,
+          "left_tail_difference": -0.04838709677419356,
+          "tp5_net_difference": -0.0034205627472842642
+        },
+        "2025": {
+          "adverse_n": 44,
+          "favorable_n": 27,
+          "left_tail_difference": 0.07491582491582488,
+          "tp5_net_difference": -0.013436351580320104
+        },
+        "2026": {
+          "adverse_n": 27,
+          "favorable_n": 13,
+          "left_tail_difference": 0.24501424501424507,
+          "tp5_net_difference": -0.07327867103487377
+        }
+      }
+    },
+    {
+      "bootstrap_ci95": [
+        -0.08122351186726669,
+        -0.008431367382988398
+      ],
+      "caveats": [
+        "Post-outcome hypothesis, not independent validation",
+        "Same-close research fill; board fillability separate"
+      ],
+      "development": {
+        "adverse_n": 52,
+        "favorable_n": 54,
+        "tp5_net_difference": -0.026060324622991196
+      },
+      "economic_rationale": "Fewer sharp losses among yesterday's high-board stocks may reduce left-tail risk.",
+      "feature_or_regime": "high_position_negative_feedback_rate_bucket",
+      "full_sample_n": {
+        "adverse": 66,
+        "favorable": 72
+      },
+      "gates": {
+        "full_n_each_ge20": true,
+        "leave_one_security_out_positive": false,
+        "monotonic_if_numeric": false,
+        "net_improvement_ge_2pp": false,
+        "tail_reduction_ge_5pp": false,
+        "year_n_each_ge10": true,
+        "yearly_net_and_tail_direction": false
+      },
+      "hypothesis_id": "H1B_LOW_HIGH_POSITION_NEGATIVE_FEEDBACK",
+      "left_tail_h5_10_difference": 0.18632478632478633,
+      "rule_candidate_description": "high_position_negative_feedback_rate_bucket LOW rather than HIGH; no filter approved",
+      "status": "NOT_ADMITTED",
+      "temporal_2026_grade": "DESCRIPTIVE_POST_OUTCOME_NOT_OOS",
+      "tp5_net_difference": -0.045354645451816604,
+      "yearly": {
+        "2024": {
+          "adverse_n": 21,
+          "favorable_n": 25,
+          "left_tail_difference": 0.043809523809523854,
+          "tp5_net_difference": 0.010579189801443276
+        },
+        "2025": {
+          "adverse_n": 31,
+          "favorable_n": 29,
+          "left_tail_difference": 0.19243604004449388,
+          "tp5_net_difference": -0.05254400380428252
+        },
+        "2026": {
+          "adverse_n": 14,
+          "favorable_n": 18,
+          "left_tail_difference": 0.3376068376068376,
+          "tp5_net_difference": -0.1035846891122535
+        }
+      }
+    },
+    {
+      "bootstrap_ci95": [
+        -0.04345401137903658,
+        0.023034206446022422
+      ],
+      "caveats": [
+        "Post-outcome hypothesis, not independent validation",
+        "Same-close research fill; board fillability separate"
+      ],
+      "development": {
+        "adverse_n": 75,
+        "favorable_n": 59,
+        "tp5_net_difference": -0.015761294449260943
+      },
+      "economic_rationale": "The Entry may work only when shortline rather than capacity trend dominates.",
+      "feature_or_regime": "style_regime",
+      "full_sample_n": {
+        "adverse": 99,
+        "favorable": 78
+      },
+      "gates": {
+        "full_n_each_ge20": true,
+        "leave_one_security_out_positive": false,
+        "monotonic_if_numeric": true,
+        "net_improvement_ge_2pp": false,
+        "tail_reduction_ge_5pp": false,
+        "year_n_each_ge10": true,
+        "yearly_net_and_tail_direction": false
+      },
+      "hypothesis_id": "H2_SHORTLINE_STYLE_DOMINANCE",
+      "left_tail_h5_10_difference": 0.03532182103610676,
+      "rule_candidate_description": "style_regime SHORTLINE_DOMINANT rather than TREND_DOMINANT; no filter approved",
+      "status": "NOT_ADMITTED",
+      "temporal_2026_grade": "DESCRIPTIVE_POST_OUTCOME_NOT_OOS",
+      "tp5_net_difference": -0.009996294935762078,
+      "yearly": {
+        "2024": {
+          "adverse_n": 18,
+          "favorable_n": 28,
+          "left_tail_difference": 0.16666666666666669,
+          "tp5_net_difference": -0.030391198518847314
+        },
+        "2025": {
+          "adverse_n": 57,
+          "favorable_n": 31,
+          "left_tail_difference": -0.048670062252405166,
+          "tp5_net_difference": -0.013534005837293514
+        },
+        "2026": {
+          "adverse_n": 24,
+          "favorable_n": 19,
+          "left_tail_difference": 0.02974828375286037,
+          "tp5_net_difference": 0.0084974969376772
+        }
+      }
+    }
+  ],
+  "status": "NO_STABLE_MARKET_STYLE_CONTEXT",
+  "theme_status": "THEME_CONTEXT_DEFERRED_DATA_UNQUALIFIED",
+  "validation_grade": "POST_OUTCOME_EXPLORATORY_TEMPORAL_DESCRIPTIVE_ONLY"
+}
