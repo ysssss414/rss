@@ -1,0 +1,19 @@
+{
+  "code_sha256": {
+    "research/pre_entry_features_v1.py": "82532cd5d2e365a9a3d64a068a0cfdcae38cb1c94816cf6f97aa28ba5face753",
+    "scripts/build_pre_entry_features_v1.py": "7a602029746c5d7306b88f877ebc9f7c5fb32e522c55b120aa87b775777c6db2"
+  },
+  "entry_n": 505,
+  "feature_contract_sha256": "cbf74acbab769fdae1650a6ab989ed8bd44d1170ca62ff7083f922897608ac31",
+  "forbidden_feature_data_loaded": false,
+  "id": "ENTRY_PRE_SIGNAL_FEATURES_V1",
+  "inventory_sha256": "026980b5348ef1c84558c3cb4ceca47a957e8e4f2e9be8f9cb42aca730e8d3c2",
+  "max_source_date": "ENTRY_T_CLOSE",
+  "private_parquet_sha256": "634c5bff0a7702e3298955bc66ef34aaa19a225629df1ee7770a0573e3a76870",
+  "snapshot_integrity_note": "Opening the snapshot hashes all constituent files, including D8, but this builder loads only calendar and D3 daily bars as economic rows.",
+  "snapshot_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+  "source_entry_sha256": "82d16ddf0f3c1af3c5015dd34ae08b9bbe83e23ed90c03b2c8b7ade7ec4bb0f1",
+  "source_observation_sha256": "d811b3f150e0aeb22c33d7b7d4fe4f0d07fcbbae4dee9715bb49d5975f7e6153",
+  "status": "PASS",
+  "unique_event_ids": 505
+}

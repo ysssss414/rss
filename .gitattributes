@@ -14,3 +14,9 @@ artifacts/stage1_exit_and_pnl_v1/** -text
 research/exit_pnl_v1.py -text
 scripts/run_exit_and_pnl_v1.py -text
 tests/test_exit_pnl_v1.py -text
+artifacts/stage1_exit_robustness_v1/** -text
+research/pre_entry_features_v1.py -text
+research/edge_assessment_v1.py -text
+scripts/run_exit_robustness_v1.py -text
+scripts/build_pre_entry_features_v1.py -text
+tests/test_exit_robustness_v1.py -text

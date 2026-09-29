@@ -1,0 +1,38 @@
+{
+  "id": "ENTRY_PRE_SIGNAL_FEATURE_CONTRACT_V1",
+  "grain": "one frozen Formal Entry event; exactly 505 rows",
+  "cutoff": "Entry T close; no T+1 data",
+  "sources": ["frozen entries.csv", "frozen observations.csv", "frozen snapshot D3 daily_bars", "frozen trading_calendar"],
+  "forbidden_sources": ["D8 economic records/columns", "Entry Event Study", "trade PnL", "H1+ bars", "future sector or market states"],
+  "snapshot_integrity_only": "Snapshot open verifies all physical constituent hashes including D8; no D8 rows or columns are loaded as feature data.",
+  "independent_builder": "research/pre_entry_features_v1.py",
+  "features": [
+    "entry_close_vs_ma5", "entry_low_vs_ma5", "intraday_recovery",
+    "prior5_raw_return", "trigger_to_entry_raw_return", "entry_rsi14",
+    "rsi_change", "amount_ratio_prev5", "prev5_avg_range"
+  ],
+  "diagnostic_bins": {
+    "entry_close_vs_ma5": [0.0, 0.03, 0.08],
+    "entry_low_vs_ma5": [-0.03, 0.0],
+    "intraday_recovery": [0.02, 0.05],
+    "prior5_raw_return": [0.0, 0.10, 0.20],
+    "trigger_to_entry_raw_return": [0.0, 0.05],
+    "entry_rsi14": [70.0, 80.0],
+    "rsi_change": [-5.0, 0.0],
+    "amount_ratio_prev5": [0.75, 1.5],
+    "prev5_avg_range": [0.05, 0.10]
+  },
+  "tested_cross_tabs": ["ENTRY_TYPE_X_PRIOR5_RAW_RETURN", "INTENT_X_PRIOR5_RAW_RETURN"],
+  "hypothesis_shortlist_gate": "For H5 <= -10% incidence in normal-close rows: same monotonic direction across all nonempty bins in development and descriptive 2026, at least 10/5 rows in each extreme bin respectively, and absolute extreme-bin incidence difference >= 0.10 in development. Retain at most three; never approve a filter.",
+  "left_tail_outcome_labels": {
+    "LEFT_TAIL_H5_10": "H5 signal comparable close return <= -0.10",
+    "LEFT_TAIL_H5_20": "H5 signal comparable close return <= -0.20",
+    "FAILED_REBOUND_TP5": "TP5_H5 closed without a TP exit; null if unresolved/censored",
+    "TP5_THEN_DEEP_REVERSAL": "H5 signal MFE >= 0.05 and H5 comparable close return <= -0.05"
+  },
+  "labels_are_outcome_only": true,
+  "diagnostic_target": "Normal-close Entry, with board conditional summary separate",
+  "hypothesis_status": "EXPLORATORY_NOT_A_NEW_ENTRY_FILTER",
+  "multiple_testing": "Nine univariate features and two prespecified cross-tabs; no p-value hunting or parameter search",
+  "deferred": ["MA10/MA20 without a frozen qualified primitive", "exact V3 hit positions not in frozen Observation CSV", "turnover without qualified float shares", "market/context features without canonical PIT contracts", "raw-return windows crossing corporate actions may be distorted without an allowed signal-side adjustment"]
+}

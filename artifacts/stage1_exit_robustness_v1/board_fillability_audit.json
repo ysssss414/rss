@@ -1,0 +1,30 @@
+{
+  "board_entry_n": 263,
+  "conditional_pnl_only": true,
+  "d4_limit_caveat": "D4 vendor upper bound is a diagnostic comparison, not globally certified exchange reference rows",
+  "daily_ohlc_interpretation": "Even one-price upper-bound OHLC cannot prove queue fill; lower-price prints have no post-signal timestamp",
+  "eligible_unconditional_board_fills": 0,
+  "entry_day_daily_structure_counts": {
+    "LOWER_PRICE_SEEN_BEFORE_T_CLOSE_UNTIMED": 263
+  },
+  "frozen_snapshot_dataset_names": [
+    "adjustment_factor",
+    "daily_bars",
+    "daily_status",
+    "outcome_adjustment",
+    "outcome_adjustment_exclusions",
+    "security_master",
+    "trading_calendar"
+  ],
+  "frozen_snapshot_intraday_orderbook_or_queue_datasets": [],
+  "historical_fill_probability": null,
+  "id": "BOARD_FILLABILITY_AUDIT_V1",
+  "matching_rule_sources": {
+    "sse_price_time_priority": "https://www.sse.com.cn/lawandrules/sselawsrules2025/stocks/exchange/c/c_20260424_10816482.shtml",
+    "szse_price_time_priority": "https://docs.static.szse.cn/www/lawrules/rule/trade/W020260424690713155663.pdf"
+  },
+  "possible_next_contract": "BOARD_FILLABILITY_V1 only after timestamped historical order/queue or other verified fill evidence",
+  "repo_qualified_bridge": "research/data/amazingdata.py checked_sdk_bars uses Period.day only",
+  "sdk_surface_from_existing_gate_c_audit": "Period.min1/min5 and query_snapshot API surface described; historical coverage, T-close timestamps, seal/queue records and entitlement unqualified; no live query in this stage",
+  "status": "BOARD_FILLABILITY_DATA_INSUFFICIENT"
+}

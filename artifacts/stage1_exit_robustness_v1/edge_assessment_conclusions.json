@@ -1,0 +1,9 @@
+{
+  "board_conditional": "CONDITIONAL_EDGE_CANDIDATE",
+  "board_fillability": "FILLABILITY_UNQUALIFIED",
+  "left_tail_filtering": "NO_STABLE_PRE_ENTRY_DIAGNOSTIC",
+  "limitations": "No claim of an independently validated executable or board-fill edge",
+  "next_research_recommendation": "STAGE1_STRATEGY_REASSESSMENT",
+  "normal_close": "EDGE_NOT_SUPPORTED",
+  "validation_grade": "POST_OUTCOME_EXPLORATORY_TEMPORAL_DESCRIPTIVE_ONLY"
+}
