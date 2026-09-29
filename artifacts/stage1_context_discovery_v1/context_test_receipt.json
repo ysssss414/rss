@@ -1,0 +1,8 @@
+{
+  "focused": "PASS: 9 tests",
+  "full_suite": "625 passed, 1 pre-existing failure",
+  "pre_existing_failure": "tests/test_research_integration.py::test_frozen_original_head_full_pipeline_through_snapshot",
+  "actual_pipeline_reference_sha256": "c56f2129ab620f4943e66c300895c81620c313902d4e58bece3ebbfaecfdfeae",
+  "expected_pipeline_reference_sha256": "f021c169b1e3739f5b9aa227251057c7313f32b0ce2b57d5f3e2d486ab29fcda",
+  "new_regressions": 0
+}

@@ -1,0 +1,41 @@
+{
+  "bin_semantics": "LOW <= p33; MID <= p67; HIGH > p67; missing separate",
+  "boundaries": {
+    "high_board_advancement_rate": [
+      0.3962962962962963,
+      0.5263157894736842
+    ],
+    "high_position_negative_feedback_rate": [
+      0.1,
+      0.24712643678160912
+    ],
+    "market_breadth_score": [
+      0.027474668745128605,
+      0.06276801752558069
+    ],
+    "prior_limit_up_next_day_median_return": [
+      0.007290431249761327,
+      0.02567987567987558
+    ],
+    "shortline_style_score": [
+      -0.06187908496732027,
+      0.17184711565785735
+    ],
+    "style_differential": [
+      -0.1729240072097215,
+      0.10347985347985349
+    ],
+    "trend_style_score": [
+      -0.022222222222222216,
+      0.2222222222222222
+    ],
+    "turnover_20d_percentile": [
+      0.43333333333333324,
+      0.8166666666666664
+    ]
+  },
+  "duplicate_boundary_features": [],
+  "id": "CONTEXT_DEVELOPMENT_TERCILES_V1",
+  "population": "174 frozen 2024-2025 normal-close Entries",
+  "source": "ENTRY_CONTEXT_FEATURES_V1_ONLY_NO_OUTCOMES"
+}

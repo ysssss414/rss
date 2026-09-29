@@ -1,0 +1,92 @@
+{
+  "bins_sha256": "a0914ec8325260f1dc9ba2fa5908cf8bcd1bc4b23e3e53ff9c0dc968e8fe12a4",
+  "code_sha256": {
+    "research/context_discovery_v1.py": "38d0d246e0eebeda19995132bc0977a03066799cbe6038100640922c40cb60d0",
+    "research/context_features_v1.py": "a3f2f14f637936bb2e3b5320975fb46c67cbc78a25c05b8b47bef8594820eb9b",
+    "scripts/build_entry_context_features_v1.py": "9ed3bcafdb3854523d4dfbff8b34e9154de48f2d02cd65ab7bb9c74e5c545015",
+    "scripts/run_context_discovery_v1.py": "ece10ea64497d2d0da9c35863f98b171acf432b55e9c97f8ebf8e12d460881cb"
+  },
+  "entry_population_sha256": "82d16ddf0f3c1af3c5015dd34ae08b9bbe83e23ed90c03b2c8b7ade7ec4bb0f1",
+  "feature_contract_sha256": "e1a0ed2bd4b02821d6782609a39a5622f097c45dcbd24cbf3ca46691a84be0e6",
+  "feature_list": [
+    "turnover_20d_percentile",
+    "market_breadth_score",
+    "prior_limit_up_next_day_median_return",
+    "high_position_negative_feedback_rate",
+    "high_board_advancement_rate",
+    "shortline_style_score",
+    "trend_style_score",
+    "style_differential"
+  ],
+  "frozen_outcomes": {
+    "auxiliary": [
+      "TIME_H1",
+      "TIME_H3",
+      "TIME_H5",
+      "H5_SIGNAL",
+      "LEFT_TAIL_H5_10",
+      "LEFT_TAIL_H5_20",
+      "FAILED_REBOUND_TP5"
+    ],
+    "event_parquet_sha256": "3741d921cbb3cb5145a371baf677d49cc29c67d669fbf934bf40ed25d987810e",
+    "primary": "TP5_H5_NET",
+    "trade_parquet_sha256": "ef750a52c95275b41184ac3df4f115ddefb3ff68edfb7736393af0951448cbec"
+  },
+  "frozen_population": {
+    "all": 505,
+    "board_conditional": 263,
+    "normal": 242
+  },
+  "hypothesis_admission": "Post-outcome exploratory only; H1a prior-limit-up median HIGH vs LOW, H1b high-position negative-feedback LOW vs HIGH, H2 SHORTLINE_DOMINANT vs TREND_DOMINANT. Require >=10 per side per 2024/2025/2026 year and >=20 per side full sample, full TP5/H5 net-mean contrast >=+0.02, H5 <=-10% tail contrast <=-0.05, same favorable net-mean and tail direction in every year, monotonic three-bin net means for H1 features, and leave-one-security-out TP5 contrast >0 for every security. At most three; never approve a filter.",
+  "interactions": [
+    "MARKET_RISK_REGIME_X_STYLE_REGIME"
+  ],
+  "market_style_status": "NO_STABLE_MARKET_STYLE_CONTEXT",
+  "multiple_testing": "Eight primary numeric features, two regimes and one market x style interaction; correlated tests, descriptive bootstrap only; no TP/SL selection.",
+  "parent_manifest_sha256": "06db29faf777912fd1f44e2b6bd599e1211cbc6538fc3a7c8dffaf810ebac769",
+  "parent_run_id": "EXIT_ROBUSTNESS_AND_EDGE_ASSESSMENT_RUN_V1",
+  "private_artifacts": {
+    "daily_market_style_context_v1.parquet": "19074d59b91cc5217496e9e9723104c9350148127c09343663e09b40b010a31c",
+    "entry_context_features_v1.parquet": "cc06f4ebed7062e2da6bf4323c168479b06969cc3bac57a15bb97e4273288b38"
+  },
+  "public_artifacts": {
+    "context_all_exits_regime_summary.csv": "ac3b461854ed8fb4019ff7e3c5b4af40d9b3f5c28145ef1489ae124ab2af26ba",
+    "context_bins_v1.json": "a0914ec8325260f1dc9ba2fa5908cf8bcd1bc4b23e3e53ff9c0dc968e8fe12a4",
+    "context_cluster_bootstrap.json": "c6545ebf8dd65ef8e7ff713b4018076fd21b2e18a6a20d256d9d4a4341ff34d5",
+    "context_discovery_quality_receipt.json": "b07b5805f687cc491852d4b6de1fc37d0f26f868460ccce22785491b235cf28e",
+    "context_discovery_reproducibility.json": "00d5c1ce843ecc0f184beae5f4f84cdee05b662063e7ef73ec1aaaff8beaf052",
+    "context_feature_builder_receipt.json": "2eead5cc61895b3ad6ea35718e5bd51abd8b6877b7c15fb11bb4424e288c3995",
+    "context_feature_contract_v1.json": "e1a0ed2bd4b02821d6782609a39a5622f097c45dcbd24cbf3ca46691a84be0e6",
+    "context_feature_inventory.csv": "86dfbd17c929f994903c9944ad9c7e02cda345591011f85fafdf1d27041869e2",
+    "context_hypothesis_candidates.json": "7940071f239e78548fba96b3ad08386b708014a2272b5af6b52dab168991f6c0",
+    "context_interaction_summary.csv": "7cea7ab6f508a1baf0b120574634a7d7e8fe13f8f1b48cffd7e8c257868dd93b",
+    "context_temporal_robustness.csv": "94c6b853b4a3667493cee9d917295abd1f3fd042e743f6963f24c316f6b9d778",
+    "context_test_receipt.json": "91296ad4ea38ef733804ea4a9a0cfac2954a837fc3ac94db52a9376c41770942",
+    "market_context_univariate_summary.csv": "f610b419839d20d98c14667d399853bac56a6c6bdec52bf235d8ce4b1fa94b21",
+    "market_style_regime_summary.csv": "2f541c34902acd2e9f67a1ea1ccb7388957802ca5674d35f2852bc0377b8f5ec",
+    "style_context_summary.csv": "a9c10a14bdf32a152d6542357150e8d5ea41ae29f570d290f1cf7cbcca8ddfdd",
+    "theme_context_data_qualification.json": "f84668a9e6892b0d5020d74ec74f3a039cde971511901f58d0c0d7102dbe7274"
+  },
+  "regimes": [
+    "MARKET_RISK_REGIME_V1",
+    "STYLE_REGIME_V1"
+  ],
+  "run_id": "MARKET_STYLE_THEME_CONTEXT_DISCOVERY_RUN_V1",
+  "runtime": {
+    "duckdb": "1.5.5",
+    "pandas": "2.2.3",
+    "python": "3.13.14"
+  },
+  "snapshot_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+  "status": "MATERIALIZED",
+  "tests": {
+    "actual_pipeline_reference_sha256": "c56f2129ab620f4943e66c300895c81620c313902d4e58bece3ebbfaecfdfeae",
+    "expected_pipeline_reference_sha256": "f021c169b1e3739f5b9aa227251057c7313f32b0ce2b57d5f3e2d486ab29fcda",
+    "focused": "PASS: 9 tests",
+    "full_suite": "625 passed, 1 pre-existing failure",
+    "new_regressions": 0,
+    "pre_existing_failure": "tests/test_research_integration.py::test_frozen_original_head_full_pipeline_through_snapshot"
+  },
+  "theme_status": "THEME_CONTEXT_DEFERRED_DATA_UNQUALIFIED",
+  "validation_grade": "POST_OUTCOME_EXPLORATORY_TEMPORAL_DESCRIPTIVE_ONLY"
+}

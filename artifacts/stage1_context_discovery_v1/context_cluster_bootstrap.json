@@ -1,0 +1,191 @@
+{
+  "contrasts": [
+    {
+      "adverse": "RISK_OFF",
+      "contrast_id": "MARKET_RISK_ON_VS_OFF",
+      "draws": 2000,
+      "execution_basis": "SAME_CLOSE_RESEARCH_COUNTERFACTUAL",
+      "favorable": "RISK_ON",
+      "left_tail_difference_ci95": [
+        -0.07732868757258998,
+        0.3245912703535009
+      ],
+      "left_tail_h5_10_difference": 0.13169642857142855,
+      "meaning": "Within-sample security-cluster percentile interval; post-outcome exploratory, not independent validation",
+      "n_adverse": 28,
+      "n_favorable": 130,
+      "population": "NORMAL_CLOSE_INTENT",
+      "security_clusters": 151,
+      "seed": 4038213997,
+      "tp5_net_difference_ci95": [
+        -0.07355331969477183,
+        0.020445516983032246
+      ],
+      "tp5_net_mean_difference": -0.030308447911156507
+    },
+    {
+      "adverse": "LOW",
+      "contrast_id": "H1A_PRIOR_STRONG_FEEDBACK",
+      "draws": 2000,
+      "execution_basis": "SAME_CLOSE_RESEARCH_COUNTERFACTUAL",
+      "favorable": "HIGH",
+      "left_tail_difference_ci95": [
+        -0.06332176398530012,
+        0.24738835725677819
+      ],
+      "left_tail_h5_10_difference": 0.09776304888152443,
+      "meaning": "Within-sample security-cluster percentile interval; post-outcome exploratory, not independent validation",
+      "n_adverse": 85,
+      "n_favorable": 71,
+      "population": "NORMAL_CLOSE_INTENT",
+      "security_clusters": 148,
+      "seed": 3164113182,
+      "tp5_net_difference_ci95": [
+        -0.05521481115788611,
+        0.012709820627030343
+      ],
+      "tp5_net_mean_difference": -0.02104256802694948
+    },
+    {
+      "adverse": "HIGH",
+      "contrast_id": "H1B_LOW_HIGH_POSITION_NEGATIVE_FEEDBACK",
+      "draws": 2000,
+      "execution_basis": "SAME_CLOSE_RESEARCH_COUNTERFACTUAL",
+      "favorable": "LOW",
+      "left_tail_difference_ci95": [
+        0.012479166666666625,
+        0.3501975924676099
+      ],
+      "left_tail_h5_10_difference": 0.18632478632478633,
+      "meaning": "Within-sample security-cluster percentile interval; post-outcome exploratory, not independent validation",
+      "n_adverse": 66,
+      "n_favorable": 72,
+      "population": "NORMAL_CLOSE_INTENT",
+      "security_clusters": 132,
+      "seed": 3025287335,
+      "tp5_net_difference_ci95": [
+        -0.08122351186726669,
+        -0.008431367382988398
+      ],
+      "tp5_net_mean_difference": -0.045354645451816604
+    },
+    {
+      "adverse": "TREND_DOMINANT",
+      "contrast_id": "H2_SHORTLINE_STYLE_DOMINANCE",
+      "draws": 2000,
+      "execution_basis": "SAME_CLOSE_RESEARCH_COUNTERFACTUAL",
+      "favorable": "SHORTLINE_DOMINANT",
+      "left_tail_difference_ci95": [
+        -0.10912991034234056,
+        0.1823563611491108
+      ],
+      "left_tail_h5_10_difference": 0.03532182103610676,
+      "meaning": "Within-sample security-cluster percentile interval; post-outcome exploratory, not independent validation",
+      "n_adverse": 99,
+      "n_favorable": 78,
+      "population": "NORMAL_CLOSE_INTENT",
+      "security_clusters": 168,
+      "seed": 3167385861,
+      "tp5_net_difference_ci95": [
+        -0.04345401137903658,
+        0.023034206446022422
+      ],
+      "tp5_net_mean_difference": -0.009996294935762078
+    },
+    {
+      "adverse": "RISK_OFF",
+      "contrast_id": "MARKET_RISK_ON_VS_OFF",
+      "draws": 2000,
+      "execution_basis": "CONDITIONAL_ON_FILL",
+      "favorable": "RISK_ON",
+      "left_tail_difference_ci95": [
+        -0.2262780694561998,
+        0.21124732120155426
+      ],
+      "left_tail_h5_10_difference": -0.012254901960784326,
+      "meaning": "Within-sample security-cluster percentile interval; post-outcome exploratory, not independent validation",
+      "n_adverse": 24,
+      "n_favorable": 136,
+      "population": "LIMIT_UP_CLOSE_BOARD_INTENT",
+      "security_clusters": 150,
+      "seed": 4038213997,
+      "tp5_net_difference_ci95": [
+        -0.030335650092945452,
+        0.06966094188175126
+      ],
+      "tp5_net_mean_difference": 0.01655647014818471
+    },
+    {
+      "adverse": "LOW",
+      "contrast_id": "H1A_PRIOR_STRONG_FEEDBACK",
+      "draws": 2000,
+      "execution_basis": "CONDITIONAL_ON_FILL",
+      "favorable": "HIGH",
+      "left_tail_difference_ci95": [
+        -0.06110347419375417,
+        0.23413217227418673
+      ],
+      "left_tail_h5_10_difference": 0.08953282081608516,
+      "meaning": "Within-sample security-cluster percentile interval; post-outcome exploratory, not independent validation",
+      "n_adverse": 89,
+      "n_favorable": 95,
+      "population": "LIMIT_UP_CLOSE_BOARD_INTENT",
+      "security_clusters": 166,
+      "seed": 3164113182,
+      "tp5_net_difference_ci95": [
+        -0.055427180734450535,
+        0.012443176483972206
+      ],
+      "tp5_net_mean_difference": -0.022541511885456337
+    },
+    {
+      "adverse": "HIGH",
+      "contrast_id": "H1B_LOW_HIGH_POSITION_NEGATIVE_FEEDBACK",
+      "draws": 2000,
+      "execution_basis": "CONDITIONAL_ON_FILL",
+      "favorable": "LOW",
+      "left_tail_difference_ci95": [
+        -0.2743722943722943,
+        0.038597200489039564
+      ],
+      "left_tail_h5_10_difference": -0.1115492957746479,
+      "meaning": "Within-sample security-cluster percentile interval; post-outcome exploratory, not independent validation",
+      "n_adverse": 75,
+      "n_favorable": 71,
+      "population": "LIMIT_UP_CLOSE_BOARD_INTENT",
+      "security_clusters": 139,
+      "seed": 3025287335,
+      "tp5_net_difference_ci95": [
+        -0.016557595466884577,
+        0.05240165315468923
+      ],
+      "tp5_net_mean_difference": 0.018488190896144344
+    },
+    {
+      "adverse": "TREND_DOMINANT",
+      "contrast_id": "H2_SHORTLINE_STYLE_DOMINANCE",
+      "draws": 2000,
+      "execution_basis": "CONDITIONAL_ON_FILL",
+      "favorable": "SHORTLINE_DOMINANT",
+      "left_tail_difference_ci95": [
+        0.0789045579576991,
+        0.3720003928643926
+      ],
+      "left_tail_h5_10_difference": 0.2241486068111455,
+      "meaning": "Within-sample security-cluster percentile interval; post-outcome exploratory, not independent validation",
+      "n_adverse": 95,
+      "n_favorable": 85,
+      "population": "LIMIT_UP_CLOSE_BOARD_INTENT",
+      "security_clusters": 165,
+      "seed": 3167385861,
+      "tp5_net_difference_ci95": [
+        -0.046102699852704265,
+        0.015962721557018205
+      ],
+      "tp5_net_mean_difference": -0.014985187294557039
+    }
+  ],
+  "draws": 2000,
+  "interpretation": "Descriptive within-sample uncertainty only; 2026 has prior outcome exposure",
+  "unit": "security_id"
+}

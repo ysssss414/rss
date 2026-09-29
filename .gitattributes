@@ -20,3 +20,10 @@ research/edge_assessment_v1.py -text
 scripts/run_exit_robustness_v1.py -text
 scripts/build_pre_entry_features_v1.py -text
 tests/test_exit_robustness_v1.py -text
+artifacts/stage1_context_discovery_v1/** -text
+research/context_features_v1.py -text
+research/context_discovery_v1.py -text
+scripts/build_entry_context_features_v1.py -text
+scripts/run_context_discovery_v1.py -text
+tests/test_context_discovery_v1.py -text
+docs/stage1_market_style_theme_context_discovery_v1.md -text
