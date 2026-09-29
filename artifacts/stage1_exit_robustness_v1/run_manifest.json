@@ -1,0 +1,94 @@
+{
+  "board_fillability_status": "BOARD_FILLABILITY_DATA_INSUFFICIENT",
+  "bootstrap": {
+    "draws": 2000,
+    "seed_base": 20260929,
+    "unit": "security_id"
+  },
+  "code_sha256": {
+    "research/edge_assessment_v1.py": "77b7b73dee8951133ad046e24a754555d42c96274c501d426d4dbb2e1d59ca2e",
+    "scripts/run_exit_robustness_v1.py": "57767c8f42ebf8dc445d6cd8934323d47026dc758dea98bb6b815fb7d4ac91c2"
+  },
+  "conclusions": {
+    "board_conditional": "CONDITIONAL_EDGE_CANDIDATE",
+    "board_fillability": "FILLABILITY_UNQUALIFIED",
+    "left_tail_filtering": "NO_STABLE_PRE_ENTRY_DIAGNOSTIC",
+    "limitations": "No claim of an independently validated executable or board-fill edge",
+    "next_research_recommendation": "STAGE1_STRATEGY_REASSESSMENT",
+    "normal_close": "EDGE_NOT_SUPPORTED",
+    "validation_grade": "POST_OUTCOME_EXPLORATORY_TEMPORAL_DESCRIPTIVE_ONLY"
+  },
+  "entry_n": 505,
+  "entry_population_sha256": "82d16ddf0f3c1af3c5015dd34ae08b9bbe83e23ed90c03b2c8b7ade7ec4bb0f1",
+  "exit_contract_ids": [
+    "TIME_H1",
+    "TIME_H3",
+    "TIME_H5",
+    "TP5_H5",
+    "TP10_H5",
+    "TP5_SL5_H5",
+    "TP10_SL10_H5",
+    "TP10_SL5_H5"
+  ],
+  "feature_builder_code_sha256": {
+    "research/pre_entry_features_v1.py": "82532cd5d2e365a9a3d64a068a0cfdcae38cb1c94816cf6f97aa28ba5face753",
+    "scripts/build_pre_entry_features_v1.py": "7a602029746c5d7306b88f877ebc9f7c5fb32e522c55b120aa87b775777c6db2"
+  },
+  "feature_contract": "ENTRY_PRE_SIGNAL_FEATURE_CONTRACT_V1",
+  "feature_contract_sha256": "cbf74acbab769fdae1650a6ab989ed8bd44d1170ca62ff7083f922897608ac31",
+  "parent_manifest_sha256": "3d7f825551a08872a487f86c5891e741f8503976433ff25ea83b6ada314265b9",
+  "parent_run_id": "EXIT_AND_PNL_RUN_V1",
+  "private_artifacts": {
+    "entry_pre_signal_features_v1.parquet": "634c5bff0a7702e3298955bc66ef34aaa19a225629df1ee7770a0573e3a76870",
+    "entry_trade_pnl_v1.parquet": "ef750a52c95275b41184ac3df4f115ddefb3ff68edfb7736393af0951448cbec"
+  },
+  "public_artifacts": {
+    "board_conditional_robustness_summary.csv": "e1c24ae772225ad6817668e6323990f06ab4457a797a69502409a0caba47d965",
+    "board_fillability_audit.json": "8fd7cbdcda454dced492dcf0029d80ba21135396b6d202c065c1cd7b8ebb7991",
+    "cost_sensitivity.csv": "1f93cbc31b9315fd1e0d370b1f6651ae09affe4e563c68b746a0b60bea5e8d89",
+    "edge_assessment_conclusions.json": "e6dea62e5fc790d3228027a99fe007593ddff6475bd385da6beb9ddeb3e5b152",
+    "edge_assessment_quality_receipt.json": "cff8f497095de594f6503743d4027d47af6fc39d16f649563492d4da6a3d4cd7",
+    "edge_assessment_reproducibility.json": "32724a10087617c194699e0bfe39fd9b83d4c29393ab347f755867f2f8b99249",
+    "edge_assessment_split_v1.json": "4ab5cda201b7415ea868df1f338c3dae26acbdc5bdf60d5e2abfb8d75afa8fe3",
+    "edge_case_audit.json": "b07cfe5682e6a45b203e0957ec2fec4266533a97f4aa239ae2a81696e82da62a",
+    "edge_cluster_bootstrap.json": "963239987466f602467ba88aae2af00e1c499fa9d386437977f6ffab8b8cbb40",
+    "feature_builder_receipt.json": "9791c7869e53c35efe17c361d79a46384e9d3dcf3b620cde984d727601f1acc7",
+    "left_tail_anatomy.json": "ba5ad974b7bb51af14f6e80993f7e218703fecd12aa6e794a837a7ac9dc71f36",
+    "left_tail_diagnostics.csv": "3869d46aca47c2fea8705b5850af07c663656cf7a84663040d4094c9de4515a5",
+    "left_tail_hypothesis_candidates.json": "81e49985888c0cebd08498ca463ba712b226a9585258286e4dbe176a75e6809b",
+    "normal_close_robustness_summary.csv": "bf40f9888795f15a47338744b357c88e1f7909c517f54383c2cf26d88edccaea",
+    "pre_entry_feature_contract_v1.json": "cbf74acbab769fdae1650a6ab989ed8bd44d1170ca62ff7083f922897608ac31",
+    "pre_entry_feature_inventory.csv": "026980b5348ef1c84558c3cb4ceca47a957e8e4f2e9be8f9cb42aca730e8d3c2",
+    "same_bar_ambiguity_sensitivity.csv": "d2506b6165e83d0c718adf137f71f2adc912e2bffa00905ad536adb25439afd7",
+    "temporal_robustness_summary.csv": "ece4babab993bb714fcbc5321de41eba7448392d4874c5008130daff3293cc90"
+  },
+  "run_id": "EXIT_ROBUSTNESS_AND_EDGE_ASSESSMENT_RUN_V1",
+  "runtime": {
+    "duckdb": "1.5.5",
+    "pandas": "2.2.3",
+    "python": "3.13.14"
+  },
+  "snapshot_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+  "split_contract": "EDGE_ASSESSMENT_SPLIT_V1",
+  "split_sha256": "4ab5cda201b7415ea868df1f338c3dae26acbdc5bdf60d5e2abfb8d75afa8fe3",
+  "status": "MATERIALIZED",
+  "tested_cross_tabs": [
+    "ENTRY_TYPE_X_PRIOR5_RAW_RETURN",
+    "INTENT_X_PRIOR5_RAW_RETURN"
+  ],
+  "tested_feature_list": [
+    "entry_close_vs_ma5",
+    "entry_low_vs_ma5",
+    "intraday_recovery",
+    "prior5_raw_return",
+    "trigger_to_entry_raw_return",
+    "entry_rsi14",
+    "rsi_change",
+    "amount_ratio_prev5",
+    "prev5_avg_range"
+  ],
+  "tests": {
+    "focused": "PASS",
+    "full_suite": "ONE_PREEXISTING_FAILURE"
+  }
+}

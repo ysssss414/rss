@@ -1,0 +1,15 @@
+{
+  "board_unconditional_fill_n": 0,
+  "candidate_n": 0,
+  "failures": [],
+  "feature_outcome_join_n": 505,
+  "frozen_entry_n": 505,
+  "signal_firewall": "feature builder has no outcome/PnL/D8 imports or H1+ bar lookups; outcome joins occur only after feature parquet is frozen",
+  "status": "PASS",
+  "tested_cross_tab_n": 2,
+  "tested_feature_n": 9,
+  "trade_n": 4040,
+  "unique_security_n": 434,
+  "unique_trade_keys": 4040,
+  "validation_grade": "TEMPORAL_VALIDATION_DESCRIPTIVE_ONLY"
+}

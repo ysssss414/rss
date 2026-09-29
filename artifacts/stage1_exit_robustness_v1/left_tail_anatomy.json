@@ -1,0 +1,94 @@
+{
+  "by_exit": {
+    "TIME_H1": {
+      "interpretation": "arithmetic contribution, not a removable or forecastable subset",
+      "loss_le_20_return_sum": 0,
+      "n_closed": 242,
+      "n_loss_le_10": 56,
+      "n_loss_le_20": 0,
+      "n_loss_le_5": 103,
+      "n_negative": 144,
+      "negative_return_sum": -10.447802367797037,
+      "share_of_negative_return_magnitude_from_le_20": -0.0
+    },
+    "TIME_H3": {
+      "interpretation": "arithmetic contribution, not a removable or forecastable subset",
+      "loss_le_20_return_sum": -4.016406326748168,
+      "n_closed": 240,
+      "n_loss_le_10": 87,
+      "n_loss_le_20": 17,
+      "n_loss_le_5": 116,
+      "n_negative": 153,
+      "negative_return_sum": -17.354987402624495,
+      "share_of_negative_return_magnitude_from_le_20": 0.23142663452125525
+    },
+    "TIME_H5": {
+      "interpretation": "arithmetic contribution, not a removable or forecastable subset",
+      "loss_le_20_return_sum": -9.68368428732596,
+      "n_closed": 240,
+      "n_loss_le_10": 102,
+      "n_loss_le_20": 40,
+      "n_loss_le_5": 131,
+      "n_negative": 160,
+      "negative_return_sum": -21.568244696644143,
+      "share_of_negative_return_magnitude_from_le_20": 0.44897878448275713
+    },
+    "TP10_H5": {
+      "interpretation": "arithmetic contribution, not a removable or forecastable subset",
+      "loss_le_20_return_sum": -8.818462608466179,
+      "n_closed": 241,
+      "n_loss_le_10": 94,
+      "n_loss_le_20": 36,
+      "n_loss_le_5": 116,
+      "n_negative": 132,
+      "negative_return_sum": -19.414030191420274,
+      "share_of_negative_return_magnitude_from_le_20": 0.4542314254957407
+    },
+    "TP10_SL10_H5": {
+      "interpretation": "arithmetic contribution, not a removable or forecastable subset",
+      "loss_le_20_return_sum": -0.28930245862884163,
+      "n_closed": 242,
+      "n_loss_le_10": 128,
+      "n_loss_le_20": 1,
+      "n_loss_le_5": 139,
+      "n_negative": 144,
+      "negative_return_sum": -15.646785394028454,
+      "share_of_negative_return_magnitude_from_le_20": 0.01848957797678065
+    },
+    "TP10_SL5_H5": {
+      "interpretation": "arithmetic contribution, not a removable or forecastable subset",
+      "loss_le_20_return_sum": 0,
+      "n_closed": 242,
+      "n_loss_le_10": 13,
+      "n_loss_le_20": 0,
+      "n_loss_le_5": 184,
+      "n_negative": 184,
+      "negative_return_sum": -11.091110131432087,
+      "share_of_negative_return_magnitude_from_le_20": -0.0
+    },
+    "TP5_H5": {
+      "interpretation": "arithmetic contribution, not a removable or forecastable subset",
+      "loss_le_20_return_sum": -7.347136151960111,
+      "n_closed": 241,
+      "n_loss_le_10": 76,
+      "n_loss_le_20": 30,
+      "n_loss_le_5": 89,
+      "n_negative": 99,
+      "negative_return_sum": -15.492099492444245,
+      "share_of_negative_return_magnitude_from_le_20": 0.474250514305271
+    },
+    "TP5_SL5_H5": {
+      "interpretation": "arithmetic contribution, not a removable or forecastable subset",
+      "loss_le_20_return_sum": 0,
+      "n_closed": 242,
+      "n_loss_le_10": 11,
+      "n_loss_le_20": 0,
+      "n_loss_le_5": 164,
+      "n_negative": 164,
+      "negative_return_sum": -9.895856523789364,
+      "share_of_negative_return_magnitude_from_le_20": -0.0
+    }
+  },
+  "metric": "NET_RESEARCH_PRICE_RETURN",
+  "population": "NORMAL_CLOSE_INTENT"
+}

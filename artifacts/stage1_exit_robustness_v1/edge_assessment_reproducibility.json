@@ -1,0 +1,8 @@
+{
+  "determinism": "fixed split/features/bins/bootstrap seed and sorted frozen inputs; rerun refuses changed public hashes",
+  "parent_exit_manifest_sha256": "3d7f825551a08872a487f86c5891e741f8503976433ff25ea83b6ada314265b9",
+  "private_feature_parquet_sha256": "634c5bff0a7702e3298955bc66ef34aaa19a225629df1ee7770a0573e3a76870",
+  "private_trade_parquet_sha256": "ef750a52c95275b41184ac3df4f115ddefb3ff68edfb7736393af0951448cbec",
+  "public_content_sha256": "ad29f1f861f480bccef461778f0e61abd2d668f96df424a8f4b2d7133e1958f7",
+  "status": "PASS"
+}

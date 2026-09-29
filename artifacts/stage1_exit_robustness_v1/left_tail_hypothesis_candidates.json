@@ -1,0 +1,10 @@
+{
+  "candidates": [],
+  "multiple_testing_risk": "EXPLORATORY_MULTIPLE_TESTING_RISK; 2026 is descriptive, not untouched holdout",
+  "status": "NO_STABLE_PRE_ENTRY_DIAGNOSTIC",
+  "tested_cross_tabs": [
+    "ENTRY_TYPE_X_PRIOR5_RAW_RETURN",
+    "INTENT_X_PRIOR5_RAW_RETURN"
+  ],
+  "tested_feature_n": 9
+}
