@@ -1,0 +1,46 @@
+{
+  "audit_as_of": "2026-10-14",
+  "automation": {
+    "id": "automation",
+    "market_data_network_access": false,
+    "no_new_data": "QUIET",
+    "only_verified_local_snapshots": true,
+    "schedule": "Monday-Friday 16:30 Asia/Shanghai",
+    "settings_sha256": "9e111c8c7335ec80241b957e600bedb6e27e291a5a253ebce9baa2266aa8234a",
+    "status": "ACTIVE"
+  },
+  "initial_receipt_sha256": "cf914a490cc3088705da21a1f2dc27b94bf933b03601164a5ea4f7e993401023",
+  "market_store_manifest_sha256": "a7d3243efadbf3bfdc67ba9b361bd3a9d00398b1b8a0854d6ff927146d4d5279",
+  "mutable_store_security_coverage": {
+    "adjustment_factor": {
+      "first": "2024-01-02",
+      "last": "2026-09-23",
+      "rows": 662
+    },
+    "daily_bars": {
+      "first": "2024-01-02",
+      "last": "2026-09-23",
+      "rows": 662
+    },
+    "daily_status": {
+      "first": "2024-01-02",
+      "last": "2026-09-23",
+      "rows": 662
+    }
+  },
+  "next_data_requirement": "SEPARATELY_AUTHORIZED_BOUNDED_ACQUISITION_AND_NEW_VALIDATED_SNAPSHOT",
+  "observation_id": "WUXI_FORWARD_20261013_V0_1",
+  "observation_start": "2026-10-13",
+  "post_inception_rows": 0,
+  "sdk_login_or_acquisition_tested": false,
+  "security_id": "603259.SH",
+  "snapshot_latest_data": "2026-09-23",
+  "source_code_sha256": {
+    "research/data/amazingdata.py": "69698eee5845b78bd0990c75e4e649432fc21cf8e915f1dea6dbfd713692f7f2",
+    "research/market_update.py": "35ea2beb5b40081c451a1a2c51c40510c930907ffab261e814c105aa12b3ef89",
+    "scripts/update_market_store.py": "90949cc40ad596756b5634d3cf06499c8806ef79c40eba9de8e22fb11c8e82c2",
+    "trend_exit_research/src/forward.py": "54a489d05e1292c1f70896656e858e51196828cb13c0d0f5fced35baf249d246"
+  },
+  "status": "WAITING_FOR_POST_INCEPTION_DATA",
+  "updater_security_option_limits": "HISTORICAL_REPAIR_ONLY;NEW_DATE_BASE_MISSING_STILL_ALL_SECURITIES"
+}

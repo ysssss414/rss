@@ -1,0 +1,12 @@
+{
+  "version": "TREND_EXIT_PILOT_V0_2",
+  "cases": ["昆仑万维", "兆易创新", "五粮液", "工业富联"],
+  "confirmation_days": [1, 2, 3],
+  "remaining_position_scenarios": [0.25, 0.5, 0.75],
+  "horizons": [5, 10, 20, 40],
+  "blank_interval_policy": "FULL_FROZEN_SNAPSHOT",
+  "cohort_policy": "EVERY_MA28_CONFIRMATION_PREEXISTING_ONE_UNIT_NO_REENTRY",
+  "execution_lanes": ["QUALIFIED_ONLY", "CONDITIONAL_CACHED_LIMITS"],
+  "blocked_order_policy": "NO_AUTOMATIC_RETRY_REQUIRES_REVIEW",
+  "fees_and_slippage": "NOT_MODELLED"
+}

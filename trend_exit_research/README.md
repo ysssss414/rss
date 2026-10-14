@@ -95,3 +95,23 @@ MA28 确认要求降低仓位上限；MA55 首次跌破进入 `EXIT_PENDING` 并
 `artifacts/` 内本地逐日行情派生文件全部忽略，不提交 Git。`reports/` 保存有界的覆盖、验证摘要和样例，不放完整市场数据。仓库默认 pytest 的 `testpaths` 只有 `tests/`，新增测试需显式指定 `trend_exit_research/tests`。
 
 新增测试覆盖四类信号、未来后缀扰动、前缀回放、除权同锚点/事件比值、共同归一化、非共同修订拒绝、缺失/停牌/晚到输入、代码歧义、追加样本独立性、在线极值确认和字节可复现性。最终证据见 `reports/bootstrap_report.md`。`PASS_WITH_LIMITATIONS` 只指本轮工程流程在已披露限制下通过，不是策略效果结论。
+
+## V0.2 固定四案例实证
+
+使用上文同一Python与依赖环境，在仓库根目录运行：
+
+```powershell
+python -m trend_exit_research.src.pilot
+python trend_exit_research/tests/verify_pilot_outputs.py
+python -m pytest trend_exit_research/tests tests/test_factor_pit.py tests/test_trade_lifecycle.py tests/test_research_cache.py tests/test_d8_snapshot.py tests/test_stage1_foundation.py -q --basetemp=.test_tmp/trend_exit_v02_local
+```
+
+参数在 `config/pilot_v0_2.json`：昆仑万维、兆易创新、五粮液使用完整冻结快照区间，工业富联使用2025年；确认天数固定对照1/2/3，B剩余仓位情景固定25%/50%/75%，无参数寻优。指标允许前置历史，风险状态与连续计数在研究起点重置。工业富联研究期后40日的原规则逐日延续标为 `OUTCOME_EXTENSION`，仅用于评价，不回填研究期信号。
+
+默认写入 `artifacts/pilot_v0_2/`。可用 `--out trend_exit_research/artifacts/另一目录` 比对相同快照和配置的运行结果。八个CSV为 `coverage_audit`、`daily_signals`、`signal_log`、`execution_events`、`cohort_comparison`、`cohort_daily`、`confirmation_summary`、`scheme_summary`，另有 `trend_exit_v0_2_pilot_report.md` 和可追溯 `run_receipt.json`。代码/配置/输入/输出哈希及Git计算锚点完整保留。
+
+严格成交资格与 `CONDITIONAL_CACHED_LIMITS` 情景分别输出。后者依赖未获得历史早盘资格的日终供应商数据，仅是下一可交易日开盘卖出的条件模型，不能称为实际成交或合格历史执行。没有把信号日收盘当作卖价；跌停不假定成交，未知状态不跳过，未验证除权不强行计算收益，失败后不自动重试。
+
+A/B/C/D比较采用所有MA28确认事件的共同既有一股持仓起点，属于可重叠的独立事件对照，不连接成连续账户、自动买回或总体成功率。B在MA28后按情景一次降低持仓、MA55后退出；持续上限维护未实现，记录后续权重漂移。所有未来5/10/20/40日结果在事件评价或持仓路径表中，不能进入每日风险信号。
+
+正式交付报告见 `reports/trend_exit_v0_2_pilot_report.md`；交付测试、真实数据一致性和重复运行验证见 `reports/pilot_validation_receipt.json`；前瞻数据与自动检查能力审计见 `reports/forward_capability_audit.json`。技术验收、人工小样本证据和策略有效性分开判定。该模块不修改任何Stage 1策略、生命周期契约或冻结研究产物。
