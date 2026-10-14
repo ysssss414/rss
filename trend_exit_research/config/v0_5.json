@@ -1,0 +1,34 @@
+{
+  "version": "TREND_EXIT_V0_5_BAOSTOCK",
+  "baostock_version": "0.9.4",
+  "wheel_sha256": "0bf71c6069ab5890ff3596632f9c3f8f1fbc6bfcac582c2f9d6a5c11ab2cfaf8",
+  "fields": "date,code,open,high,low,close,preclose,volume,amount,adjustflag,turn,tradestatus,pctChg,isST",
+  "frequency": "d",
+  "adjustflag": "3",
+  "authorized": {
+    "300418.SZ": ["sz.300418", "2022-07-01", "2023-12-31"],
+    "000858.SZ": ["sz.000858", "2019-07-01", "2022-03-31"],
+    "603259.SH": ["sh.603259", "2026-09-24", "2026-10-13"]
+  },
+  "smoke": [
+    ["603259.SH", "2026-09-24", "2026-09-25"],
+    ["300418.SZ", "2023-06-01", "2023-06-09"]
+  ],
+  "max_high_level_data_attempts": 16,
+  "max_attempts_per_request": 2,
+  "max_pages_per_attempt": 3,
+  "max_rows_per_query": 1200,
+  "max_wire_data_requests": 48,
+  "socket_timeout_seconds": 15,
+  "query_timeout_seconds": 90,
+  "total_timeout_seconds": 900,
+  "max_response_bytes": 8388608,
+  "action_reference_tolerance_cny": 0.000001,
+  "slope_days": 5,
+  "peak_window": 60,
+  "confirmation_days": 3,
+  "evaluation_horizons": [5, 10, 20, 40],
+  "baseline_config_sha256": "f1826b0b4df15afcc03108cc9f9bf91af48e21a5aa58f47752b1ed8af55263fa",
+  "observation_id": "WUXI_FORWARD_20261013_V0_1",
+  "automatic_online_access": false
+}
