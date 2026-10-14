@@ -1,0 +1,23 @@
+{
+  "version": "TREND_EXIT_V0_3",
+  "qualification": {
+    "version": "TREND_QUALIFICATION_EXPERIMENT_V0_3",
+    "min_observations": 60,
+    "runup_window": 20,
+    "min_runup": 0.15,
+    "min_ma28_slope": 0.0,
+    "min_ma55_slope": 0.0,
+    "min_ma28_over_ma55": 0.0,
+    "max_close_over_ma55": 0.30,
+    "max_distance_below_peak": 0.10
+  },
+  "lifecycle": {
+    "version": "TREND_HOLDING_ASSOCIATION_V0_3",
+    "mode": "FIRST_ELIGIBLE_OBSERVATION_NO_ENTRY_FILL",
+    "ma28_position_cap": null,
+    "automatic_reentry": false,
+    "automatic_retry": false
+  },
+  "confirmation_days": [1, 2, 3],
+  "horizons": [5, 10, 20, 40]
+}

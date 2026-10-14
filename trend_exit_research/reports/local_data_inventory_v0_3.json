@@ -1,0 +1,106 @@
+{
+  "legacy_factor_files": [
+    {
+      "bytes": 146312,
+      "path": ".cache/amazingdata-real-smoke-20260729/factors/basedata/backward_factor/backward_factor.h5",
+      "source_qualification": "UNVERIFIED_HDF_CACHE_NOT_A_TARGET_CASE_SNAPSHOT"
+    },
+    {
+      "bytes": 146328,
+      "path": ".cache/three_board_rsi_entry/factors/basedata/backward_factor/backward_factor.h5",
+      "source_qualification": "UNVERIFIED_HDF_CACHE_NOT_A_TARGET_CASE_SNAPSHOT"
+    }
+  ],
+  "mutable_market_store_coverage": {
+    "adjustment_factor": {
+      "disk_bytes": 6679795,
+      "max_trade_date": "2026-09-23",
+      "min_trade_date": "2024-01-02",
+      "rows": 3380290,
+      "unique_securities": 5222,
+      "unique_trade_dates": 662
+    },
+    "daily_bars": {
+      "disk_bytes": 66581369,
+      "max_trade_date": "2026-09-23",
+      "min_trade_date": "2024-01-02",
+      "rows": 3375103,
+      "unique_securities": 5222,
+      "unique_trade_dates": 662
+    },
+    "daily_status": {
+      "disk_bytes": 24964912,
+      "max_trade_date": "2026-09-23",
+      "min_trade_date": "2024-01-02",
+      "rows": 3379281,
+      "unique_securities": 5222,
+      "unique_trade_dates": 662
+    },
+    "outcome_adjustment": {
+      "disk_bytes": 583517,
+      "max_effective_date": "2026-09-23",
+      "min_effective_date": "2024-01-02",
+      "rows": 12457,
+      "unique_effective_dates": 566,
+      "unique_securities": 4125
+    },
+    "outcome_adjustment_exclusions": {
+      "disk_bytes": 8558,
+      "rows": 718,
+      "unique_securities": 510
+    },
+    "security_master": {
+      "disk_bytes": 53383,
+      "rows": 5222,
+      "unique_securities": 5222
+    },
+    "trading_calendar": {
+      "disk_bytes": 1690,
+      "max_trade_date": "2026-09-23",
+      "min_trade_date": "2024-01-02",
+      "rows": 662,
+      "unique_securities": 0,
+      "unique_trade_dates": 662
+    }
+  },
+  "no_cache_changes": true,
+  "no_legacy_cache_promoted_to_qualified_snapshot": true,
+  "no_network": true,
+  "qualified_snapshot": "REAL_RESEARCH_SNAPSHOT_V1",
+  "qualified_snapshot_range": [
+    "2024-01-02",
+    "2026-09-23"
+  ],
+  "targeted_legacy_raw_cache_inventory": [
+    {
+      "exists": false,
+      "path": ".cache/three_board_rsi_entry/raw_daily/300418_SZ.csv",
+      "security_id": "300418.SZ"
+    },
+    {
+      "exists": false,
+      "path": ".cache/amazingdata-real-smoke-20260729/raw_daily/300418_SZ.csv",
+      "security_id": "300418.SZ"
+    },
+    {
+      "exists": false,
+      "path": ".cache/three_board_rsi_entry/raw_daily/000858_SZ.csv",
+      "security_id": "000858.SZ"
+    },
+    {
+      "exists": false,
+      "path": ".cache/amazingdata-real-smoke-20260729/raw_daily/000858_SZ.csv",
+      "security_id": "000858.SZ"
+    },
+    {
+      "exists": false,
+      "path": ".cache/three_board_rsi_entry/raw_daily/603259_SH.csv",
+      "security_id": "603259.SH"
+    },
+    {
+      "exists": false,
+      "path": ".cache/amazingdata-real-smoke-20260729/raw_daily/603259_SH.csv",
+      "security_id": "603259.SH"
+    }
+  ]
+}
