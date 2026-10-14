@@ -1,0 +1,137 @@
+{
+  "candidate_config_sha256": "8921bc31f52d22c55ac29948b5d47252312777b98b1d83c25f92a1c933f27b9a",
+  "code_sha256": {
+    "trend_exit_research/src/__init__.py": "f1a07ad926035d6053df22ca5f68920a532aa7d71c9b3ddc31d131ac10b6c41d",
+    "trend_exit_research/src/cli.py": "335d23e4b6f0203c16af2fad18c4f1f70583822baf4494ffcaf450888b1d5291",
+    "trend_exit_research/src/data.py": "b02c943605f7489e2e4cfbc7594f606bfa1596c3b5cbc91ba89eaff1e02d86ae",
+    "trend_exit_research/src/evaluation.py": "94811dd5f002c62d4872f326a808209e54e29dde7312817c25c9ab73cf3f9fa4",
+    "trend_exit_research/src/forward.py": "54a489d05e1292c1f70896656e858e51196828cb13c0d0f5fced35baf249d246",
+    "trend_exit_research/src/indicators.py": "7267627bea6c7d8b312c15bd8c600faf8afe803492e83f657475945ae8cbb472",
+    "trend_exit_research/src/pilot.py": "c466a822476b7c820c98a6697e9ad228db0970ca07384d3865c4f7de928e49b8",
+    "trend_exit_research/src/pilot_report.py": "295c8cb5cf8e5a29be68fe6e4948d82bbbf66d568e6336aa3ad0720dec3592ee",
+    "trend_exit_research/src/risk.py": "74f7aaaa16acede7368b1f86b76e1d36704065d2359467e37d228a8683370d97",
+    "trend_exit_research/src/samples.py": "173f28c927b4b6eb18135eab8e6f45ef5f3d5e1e6375b72fcd86f2bbdc650181",
+    "trend_exit_research/src/synthetic.py": "15cb8b7e285aadbddbe4cdea402f793986687887904621776fa554188a87cb2e"
+  },
+  "conditional_execution": "EOD_VENDOR_LIMITS_NOT_HISTORICALLY_QUALIFIED;NO_LIQUIDITY_OR_SLIPPAGE_PROOF",
+  "config": {
+    "blank_interval_policy": "FULL_FROZEN_SNAPSHOT",
+    "blocked_order_policy": "NO_AUTOMATIC_RETRY_REQUIRES_REVIEW",
+    "cases": [
+      "昆仑万维",
+      "兆易创新",
+      "五粮液",
+      "工业富联"
+    ],
+    "cohort_policy": "EVERY_MA28_CONFIRMATION_PREEXISTING_ONE_UNIT_NO_REENTRY",
+    "confirmation_days": [
+      1,
+      2,
+      3
+    ],
+    "execution_lanes": [
+      "QUALIFIED_ONLY",
+      "CONDITIONAL_CACHED_LIMITS"
+    ],
+    "fees_and_slippage": "NOT_MODELLED",
+    "horizons": [
+      5,
+      10,
+      20,
+      40
+    ],
+    "remaining_position_scenarios": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "version": "TREND_EXIT_PILOT_V0_2"
+  },
+  "execution_grades_separate": true,
+  "git_commit": "10e720cb4367e00fae643493116572f4cbcd17c5",
+  "horizon_definition": "D+1..D+H_EXCHANGE_SESSIONS;EXECUTION_DAY_EXCLUDED;EVENT_FREE_RAW_PRICE_PATH",
+  "interpretation": "MANUAL_CASES_OVERLAPPING_COHORTS_NO_UNBIASED_SUCCESS_RATE",
+  "no_automatic_reentry": true,
+  "no_download": true,
+  "no_parameter_search": true,
+  "no_real_orders": true,
+  "outputs": {
+    "cohort_comparison.csv": {
+      "rows": 8928,
+      "sha256": "c561452d8b9e1652bd02e3d5843b22669d928cb3e04ade5fdcc37958d91a489a"
+    },
+    "cohort_daily.csv": {
+      "rows": 84660,
+      "sha256": "52b8c9b79ca2f15a478de8d9a5b7bf9b42f1ce068c9fc6f5736b6bf8dfbe5196"
+    },
+    "confirmation_summary.csv": {
+      "rows": 48,
+      "sha256": "7add237afff6c8e9512533505772ffc9d200b343204b024c00adab992535f793"
+    },
+    "coverage_audit.csv": {
+      "rows": 16,
+      "sha256": "dc31542f0e4cb9d899030afa4c8eaf01a9da6efcf9e5a6a7f858de937031aee3"
+    },
+    "daily_signals.csv": {
+      "rows": 6807,
+      "sha256": "e7d131930fc307e3cbcbf531bd8620bff3d10e5b08b4b89ba5c77a665a88b3a4"
+    },
+    "execution_events.csv": {
+      "rows": 644,
+      "sha256": "75fffd6e2c8c2c875e2858b416a07cccd3cbc78beb53cbac309977dabdba4384"
+    },
+    "scheme_summary.csv": {
+      "rows": 576,
+      "sha256": "42a9d42fe5b0ba23e1f2824dcb6850c28801d5e6af36d178d57ce8e8a30c7e30"
+    },
+    "signal_log.csv": {
+      "rows": 611,
+      "sha256": "a27cbd96a127dd05f59711c524d64af06f8fe035736722b6cfd2db9111cf184f"
+    },
+    "trend_exit_v0_2_pilot_report.md": {
+      "sha256": "c62544be23f04faaa31e385d2fa64a837f484f0fbbe49ab93ba8482204fe0716"
+    }
+  },
+  "pandas": "3.0.1",
+  "pilot_config_sha256": "5382a05d2cf905160d9d8252830f7d3932a1d8b75119d0e51ff4d30782f73dbe",
+  "python": "3.12.14",
+  "reused_code_sha256": {
+    "research/data/adjustment.py": "f1ece56fe54d86ac37429c83c726d3592f714e1e700a67720f855175ea2c4e11",
+    "research/factor_pit.py": "641926770858bc5b1f9793ab6373bf3db5c5e197dc6e42717272fd2a1f0aa341",
+    "research/foundation.py": "fe70d4352b30e486b386c449b5aeeff2a1b09c26457447405dcded2dffc191f1",
+    "research/snapshot.py": "1a40d74fe4dd0f99c9dec6d9621385c3df8156d85d6c8178ee978353faaac1fe"
+  },
+  "risk_boundary": "COUNTS_RESET_AT_STUDY_START;PREHISTORY_FOR_INDICATORS_ONLY",
+  "risk_config_sha256": "f1826b0b4df15afcc03108cc9f9bf91af48e21a5aa58f47752b1ed8af55263fa",
+  "samples_sha256": "36a9a40e8dfdd2c42cb845c20901944a88f50c16cfd1ffbc6797f4bbe4401fd9",
+  "schema": "trend-exit-pilot/0.2",
+  "snapshot_validation": {
+    "constituent_files_checked": 104,
+    "cutoff_date": "2026-09-23",
+    "dataset_fingerprints": {
+      "adjustment_factor": "c343305415f88c40e12e4cda7c6fbb4521409883035eba7a2174a34565359998",
+      "daily_bars": "b592907e2d9edbad106edd63b3b62ea9983a8cc54f9c406539d04b240e724a98",
+      "daily_status": "10a62607ddbd6b448f70762ff6ffcc95e62eea8ff1bf779644f1ca34dda0c6d4",
+      "outcome_adjustment": "4e1811ae70548605265f28dfad9a63b899b74fe92a5bc9d41043853895e68cbf",
+      "outcome_adjustment_exclusions": "b43a05e1fd1b7757882ca8bb4a5549a25c6af23f6064ba7222651c555c4fecf8",
+      "security_master": "9f8d05f1aac027d850581b32b79604d8b5201f5f06245b66cec307d1241f5347",
+      "trading_calendar": "79b601366ade53456a86747c8eb72b9302a0b6e9bfbfb2ff391817fe0c3ba037"
+    },
+    "dataset_row_counts": {
+      "adjustment_factor": 3380290,
+      "daily_bars": 3375103,
+      "daily_status": 3379281,
+      "outcome_adjustment": 12457,
+      "outcome_adjustment_exclusions": 718,
+      "security_master": 5222,
+      "trading_calendar": 662
+    },
+    "manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+    "snapshot_id": "REAL_RESEARCH_SNAPSHOT_V1",
+    "status": "PASS"
+  },
+  "source_snapshot_id": "REAL_RESEARCH_SNAPSHOT_V1",
+  "strategy_effectiveness": "STRATEGY_EFFECTIVENESS_NOT_YET_ESTABLISHED",
+  "strict_execution": "HISTORICAL_MORNING_CONSTRAINT_REQUIRED",
+  "v01_release_commit": "10e720cb4367e00fae643493116572f4cbcd17c5"
+}

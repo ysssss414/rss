@@ -1,0 +1,102 @@
+{
+  "blocked_paths": {
+    "factor_endpoint": "STOP_UNBOUNDED_DATE_ENDPOINT",
+    "market_updater": "STOP_ALL_MARKET_NEW_DATE_FANOUT",
+    "old_calendar_helper": "STOP_PRE_2024_FILTER",
+    "old_freeze_cli": "STOP_FIXED_V1_CUTOFF_CONTRACT",
+    "sdk_initialization": "STOP_UNVERIFIED_INTERNAL_NETWORK_SCOPE"
+  },
+  "datasets": [
+    "raw_daily_bars",
+    "historical_daily_status",
+    "exchange_calendar",
+    "qualified_factors_and_actions",
+    "historical_morning_constraints"
+  ],
+  "endpoint_limits": {
+    "bars_attempts": 9,
+    "calendar_attempts": 6,
+    "factor_online_attempts": 0,
+    "security_master_online_attempts": 0,
+    "status_attempts": 9
+  },
+  "immutable_snapshot_created": false,
+  "login_and_sdk_internal_bounds": "UNVERIFIED;NOT_PART_OF_24_CALL_BUDGET",
+  "network_call_upper_bound_qualified": false,
+  "old_snapshot_overwrite_forbidden": true,
+  "online_calls_executed": 0,
+  "plan_dates": [
+    {
+      "evaluation": [
+        "2024-01-01",
+        "2024-03-31"
+      ],
+      "new_request": [
+        "2022-07-01",
+        "2023-12-31"
+      ],
+      "reuse_existing": [
+        "2024-01-02",
+        "2024-03-31"
+      ],
+      "security_id": "300418.SZ",
+      "study": [
+        "2023-01-01",
+        "2023-12-31"
+      ],
+      "warmup": [
+        "2022-07-01",
+        "2022-12-31"
+      ]
+    },
+    {
+      "evaluation": [
+        "2022-01-01",
+        "2022-03-31"
+      ],
+      "new_request": [
+        "2019-07-01",
+        "2022-03-31"
+      ],
+      "security_id": "000858.SZ",
+      "study": [
+        "2020-01-01",
+        "2021-12-31"
+      ],
+      "warmup": [
+        "2019-07-01",
+        "2019-12-31"
+      ]
+    },
+    {
+      "capture_label": "LATE_CAPTURE_NOT_SAME_DAY_PROSPECTIVE",
+      "new_request": [
+        "2026-09-24",
+        "2026-10-13"
+      ],
+      "observation_id": "WUXI_FORWARD_20261013_V0_1",
+      "reuse_existing_through": "2026-09-23",
+      "security_id": "603259.SH"
+    }
+  ],
+  "proposal_document_sha256": "9615c5f8da20608d2c23fae28d6b552f44a6d9df4a9b3fa1ebfe38735ea129f0",
+  "proposed_python_data_api_attempts_upper_bound": 24,
+  "qualification_requirements": [
+    "REAL_RETRIEVAL_TIMESTAMP",
+    "HISTORICAL_STATUS_EFFECTIVE_DATE",
+    "PIT_FACTOR_EVENT_AND_REVISION_EVIDENCE",
+    "RAW_PRICE_UNITS",
+    "NO_PROMOTION_OF_EOD_LIMITS"
+  ],
+  "source_code_sha256": {
+    "research/data/amazingdata.py": "69698eee5845b78bd0990c75e4e649432fc21cf8e915f1dea6dbfd713692f7f2",
+    "research/factor_pit.py": "641926770858bc5b1f9793ab6373bf3db5c5e197dc6e42717272fd2a1f0aa341",
+    "research/market_update.py": "35ea2beb5b40081c451a1a2c51c40510c930907ffab261e814c105aa12b3ef89",
+    "research/snapshot.py": "1a40d74fe4dd0f99c9dec6d9621385c3df8156d85d6c8178ee978353faaac1fe",
+    "scripts/freeze_research_snapshot.py": "3a84296eea958dd059e6d016d4353f4264a3649fcba8e9c1018021ac394dfabf",
+    "scripts/update_market_store.py": "90949cc40ad596756b5634d3cf06499c8806ef79c40eba9de8e22fb11c8e82c2",
+    "three_board_rsi_entry/market_data.py": "e454b13431abdf1885c2ee435408773d478fbeca9bee7e56c28fc7941edb6624"
+  },
+  "status": "OFFLINE_AUDIT_ONLY_AWAITING_EXPLICIT_AUTHORIZATION",
+  "version": "TREND_EXIT_BOUNDED_ACQUISITION_PLAN_V0_3"
+}

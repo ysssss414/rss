@@ -1,0 +1,298 @@
+{
+  "automation": {
+    "id": "automation",
+    "kind": "heartbeat",
+    "market_data_network_access": false,
+    "name": "药明康德离线前瞻观察",
+    "schedule": "Monday-Friday 16:30 Asia/Shanghai",
+    "status": "ACTIVE",
+    "unchanged_or_missing_data": "QUIET"
+  },
+  "baseline_risk_signal_examples": [
+    {
+      "close": 32.88,
+      "confirmation_days": 3,
+      "count": 1,
+      "decision_at": "2024-02-08T15:30:00+08:00",
+      "episode_start": "2024-02-08",
+      "ma": 33.5310714286,
+      "ma_period": 28,
+      "reason": "1 valid closes strictly below each day's MA28; no backdating",
+      "risk_config_sha256": "f1826b0b4df15afcc03108cc9f9bf91af48e21a5aa58f47752b1ed8af55263fa",
+      "risk_rule_version": "TREND_EXIT_BASELINE_V0_1",
+      "risk_scenario": "TREND_EXIT_BASELINE_V0_1/CONFIRM_3",
+      "sample_id": "d3dfdde389c2a399",
+      "security_id": "300418.SZ",
+      "signal": "MA28_BREAK_PENDING",
+      "snapshot_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+      "source_snapshot_id": "REAL_RESEARCH_SNAPSHOT_V1",
+      "stock_name": "昆仑万维",
+      "trade_date": "2024-02-08"
+    },
+    {
+      "close": 36.44,
+      "confirmation_days": 3,
+      "count": 1,
+      "decision_at": "2024-03-27T15:30:00+08:00",
+      "episode_start": "2024-03-27",
+      "ma": 37.0967272727,
+      "ma_period": 55,
+      "reason": "1 valid closes strictly below each day's MA55; no backdating",
+      "risk_config_sha256": "f1826b0b4df15afcc03108cc9f9bf91af48e21a5aa58f47752b1ed8af55263fa",
+      "risk_rule_version": "TREND_EXIT_BASELINE_V0_1",
+      "risk_scenario": "TREND_EXIT_BASELINE_V0_1/CONFIRM_3",
+      "sample_id": "d3dfdde389c2a399",
+      "security_id": "300418.SZ",
+      "signal": "MA55_BREAK_PENDING",
+      "snapshot_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+      "source_snapshot_id": "REAL_RESEARCH_SNAPSHOT_V1",
+      "stock_name": "昆仑万维",
+      "trade_date": "2024-03-27"
+    },
+    {
+      "close": 40.64,
+      "confirmation_days": 3,
+      "count": 3,
+      "decision_at": "2024-03-28T15:30:00+08:00",
+      "episode_start": "2024-03-26",
+      "ma": 40.72,
+      "ma_period": 28,
+      "reason": "3 valid closes strictly below each day's MA28; no backdating",
+      "risk_config_sha256": "f1826b0b4df15afcc03108cc9f9bf91af48e21a5aa58f47752b1ed8af55263fa",
+      "risk_rule_version": "TREND_EXIT_BASELINE_V0_1",
+      "risk_scenario": "TREND_EXIT_BASELINE_V0_1/CONFIRM_3",
+      "sample_id": "d3dfdde389c2a399",
+      "security_id": "300418.SZ",
+      "signal": "MA28_BREAK_CONFIRMED",
+      "snapshot_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+      "source_snapshot_id": "REAL_RESEARCH_SNAPSHOT_V1",
+      "stock_name": "昆仑万维",
+      "trade_date": "2024-03-28"
+    },
+    {
+      "close": 37.52,
+      "confirmation_days": 3,
+      "count": 3,
+      "decision_at": "2024-04-22T15:30:00+08:00",
+      "episode_start": "2024-04-18",
+      "ma": 39.0661818182,
+      "ma_period": 55,
+      "reason": "3 valid closes strictly below each day's MA55; no backdating",
+      "risk_config_sha256": "f1826b0b4df15afcc03108cc9f9bf91af48e21a5aa58f47752b1ed8af55263fa",
+      "risk_rule_version": "TREND_EXIT_BASELINE_V0_1",
+      "risk_scenario": "TREND_EXIT_BASELINE_V0_1/CONFIRM_3",
+      "sample_id": "d3dfdde389c2a399",
+      "security_id": "300418.SZ",
+      "signal": "MA55_BREAK_CONFIRMED",
+      "snapshot_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+      "source_snapshot_id": "REAL_RESEARCH_SNAPSHOT_V1",
+      "stock_name": "昆仑万维",
+      "trade_date": "2024-04-22"
+    }
+  ],
+  "exact_replay": {
+    "forward_initial": "IMMUTABLE_REPEAT_PASS",
+    "real_two_samples": "NINE_FILES_IDENTICAL_IN_INDEPENDENT_PROCESSES_SEEDS_11_29",
+    "synthetic": "NINE_FILES_IDENTICAL_IN_INDEPENDENT_PROCESSES_SEEDS_11_29"
+  },
+  "existing_related_regression": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 98
+  },
+  "existing_tracked_diff": [
+    "inputs/three_board_daily_input.xlsx"
+  ],
+  "exit_effectiveness": "NOT_EVALUATED",
+  "forward_initial": {
+    "availability_basis": "ASSUMED_15_30_SHANGHAI_NOT_HISTORICAL_PUBLICATION_PROOF",
+    "initial_data_as_of": "2026-09-23",
+    "initial_observation_date": "2026-10-13",
+    "initial_recorded_date": "2026-10-13",
+    "initial_snapshot_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+    "initial_source_snapshot_id": "REAL_RESEARCH_SNAPSHOT_V1",
+    "observation_id": "WUXI_FORWARD_20261013_V0_1",
+    "rule_identity": {
+      "candidate_config_sha256": "8921bc31f52d22c55ac29948b5d47252312777b98b1d83c25f92a1c933f27b9a",
+      "risk_config_sha256": "f1826b0b4df15afcc03108cc9f9bf91af48e21a5aa58f47752b1ed8af55263fa",
+      "risk_rule_version": "TREND_EXIT_BASELINE_V0_1",
+      "signal_code_sha256": {
+        "trend_exit_research/src/data.py": "b02c943605f7489e2e4cfbc7594f606bfa1596c3b5cbc91ba89eaff1e02d86ae",
+        "trend_exit_research/src/indicators.py": "7267627bea6c7d8b312c15bd8c600faf8afe803492e83f657475945ae8cbb472",
+        "trend_exit_research/src/risk.py": "74f7aaaa16acede7368b1f86b76e1d36704065d2359467e37d228a8683370d97"
+      }
+    },
+    "sample_type": "FORWARD_OBSERVATION",
+    "scope": "Signals before inception are never forward observations",
+    "security_id": "603259.SH",
+    "stock_name": "药明康德"
+  },
+  "frozen_publication_checks": {
+    "foundation": 7,
+    "observation_entry": 11,
+    "primitives": 13
+  },
+  "git_branch": "codex/trend-exit-research-v0.1",
+  "git_head": "915b8f86a82fffe4ffd6f15d827df2d6200e0a1b",
+  "initial_test_failures": {
+    "new_tests": "Five prefix dtype mismatches repaired without weakening assertions",
+    "regression": "Four Windows sandbox hard-link permission failures; unchanged suite passed outside sandbox",
+    "sample_csv_order": "Set-derived field order fixed; independent-process regression added"
+  },
+  "limitations": [
+    "Real historical publication time assumed at 15:30 Shanghai",
+    "Unqualified corporate actions reset history; no cross-event real PIT admission",
+    "Turnover missing in all 12 samples",
+    "One status day missing in each of 300502.SZ and 300604.SZ",
+    "Manual study intervals not supplied; snapshot coverage range used for smoke",
+    "Manual cases cannot support market-wide success rate",
+    "No parameter optimization, trade simulation, PnL or deployment"
+  ],
+  "network_and_sdk_guard": "PASS",
+  "new_change_scope": "trend_exit_research/ only; uncommitted new module",
+  "new_tests": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 56
+  },
+  "protected_user_file_sha256": {
+    "inputs/three_board_daily_input.xlsx": "38dabdc991d26d4d1b5873bfdcbfb5dd29db4671fa1760c20d932d3d17d9b9fe",
+    "inputs/three_board_daily_input_2026_backtest.xlsx": "282c4abdbb5901f5e3ee33512e7256887c1e92ae129662f631397fbd6943cf22",
+    "手工统计.xlsx": "2fdf23576a7d220e994cf74143236a0b3db34e9e495f769927d0a65c994f8277"
+  },
+  "signal_counts": [
+    {
+      "count": 18,
+      "security_id": "002281.SZ",
+      "signal": "A"
+    },
+    {
+      "count": 9,
+      "security_id": "002281.SZ",
+      "signal": "B"
+    },
+    {
+      "count": 8,
+      "security_id": "002281.SZ",
+      "signal": "C"
+    },
+    {
+      "count": 1,
+      "security_id": "002281.SZ",
+      "signal": "D"
+    },
+    {
+      "count": 22,
+      "security_id": "300418.SZ",
+      "signal": "A"
+    },
+    {
+      "count": 11,
+      "security_id": "300418.SZ",
+      "signal": "B"
+    },
+    {
+      "count": 13,
+      "security_id": "300418.SZ",
+      "signal": "C"
+    }
+  ],
+  "signal_examples": [
+    {
+      "availability_basis": "ASSUMED_15_30_SHANGHAI_NOT_HISTORICAL_PUBLICATION_PROOF",
+      "config_sha256": "8921bc31f52d22c55ac29948b5d47252312777b98b1d83c25f92a1c933f27b9a",
+      "decision_at": "2024-04-10T15:30:00+08:00",
+      "factor_policy": "EVENT_FREE_SEGMENT_ONLY",
+      "factor_source_hash": "c343305415f88c40e12e4cda7c6fbb4521409883035eba7a2174a34565359998",
+      "latest_input_date": "2024-04-10",
+      "parameter_version": "trend-exit-candidates/0.1",
+      "reason": "{\"below_count\":2,\"buffer\":0.01,\"close\":40.31,\"ma\":41.512499999999996,\"ma_period\":28,\"rule\":\"FIRST_CONFIRMED_MA_BREAK_IN_EPISODE\",\"signal\":\"A\"}",
+      "sample_id": "d3dfdde389c2a399",
+      "security_id": "300418.SZ",
+      "signal": "A",
+      "snapshot_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+      "source_snapshot_id": "REAL_RESEARCH_SNAPSHOT_V1",
+      "stock_name": "昆仑万维",
+      "trade_date": "2024-04-10"
+    },
+    {
+      "availability_basis": "ASSUMED_15_30_SHANGHAI_NOT_HISTORICAL_PUBLICATION_PROOF",
+      "config_sha256": "8921bc31f52d22c55ac29948b5d47252312777b98b1d83c25f92a1c933f27b9a",
+      "decision_at": "2024-04-22T15:30:00+08:00",
+      "factor_policy": "EVENT_FREE_SEGMENT_ONLY",
+      "factor_source_hash": "c343305415f88c40e12e4cda7c6fbb4521409883035eba7a2174a34565359998",
+      "latest_input_date": "2024-04-22",
+      "parameter_version": "trend-exit-candidates/0.1",
+      "reason": "{\"below_count\":2,\"buffer\":0.01,\"close\":37.52,\"ma\":39.06618181818182,\"ma_period\":55,\"rule\":\"FIRST_CONFIRMED_MA_BREAK_IN_EPISODE\",\"signal\":\"C\"}",
+      "sample_id": "d3dfdde389c2a399",
+      "security_id": "300418.SZ",
+      "signal": "C",
+      "snapshot_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+      "source_snapshot_id": "REAL_RESEARCH_SNAPSHOT_V1",
+      "stock_name": "昆仑万维",
+      "trade_date": "2024-04-22"
+    },
+    {
+      "availability_basis": "ASSUMED_15_30_SHANGHAI_NOT_HISTORICAL_PUBLICATION_PROOF",
+      "config_sha256": "8921bc31f52d22c55ac29948b5d47252312777b98b1d83c25f92a1c933f27b9a",
+      "decision_at": "2024-04-25T15:30:00+08:00",
+      "factor_policy": "EVENT_FREE_SEGMENT_ONLY",
+      "factor_source_hash": "c343305415f88c40e12e4cda7c6fbb4521409883035eba7a2174a34565359998",
+      "latest_input_date": "2024-04-25",
+      "parameter_version": "trend-exit-candidates/0.1",
+      "reason": "{\"age\":7,\"break_date\":\"2024-04-17\",\"close\":38.67,\"ma13\":39.75615384615385,\"ma13_slope\":-0.04398734762583012,\"ma28\":40.753928571428574,\"rebound_high\":39.18,\"rebound_low\":36.79,\"rebound_min\":0.03,\"rule\":\"REBOUND_THEN_DECLINE_BELOW_MA13_AND_MA28\",\"signal\":\"B\"}",
+      "sample_id": "d3dfdde389c2a399",
+      "security_id": "300418.SZ",
+      "signal": "B",
+      "snapshot_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+      "source_snapshot_id": "REAL_RESEARCH_SNAPSHOT_V1",
+      "stock_name": "昆仑万维",
+      "trade_date": "2024-04-25"
+    },
+    {
+      "availability_basis": "ASSUMED_15_30_SHANGHAI_NOT_HISTORICAL_PUBLICATION_PROOF",
+      "config_sha256": "8921bc31f52d22c55ac29948b5d47252312777b98b1d83c25f92a1c933f27b9a",
+      "decision_at": "2024-04-10T15:30:00+08:00",
+      "factor_policy": "EVENT_FREE_SEGMENT_ONLY",
+      "factor_source_hash": "c343305415f88c40e12e4cda7c6fbb4521409883035eba7a2174a34565359998",
+      "latest_input_date": "2024-04-10",
+      "parameter_version": "trend-exit-candidates/0.1",
+      "reason": "{\"buffer\":0.01,\"close\":33.6,\"ma55\":31.274181818181816,\"prior_support\":34.34,\"rule\":\"PRIOR_ROLLING_LOW_BREAK_WHILE_AT_OR_ABOVE_MA55\",\"signal\":\"D\"}",
+      "sample_id": "9d74bd7be9f1e01d",
+      "security_id": "002281.SZ",
+      "signal": "D",
+      "snapshot_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+      "source_snapshot_id": "REAL_RESEARCH_SNAPSHOT_V1",
+      "stock_name": "光迅科技",
+      "trade_date": "2024-04-10"
+    }
+  ],
+  "source_snapshot": {
+    "constituent_files_checked": 104,
+    "cutoff_date": "2026-09-23",
+    "dataset_fingerprints": {
+      "adjustment_factor": "c343305415f88c40e12e4cda7c6fbb4521409883035eba7a2174a34565359998",
+      "daily_bars": "b592907e2d9edbad106edd63b3b62ea9983a8cc54f9c406539d04b240e724a98",
+      "daily_status": "10a62607ddbd6b448f70762ff6ffcc95e62eea8ff1bf779644f1ca34dda0c6d4",
+      "outcome_adjustment": "4e1811ae70548605265f28dfad9a63b899b74fe92a5bc9d41043853895e68cbf",
+      "outcome_adjustment_exclusions": "b43a05e1fd1b7757882ca8bb4a5549a25c6af23f6064ba7222651c555c4fecf8",
+      "security_master": "9f8d05f1aac027d850581b32b79604d8b5201f5f06245b66cec307d1241f5347",
+      "trading_calendar": "79b601366ade53456a86747c8eb72b9302a0b6e9bfbfb2ff391817fe0c3ba037"
+    },
+    "dataset_row_counts": {
+      "adjustment_factor": 3380290,
+      "daily_bars": 3375103,
+      "daily_status": 3379281,
+      "outcome_adjustment": 12457,
+      "outcome_adjustment_exclusions": 718,
+      "security_master": 5222,
+      "trading_calendar": 662
+    },
+    "manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+    "snapshot_id": "REAL_RESEARCH_SNAPSHOT_V1",
+    "status": "PASS"
+  },
+  "verdict": "PASS_WITH_LIMITATIONS"
+}

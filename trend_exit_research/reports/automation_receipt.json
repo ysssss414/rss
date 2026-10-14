@@ -1,0 +1,9 @@
+{
+  "id": "automation",
+  "kind": "heartbeat",
+  "market_data_network_access": false,
+  "name": "药明康德离线前瞻观察",
+  "schedule": "Monday-Friday 16:30 Asia/Shanghai",
+  "status": "ACTIVE",
+  "unchanged_or_missing_data": "QUIET"
+}

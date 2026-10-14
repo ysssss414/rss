@@ -1,0 +1,15 @@
+# TREND_EXIT_V0_5 原案例恢复结果
+
+三股真实新增日线均为0；昆仑2023和五粮液2020—2021均未恢复。以下均为缺失状态，不能视为没有风险事件。
+
+| 案例 | 目标区间 | 状态 | 风险时间线 |
+| --- | --- | --- | --- |
+| KUNLUN_2023_AI | 2023-01-01～2023-12-31 | TARGET_CASE_WINDOW_UNCOVERED | NOT_COMPUTED |
+| WULIANGYE_2020_2021 | 2020-01-01～2021-12-31 | TARGET_CASE_WINDOW_UNCOVERED | NOT_COMPUTED |
+| WUXI_FORWARD_20261013 | 2026-10-13～2026-10-13 | TARGET_CASE_WINDOW_UNCOVERED | NOT_COMPUTED |
+
+当日可知高点、MA28/MA55首次及三日确认、两者交易日间隔、条件退出回撤、后5/10/20/40路径和趋势恢复候选均保持null/NOT_COMPUTED，没有用2024年后行情替代。严格PIT/执行资格未取得，无模拟成交或交易收益。
+
+药明初始身份、2026-10-13冻结记录及实际数据截至2026-09-23保留；补取0行、无迟到行情归档、无当天或后续前瞻成功。
+
+CASE_ALIGNMENT_PARTIAL；STRATEGY_EFFECTIVENESS_NOT_YET_ESTABLISHED。
