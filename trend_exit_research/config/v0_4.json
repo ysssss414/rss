@@ -1,0 +1,19 @@
+{
+  "version": "TREND_EXIT_V0_4",
+  "smoke": {"security_id": "603259.SH", "start": "2026-09-24", "end": "2026-09-26"},
+  "authorized": {
+    "300418.SZ": ["2022-07-01", "2023-12-31"],
+    "000858.SZ": ["2019-07-01", "2022-03-31"],
+    "603259.SH": ["2026-09-24", "2026-10-13"]
+  },
+  "datasets": ["bars", "status"],
+  "max_attempts_per_interface": 2,
+  "max_python_data_attempts": 16,
+  "online_factor_attempts": 0,
+  "online_master_attempts": 0,
+  "observation_id": "WUXI_FORWARD_20261013_V0_1",
+  "backfill_label": "LATE_CAPTURE_NOT_SAME_DAY_PROSPECTIVE",
+  "baseline_version": "TREND_EXIT_BASELINE_V0_1",
+  "baseline_config_sha256": "f1826b0b4df15afcc03108cc9f9bf91af48e21a5aa58f47752b1ed8af55263fa",
+  "automatic_online_access": false
+}
