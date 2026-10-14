@@ -1,0 +1,3 @@
+﻿security_id,risk_rule_version,confirmation_days,daily_rows,ma28_reduce_signals,ma55_clear_signals,modelled_fills,no_fill,execution_unresolved,forward20_available,state_days,position_caps
+300418.SZ,TREND_EXIT_BASELINE_V0_1,3,662,19,16,0,0,30,621,"{""DEFENSIVE"": 5, ""EXIT_PENDING"": 3, ""EXIT_REQUIRED"": 450, ""REENTRY_CANDIDATE"": 141, ""TREND"": 63}",EXPLICIT_ZERO_FOR_EXIT;OTHER_RATIOS_UNSPECIFIED
+002281.SZ,TREND_EXIT_BASELINE_V0_1,3,662,16,6,0,0,22,600,"{""DEFENSIVE"": 19, ""EXIT_PENDING"": 3, ""EXIT_REQUIRED"": 390, ""REENTRY_CANDIDATE"": 188, ""TREND"": 62}",EXPLICIT_ZERO_FOR_EXIT;OTHER_RATIOS_UNSPECIFIED

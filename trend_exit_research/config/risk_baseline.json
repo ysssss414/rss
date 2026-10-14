@@ -1,0 +1,18 @@
+{
+  "version": "TREND_EXIT_BASELINE_V0_1",
+  "confirmation_days": 3,
+  "repair_confirm_days": 3,
+  "box_state_enabled": false,
+  "box_window": 20,
+  "box_max_width": 0.12,
+  "box_near_peak": 0.10,
+  "box_min_runup": 0.30,
+  "position_caps": {
+    "TREND": null,
+    "DEFENSIVE": null,
+    "BOX_LOW_EXPOSURE": null,
+    "EXIT_PENDING": null,
+    "EXIT_REQUIRED": 0,
+    "REENTRY_CANDIDATE": 0
+  }
+}

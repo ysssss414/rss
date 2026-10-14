@@ -1,0 +1,23 @@
+{
+  "availability_basis": "ASSUMED_15_30_SHANGHAI_NOT_HISTORICAL_PUBLICATION_PROOF",
+  "initial_data_as_of": "2026-09-23",
+  "initial_observation_date": "2026-10-13",
+  "initial_recorded_date": "2026-10-13",
+  "initial_snapshot_manifest_sha256": "a41628925227863150aa7785bc4a15e811a55e6bafb3d5136062a277c99d4c67",
+  "initial_source_snapshot_id": "REAL_RESEARCH_SNAPSHOT_V1",
+  "observation_id": "WUXI_FORWARD_20261013_V0_1",
+  "rule_identity": {
+    "candidate_config_sha256": "8921bc31f52d22c55ac29948b5d47252312777b98b1d83c25f92a1c933f27b9a",
+    "risk_config_sha256": "f1826b0b4df15afcc03108cc9f9bf91af48e21a5aa58f47752b1ed8af55263fa",
+    "risk_rule_version": "TREND_EXIT_BASELINE_V0_1",
+    "signal_code_sha256": {
+      "trend_exit_research/src/data.py": "b02c943605f7489e2e4cfbc7594f606bfa1596c3b5cbc91ba89eaff1e02d86ae",
+      "trend_exit_research/src/indicators.py": "7267627bea6c7d8b312c15bd8c600faf8afe803492e83f657475945ae8cbb472",
+      "trend_exit_research/src/risk.py": "74f7aaaa16acede7368b1f86b76e1d36704065d2359467e37d228a8683370d97"
+    }
+  },
+  "sample_type": "FORWARD_OBSERVATION",
+  "scope": "Signals before inception are never forward observations",
+  "security_id": "603259.SH",
+  "stock_name": "药明康德"
+}

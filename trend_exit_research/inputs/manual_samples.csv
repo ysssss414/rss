@@ -1,0 +1,17 @@
+stock_name,stock_code,analysis_start,analysis_end,notes,sample_source,sample_type,observation_start,observation_id
+昆仑万维,300418.SZ,,,初始人工案例；区间待指定,user_task_2026-10-13
+光迅科技,002281.SZ,,,初始人工案例；区间待指定,user_task_2026-10-13
+东山精密,002384.SZ,,,初始人工案例；区间待指定,user_task_2026-10-13
+佰维存储,688525.SH,,,初始人工案例；区间待指定,user_task_2026-10-13
+中际旭创,300308.SZ,,,初始人工案例；区间待指定,user_task_2026-10-13
+新易盛,300502.SZ,,,初始人工案例；区间待指定,user_task_2026-10-13
+五粮液,000858.SZ,,,初始人工案例；区间待指定,user_task_2026-10-13
+爱尔眼科,300015.SZ,,,初始人工案例；区间待指定,user_task_2026-10-13
+源杰科技,688498.SH,,,初始人工案例；区间待指定,user_task_2026-10-13
+生益科技,600183.SH,,,初始人工案例；区间待指定,user_task_2026-10-13
+长川科技,300604.SZ,,,初始人工案例；区间待指定,user_task_2026-10-13
+兆易创新,603986.SH,,,初始人工案例；区间待指定,user_task_2026-10-13
+三花智控,002050.SZ,2025-01-01,2025-12-31,新增历史案例；允许向前预热,user_task_update_2026-10-13,HISTORICAL_CASE,,
+卧龙电驱,600580.SH,2025-01-01,2025-12-31,新增历史案例；允许向前预热,user_task_update_2026-10-13,HISTORICAL_CASE,,
+工业富联,601138.SH,2025-01-01,2025-12-31,新增历史案例；允许向前预热,user_task_update_2026-10-13,HISTORICAL_CASE,,
+药明康德,603259.SH,2026-10-13,,前瞻观察；不得把此前历史信号回填为前瞻结果,user_task_update_2026-10-13,FORWARD_OBSERVATION,2026-10-13,WUXI_FORWARD_20261013_V0_1

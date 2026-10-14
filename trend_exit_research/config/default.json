@@ -1,0 +1,11 @@
+{
+  "version": "trend-exit-candidates/0.1",
+  "break_buffer": 0.01,
+  "confirm_days": 2,
+  "slope_days": 5,
+  "peak_window": 60,
+  "support_window": 20,
+  "swing_reversal": 0.04,
+  "rebound_min": 0.03,
+  "repair_grace_days": 5
+}
